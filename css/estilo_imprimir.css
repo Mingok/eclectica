@@ -1,0 +1,21 @@
+BODY {
+    font: 12ºpt Verdana, Geneva, Arial, Helvetica, sans-serif;
+    margin: 5 0 5 0px;
+    text-align: center;
+    background-color: #ffffff;
+    vertical-align:middle; 
+}
+
+#cabecera{
+	visibility:hidden;
+	display: none;
+}
+
+
+#principal{
+    background-color: #ffffff;
+    padding: 0 0 0 20px;
+    width: 600px;
+    float: left;
+    
+} 
