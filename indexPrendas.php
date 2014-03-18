@@ -19,11 +19,6 @@
                                 </tr>
                                 <tr>
                                         <td>
-                                                <?php include './menuGral.php' ?>
-                                        </td>
-                                </tr>
-                                 <tr>
-                                        <td>
                                         <hr />
                                                 <?php include './form01prenda.php'?>
                                         <hr /></td>

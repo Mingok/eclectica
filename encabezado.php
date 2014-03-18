@@ -1,17 +1,15 @@
-<table width="100%" height="85px">
-	<tr  height="80px" >
-		<td>
-		<img src="./imagenes/logos/logoEcle.png" height="82"/>
+<table style="width:1150px; height:85px; text-align: left;">
+	<tr >
+		<td  style="width: 230px;"  >
+		    <img src="./imagenes/logos/logoEcle.png" height="78"/>
 		</td>
-		<td >
-			<p style="font-family: Tahoma, Verdana, Arial;  font-size: 20px; text-align: center;">
+		<td style="vertical-align: top; padding-top: 5px; text-align: left;">
+			
 				
-				<tt style="font-size: small;">
-					Titulo del Programa 
-				</tt>
-			</p>
+				<div style="text-align:left;" > <?php include 'menuGral.php' ?></div>
+		
 		</td>
-		<td >
+		<td style="width: 200px;" >
 			<table class="msg_user" align="Right">
 				<tr>
 					

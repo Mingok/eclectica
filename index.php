@@ -20,11 +20,6 @@
                                 </tr>
                                 <tr>
                                         <td>
-                                                <?php include 'menuGral.php' ?>
-                                        </td>
-                                </tr>
-                                 <tr>
-                                        <td>
                                                 <a href="indexPrendas.php"> prendas</a>
                                         </td>
                                 </tr>

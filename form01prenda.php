@@ -477,7 +477,7 @@
 
 
     
-    <div id="ver" style="display: none;padding-top:10px; padding-left:25px">
+    <div id="ver" style="display: none;padding-top:10px; ">
     
     
     <table cellpadding="5px" cellspacing="5px" style="border: solid; padding-left: 5px; padding-right: 5px; width: 1150px;">
