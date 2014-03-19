@@ -77,16 +77,11 @@
 <div id="prendas" style="display: none;padding-top:10px; padding-left:125px">
 	<table cellspacing="1px">
 		<tr>
-			<td>|
-            <a href="#"onclick="javascript:mostrarOcultarTablas('prendas')">&nbsp;Prendas&nbsp;</a>
+			<td>|                    
+
+            <a href="indexPrendas.php"onclick="javascript:mostrarOcultarTablas('prendas')">&nbsp;Prendas&nbsp;</a>
 				|
-				<a href="#" onclick="javascript:mostrarOcultarTablas('prendas')">&nbsp;Telas&nbsp;</a>
-	            |
-				<a href="#" onclick="javascript:mostrarOcultarTablas('prendas')">&nbsp;Talles&nbsp;</a>
-				|
-                <a href="#" onclick="javascript:mostrarOcultarTablas('prendas')">&nbsp;Color&nbsp;</a>
-				|
-            	 <a href="#" onclick="javascript:mostrarOcultarTablas('prendas')">&nbsp;Estampados&nbsp;</a>
+				<a href="indexCaracteristicas.php" onclick="javascript:mostrarOcultarTablas('prendas')">&nbsp;Telas&nbsp;-&nbsp;Talles&nbsp;-&nbsp;Colores&nbsp;-&nbsp;Estampados&nbsp;</a>
 				|
 			</td>
           

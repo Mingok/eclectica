@@ -18,11 +18,6 @@
                                                 <?php include 'encabezado.php'; ?>
                                         </td>
                                 </tr>
-                                <tr>
-                                        <td>
-                                                <a href="indexPrendas.php"> prendas</a>
-                                        </td>
-                                </tr>
                         </table>
                 </center>
         </body>
