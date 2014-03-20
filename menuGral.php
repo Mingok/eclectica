@@ -60,7 +60,7 @@
 						&nbsp;Marcas&nbsp;
 					</a>
 	            |
-					<a href="#" onclick="javascript:mostrarOcultarTablas('configuracion')">
+					<a href="./indexEmpleados.php" onclick="javascript:mostrarOcultarTablas('configuracion')">
 						&nbsp;Empleados&nbsp;
 					</a>
 				|
