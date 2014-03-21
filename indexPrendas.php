@@ -1,3 +1,7 @@
+<?php
+ define('EMPLEADOS_STYLE_PATH', 'http://localhost/ecleptica/css/');
+
+?>
 <!DOCTYPE HTML>
 <head>
 	<meta http-equiv="content-type" content="text/html" />
@@ -5,7 +9,7 @@
 	<title>
 		Nombre del programa
 	</title>
-	<link rel="stylesheet" href="./css/css.css" type="text/css" />
+    <link rel="stylesheet" href="<?php echo EMPLEADOS_STYLE_PATH;?>css.css" type="text/css" />
 </head>
 <body>
 	<center>

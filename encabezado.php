@@ -1,4 +1,4 @@
-<table style="width:1150px; height:85px; text-align: left;">
+<table style="width:1150px;text-align: left;">
 	<tr >
 		<td  style="width: 230px;"  >
 		    <img src="./imagenes/logos/logoEcle.png" height="78"/>

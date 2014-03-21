@@ -1,9 +1,4 @@
-<?php 
-    extract($_GET,EXTR_SKIP) ;    
-    extract($_POST,EXTR_SKIP) ; 
-    include ( "conectar.php");
-   
-?>
+
 
  
 <script>
@@ -52,7 +47,14 @@
 		<tr>
 			<td>
 				|
-					<a href="#" onclick="javascript:mostrarOcultarTablas('configuracion')">
+					<a href="./indexClientes.php" onclick="javascript:mostrarOcultarTablas('configuracion')">
+						&nbsp;Clientes&nbsp;
+					</a>
+				|
+                <a href="./indexEmpleados.php" onclick="javascript:mostrarOcultarTablas('configuracion')">
+						&nbsp;Empleados&nbsp;
+					</a>
+				|<a href="#" onclick="javascript:mostrarOcultarTablas('configuracion')">
 						&nbsp;Proveedores&nbsp;
 					</a>
 				|
@@ -60,11 +62,7 @@
 						&nbsp;Marcas&nbsp;
 					</a>
 	            |
-					<a href="./indexEmpleados.php" onclick="javascript:mostrarOcultarTablas('configuracion')">
-						&nbsp;Empleados&nbsp;
-					</a>
-				|
-                	<a href="#" onclick="javascript:mostrarOcultarTablas('configuracion')">
+				   	<a href="#" onclick="javascript:mostrarOcultarTablas('configuracion')">
 						&nbsp;Listas De Precios&nbsp;
 					</a>
 				|

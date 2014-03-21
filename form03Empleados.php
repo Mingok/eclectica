@@ -7,25 +7,11 @@
     <table class="tablaEmpleados">
     <tr style="height:180px;">
         <td >
-          <table style="width:540px">
+          <table style="width:500px">
           <tr style="vertical-align: middle;">
-              <td style="text-align: left;">
-                Nombre Tela: &nbsp; <input type="text" name="pbusc"
-                value="ingresar" />
-              </td>
-              <td style="text-align: right; height: 40px;">
-                <input type="button" name="pNuevo" value="Agregar"
-                class="buttonEmpleados" />
-              </td>
-              <td style="text-align: right; height: 40px;">
-                <input type="button" name="pNuevo" value=
-                "Modificar" class="buttonEmpleados" />
-              </td>
-            </tr>
-           
-            <tr>
-              <td colspan="3" style="text-align: right;">
-                <table class="formuEmpleados" style=
+            <td>
+			<div class="scrolEmpleado"  >
+              <table class="formuEmpleados" style=
                 "width: 100%;">
                   <tr style="text-align: center;">
                     <td width="60%">
@@ -50,66 +36,110 @@
                     </td>
                   </tr>
                   <tr style="text-align: center;">
-                    <td width="60%">
-                      &nbsp;
+                    <td width="60%">&nbsp;
+                      
                     </td>
-                    <td>
-                      &nbsp;
+                    <td>&nbsp;
+                      
                     </td>
-                    <td>
-                      &nbsp;
-                    </td>
-                  </tr>
-                  <tr style="text-align: center;">
-                    <td width="60%">
-                      &nbsp;
-                    </td>
-                    <td>
-                      &nbsp;
-                    </td>
-                    <td>
-                      &nbsp;
+                    <td>&nbsp;
+                      
                     </td>
                   </tr>
                   <tr style="text-align: center;">
-                    <td width="60%">
-                      &nbsp;
+                    <td width="60%">&nbsp;
+                      
                     </td>
-                    <td>
-                      &nbsp;
+                    <td>&nbsp;
+                      
                     </td>
-                    <td>
-                      &nbsp;
+                    <td>&nbsp;
+                      
                     </td>
                   </tr>
                   <tr style="text-align: center;">
-                    <td width="60%">
-                      &nbsp;
+                    <td width="60%">&nbsp;
+                      
                     </td>
-                    <td>
-                      &nbsp;
+                    <td>&nbsp;
+                      
                     </td>
-                    <td>
-                      &nbsp;
+                    <td>&nbsp;
+                      
+                    </td>
+                  </tr>
+                  
+                  <tr style="text-align: center;">
+                    <td width="60%">&nbsp;
+                      
+                    </td>
+                    <td>&nbsp;
+                      
+                    </td>
+                    <td>&nbsp;
+                      
+                    </td>
+                  </tr>
+                  <tr style="text-align: center;">
+                    <td width="60%">&nbsp;
+                      
+                    </td>
+                    <td>&nbsp;
+                      
+                    </td>
+                    <td>&nbsp;
+                      
+                    </td>
+                  </tr>
+                  <tr style="text-align: center;">
+                    <td width="60%">&nbsp;
+                      
+                    </td>
+                    <td>&nbsp;
+                      
+                    </td>
+                    <td>&nbsp;
+                      
+                    </td>
+                  </tr>
+                  <tr style="text-align: center;">
+                    <td width="60%">&nbsp;
+                      
+                    </td>
+                    <td>&nbsp;
+                      
+                    </td>
+                    <td>&nbsp;
+                      
                     </td>
                   </tr>
                 </table>
-              </td>
-            </tr>
-          </table>
+                </div>
         </td>
+     
         <td>
-          <table style="width:540px">
+          <table style="width:500px; height: 170px; border:solid">
                    <tr style="vertical-align: middle;">
               <td style="text-align: center;">
-                Datos del empleado Seleccionado
+                <h1>Datos del empleado Seleccionado</h1>
               </td>
             </tr>
           </table>
         </td>
+           <td style="text-align: right;" >
+                <input type="button" name="pNuevo" value="Agregar"
+                class="buttonEmpleados" />
+              <br /><br />
+                <input type="button" name="pNuevo" value=
+                "Modificar" class="buttonEmpleados" disabled="yes" />
+             
+        
+        
+                </td>
       </tr>
     </table>
-    <table class="tablaEmpleados" border="1px">
+    <br />
+    <table class="tablaEmpleados">
     <tr>
         <td colspan="7">
           <h1 style="text-align: left;">
@@ -118,7 +148,7 @@
         </td>
       </tr>
       <tr style="vertical-align: middle;">
-        <td style="text-align: left;">
+        <td style="text-align: right;">
           Cliente:&nbsp; <select name="select" class="textEmpleados">
             <option selected="selected">
               ---
@@ -135,7 +165,7 @@
           </select>
         </td>
         
-        <td style="text-align: right; height: 40px;">
+        <td style="text-align: right;">
           Tipo de venta:&nbsp; <select name="select" class="textEmpleados">
             <option selected="selected">
               ---
@@ -154,11 +184,11 @@
             </option>
           </select>
         </td>
-       <td style="text-align: right; height: 40px;">
+       <td style="text-align: right;">
           Desde: &nbsp; <input type="date" value="<?php echo date('Y-m-d')?>" 
           class="textEmpleados"/>
         </td>
-        <td style="text-align: right; height: 40px;">
+        <td style="text-align: right;">
           Hasta:&nbsp; <input type="date" value="<?php echo date('Y-m-d')?>" 
           class="textEmpleados" />
         </td>
@@ -168,7 +198,7 @@
         </td>
       </tr>
       <tr style="vertical-align: middle;">
-         <td style="text-align: right; height: 40px;">
+         <td style="text-align: right;">
           Prenda:&nbsp; <select name="select" class="textEmpleados">
             <option selected="selected">
               ---
@@ -184,7 +214,7 @@
             </option>
           </select>
         </td>
- <td style="text-align: right; height: 40px;">
+ <td style="text-align: right;">
           Marca: &nbsp; <select name="select" class="textEmpleados">
             <option selected="selected">
               ---
@@ -200,19 +230,19 @@
             </option>
           </select>
         </td>
-        <td style="text-align: right; height: 40px;">
+        <td style="text-align: right;">
           Min: &nbsp; <input type="text" maxlength="6" name=
           "pNuevo" value="100,00" class="textEmpleados" size=
           "8" />
         </td>
-        <td style="text-align: right; height: 40px;">
+        <td style="text-align: right;">
           Max: &nbsp; <input type="text" maxlength="6" name=
           "pNuevo" value="100,00" class="textEmpleados" size=
           "8"  />
         </td>
         </tr>
       <tr style="vertical-align: middle;">
-        <td style="text-align: right; height: 40px;">
+        <td style="text-align: right;">
           Color: &nbsp; <select name="select" class="textEmpleados">
             <option selected="selected">
               ---
@@ -228,7 +258,7 @@
             </option>
           </select>
         </td>
-        <td style="text-align: right; height: 40px;">
+        <td style="text-align: right;">
           Talle: &nbsp; <select name="select" class="textEmpleados">
             <option selected="selected">
               ---
@@ -244,7 +274,7 @@
             </option>
           </select>
         </td>
-        <td style="text-align: right; height: 40px;">
+        <td style="text-align: right;">
           Tela: &nbsp; <select name="select" class="textEmpleados">
             <option selected="selected">
               ---
@@ -260,7 +290,7 @@
             </option>
           </select>
         </td>
-        <td style="text-align: right; height: 40px;">
+        <td style="text-align: right;">
           Textura: &nbsp; <select name="select" class="textEmpleados">
             <option selected="selected">
               ---
@@ -279,6 +309,7 @@
        
       </tr>
     </table>
+    <br />  
     <table class="tablaEmpleados">
     <tr>
     <td>
@@ -304,135 +335,143 @@
         </td>
       </tr>
       <tr style="text-align: center;">
-        <td>
-          &nbsp;
+        <td>&nbsp;
+          
         </td>
-        <td>
-          &nbsp;
+        <td>&nbsp;
+          
         </td>
-        <td>
-          &nbsp;
+        <td>&nbsp;
+          
         </td>
-        <td>
-          &nbsp;
+        <td>&nbsp;
+          
         </td>
-        <td>
-          &nbsp;
+        <td>&nbsp;
+          
         </td>
-        <td>
-          &nbsp;
+        <td>&nbsp;
+          
         </td>
-        <td>
-          &nbsp;
+        <td>&nbsp;
+          
         </td>
-        <td>
-          &nbsp;
-        </td>
-      </tr>
-      <tr style="text-align: center;">
-        <td>
-          &nbsp;
-        </td>
-        <td>
-          &nbsp;
-        </td>
-        <td>
-          &nbsp;
-        </td>
-        <td>
-          &nbsp;
-        </td>
-        <td>
-          &nbsp;
-        </td>
-        <td>
-          &nbsp;
-        </td>
-        <td>
-          &nbsp;
-        </td>
-        <td>
-          &nbsp;
+        <td>&nbsp;
+          
         </td>
       </tr>
       <tr style="text-align: center;">
-        <td>
-          &nbsp;
+        <td>&nbsp;
+          
         </td>
-        <td>
-          &nbsp;
+        <td>&nbsp;
+          
         </td>
-        <td>
-          &nbsp;
+        <td>&nbsp;
+          
         </td>
-        <td>
-          &nbsp;
+        <td>&nbsp;
+          
         </td>
-        <td>
-          &nbsp;
+        <td>&nbsp;
+          
         </td>
-        <td>
-          &nbsp;
+        <td>&nbsp;
+          
         </td>
-        <td>
-          &nbsp;
+        <td>&nbsp;
+          
         </td>
-        <td>
-          &nbsp;
-        </td>
-      </tr>
-      <tr style="text-align: center;">
-        <td>
-          &nbsp;
-        </td>
-        <td>
-          &nbsp;
-        </td>
-        <td>
-          &nbsp;
-        </td>
-        <td>
-          &nbsp;
-        </td>
-        <td>
-          &nbsp;
-        </td>
-        <td>
-          &nbsp;
-        </td>
-        <td>
-          &nbsp;
-        </td>
-        <td>
-          &nbsp;
+        <td>&nbsp;
+          
         </td>
       </tr>
       <tr style="text-align: center;">
-        <td>
-          &nbsp;
+        <td>&nbsp;
+          
         </td>
-        <td>
-          &nbsp;
+        <td>&nbsp;
+          
         </td>
-        <td>
-          &nbsp;
+        <td>&nbsp;
+          
         </td>
-        <td>
-          &nbsp;
+        <td>&nbsp;
+          
         </td>
-        <td>
-          &nbsp;
+        <td>&nbsp;
+          
         </td>
-        <td>
-          &nbsp;
+        <td>&nbsp;
+          
         </td>
-        <td>
-          &nbsp;
+        <td>&nbsp;
+          
         </td>
-        <td>
-          &nbsp;
+        <td>&nbsp;
+          
+        </td>
+      </tr>
+      <tr style="text-align: center;">
+        <td>&nbsp;
+          
+        </td>
+        <td>&nbsp;
+          
+        </td>
+        <td>&nbsp;
+          
+        </td>
+        <td>&nbsp;
+          
+        </td>
+        <td>&nbsp;
+          
+        </td>
+        <td>&nbsp;
+          
+        </td>
+        <td>&nbsp;
+          
+        </td>
+        <td>&nbsp;
+          
+        </td>
+      </tr>
+      <tr style="text-align: center;">
+        <td>&nbsp;
+          
+        </td>
+        <td>&nbsp;
+          
+        </td>
+        <td>&nbsp;
+          
+        </td>
+        <td>&nbsp;
+          
+        </td>
+        <td>&nbsp;
+          
+        </td>
+        <td>&nbsp;
+          
+        </td>
+        <td>&nbsp;
+          
+        </td>
+        <td>&nbsp;
+          
         </td>
       </tr>
     </table>
     </td></tr></table>
+    <br />
+    <table class="tablaEmpleados" style=" height: 170px; ">
+                   <tr style="vertical-align: middle;">
+              <td style="text-align: center;">
+              <h1> Informe Segun Historial</h1> 
+              </td>
+            </tr>
+          </table>
   </div>
