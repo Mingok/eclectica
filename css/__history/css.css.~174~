@@ -1,0 +1,482 @@
+body {
+font-family:Verdana, Geneva, Arial, Helvetica, sans-serif;  
+font-size: 12px; 
+background-color:#F0F0F0;}
+
+Table.tablaGral{
+background-color: #cccccc;
+width:1200px;
+border-spacing: 5px; /* cellspacing */
+padding: 5px;/* cellpadding */
+}
+
+
+
+a {
+	text-decoration: none;	
+	font-size: 13	px;
+	color:#000000;
+	background: inherit;	
+}
+a:hover {
+		color:#000000;
+		background: inherit;	
+		font-size: 13px;
+		text-decoration:none;
+		font-weight: bold;	
+}
+h1,h2,h3,h4,h5,h6 {
+	color: #15428B; 
+	margin-top: 5px; 
+	margin-bottom:5px;
+}
+
+hr {
+	color: #1E90FF; 
+	background-color: #1E90FF; 
+	height: 2px; 
+	border: 0px;
+}
+
+img {border: 0;}		
+
+/*Empieza Css Formulario Prendas*/
+.Prendas{
+padding-bottom: 10px;
+
+background-color: #15428b;	
+}
+
+table.tablaPrendas{
+border-spacing: 5px; /* cellspacing */
+padding: 5px;/* cellpadding */
+border: solid; 
+width:1150px;	
+margin: 0 auto;
+text-align: center;
+}
+Table.formuPrendas,Table.formuPrendas td{
+	border: 1px solid;
+}
+
+Table.formuPrendas tr:not(:first-child):hover {
+	background:#aaFFFF;
+}
+
+Table.formuPrendas tr:first-child {
+	font-weight: bold;
+	color:#fff;
+	background-color: #444;
+	border-bottom:1px #000 solid;
+	text-align:left;
+}
+
+.buttonPrendas{
+height: 30px;
+font-size: 15px; font-weight: bold; width: 150px; color:black;
+padding-left: 20px; cursor:hand; cursor:pointer;
+margin-left:5px; margin-right:5px; outline-width:0px;
+background-position:5px 5px; 
+text-decoration: none; 
+background-repeat: no-repeat; 
+border-radius: 20px; 
+border:1px solid #555555;
+background-image: url(../imagenes/iconos/add.png	);	
+}
+.buttonPrendas:hover{
+
+border:none;
+}
+.textPrendas{
+  height: 20	px; background-color: #cccccc;
+ 
+  font-size: 11px; font-weight: bold; 
+  cursor:hand; cursor:pointer;
+ 
+}
+/*Termina Css Formulario Prendas*/
+
+/*Empieza Css Formulario Caracteristicas*/
+.Caracteristicas{
+padding-bottom: 10px;
+
+background-color: #15428b;	
+}
+
+table.tablaCaracteristicas{
+border-spacing: 5px; /* cellspacing */
+padding: 5px;/* cellpadding */
+border: solid; 
+width:1150px;	
+margin: 0 auto;
+text-align: center;
+}
+Table.formuCaracteristicas,Table.formuCaracteristicas td{
+	border: 1px solid;
+}
+
+Table.formuCaracteristicas tr:not(:first-child):hover {
+	background:#aaFFFF;
+}
+
+Table.formuCaracteristicas tr:first-child {
+	font-weight: bold;
+	color:#fff;
+	background-color: #444;
+	border-bottom:1px #000 solid;
+	text-align:left;
+}
+
+.buttonCaracteristicas{
+height: 30px;
+font-size: 15px; font-weight: bold; width: 150px; color:black;
+padding-left: 20px; cursor:hand; cursor:pointer;
+margin-left:5px; margin-right:5px; outline-width:0px;
+background-position:5px 5px; 
+text-decoration: none; 
+background-repeat: no-repeat; 
+border-radius: 20px; 
+border:1px solid #555555;
+background-image: url(../imagenes/iconos/add.png	);	
+}
+.buttonCaracteristicas:hover{
+
+border:none;
+}
+.textCaracteristicas{
+  height: 20	px; background-color: #cccccc;
+ 
+  font-size: 11px; font-weight: bold; 
+  cursor:hand; cursor:pointer;
+ 
+}
+
+div.scrolCaracteristicas{
+	overflow: auto;
+	height: 150px;
+	border: solid;
+}
+/*Termina Css Formulario Caracteristicas*/
+
+
+/*Empieza Css Formulario Empleados*/
+.Empleados{
+padding-bottom: 10px;
+
+background-color: #15428b;	
+}
+
+table.tablaEmpleados{
+border-spacing: 5px; /* cellspacing */
+padding: 5px;/* cellpadding */
+border: solid; 
+width:1150px;	
+margin: 0 auto;
+text-align: center;
+}
+Table.formuEmpleados,Table.formuEmpleados td{
+	border: 1px solid;
+}
+
+Table.formuEmpleados tr:not(:first-child):hover {
+	background:#aaFFFF;
+}
+
+Table.formuEmpleados tr:first-child {
+	font-weight: bold;
+	color:#fff;
+	background-color: #444;
+	border-bottom:1px #000 solid;
+	text-align:left;
+
+}
+.buttonEmpleados:disabled{
+height: 30px;
+font-size: 15px; font-weight: bold; width: 100px; color:#333333	;
+background-color:#555555;
+padding-left: 20px; cursor:hand; cursor:pointer;
+margin-left:5px; margin-right:5px; outline-width:0px;
+background-position:5px 5px; 
+text-decoration: none; 
+background-repeat: no-repeat; 
+border-radius: 20px; 
+border:1px solid #555555;
+
+}
+.buttonEmpleados:enabled {
+height: 30px;
+font-size: 15px; font-weight: bold; width: 100px; color:black;
+padding-left: 20px; cursor:hand; cursor:pointer;
+margin-left:5px; margin-right:5px; outline-width:0px;
+background-position:5px 5px; 
+text-decoration: none; 
+background-repeat: no-repeat; 
+border-radius: 20px; 
+border:1px solid #555555;
+background-image: url(../imagenes/iconos/add.png	);	
+}
+.buttonEmpleados:hover:enabled{
+
+border:none;
+}
+.textEmpleados{
+ height: 20px; 
+ background-color: #cccccc;
+ width: 120px;
+ font-size: 11px; font-weight: bold; 
+ cursor:hand; cursor:pointer;
+ 
+}
+
+
+div.scrolEmpleado{
+	overflow: auto;
+	height: 170px;
+	border: solid;
+	width: 520px;
+}
+/*Termina Css Formulario Empleados*/
+
+/*Empieza Css Formulario Clientes*/
+.Clientes{
+padding-bottom: 10px;
+
+background-color: #15428b;	
+}
+
+table.tablaEmpleados{
+border-spacing: 5px; /* cellspacing */
+padding: 5px;/* cellpadding */
+border: solid; 
+width:1150px;	
+margin: 0 auto;
+text-align: center;
+}
+Table.formuEmpleados,Table.formuEmpleados td{
+	border: 1px solid;
+}
+
+Table.formuEmpleados tr:not(:first-child):hover {
+	background:#aaFFFF;
+}
+
+Table.formuEmpleados tr:first-child {
+	font-weight: bold;
+	color:#fff;
+	background-color: #444;
+	border-bottom:1px #000 solid;
+	text-align:left;
+
+}
+.buttonEmpleados:disabled{
+height: 30px;
+font-size: 15px; font-weight: bold; width: 100px; color:#333333	;
+background-color:#555555;
+padding-left: 20px; cursor:hand; cursor:pointer;
+margin-left:5px; margin-right:5px; outline-width:0px;
+background-position:5px 5px; 
+text-decoration: none; 
+background-repeat: no-repeat; 
+border-radius: 20px; 
+border:1px solid #555555;
+
+}
+.buttonEmpleados:enabled {
+height: 30px;
+font-size: 15px; font-weight: bold; width: 100px; color:black;
+padding-left: 20px; cursor:hand; cursor:pointer;
+margin-left:5px; margin-right:5px; outline-width:0px;
+background-position:5px 5px; 
+text-decoration: none; 
+background-repeat: no-repeat; 
+border-radius: 20px; 
+border:1px solid #555555;
+background-image: url(../imagenes/iconos/add.png	);	
+}
+.buttonEmpleados:hover:enabled{
+
+border:none;
+}
+.textEmpleados{
+ height: 20px; 
+ background-color: #cccccc;
+ width: 120px;
+ font-size: 11px; font-weight: bold; 
+ cursor:hand; cursor:pointer;
+ 
+}
+
+
+div.scrolEmpleado{
+	overflow: auto;
+	height: 170px;
+	border: solid;
+	width: 520px;
+}
+/*Termina Css Formulario Clientes*/
+/*
+table {background-color: #cccccc;}
+	
+p {margin-top: 10px; margin-bottom:5px;}
+td.tabla_datos {background-color: #FFFFFF; padding: 10px;}
+td.tabla_titulos {background-color: #E1EEFF; padding: 10px; width: 800px; font-weight: bold; }
+td.tabla_critica {background-color: #7CA0C7; padding: 10px;}
+td.tabla_critica_titulos {background-color: #f5f5f5; padding: 10px; width: 800px; font-weight: bold;}
+
+table.tabla_datos {border-collapse: collapse; }
+
+div.msg_exit p{
+	margin:0px 0px 0px 0px;
+	color:#EE2037;
+	
+	padding-left:1px;
+	padding-bottom:4px;
+	font-size:11px;
+	background-position:0px 0px;
+	font-family : "Tahoma, Arial;
+}
+
+div.error_dato p{
+	margin:0px 0px 0px 0px;
+	color:#EE2037;
+	padding-left:20px;
+	padding-bottom:4px;
+	font-size:12px;
+	background:url("../imagenes/iconos/cross111.png") no-repeat left top;
+	background-position:0px 0px;
+	font-family : "Trebuchet MS", Tahoma, Arial;
+}
+div.msg_user a {
+	text-decoration: none;	
+	font-size: 12px;
+	color:#333333;
+	background: inherit;	
+
+		}	
+table.msg_user  {text-align:right; vertical-align: top;}
+div.dato_ok p{
+	margin:0px 0px 0px 0px;
+	color:#EE2037;
+	padding-left:20px;
+	padding-bottom:4px;
+	font-size:12px;
+	background:url("accept.png") no-repeat left top;
+	background-position:0px 0px;
+	font-family : "Trebuchet MS", Tahoma, Arial;
+}
+
+
+.btn{
+  height: 28px; background-color: #f5f5f0; border-bottom: 1px solid #AAAAAA;
+  border-right:1px solid #AAAAAA; border-top:0px; border-left:0px;
+  font-size: 12px; font-weight: bold; color:black;padding-left: 20px; background-repeat: no-repeat;
+  cursor:hand; cursor:pointer; margin-left:5px; margin-right:5px;outline-width:0px;
+  background-image: url(../imagenes/iconos/add.png);
+  background-position:5px 5px;
+}
+.btnstandard{
+  height: 28px; background-color: #cccccc;
+  font-size: 11px; font-weight: bold; 
+  cursor:hand; cursor:pointer;
+ 
+}
+.nuevostandard{
+  height: 20	px; background-color: #cccccc;
+ 
+  font-size: 11px; font-weight: bold; 
+  cursor:hand; cursor:pointer;
+ 
+}
+.nuevostandard1{
+  height: 28px; background-color: #cccccc;
+ width: 100px;
+  font-size: 12px; font-weight: bold; 
+  cursor:hand; cursor:pointer;
+ 
+}
+.btn1{
+ height: 28px; background-color: #f5f5f0; border-bottom: 1px solid #AAAAAA;
+  border-right:1px solid #AAAAAA; border-top:0px; border-left:0px;
+  font-size: 13px; font-weight: bold;  color:black;padding-left: 20px; background-repeat: no-repeat;
+  cursor:hand; cursor:pointer; margin-left:5px; margin-right:5px;outline-width:0px;
+  background-image: url(../imagenes/iconos/arrow_right.png);
+   background-position:5px 5px; width: 80px;
+}
+
+.btn:hover{
+font-size: 11px; font-weight: bold; 
+   height: 28px; width: 100px;	background-color: #E1EEFF; border-bottom: 1px solid #555555;
+  border-right:1px solid #555555; border-top:0px; border-left:0px; color:black; background-image: url(btns.png);
+  padding-left: 20px; background-repeat: no-repeat; cursor:hand; cursor:pointer;
+  margin-left:5px; margin-right:5px; outline-width:0px;
+  background-image: url(../imagenes/iconos/accept.png	);
+   background-position:5px 5px; 
+}
+.botones{
+height: 33px;
+font-size: 15px; font-weight: bold; width: 150px; color:black;
+padding-left: 20px; cursor:hand; cursor:pointer;
+  margin-left:5px; margin-right:5px; outline-width:0px;
+   background-position:5px 5px; 
+text-decoration: none; 
+background-repeat: no-repeat; 
+border-radius: 20px; 
+border:1px solid #555555;
+background-image: url(../imagenes/iconos/add.png	);	
+}
+.botones:hover{
+
+border:none;
+}
+
+.btn1:hover{
+font-size: 13px; font-weight: bold; 
+   height: 28px;width: 100px; background-color: #E1EEFF; border-bottom: 1px solid #555555;
+  border-right:1px solid #555555; border-top:0px; border-left:0px; 	color:black; background-image: url(btns.png);
+  padding-left: 20px; background-repeat: no-repeat; cursor:hand; cursor:pointer;
+  margin-left:5px; margin-right:5px; outline-width:0px;
+  background-image: url(../imagenes/iconos/accept.png	);
+   background-position:5px 5px; 
+}		
+
+.btnImprime	{
+font-size: 11px; font-weight: bold; 
+ height: 28px; background-color: #f5f5f0; border-bottom: 1px solid #AAAAAA;
+  border-right:1px solid #AAAAAA; border-top:0px; border-left:0px;
+  font-size: 12px; font-weight: bold;  color:black;padding-left: 20px; background-repeat: no-repeat;
+  cursor:hand; cursor:pointer; margin-left:5px; margin-right:5px;outline-width:0px;
+  background-image: url(../imagenes/iconos/print.png);
+   background-position:5px 5px; 
+}
+.btnImprime:hover{
+font-size: 11px; font-weight: bold; 
+   height: 28px; width: 100px; background-color: #E1EEFF; border-bottom: 1px solid #555555;
+  border-right:1px solid #555555; border-top:0px; border-left:0px;
+  color:black; background-image: url(btns.png);
+  padding-left: 20px; background-repeat: no-repeat; cursor:hand; cursor:pointer;
+  margin-left:5px; margin-right:5px; outline-width:0px;
+   background-image: url(../imagenes/iconos/print.png);
+   background-position:5px 5px 5px 5px; 
+ }
+ 
+ 
+ #Area_conenido{ 
+	overflow: auto;
+		
+	height: 650px;
+}
+
+.formu tr:not(:first-child):hover {
+	background:#E0FFFF;
+}
+
+
+.formu tr:first-child {
+	font-weight: bold;
+	color:#fff;
+	background-color: #444;
+	border-bottom:1px #000 solid;
+	text-align:left;
+}
+
+*/
