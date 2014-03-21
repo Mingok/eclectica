@@ -1,29 +1,29 @@
-<center>
+
 	<h2 style="text-align: left;">
 		&nbsp;Telas&nbsp;-&nbsp;Talles&nbsp;-&nbsp;Color&nbsp;-&nbsp;Estampados&nbsp;
 	</h2>
 	<hr />
 	<div style="padding-bottom: 10px">
-		<table cellpadding="5px" cellspacing="5px" style="border: solid; padding-left: 5px; padding-right: 5px;width:1150px">
+		<table class="tablaCaracteristicas">
 			<tr>
 				<td>
-					<table cellpadding="5px" cellspacing="5px" style="border: solid; padding-left: 5px; padding-right: 5px;width:570px">
+					<table style="width:560px">
 						<tr style="vertical-align: middle;">
 							<td style="text-align: left; ">
-								<h2>Telas</h2>
+								<h2>Tela</h2>
 							</td>
 							
                             <td style="text-align: left; ">
-								Nombre Tela: &nbsp;<input type="text" name="pbusc" value="ingresar" />
+								Nombre Tela: &nbsp;<input type="text" name="pbusc" value="ingresar" style="width: 120px;" class="textCaracteristicas"/>
 							</td>
-                            <td style="text-align: left; height: 40px;">
-								<input type="button" name="pNuevo" value="Agregar" class="nuevostandard1"/>
+                            <td style="text-align: right; height: 40px;">
+								<input type="button" name="pNuevo" value="Agregar" class="buttonCaracteristicas"/>
 							</td>
 						</tr>
 						<tr>
 							<td colspan="3" style="text-align: right;">
-								<center>
-									<table class="formu" border="1px" style="width: 98%; ">
+								<div class="scrolCaracteristicas"> 
+									<table class="formuCaracteristicas" style="width: 100%;">
 											<tr style="text-align: center;">
 											<td>
 												Mod
@@ -35,7 +35,8 @@
 												Elim
 											</td>
 										</tr>
-									<tr style='text-align: center'>
+								
+                                    <tr style='text-align: center'>
 											<td>
 												<a  title='Modificar datos'><img src='./imagenes/iconos/edit.png' width='14' height='14' /></a>
 											</td>
@@ -46,6 +47,51 @@
 												<a title='Borrar'><img src='./imagenes/iconos/eliminar.png' width='14' height='14' /></a>
 											</td>
 										</tr>
+                                         <tr style='text-align: center'>
+											<td>
+												<a  title='Modificar datos'><img src='./imagenes/iconos/edit.png' width='14' height='14' /></a>
+											</td>
+											<td>
+												&nbsp;
+											</td>
+											<td>
+												<a title='Borrar'><img src='./imagenes/iconos/eliminar.png' width='14' height='14' /></a>
+											</td>
+										</tr>
+                                         <tr style='text-align: center'>
+											<td>
+												<a  title='Modificar datos'><img src='./imagenes/iconos/edit.png' width='14' height='14' /></a>
+											</td>
+											<td>
+												&nbsp;
+											</td>
+											<td>
+												<a title='Borrar'><img src='./imagenes/iconos/eliminar.png' width='14' height='14' /></a>
+											</td>
+										</tr>
+                                        <tr style='text-align: center'>
+											<td>
+												<a  title='Modificar datos'><img src='./imagenes/iconos/edit.png' width='14' height='14' /></a>
+											</td>
+											<td>
+												&nbsp;
+											</td>
+											<td>
+												<a title='Borrar'><img src='./imagenes/iconos/eliminar.png' width='14' height='14' /></a>
+											</td>
+										</tr>
+                                         <tr style='text-align: center'>
+											<td>
+												<a  title='Modificar datos'><img src='./imagenes/iconos/edit.png' width='14' height='14' /></a>
+											</td>
+											<td>
+												&nbsp;
+											</td>
+											<td>
+												<a title='Borrar'><img src='./imagenes/iconos/eliminar.png' width='14' height='14' /></a>
+											</td>
+										</tr>
+                                        
                                         <tr style='text-align: center'>
 											<td>
 												<a  title='Modificar datos'><img src='./imagenes/iconos/edit.png' width='14' height='14' /></a>
@@ -90,30 +136,31 @@
 												<a title='Borrar'><img src='./imagenes/iconos/eliminar.png' width='14' height='14' /></a>
 											</td>
 										</tr>
+                                       
 									</table>
-								</center>
-							</td>
+								</div>
+								</td>
 						</tr>
 					</table>
 				</td>
 				<td>
-					<table cellpadding="5px" cellspacing="5px" style="border: solid; padding-left: 5px; padding-right: 5px;width:570px">
+					<table style="width:560px">
 						<tr style="vertical-align: middle;">
 							<td style="text-align: left; ">
 								<h2>Talle</h2>
 							</td>
 							
                             <td style="text-align: left; ">
-								Nombre Talle: &nbsp;<input type="text" name="pbusc" value="ingresar" />
+								Nombre Talle: &nbsp;<input type="text" name="pbusc" value="ingresar" style="width: 120px;"class="textCaracteristicas"/>
 							</td>
-                            <td style="text-align: left; height: 40px;">
-								<input type="button" name="pNuevo" value="Agregar" class="nuevostandard1"/>
+                            <td style="text-align: right; height: 40px;">
+								<input type="button" name="pNuevo" value="Agregar" class="buttonCaracteristicas"/>
 							</td>
 						</tr>
 						<tr>
 							<td colspan="3" style="text-align: right;">
-								<center>
-									<table class="formu" border="1px" style="width: 98%; ">
+								<div class="scrolCaracteristicas"> 
+									<table class="formuCaracteristicas" style="width: 100%;">
 											<tr style="text-align: center;">
 											<td>
 												Mod
@@ -125,7 +172,8 @@
 												Elim
 											</td>
 										</tr>
-									<tr style='text-align: center'>
+								
+                                    <tr style='text-align: center'>
 											<td>
 												<a  title='Modificar datos'><img src='./imagenes/iconos/edit.png' width='14' height='14' /></a>
 											</td>
@@ -136,6 +184,51 @@
 												<a title='Borrar'><img src='./imagenes/iconos/eliminar.png' width='14' height='14' /></a>
 											</td>
 										</tr>
+                                         <tr style='text-align: center'>
+											<td>
+												<a  title='Modificar datos'><img src='./imagenes/iconos/edit.png' width='14' height='14' /></a>
+											</td>
+											<td>
+												&nbsp;
+											</td>
+											<td>
+												<a title='Borrar'><img src='./imagenes/iconos/eliminar.png' width='14' height='14' /></a>
+											</td>
+										</tr>
+                                         <tr style='text-align: center'>
+											<td>
+												<a  title='Modificar datos'><img src='./imagenes/iconos/edit.png' width='14' height='14' /></a>
+											</td>
+											<td>
+												&nbsp;
+											</td>
+											<td>
+												<a title='Borrar'><img src='./imagenes/iconos/eliminar.png' width='14' height='14' /></a>
+											</td>
+										</tr>
+                                        <tr style='text-align: center'>
+											<td>
+												<a  title='Modificar datos'><img src='./imagenes/iconos/edit.png' width='14' height='14' /></a>
+											</td>
+											<td>
+												&nbsp;
+											</td>
+											<td>
+												<a title='Borrar'><img src='./imagenes/iconos/eliminar.png' width='14' height='14' /></a>
+											</td>
+										</tr>
+                                         <tr style='text-align: center'>
+											<td>
+												<a  title='Modificar datos'><img src='./imagenes/iconos/edit.png' width='14' height='14' /></a>
+											</td>
+											<td>
+												&nbsp;
+											</td>
+											<td>
+												<a title='Borrar'><img src='./imagenes/iconos/eliminar.png' width='14' height='14' /></a>
+											</td>
+										</tr>
+                                        
                                         <tr style='text-align: center'>
 											<td>
 												<a  title='Modificar datos'><img src='./imagenes/iconos/edit.png' width='14' height='14' /></a>
@@ -180,32 +273,33 @@
 												<a title='Borrar'><img src='./imagenes/iconos/eliminar.png' width='14' height='14' /></a>
 											</td>
 										</tr>
+                                       
 									</table>
-								</center>
-							</td>
+								</div>
+								</td>
 						</tr>
 					</table>
 				</td>
 			</tr>
 			<tr>
 				<td>
-					<table cellpadding="5px" cellspacing="5px" style="border: solid; padding-left: 5px; padding-right: 5px;width:570px">
+					<table style="width:560px">
 						<tr style="vertical-align: middle;">
 							<td style="text-align: left; ">
 								<h2>Color</h2>
 							</td>
 							
                             <td style="text-align: left; ">
-								Nombre Color: &nbsp;<input type="text" name="pbusc" value="ingresar" />
+								Nombre Color: &nbsp;<input type="text" name="pbusc" value="ingresar" style="width: 120px;"class="textCaracteristicas"/>
 							</td>
-                            <td style="text-align: left; height: 40px;">
-								<input type="button" name="pNuevo" value="Agregar" class="nuevostandard1"/>
+                            <td style="text-align: right; height: 40px;">
+								<input type="button" name="pNuevo" value="Agregar" class="buttonCaracteristicas"/>
 							</td>
 						</tr>
 						<tr>
 							<td colspan="3" style="text-align: right;">
-								<center>
-									<table class="formu" border="1px" style="width: 98%; ">
+								<div class="scrolCaracteristicas"> 
+									<table class="formuCaracteristicas" style="width: 100%;">
 											<tr style="text-align: center;">
 											<td>
 												Mod
@@ -217,7 +311,8 @@
 												Elim
 											</td>
 										</tr>
-									<tr style='text-align: center'>
+								
+                                    <tr style='text-align: center'>
 											<td>
 												<a  title='Modificar datos'><img src='./imagenes/iconos/edit.png' width='14' height='14' /></a>
 											</td>
@@ -228,6 +323,51 @@
 												<a title='Borrar'><img src='./imagenes/iconos/eliminar.png' width='14' height='14' /></a>
 											</td>
 										</tr>
+                                         <tr style='text-align: center'>
+											<td>
+												<a  title='Modificar datos'><img src='./imagenes/iconos/edit.png' width='14' height='14' /></a>
+											</td>
+											<td>
+												&nbsp;
+											</td>
+											<td>
+												<a title='Borrar'><img src='./imagenes/iconos/eliminar.png' width='14' height='14' /></a>
+											</td>
+										</tr>
+                                         <tr style='text-align: center'>
+											<td>
+												<a  title='Modificar datos'><img src='./imagenes/iconos/edit.png' width='14' height='14' /></a>
+											</td>
+											<td>
+												&nbsp;
+											</td>
+											<td>
+												<a title='Borrar'><img src='./imagenes/iconos/eliminar.png' width='14' height='14' /></a>
+											</td>
+										</tr>
+                                        <tr style='text-align: center'>
+											<td>
+												<a  title='Modificar datos'><img src='./imagenes/iconos/edit.png' width='14' height='14' /></a>
+											</td>
+											<td>
+												&nbsp;
+											</td>
+											<td>
+												<a title='Borrar'><img src='./imagenes/iconos/eliminar.png' width='14' height='14' /></a>
+											</td>
+										</tr>
+                                         <tr style='text-align: center'>
+											<td>
+												<a  title='Modificar datos'><img src='./imagenes/iconos/edit.png' width='14' height='14' /></a>
+											</td>
+											<td>
+												&nbsp;
+											</td>
+											<td>
+												<a title='Borrar'><img src='./imagenes/iconos/eliminar.png' width='14' height='14' /></a>
+											</td>
+										</tr>
+                                        
                                         <tr style='text-align: center'>
 											<td>
 												<a  title='Modificar datos'><img src='./imagenes/iconos/edit.png' width='14' height='14' /></a>
@@ -272,30 +412,31 @@
 												<a title='Borrar'><img src='./imagenes/iconos/eliminar.png' width='14' height='14' /></a>
 											</td>
 										</tr>
+                                       
 									</table>
-								</center>
-							</td>
+								</div>
+								</td>
 						</tr>
 					</table>
 				</td>
 				<td>
-					<table cellpadding="5px" cellspacing="5px" style="border: solid; padding-left: 5px; padding-right: 5px;width:570px">
+					<table style="width:560px">
 						<tr style="vertical-align: middle;">
 							<td style="text-align: left; ">
 								<h2>Estampado</h2>
 							</td>
 							
                             <td style="text-align: left; ">
-								Nombre Estampado: &nbsp;<input type="text" name="pbusc" value="ingresar" style="width: 120px;" />
+								Nombre Estampado: &nbsp;<input type="text" name="pbusc" value="ingresar" style="width: 120px;" class="textCaracteristicas"/>
 							</td>
-                            <td style="text-align: left; height: 40px;">
-								<input type="button" name="pNuevo" value="Agregar" class="nuevostandard1"/>
+                            <td style="text-align: right; height: 40px;">
+								<input type="button" name="pNuevo" value="Agregar" class="buttonCaracteristicas"/>
 							</td>
 						</tr>
 						<tr>
 							<td colspan="3" style="text-align: right;">
-								<center>
-									<table class="formu" border="1px" style="width: 98%; ">
+								<div class="scrolCaracteristicas"> 
+									<table class="formuCaracteristicas" style="width: 100%;">
 											<tr style="text-align: center;">
 											<td>
 												Mod
@@ -307,7 +448,8 @@
 												Elim
 											</td>
 										</tr>
-									<tr style='text-align: center'>
+								
+                                    <tr style='text-align: center'>
 											<td>
 												<a  title='Modificar datos'><img src='./imagenes/iconos/edit.png' width='14' height='14' /></a>
 											</td>
@@ -318,6 +460,51 @@
 												<a title='Borrar'><img src='./imagenes/iconos/eliminar.png' width='14' height='14' /></a>
 											</td>
 										</tr>
+                                         <tr style='text-align: center'>
+											<td>
+												<a  title='Modificar datos'><img src='./imagenes/iconos/edit.png' width='14' height='14' /></a>
+											</td>
+											<td>
+												&nbsp;
+											</td>
+											<td>
+												<a title='Borrar'><img src='./imagenes/iconos/eliminar.png' width='14' height='14' /></a>
+											</td>
+										</tr>
+                                         <tr style='text-align: center'>
+											<td>
+												<a  title='Modificar datos'><img src='./imagenes/iconos/edit.png' width='14' height='14' /></a>
+											</td>
+											<td>
+												&nbsp;
+											</td>
+											<td>
+												<a title='Borrar'><img src='./imagenes/iconos/eliminar.png' width='14' height='14' /></a>
+											</td>
+										</tr>
+                                        <tr style='text-align: center'>
+											<td>
+												<a  title='Modificar datos'><img src='./imagenes/iconos/edit.png' width='14' height='14' /></a>
+											</td>
+											<td>
+												&nbsp;
+											</td>
+											<td>
+												<a title='Borrar'><img src='./imagenes/iconos/eliminar.png' width='14' height='14' /></a>
+											</td>
+										</tr>
+                                         <tr style='text-align: center'>
+											<td>
+												<a  title='Modificar datos'><img src='./imagenes/iconos/edit.png' width='14' height='14' /></a>
+											</td>
+											<td>
+												&nbsp;
+											</td>
+											<td>
+												<a title='Borrar'><img src='./imagenes/iconos/eliminar.png' width='14' height='14' /></a>
+											</td>
+										</tr>
+                                        
                                         <tr style='text-align: center'>
 											<td>
 												<a  title='Modificar datos'><img src='./imagenes/iconos/edit.png' width='14' height='14' /></a>
@@ -362,13 +549,13 @@
 												<a title='Borrar'><img src='./imagenes/iconos/eliminar.png' width='14' height='14' /></a>
 											</td>
 										</tr>
+                                       
 									</table>
-								</center>
-							</td>
+								</div>
+								</td>
 						</tr>
 					</table>
 				</td>
 			</tr>
 		</table>
 	</div>
-</center>

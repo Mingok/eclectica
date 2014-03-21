@@ -1,21 +1,21 @@
-<center>
+
 	<h1 style="text-align: left;">
 		Prendas
 	</h1>
 	<hr />
-	<div style="padding-bottom: 10px">
-		<table cellpadding="5px" cellspacing="5px" style="border: solid; padding-left: 5px; padding-right: 5px;width:1150px">
+	<div class="prendas"   >
+		<table class="tablaPrendas">
 			<tr>
 				<td style="text-align: left; height: 40px;">
 					Codigo
-					<input type="text" name="pcod" value="ingrese"/>
+					<input type="text" name="pcod" value="ingrese" class="textPrendas"/>
 				</td>
 				<td style="text-align: left; height: 40px;">
 					Buscar
-					<input type="text" name="pbusc" value="palabra Clave" size="90"/>
+					<input type="text" name="pbusc" value="palabra Clave" size="90"class="textPrendas"/>
 				</td>
 				<td style="text-align: left; height: 40px;">
-					<input type="button" name="pNuevo" value="Nuevo" class="botones" onclick="javascript:mostrarOcultarTablas('ver')"/>
+					<input type="button" name="pNuevo" value="Nuevo" class="buttonPrendas" onclick="javascript:mostrarOcultarTablas('ver')"/>
 				</td>
 			</tr>
 			<tr>
@@ -28,7 +28,7 @@
 			<tr>
 				<td colspan="3" style="text-align: right;">
 					<center>
-						<table class="formu" border="1px" style="width: 98%; ">
+						<table class="formuPrendas" style="width: 98%; ">
 							<tr style='text-align: center'>
 								<td>
 									Mod
@@ -360,11 +360,11 @@
 			if (mostrado != 1) elem.style.display = 'block';
 		}
 	</script>
-	<div id="ver" style="display: none;padding-top:10px; ">
-		<table cellpadding="5px" cellspacing="5px" style="border: solid; padding-left: 5px; padding-right: 5px; width: 1150px;">
+	<div id="ver" style="display: none; padding-top:10px; ">
+		<table class="tablaPrendas">
 			<tr>
 				<td>
-					<table cellpadding="5px" cellspacing="5px" style="border: solid; padding-left: 5px; padding-right: 5px;  width: 100% ;">
+					<table width="100%" >
 						<tr>
 							<td colspan="2">
 								<h1 style="text-align: left;">
@@ -372,37 +372,37 @@
 								</h1>
 							</td>
 							<td colspan="3" style="text-align: right;">
-								<input type="button"class="botones" value="Crear" />
+								<input type="button"class="buttonPrendas  " value="Crear" />
 							</td>
 						</tr>
 						<tr>
-							<td style="text-align: left; ">
+							<td style="text-align: right;">
 								Codigo&nbsp;
-								<input type="text" class="nuevostandard" name="pcod" disabled="yes" value="#369857"/>
+								<input type="text" class="textPrendas" name="pcod" disabled="yes" value="#369857"/>
 							</td>
-							<td style="text-align: left; ">
+							<td style="text-align: right;">
 								Nombre:&nbsp;
-								<input type="text" class="nuevostandard" name="pcod" value="ingrese"/>
+								<input type="text" class="textPrendas" name="pcod" value="ingrese"/>
 							</td>
-							<td style="text-align: left; ">
+							<td style="text-align: right;">
 								Marca:&nbsp;
-								<select size="1" style="width: 150px"class="nuevostandard">
+								<select size="1" style="width: 150px"class="textPrendas">
 									<option value=0>
 										- Elija Una -
 									</option>
 								</select>
 							</td>
-							<td style="text-align: left; ">
+							<td style="text-align: right;">
 								Proveedor:&nbsp;
-								<select size="1" style="width: 150px"class="nuevostandard">
+								<select size="1" style="width: 150px"class="textPrendas">
 									<option value=0>
 										- Elija Una -
 									</option>
 								</select>
 							</td>
-							<td style="text-align: left; ">
+							<td style="text-align: right;">
 								Tela:&nbsp;
-								<select size="1" style="width: 150px"class="nuevostandard">
+								<select size="1" style="width: 150px"class="textPrendas">
 									<option value=0>
 										- Elija Una -
 									</option>
@@ -410,38 +410,38 @@
 							</td>
 						</tr>
 						<tr>
-							<td style="text-align: left; ">
+							<td style="text-align: right;">
 								Color:&nbsp;
-								<select size="1" style="width: 150px"class="nuevostandard">
+								<select size="1" style="width: 150px"class="textPrendas">
 									<option value=0>
 										- Elija Una -
 									</option>
 								</select>
-								<td style="text-align: left; ">
+								<td style="text-align: right;">
 									Talle:&nbsp;
-									<select size="1" style="width: 150px"class="nuevostandard">
+									<select size="1" style="width: 150px"class="textPrendas">
 										<option value=0>
 											- Elija Una -
 										</option>
 									</select>
 								</td>
-								<td style="text-align: left; ">
+								<td style="text-align: right;">
 									Estampado:&nbsp;
-									<select size="1" style="width: 150px"class="nuevostandard">
+									<select size="1" style="width: 150px"class="textPrendas">
 										<option value=0>
 											- Elija Una -
 										</option>
 									</select>
 								</td>
-								<td style="text-align: left; ">
+								<td style="text-align: right;">
 									Temporada:&nbsp;
-									<select size="1" style="width: 150px"class="nuevostandard">
+									<select size="1" style="width: 150px"class="textPrendas">
 										<option value=0>
 											- Elija Una -
 										</option>
 									</select>
 								</td>
-								<td style="text-align: left; ">
+								<td style="text-align: right;">
 									Cantidad :
 									<input type="number" style="width: 30px;" name="hpcant" min="0" max="10" value="0" />
 								</td>
@@ -449,36 +449,37 @@
 					</table>
 					</td>
 			</tr>
+            
 			<tr>
-				<td>
+				<td colspan="2">
 					<h1 style="text-align: left;">
-						Precios
-					</h1>
-					<table cellpadding="5px" cellspacing="5px" style="border: solid; padding-left: 5px; padding-right: 5px; width: 100% ;">
+									Precios
+								</h1>
+					<table width="100%" >
 						<tr>
-							<td style="text-align: left; ">
+							<td style="text-align: right;">
 								Prec 1:
-								<input type="text" class="nuevostandard" name="pcod" value="00,00" size="10"/>
+								<input type="text" class="textPrendas" name="pcod" value="00,00" size="10"/>
 							</td>
-							<td style="text-align: left; ">
+							<td style="text-align: right;">
 								Prec 2:
-								<input type="text" class="nuevostandard" name="pcod"value="00,00" size="10"/>
+								<input type="text" class="textPrendas" name="pcod"value="00,00" size="10"/>
 							</td>
-							<td style="text-align: left; ">
+							<td style="text-align: right;">
 								Prec 3:
-								<input type="text" class="nuevostandard" name="pcod" value="00,00" size="10"/>
+								<input type="text" class="textPrendas" name="pcod" value="00,00" size="10"/>
 							</td>
-							<td style="text-align: left; ">
+							<td style="text-align: right;">
 								Prec 4:
-								<input type="text" class="nuevostandard" name="pcod" value="00,00" size="10"/>
+								<input type="text" class="textPrendas" name="pcod" value="00,00" size="10"/>
 							</td>
-							<td style="text-align: left; ">
+							<td style="text-align: right;">
 								Prec 5:
-								<input type="text" class="nuevostandard" name="pcod" value="00,00" size="10"/>
+								<input type="text" class="textPrendas" name="pcod" value="00,00" size="10"/>
 							</td>
-							<td style="text-align: left; ">
+							<td style="text-align: right;">
 								Prec 6:
-								<input type="text" class="nuevostandard" name="pcod" value="00,00" size="10"/>
+								<input type="text" class="textPrendas" name="pcod" value="00,00" size="10"/>
 							</td>
 						</tr>
 					</table>
@@ -486,4 +487,3 @@
 			</tr>
 		</table>
 	</div>
-</center>
