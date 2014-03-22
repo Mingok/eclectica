@@ -30,7 +30,7 @@
 					&nbsp;Ventas&nbsp;
 				</a>
 			|
-            	<a href="#">
+            	<a class="fancybox fancybox.iframe" href="indexCC.php">
 					<img src="./imagenes/iconos/25.png" height="15px" title="Cuentas Corrientes"/>
 					&nbsp;Cuentas Corrientes&nbsp;
 				</a>

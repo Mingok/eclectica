@@ -10,9 +10,6 @@
 		Nombre del programa
 	</title>
 	<link rel="stylesheet" href="<?php echo EMPLEADOS_STYLE_PATH;?>css.css" type="text/css" />
-    
-
-
 </head>
 <body>
 	<center>
@@ -25,7 +22,7 @@
 			<tr>
 				<td>
 					<hr />
-					<?php include './home.php'?>
+					<?php include './form05CC.php'?>
 						<hr />
 				</td>
 			</tr>
