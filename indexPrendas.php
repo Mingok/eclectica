@@ -22,7 +22,7 @@
 			<tr>
 				<td>
 					<hr />
-					<?php include './form01prenda.php'?>
+					<?php include './form01Prenda.php'?>
 						<hr />
 				</td>
 			</tr>

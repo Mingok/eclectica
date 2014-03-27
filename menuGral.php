@@ -108,7 +108,16 @@
 			});
 
 		});
+	$("#fancybox-manual-b").click(function() {
 
+			$.fancybox.open({
+				href: 'form05CC.php',
+				type: 'iframePrec',
+
+				padding: 5
+			});
+
+		});
 		$(".fancybox").fancybox({
 			closeClick: false,
 			// prevents closing when clicking INSIDE fancybox 
@@ -179,20 +188,20 @@
 				&nbsp;Clientes&nbsp;
 				</a>
 				|
-				<a href="./indexEmpleados.php" onclick="javascript:mostrarOcultarTablas('configuracion')"style="font-style: italic; font-size: large;">
+				<a href="./indexEmpleados.php" onclick="javascript:mostrarOcultarTablas('configuracion')" style="font-style: italic; font-size: large;">
 				&nbsp;Empleados&nbsp;
 				</a>
 				|
-				<a href="#" onclick="javascript:mostrarOcultarTablas('configuracion')">
+				<a href="./indexProv.php" onclick="javascript:mostrarOcultarTablas('configuracion')" style="font-style: italic; font-size: large;" >
 				&nbsp;Proveedores&nbsp;
-				</a>
+			     </a>
 				|
-				<a href="#" onclick="javascript:mostrarOcultarTablas('configuracion')">
-				&nbsp;Marcas&nbsp;
-				</a>
-				|
-				<a href="#" onclick="javascript:mostrarOcultarTablas('configuracion')">
+				<a class="fancybox fancybox.iframe" href="form07ListPrec.php" style="font-style: italic; font-size: large;" onclick="javascript:mostrarOcultarTablas('configuracion')">
 				&nbsp;Listas De Precios&nbsp;
+				</a>
+				|
+                <a href="#" onclick="javascript:mostrarOcultarTablas('configuracion')">
+				&nbsp;Marcas&nbsp;
 				</a>
 				|
 			</td>
