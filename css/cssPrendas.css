@@ -1,0 +1,55 @@
+/*Empieza Css Formulario Prendas*/
+.Prendas{
+padding-bottom: 10px;
+
+background-color: #15428b;	
+}
+
+table.tablaPrendas{
+border-spacing: 5px; /* cellspacing */
+padding: 5px;/* cellpadding */
+border: solid; 
+width:1150px;	
+margin: 0 auto;
+text-align: center;
+}
+Table.formuPrendas,Table.formuPrendas td{
+	border: 1px solid;
+}
+
+Table.formuPrendas tr:not(:first-child):hover {
+	background:#aaFFFF;
+}
+
+Table.formuPrendas tr:first-child {
+	font-weight: bold;
+	color:#fff;
+	background-color: #444;
+	border-bottom:1px #000 solid;
+	text-align:left;
+}
+
+.buttonPrendas{
+height: 30px;
+font-size: 15px; font-weight: bold; width: 150px; color:black;
+padding-left: 20px; cursor:hand; cursor:pointer;
+margin-left:5px; margin-right:5px; outline-width:0px;
+background-position:5px 5px; 
+text-decoration: none; 
+background-repeat: no-repeat; 
+border-radius: 20px; 
+border:1px solid #555555;
+background-image: url(../imagenes/iconos/add.png	);	
+}
+.buttonPrendas:hover{
+
+border:none;
+}
+.textPrendas{
+  height: 20	px; background-color: #cccccc;
+ 
+  font-size: 11px; font-weight: bold; 
+  cursor:hand; cursor:pointer;
+ 
+}
+/*Termina Css Formulario Prendas*/

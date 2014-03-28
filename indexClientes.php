@@ -10,6 +10,7 @@
 		Nombre del programa
 	</title>
 	<link rel="stylesheet" href="<?php echo EMPLEADOS_STYLE_PATH;?>css.css" type="text/css" />
+    <link rel="stylesheet" href="<?php echo EMPLEADOS_STYLE_PATH;?>cssClientes.css" type="text/css" />
 </head>
 <body>
 	<center>

@@ -1,15 +1,15 @@
 	<?php 
-				require_once 'classes/color/color.php';
-				$colorList = new color();
-				$colores = $colorList->coloresDisponibles();
+				require_once 'classes/estampado/estampado.php';
+				$estampadoList = new estampado();
+				$estampados = $estampadoList->estampadosDisponibles();
 				?>
-<table >
+<table>
 	<tr style="vertical-align: middle;">
 		<td style="text-align: left; " >
-			<form action="actions/color/guardarColor.php">
-				<h2>Color</h2>
-				Nombre Color: &nbsp;<input type="text" name="detalleColor" placeholder="ingresar" style="width: 120px;"class="textCaracteristicas"/>
-				<input type="submit" text="Agregar" class="buttonCaracteristicas"/>
+			<form action="actions/estampado/guardarEstampado.php">
+				<h2>Estampado</h2>
+				Nombre Estampado: &nbsp;<input type="text" name="detalleEstampado" placeholder="ingresar" style="width: 120px;"class="textCaracteristicas"/>
+				<input  type="submit" value="Agregar" class="buttonCaracteristicas"/>
 			</form>
 		</td>
 	</tr>
@@ -17,7 +17,6 @@
 		<td style="text-align: right;">
 			<div class="scrolCaracteristicas"> 
 				<table class="formuCaracteristicas" style="width: 100%;">
-			
 					<tr style="text-align: center;">
 						<td>
 							Mod
@@ -28,14 +27,14 @@
 
 					</tr>
 					<?php 
-					foreach ($colores as $color) {
+					foreach ($estampados as $estampado) {
 					?>					
 					<tr style='text-align: center'>
 						<td>
 							<a  title='Modificar datos'><img src='./imagenes/iconos/edit.png' width='14' height='14' /></a>
 						</td>
 						<td>
-							<?php echo $color['detalleColor']?>
+							<?php echo $estampado['detalleEstampado']?>
 						</td>
 
 					</tr>

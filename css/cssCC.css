@@ -1,0 +1,84 @@
+/*Empieza Css Formulario CC*/
+.Clientes{
+padding-bottom: 10px;
+
+background-color: #15428b;	
+}
+
+table.tablaCC{
+border-spacing: 5px; /* cellspacing */
+padding: 5px;/* cellpadding */
+border: solid; 
+width:520px;	
+margin: 0 auto;
+text-align: center;
+}
+table.tablaCC1{
+border-spacing: 5px; /* cellspacing */
+padding: 5px;/* cellpadding */
+border: solid; 
+margin: 0 auto;
+
+}
+Table.formuCC,Table.formuCC td{
+	border: 1px solid;
+}
+
+Table.formuCC tr:not(:first-child):hover {
+	background:#aaFFFF;
+}
+
+Table.formuCC tr:first-child {
+	font-weight: bold;
+	color:#fff;
+	background-color: #444;
+	border-bottom:1px #000 solid;
+	text-align:left;
+
+}
+.buttonCC:disabled{
+height: 30px;
+font-size: 15px; font-weight: bold; width: 100px; color:#333333	;
+background-color:#555555;
+padding-left: 20px; cursor:hand; cursor:pointer;
+margin-left:5px; margin-right:5px; outline-width:0px;
+background-position:5px 5px; 
+text-decoration: none; 
+background-repeat: no-repeat; 
+border-radius: 20px; 
+border:1px solid #555555;
+
+}
+.buttonCC:enabled {
+height: 30px;
+font-size: 15px; font-weight: bold; width: 100px; color:black;
+padding-left: 20px; cursor:hand; cursor:pointer;
+margin-left:5px; margin-right:5px; outline-width:0px;
+background-position:5px 5px; 
+text-decoration: none; 
+background-repeat: no-repeat; 
+border-radius: 20px; 
+border:1px solid #555555;
+background-image: url(../imagenes/iconos/add.png	);	
+}
+.buttonCC:hover:enabled{
+
+border:none;
+}
+.textCC{
+ height: 20px; 
+ background-color: #cccccc;
+ width: 120px;
+ font-size: 11px; font-weight: bold; 
+ cursor:hand; cursor:pointer;
+ 
+}
+
+
+div.scrolCC{
+	overflow: auto;
+	height: 170px;
+	border: solid;
+	width: 770px;
+}
+/*Termina Css Formulario CC*/

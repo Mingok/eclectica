@@ -1,9 +1,6 @@
-	<?php 
-				require_once 'classes/color/color.php';
-				$colorList = new color();
-				$colores = $colorList->coloresDisponibles();
-				?>
-<table >
+<?php
+?>
+<table style="width:560px">
 	<tr style="vertical-align: middle;">
 		<td style="text-align: left; " >
 			<form action="actions/color/guardarColor.php">
@@ -17,7 +14,11 @@
 		<td style="text-align: right;">
 			<div class="scrolCaracteristicas"> 
 				<table class="formuCaracteristicas" style="width: 100%;">
-			
+				<?php 
+				require_once 'classes/color/color.php';
+				$colorList = new color();
+				$colores = $colorList->coloresDisponibles();
+				?>
 					<tr style="text-align: center;">
 						<td>
 							Mod
@@ -37,7 +38,9 @@
 						<td>
 							<?php echo $color['detalleColor']?>
 						</td>
-
+<!--						<td>-->
+<!--							<a title='Borrar' href="actions/color/eliminarColor.php?idColor=<?php //echo $color['idColor'];?>"><img src='./imagenes/iconos/eliminar.png' width='14' height='14' /></a>-->
+<!--						</td>-->
 					</tr>
 					<?php }?>
 				</table>
