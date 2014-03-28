@@ -8,11 +8,17 @@ background-color: #15428b;
 table.tablaCaracteristicas{
 border-spacing: 5px; /* cellspacing */
 padding: 5px;/* cellpadding */
-border: solid; 
 width:1150px;	
 margin: 0 auto;
 text-align: center;
 }
+table.tablaCaracteristicas1{
+border-spacing: 5px; /* cellspacing */
+padding: 5px;/* cellpadding */
+margin: 0 auto;
+text-align: center;
+}
+
 Table.formuCaracteristicas,Table.formuCaracteristicas td{
 	border: 1px solid;
 }
@@ -31,7 +37,7 @@ Table.formuCaracteristicas tr:first-child {
 
 .buttonCaracteristicas{
 height: 30px;
-font-size: 15px; font-weight: bold; width: 150px; color:black;
+font-size: 15px; font-weight: bold; width: 120px; color:black;
 padding-left: 20px; cursor:hand; cursor:pointer;
 margin-left:5px; margin-right:5px; outline-width:0px;
 background-position:5px 5px; 

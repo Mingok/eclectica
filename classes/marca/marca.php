@@ -1,22 +1,22 @@
 <?php
-Class estampado {
-	public function estampadosDisponibles(){
+Class marca {
+	public function marcasDisponibles(){
 		require_once (__DIR__.'\..\..\base\manejoMySQL.php');
 		
 		$objManejoMySQL= new manejoMySQL();
-		$strSql="	SELECT * FROM `estampado`
-					ORDER BY `detalleEstampado` ASC";
+		$strSql="	SELECT * FROM `marca`
+					ORDER BY `detalleMarca` ASC";
 		$arrResultado=null;
 		$objManejoMySQL->consultar($strSql, $arrResultado);
 		return $arrResultado;
 	}
 	
-	public function agregarNuevoEstampado($arrEstampado){
+	public function agregarNuevoMarca($arrMarca){
 		require_once (__DIR__.'\..\..\base\manejoMySQL.php');
 		$strValoresCampos = "";
 		$strNombresCampos = "";
 		$objManejoMySQL = new manejoMySQL();
-		foreach ($arrEstampado as $nombreCampo=>$valorCampo){
+		foreach ($arrMarca as $nombreCampo=>$valorCampo){
 			$strValoresCampos .= $strValoresCampos == '' ? '' : ',';
 			$strNombresCampos .= ($strNombresCampos == '' ? '' : ',') . '`' . $nombreCampo . '`';
 			if(is_null($valorCampo)){
@@ -30,30 +30,30 @@ Class estampado {
 			}
 		}
 		
-		$strSql = "INSERT INTO `estampado`($strNombresCampos) VALUES($strValoresCampos)";
+		$strSql = "INSERT INTO `marca`($strNombresCampos) VALUES($strValoresCampos)";
 		$arrResultado = null;
 		$objManejoMySQL->consultar($strSql, $arrResultado);
 		return $arrResultado;
 	}
 	
-/* public function eliminarEstampado($objEstampado){
+/* public function eliminarMarca($objMarca){
 		require_once (__DIR__.'\..\..\base\manejoMySQL.php');
 		
 		$objManejoMySQL = new manejoMySQL();
-		$lngIdEstampado = $objEstampado['idEstampado'];
-		$strSql = "DELETE FROM `estampado` WHERE `idEstampado`=$lngIdEstampado";
+		$lngIdMarca = $objMarca['idMarca'];
+		$strSql = "DELETE FROM `marca` WHERE `idMarca`=$lngIdMarca";
 		$arrResultado = null;
 		$objManejoMySQL->consultar($strSql, $arrResultado);
 		return $arrResultado;
 	}*/
 	
-	public function modificarEstampado($arrEstampado){
+	public function modificarMarca($arrMarca){
 		require_once (__DIR__.'\..\..\base\manejoMySQL.php');
 		$strValoresCampos = "";
 		$strNombresCampos = "";
 		$strUpdate = "";
-		foreach ($arrEstampado as $nombreCampo=>$valorCampo){
-			if($nombreCampo != 'idEstampado'){
+		foreach ($arrMarca as $nombreCampo=>$valorCampo){
+			if($nombreCampo != 'idMarca'){
 				$strUpdate .= $strUpdate == '' ? '' : ',';
 				if(is_null($valorCampo)){
 					$strUpdate .= "$nombreCampo='null'";
@@ -65,13 +65,13 @@ Class estampado {
 					}
 				}
 			}else{
-				$lngIdEstampado = $valorCampo;
+				$lngIdMarca = $valorCampo;
 			}
 		}
 		
 		$objManejoMySQL = new manejoMySQL();
-		$strSql = "UPDATE `estampado` SET $strUpdate
-					WHERE `idEstampado`=$lngIdEstampado";
+		$strSql = "UPDATE `marca` SET $strUpdate
+					WHERE `idMarca`=$lngIdMarca";
 		$arrResultado = null;
 		$objManejoMySQL->consultar($strSql, $arrResultado);
 		return $arrResultado;

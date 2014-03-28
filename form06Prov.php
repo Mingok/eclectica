@@ -159,7 +159,7 @@
 				</tr>
 			</table>
 		</td>
-		<td>
+ 		<td>
 			<table style="width:635px;">
 				<tr style="vertical-align: middle;">
 					<td style="text-align: center;">
@@ -226,8 +226,13 @@
 	</tr>
 </table>
 <br />
+
+ <h1 style="text-align: left;">
+	&nbsp;Empresa &nbsp;
+</h1>
+<hr />
 <table class="tablaProv">
-	<tr>
+	<tr>       
 		<td style="text-align: left; height: 40px;">
 			<h2>
 				Datos de la Empresa

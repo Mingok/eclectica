@@ -12,27 +12,36 @@
 				include_once 'views/color/abmColor.php';
 				?>	
 				</td>
-				
-				<td>
-                <?php 
-				include_once 'views/estampado/abmEstampado.php';
-				?>	
-					
-				</td>
-			</tr>
-			<tr>
-				<td>
-				<?php 
-				include_once 'views/talle/abmTalle.php';
-				?>	
-				</td>
-				
-				<td>
+					<td>
                 <?php 
 				include_once 'views/tela/abmTela.php';
 				?>	
 					
 				</td>
+					<td>
+                <?php 
+				include_once 'views/marca/abmMarca.php';
+				?>	
+					
+				</td>
+			</tr>
+         </table>
+         	<table class="tablaCaracteristicas1">   
+			<tr>
+				<td >
+				<?php 
+				include_once 'views/talle/abmTalle.php';
+				?>	
+				</td>
+				<td style="width: 100px;">
+                &nbsp;
+				</td><td>
+                <?php 
+				include_once 'views/estampado/abmEstampado.php';
+				?>	
+					
+				</td>
+			
 			</tr>
 		</table>
 	</div>

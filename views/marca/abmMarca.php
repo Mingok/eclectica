@@ -1,14 +1,14 @@
 <?php 
-				require_once 'classes/talle/talle.php';
-				$talleList = new talle();
-				$talles = $talleList->tallesDisponibles();
+				require_once 'classes/marca/marca.php';
+				$marcaList = new marca();
+				$marcas = $marcaList->marcasDisponibles();
 				?>
 <table >
 	<tr style="vertical-align: middle;">
 		<td style="text-align: left; " >
-			<form action="actions/talle/guardarTalle.php">
-				<h2>Talle</h2>
-				Nombre Talle: &nbsp;<input type="text" name="detalleTalle" placeholder="ingresar" style="width: 120px;"class="textCaracteristicas"/>
+			<form action="actions/marca/guardarMarca.php">
+				<h2>Marca</h2>
+				Nombre Marca: &nbsp;<input type="text" name="detalleMarca" placeholder="ingresar" style="width: 120px;"class="textCaracteristicas"/>
 				<input type="submit" value="Agregar" class="buttonCaracteristicas"/>
 			</form>
 		</td>
@@ -17,7 +17,6 @@
 		<td style="text-align: right;">
 			<div class="scrolCaracteristicas"> 
 				<table class="formuCaracteristicas" style="width: 100%;">
-				
 					<tr style="text-align: center;">
 						<td>
 							Mod
@@ -28,14 +27,14 @@
 
 					</tr>
 					<?php 
-					foreach ($talles as $talle) {
+					foreach ($marcas as $marca) {
 					?>					
 					<tr style='text-align: center'>
 						<td>
 							<a  title='Modificar datos'><img src='./imagenes/iconos/edit.png' width='14' height='14' /></a>
 						</td>
 						<td>
-							<?php echo $talle['detalleTalle']?>
+							<?php echo $marca['detalleMarca']?>
 						</td>
 
 					</tr>

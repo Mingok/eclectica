@@ -9,7 +9,7 @@
 			<form action="actions/color/guardarColor.php">
 				<h2>Color</h2>
 				Nombre Color: &nbsp;<input type="text" name="detalleColor" placeholder="ingresar" style="width: 120px;"class="textCaracteristicas"/>
-				<input type="submit" text="Agregar" class="buttonCaracteristicas"/>
+				<input type="submit" value="Agregar" class="buttonCaracteristicas"/>
 			</form>
 		</td>
 	</tr>
