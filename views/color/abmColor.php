@@ -26,9 +26,7 @@
 						<td>
 							Nombre
 						</td>
-						<td>
-							Elim
-						</td>
+
 					</tr>
 					<?php 
 					foreach ($colores as $color) {
@@ -40,9 +38,9 @@
 						<td>
 							<?php echo $color['detalleColor']?>
 						</td>
-						<td>
-							<a title='Borrar' href="actions/color/eliminarColor.php?idColor=<?php echo $color['idColor'];?>"><img src='./imagenes/iconos/eliminar.png' width='14' height='14' /></a>
-						</td>
+<!--						<td>-->
+<!--							<a title='Borrar' href="actions/color/eliminarColor.php?idColor=<?php //echo $color['idColor'];?>"><img src='./imagenes/iconos/eliminar.png' width='14' height='14' /></a>-->
+<!--						</td>-->
 					</tr>
 					<?php }?>
 				</table>
