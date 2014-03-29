@@ -19,13 +19,13 @@
 		<table class="tablaGral">
 			<tr>
 				<td>
-					<?php include './encabezado.php'; ?>
+					<?php include_once './encabezado.php'; ?>
 				</td>
 			</tr>
 			<tr>
 				<td>
 					<hr />
-					<?php include './home.php'?>
+					<?php include_once './home.php'?>
 						<hr />
 				</td>
 			</tr>

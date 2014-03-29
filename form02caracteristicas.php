@@ -1,47 +1,36 @@
-
-	<h2 style="text-align: left;">
-		&nbsp;Telas&nbsp;-&nbsp;Talles&nbsp;-&nbsp;Color&nbsp;-&nbsp;Estampados&nbsp;
-	</h2>
-	<hr />
-	<div style="padding-bottom: 10px">
-		<table class="tablaCaracteristicas">
-			<tr>
-				
-				<td>
-				<?php 
-				include_once 'views/color/abmColor.php';
-				?>	
-				</td>
-					<td>
-                <?php 
-				include_once 'views/tela/abmTela.php';
-				?>	
-					
-				</td>
-					<td>
-                <?php 
-				include_once 'views/marca/abmMarca.php';
-				?>	
-					
-				</td>
-			</tr>
-         </table>
-         	<table class="tablaCaracteristicas1">   
-			<tr>
-				<td >
-				<?php 
-				include_once 'views/talle/abmTalle.php';
-				?>	
-				</td>
-				<td style="width: 100px;">
-                &nbsp;
-				</td><td>
-                <?php 
-				include_once 'views/estampado/abmEstampado.php';
-				?>	
-					
-				</td>
-			
-			</tr>
-		</table>
-	</div>
+<h1 style="text-align: left;">
+	&nbsp;Caracteristicas&nbsp;
+</h1>
+<hr />
+<table class="tablaCaracteristicas">
+	<tr>
+		<td style="width: 32%;">
+			<?php include_once 'views/color/abmColor.php'; ?>
+		</td>
+		<td style="width: 1%;">
+		</td>
+		<td style="width: 32%;">
+			<?php include_once 'views/tela/abmTela.php'; ?>
+		</td>
+		<td style="width: 1%;">
+		</td>
+		<td style="width: 32%;">
+			<?php include_once 'views/marca/abmMarca.php'; ?>
+		</td>
+	</tr>
+	<tr>
+		<td style="width: 32%;">
+			<?php include_once 'views/talle/abmTalle.php'; ?>
+		</td>
+		<td style="width: 1%;">
+		</td>
+		<td style="width: 32%;">
+			<?php include_once 'views/estampado/abmEstampado.php'; ?>
+		</td>
+		<td style="width: 1%;">
+		</td>
+		<td style="width: 32%;">
+			<?php include_once 'views/listPrec/abmListPrec.php'; ?>
+		</td>
+	</tr>
+</table>

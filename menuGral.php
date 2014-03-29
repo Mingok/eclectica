@@ -108,16 +108,7 @@
 			});
 
 		});
-	$("#fancybox-manual-b").click(function() {
-
-			$.fancybox.open({
-				href: 'form05CC.php',
-				type: 'iframePrec',
-
-				padding: 5
-			});
-
-		});
+	
 		$(".fancybox").fancybox({
 			closeClick: false,
 			// prevents closing when clicking INSIDE fancybox 
@@ -166,7 +157,7 @@
 			&nbsp;Ventas&nbsp;
 			</a>
 			|
-			<a class="fancybox fancybox.iframe" href="form05cc.php" style="font-style: italic; font-size: large;"  >
+			<a class="fancybox fancybox.iframe" href="form05cc.php" style="font-style: italic; "  >
 			<img src="./imagenes/iconos/25.png" height="15px" title="Cuentas Corrientes" />
 			&nbsp;Cuentas Corrientes&nbsp;
 			</a>
@@ -184,22 +175,19 @@
 		<tr>
 			<td>
 				|
-				<a href="./indexClientes.php" onclick="javascript:mostrarOcultarTablas('configuracion')" style="font-style: italic; font-size: large;">
+				<a href="./indexClientes.php" onclick="javascript:mostrarOcultarTablas('configuracion')" style="font-style: italic; ">
 				&nbsp;Clientes&nbsp;
 				</a>
 				|
-				<a href="./indexEmpleados.php" onclick="javascript:mostrarOcultarTablas('configuracion')" style="font-style: italic; font-size: large;">
+				<a href="./indexEmpleados.php" onclick="javascript:mostrarOcultarTablas('configuracion')" style="font-style: italic; ">
 				&nbsp;Empleados&nbsp;
 				</a>
 				|
-				<a href="./indexProv.php" onclick="javascript:mostrarOcultarTablas('configuracion')" style="font-style: italic; font-size: large;" >
+				<a href="./indexProv.php" onclick="javascript:mostrarOcultarTablas('configuracion')" style="font-style: italic; " >
 				&nbsp;Proveedores&nbsp;
 			     </a>
 				|
-				<a class="fancybox fancybox.iframe" href="form07ListPrec.php" style="font-style: italic; font-size: large;" onclick="javascript:mostrarOcultarTablas('configuracion')">
-				&nbsp;Listas De Precios&nbsp;
-				</a>
-				|
+			
                 <a href="#" onclick="javascript:mostrarOcultarTablas('configuracion')">
 				&nbsp;Marcas&nbsp;
 				</a>
@@ -213,9 +201,9 @@
 		<tr>
 			<td>
 				|
-				<a href="indexPrendas.php"onclick="javascript:mostrarOcultarTablas('prendas')"style="font-style: italic; font-size: large;">&nbsp;Prendas&nbsp;</a>
+				<a href="indexPrendas.php"onclick="javascript:mostrarOcultarTablas('prendas')"style="font-style: italic; ">&nbsp;Prendas&nbsp;</a>
 				|
-				<a href="indexCaracteristicas.php" onclick="javascript:mostrarOcultarTablas('prendas')"style="font-style: italic; font-size: large;">&nbsp;Telas&nbsp;-&nbsp;Talles&nbsp;-&nbsp;Colores&nbsp;-&nbsp;Estampados&nbsp;</a>
+				<a href="indexCaracteristicas.php" onclick="javascript:mostrarOcultarTablas('prendas')"style="font-style: italic; ">&nbsp;Caracteristicas&nbsp;</a>
 				|
 			</td>
 		</tr>

@@ -6,7 +6,7 @@
 		<td style="vertical-align: top; padding-top: 5px; text-align: left;">
 			
 				
-				<div style="text-align:left;" > <?php include 'menuGral.php' ?></div>
+				<div style="text-align:left;" > <?php include_once 'menuGral.php' ?></div>
 		
 		</td>
 		<td style="width: 200px;" >

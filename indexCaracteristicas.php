@@ -17,13 +17,13 @@
 		<table class="tablaGral">
 			<tr>
 				<td>
-					<?php include './encabezado.php'; ?>
+					<?php include_once './encabezado.php'; ?>
 				</td>
 			</tr>
 			<tr>
 				<td>
 					<hr />
-					<?php include './form02Caracteristicas.php'?>
+					<?php include_once './form02Caracteristicas.php'?>
 						<hr />
 				</td>
 			</tr>

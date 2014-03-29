@@ -3,12 +3,12 @@
 				$estampadoList = new estampado();
 				$estampados = $estampadoList->estampadosDisponibles();
 				?>
-<table>
+<table style="vertical-align: middle; width: 100%;" >
 	<tr style="vertical-align: middle;">
 		<td style="text-align: left; " >
 			<form action="actions/estampado/guardarEstampado.php">
 				<h2>Estampado</h2>
-				Nombre Estampado: &nbsp;<input type="text" name="detalleEstampado" placeholder="ingresar" style="width: 120px;"class="textCaracteristicas"/>
+				Nombre: &nbsp;<input type="text" name="detalleEstampado" placeholder="ingresar" class="textCaracteristicas"/>
 				<input  type="submit" value="Agregar" class="buttonCaracteristicas"/>
 			</form>
 		</td>

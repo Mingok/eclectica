@@ -3,12 +3,12 @@
 				$talleList = new talle();
 				$talles = $talleList->tallesDisponibles();
 				?>
-<table >
+<table style="vertical-align: middle; width: 100%;" >
 	<tr style="vertical-align: middle;">
 		<td style="text-align: left; " >
 			<form action="actions/talle/guardarTalle.php">
 				<h2>Talle</h2>
-				Nombre Talle: &nbsp;<input type="text" name="detalleTalle" placeholder="ingresar" style="width: 120px;"class="textCaracteristicas"/>
+				Nombre: &nbsp;<input type="text" name="detalleTalle" placeholder="ingresar" style="width: 120px;"class="textCaracteristicas"/>
 				<input type="submit" value="Agregar" class="buttonCaracteristicas"/>
 			</form>
 		</td>

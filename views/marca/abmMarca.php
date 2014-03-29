@@ -3,12 +3,12 @@
 				$marcaList = new marca();
 				$marcas = $marcaList->marcasDisponibles();
 				?>
-<table >
+<table style="vertical-align: middle; width: 100%;" >
 	<tr style="vertical-align: middle;">
 		<td style="text-align: left; " >
 			<form action="actions/marca/guardarMarca.php">
 				<h2>Marca</h2>
-				Nombre Marca: &nbsp;<input type="text" name="detalleMarca" placeholder="ingresar" style="width: 120px;"class="textCaracteristicas"/>
+				Nombre: &nbsp;<input type="text" name="detalleMarca" placeholder="ingresar" style="width: 120px;"class="textCaracteristicas"/>
 				<input type="submit" value="Agregar" class="buttonCaracteristicas"/>
 			</form>
 		</td>

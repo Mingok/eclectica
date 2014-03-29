@@ -3,12 +3,12 @@
 				$telaList = new tela();
 				$telas = $telaList->telasDisponibles();
 				?>
-<table >
+<table style="vertical-align: middle; width: 100%;" >
 	<tr style="vertical-align: middle;">
 		<td style="text-align: left; " >
 			<form action="actions/tela/guardarTela.php">
 				<h2>Tela</h2>
-				Nombre Color: &nbsp;<input type="text" name="detalleTela" placeholder="ingresar" style="width: 120px;"class="textCaracteristicas"/>
+				Nombre: &nbsp;<input type="text" name="detalleTela" placeholder="ingresar" style="width: 120px;"class="textCaracteristicas"/>
 				<input type="submit" value="Agregar" class="buttonCaracteristicas"/>
 			</form>
 		</td>
