@@ -47,7 +47,7 @@
 									<?php foreach ($proveedores as $proveedor) { ?>
 										<tr style='text-align: center'>
 											<td>
-												<a title='Modificar datos'><img src='./imagenes/iconos/edit.png' width='14' height='14' /></a>
+												<a  tite='Modificar datos del empleado' href='./actions/proveedor/camposProveedor.php?id="<?php echo $proveedor[ "idProveedor"]?>"'><img src='./imagenes/iconos/edit.png' width='14' height='14' /></a>
 											</td>
 											<td>
 												<?php echo $proveedor[ 'nombreProveedor']?>

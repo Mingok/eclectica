@@ -76,4 +76,15 @@ Class proveedor {
 		$objManejoMySQL->consultar($strSql, $arrResultado);
 		return $arrResultado;
 	}
+
+public function camposModificarProveedor($id){
+		require_once (__DIR__.'\..\..\base\manejoMySQL.php');
+		$objManejoMySQL = new manejoMySQL();
+		$strSql = "SELECT * FROM `proveedor` WHERE `idProveedor`=$id";
+		$arrResultado = null;
+		$objManejoMySQL->consultar($strSql, $arrResultado);
+		return $arrResultado;
+		
+		
+	}
 }
