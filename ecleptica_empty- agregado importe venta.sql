@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 29-03-2014 a las 10:41:04
+-- Tiempo de generación: 30-03-2014 a las 22:29:43
 -- Versión del servidor: 5.6.12-log
 -- Versión de PHP: 5.4.12
 
@@ -34,6 +34,13 @@ CREATE TABLE IF NOT EXISTS `color` (
   PRIMARY KEY (`idColor`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
+--
+-- Volcado de datos para la tabla `color`
+--
+
+INSERT INTO `color` (`idColor`, `detalleColor`) VALUES
+(1, 'Marron');
+
 -- --------------------------------------------------------
 
 --
@@ -42,9 +49,21 @@ CREATE TABLE IF NOT EXISTS `color` (
 
 CREATE TABLE IF NOT EXISTS `empresa` (
   `idEmpresa` int(11) NOT NULL AUTO_INCREMENT,
-  `detalleEmpresa` varchar(45) DEFAULT NULL,
+  `nombreEmpresa` varchar(45) DEFAULT NULL,
+  `dirEmpresa` varchar(50) NOT NULL,
+  `cuitEmpresa` varchar(13) NOT NULL,
+  `telEmpresa` varchar(20) NOT NULL,
+  `emailEmpresa` varchar(100) NOT NULL,
+  `logoEmpresa` varchar(200) NOT NULL,
   PRIMARY KEY (`idEmpresa`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Volcado de datos para la tabla `empresa`
+--
+
+INSERT INTO `empresa` (`idEmpresa`, `nombreEmpresa`, `dirEmpresa`, `cuitEmpresa`, `telEmpresa`, `emailEmpresa`, `logoEmpresa`) VALUES
+(1, 'Eclectica Esperanza1', '', '30699872160', '03496 43-0854', 'eclectica.esperanza@facebook.com', 'logoEcle - copia.png');
 
 -- --------------------------------------------------------
 
@@ -70,6 +89,15 @@ CREATE TABLE IF NOT EXISTS `estampado` (
   PRIMARY KEY (`idEstampado`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
+--
+-- Volcado de datos para la tabla `estampado`
+--
+
+INSERT INTO `estampado` (`idEstampado`, `detalleEstampado`) VALUES
+(1, 'Flores'),
+(2, 'RAYADO'),
+(3, 'LUNARES');
+
 -- --------------------------------------------------------
 
 --
@@ -81,6 +109,14 @@ CREATE TABLE IF NOT EXISTS `marca` (
   `detalleMarca` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`idMarca`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+
+--
+-- Volcado de datos para la tabla `marca`
+--
+
+INSERT INTO `marca` (`idMarca`, `detalleMarca`) VALUES
+(1, 'Mi MARca'),
+(2, 'Mi otra MArca');
 
 -- --------------------------------------------------------
 
@@ -135,10 +171,27 @@ CREATE TABLE IF NOT EXISTS `prenda` (
 CREATE TABLE IF NOT EXISTS `proveedor` (
   `idProveedor` int(11) NOT NULL AUTO_INCREMENT,
   `nombreProveedor` varchar(45) DEFAULT NULL,
-  `direccion` varchar(150) DEFAULT NULL,
-  `telefono` varchar(45) DEFAULT NULL,
+  `cuitProveedor` varchar(13) NOT NULL,
+  `condIvaProveedor` varchar(50) NOT NULL,
+  `direccionProveedor` varchar(150) DEFAULT NULL,
+  `localidadProveedor` varchar(11) NOT NULL,
+  `telefonoProveedor` varchar(45) DEFAULT NULL,
+  `contactoProveedor` varchar(100) NOT NULL,
+  `bancoProveedor` varchar(100) NOT NULL,
+  `cbuProveedor` varchar(100) NOT NULL,
   PRIMARY KEY (`idProveedor`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+
+--
+-- Volcado de datos para la tabla `proveedor`
+--
+
+INSERT INTO `proveedor` (`idProveedor`, `nombreProveedor`, `cuitProveedor`, `condIvaProveedor`, `direccionProveedor`, `localidadProveedor`, `telefonoProveedor`, `contactoProveedor`, `bancoProveedor`, `cbuProveedor`) VALUES
+(1, 'Proveedor 1 ', '30699872160', 'Inscripto', 'una calle me separa 1234', 'Bs As', '0342 - 154426340', 'Chin Chu lin Su', 'Macro', '258965832215993'),
+(2, 'Proveedor 1 ', '2147483647', 'Inscripto', 'una calle me separa 1234', 'Bs As', '0342 - 154426340', 'Chin Chu lin Su', 'Macro', '258965832215993'),
+(3, NULL, 'adasd', 'asdasd', 'asdasd', 'asdasd', 'asdasd', 'asdasd', 'adasd', 'asdasd'),
+(4, NULL, 'adasd', 'asdasd', 'asdasd', 'asdasd', 'asdasd', 'asdasd', 'adasd', 'asdasd'),
+(5, 'asdasdad', '1111111111111', '111111111111111', '11111', '11111111111', '11111111111111', '11111111111111111111', '11111111111111', '11111111111111');
 
 -- --------------------------------------------------------
 
@@ -152,6 +205,13 @@ CREATE TABLE IF NOT EXISTS `talle` (
   PRIMARY KEY (`idTalle`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
+--
+-- Volcado de datos para la tabla `talle`
+--
+
+INSERT INTO `talle` (`idTalle`, `detalleTalle`) VALUES
+(1, 'xxxL');
+
 -- --------------------------------------------------------
 
 --
@@ -163,6 +223,20 @@ CREATE TABLE IF NOT EXISTS `tela` (
   `detalleTela` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`idTela`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
+
+--
+-- Volcado de datos para la tabla `tela`
+--
+
+INSERT INTO `tela` (`idTela`, `detalleTela`) VALUES
+(1, 'JEANS'),
+(2, 'GABARDINA'),
+(3, 'LANA FRIA'),
+(4, 'SEDA FRIA'),
+(5, 'CLOQUE'),
+(6, 'GASA'),
+(7, 'RASO'),
+(8, 'LANA  ');
 
 -- --------------------------------------------------------
 

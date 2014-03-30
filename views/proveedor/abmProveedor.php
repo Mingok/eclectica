@@ -19,7 +19,7 @@
 									</td>
 									<td style="text-align: Right; ">
 										Buscar: &nbsp;
-										<select name="select" class="textProv" style="width:300px">
+										<select name="select" class="textProv" style="width:250px">
 											<option selected="selected">
 												ESSENCE
 											</option>

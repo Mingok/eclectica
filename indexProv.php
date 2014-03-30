@@ -23,7 +23,7 @@
 			<tr>
 				<td>
 					<hr />
-					<?php include_once './views/proveedores/abmProveedores.php'?>
+					<?php include_once './views/proveedor/abmProveedor.php'?>
 						<hr />
 				</td>
 			</tr>

@@ -1,48 +1,61 @@
+
+	<?php 
+				require_once 'classes/empresa/empresa.php';
+				$empresaList = new empresa();
+				$empresas = $empresaList->datosEmpresa();
+             
+				?>
 <h1 style="text-align: left;">
 	&nbsp;Empresa &nbsp;
 </h1>
 <hr />
+<form action="actions/empresa/moificarEmpresa.php">
 <table class="tablaProv">
-	<tr>       
+	 <?php 
+					foreach ($empresas as $empresa) {
+					?>	
+    <tr>       
 		<td style="text-align: left; height: 40px;">
 			<h2>
+            
 				Datos de la Empresa
 			</h2>
 		</td>
 		<td colspan="2">
 			Logo:&nbsp;
-			<input type="file" id="logo" name="logo" title="Seleccionar archivo desde su PC" accept="image/x-png, image/gif, image/jpeg" />
+			<input type="file" id="logo" name="logoEmpresa" title="Seleccionar archivo desde su PC" accept="image/x-png, image/gif, image/jpeg" />
 		</td>
 		</td>
 	</tr>
+   
 	<tr>
+    		
 		<td style=" text-align:Right; ">
 			Razón Social:&nbsp;&nbsp;
-			<input type="text" style="width: 150px;" maxlength="50px" name="razon_social_empresa" value="ingrese" disabled="yes" />
+			<input type="text" style="width: 150px;" maxlength="50px" name="nombreEmpresa" value="<?php echo $empresa['nombreEmpresa'];?>"/>
 		</td>
 		<td style=" text-align:Right; ">
 			CUIT:&nbsp;
-			<input type="text" style="width: 120px;" maxlength="50px" name="cuit_empresa" value="ingrese" disabled="yes" />
+			<input type="text" style="width: 120px;" maxlength="50px" name="cuitEmpresa" value="<?php echo $empresa['cuitEmpresa'];?>"/>
 		</td>
 		<td style=" text-align:Right;">
 			Tel.:
-			<input type="text" style="width: 150px;" maxlength="50px" name="telefono_empresa" value="ingrese" disabled="yes" />
+			<input type="text" style="width: 150px;" maxlength="50px" name="telEmpresa" value="<?php echo $empresa['telEmpresa'];?>"/>
 		</td>
 		<td style="text-align: right;" rowspan="3">
-			<input type="button" name="pNuevo" value="Modificar" class="buttonProv" disabled="yes" />
+			<input type="submit" name="pNuevo" value="Modificar" class="buttonProv"/>
 	</tr>
 	<tr>
-		<td style=" text-align:Right;">
+		<td style=" text-align:Right;" colspan="2">
 			E-mail:&nbsp;
-			<input type="text" style="width: 150px;" name="email_empresa" value="ingrese" disabled="yes" />
+			<input type="text" style="width: 250px;" name="emailEmpresa" value="<?php echo $empresa['emailEmpresa'];?>"/>
 		</td>
 		<td style=" text-align:Right; ">
 			Domicilio:&nbsp;&nbsp;
-			<input type="text" style="width: 150px;" maxlength="50px" name="domicilio_empresa" value="ingrese" disabled="yes" />
+			<input type="text" style="width: 150px;" maxlength="50px" name="dirEmpresa" value="<?php echo $empresa['dirEmpresa'];?>"/>
 		</td>
-		<td style=" text-align:Right; ">
-			Fax:&nbsp;
-			<input type="text" style="width: 150px;" name="fax_empresa" value="ingrese" disabled="yes"/>
-		</td>
+		
 	</tr>
+    	<?php }?>
 </table>
+</form>
