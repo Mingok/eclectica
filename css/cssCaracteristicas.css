@@ -42,6 +42,20 @@ border-radius: 20px;
 border:1px solid #555555;
 background-image: url(../imagenes/iconos/add.png	);	
 }
+.buttonLimpiar {
+height: 30px;
+font-size: 15px; font-weight: bold; width: 140px; color:black;
+cursor:hand; cursor:pointer;
+margin-left:5px; margin-right:5px; outline-width:0px;
+background-position:5px 5px; 
+text-decoration: none; 
+background-repeat: no-repeat; 
+border-radius: 20px; 
+border:1px solid #555555;	
+}
+.no {
+	display: none;
+}
 .buttonCaracteristicas:hover{
 
 border:none;

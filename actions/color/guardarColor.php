@@ -1,12 +1,19 @@
 <?php
 require_once 'classes/color/color.php';
 $detalleColor = $_REQUEST['detalleColor'];
+$idColor = $_REQUEST['idColor'];
 $arrColor = array(
-	'detalleColor' => $detalleColor
+	'detalleColor' => $detalleColor,
+	'idColor' => $idColor
 );
 
+
 $colorClass = new color();
-$colores = $colorClass->agregarNuevoColor($arrColor);
+if ($idColor) {
+	$colores = $colorClass->modificarColor($arrColor);
+} else {
+	$colores = $colorClass->agregarNuevoColor($arrColor);	
+}
 
 header('Location: '.$_SERVER['HTTP_REFERER']);
 exit;
