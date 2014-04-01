@@ -39,7 +39,7 @@
 						</td>
 
 					</tr>
-					<?php }?>
+					<?php }?>		
 				</table>
 			</div>
 		</td>
