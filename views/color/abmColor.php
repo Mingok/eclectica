@@ -7,12 +7,25 @@
 	<tr style="vertical-align: middle;">
 		<td style="text-align: left; " >
 			<form action="actions/color/guardarColor.php">
-				<h2>Color</h2>
-				Nombre: &nbsp;<input type="text" name="detalleColor" placeholder="ingresar" style="width: 290px;"class="textCaracteristicas"/>
+				<table style="width: 100%;">
+                <tr>
+                <td>
+                <h2>Color</h2>
+				
+                </td>
+                <td style="text-align: right;">
+                <input type="submit" value="Agregar" class="buttonCaracteristicas Color"/>
+				</td>
+                <td style="text-align: right;">
+                <input type="button" value="Limpiar Campos" class="buttonLimpiar Color no"/></td>
+                </tr>
+                <tr>
+                <td colspan="3"> Nombre: &nbsp;<input type="text" name="detalleColor" placeholder="ingresar" class="textCaracteristicas"/>
 				<input type="hidden" value="" name="idColor"/>
-				<input type="submit" value="Agregar" class="buttonCaracteristicas"/>
-				<input type="button" value="Limpiar Campos" class="buttonLimpiar no"/>
-			</form>
+			</td></tr>
+               	
+			</table>
+            </form>
 		</td>
 	</tr>
 	<tr>
@@ -34,7 +47,7 @@
 					?>					
 					<tr style='text-align: center'>
 						<td>
-							<a title='Modificar datos' class="editButton" name="editColor" data-idcolor="<?php echo $color['idColor']?>" data-detallecolor="<?php echo $color['detalleColor']?>">
+							<a title='Modificar datos' class="editButtonColor" name="editColor" data-idcolor="<?php echo $color['idColor']?>" data-detallecolor="<?php echo $color['detalleColor']?>">
 								<img src='./imagenes/iconos/edit.png' width='14' height='14' />
 							</a>
 						</td>
@@ -50,17 +63,17 @@
 	</tr>
 </table>
 <script type="text/javascript">
-$('.editButton').click(function(){
+$('.editButtonColor').click(function(){
 	$('input[name=idColor]').val($(this).data('idcolor'));
 	$('input[name=detalleColor]').val($(this).data('detallecolor'));
-	$('.buttonCaracteristicas').val('Modificar');
-	$('.buttonLimpiar').removeClass('no');
+	$('.buttonCaracteristicas.Color').val('Modificar');
+	$('.buttonLimpiar.Color').removeClass('no');
 });
-$('.buttonLimpiar').click(function(){
-	$('.buttonCaracteristicas').val('Agregar');
+$('.buttonLimpiar.Color').click(function(){
+	$('.buttonCaracteristicas.Color').val('Agregar');
 	$('input[name=idColor]').val('');
 	$('input[name=detalleColor]').val('');
-	$('.buttonLimpiar').addClass('no');
+	$('.buttonLimpiar.Color').addClass('no');
 });
 
 </script>

@@ -1,273 +1,268 @@
-SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
-SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
-SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
+-- phpMyAdmin SQL Dump
+-- version 4.0.4
+-- http://www.phpmyadmin.net
+--
+-- Servidor: localhost
+-- Tiempo de generación: 02-04-2014 a las 23:57:17
+-- Versión del servidor: 5.6.12-log
+-- Versión de PHP: 5.4.12
 
-DROP SCHEMA IF EXISTS `ecleptica` ;
-CREATE SCHEMA IF NOT EXISTS `ecleptica` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci ;
-USE `ecleptica` ;
-
--- -----------------------------------------------------
--- Table `ecleptica`.`Persona`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `ecleptica`.`Persona` ;
-
-CREATE TABLE IF NOT EXISTS `ecleptica`.`Persona` (
-  `idPersona` INT NOT NULL AUTO_INCREMENT,
-  `apellido` VARCHAR(100) NULL,
-  `nombre` VARCHAR(45) NULL,
-  `direccion` VARCHAR(45) NULL,
-  `telefono` VARCHAR(45) NULL,
-  `codigoVendedor` VARCHAR(45) NULL,
-  PRIMARY KEY (`idPersona`))
-ENGINE = InnoDB;
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
 
 
--- -----------------------------------------------------
--- Table `ecleptica`.`Proveedor`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `ecleptica`.`Proveedor` ;
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
 
-CREATE TABLE IF NOT EXISTS `ecleptica`.`Proveedor` (
-  `idProveedor` INT NOT NULL AUTO_INCREMENT,
-  `nombreProveedor` VARCHAR(45) NULL,
-  `direccion` VARCHAR(150) NULL,
-  `telefono` VARCHAR(45) NULL,
-  PRIMARY KEY (`idProveedor`))
-ENGINE = InnoDB;
+--
+-- Base de datos: `ecleptica`
+--
+CREATE DATABASE IF NOT EXISTS `ecleptica` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `ecleptica`;
 
+-- --------------------------------------------------------
 
--- -----------------------------------------------------
--- Table `ecleptica`.`Color`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `ecleptica`.`Color` ;
+--
+-- Estructura de tabla para la tabla `color`
+--
 
-CREATE TABLE IF NOT EXISTS `ecleptica`.`Color` (
-  `idColor` INT NOT NULL AUTO_INCREMENT,
-  `detalleColor` VARCHAR(45) NULL,
-  PRIMARY KEY (`idColor`))
-ENGINE = InnoDB;
+CREATE TABLE IF NOT EXISTS `color` (
+  `idColor` int(11) NOT NULL AUTO_INCREMENT,
+  `detalleColor` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`idColor`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
 
+-- --------------------------------------------------------
 
--- -----------------------------------------------------
--- Table `ecleptica`.`Estampado`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `ecleptica`.`Estampado` ;
+--
+-- Estructura de tabla para la tabla `empresa`
+--
 
-CREATE TABLE IF NOT EXISTS `ecleptica`.`Estampado` (
-  `idEstampado` INT NOT NULL AUTO_INCREMENT,
-  `detalleEstampado` VARCHAR(45) NULL,
-  PRIMARY KEY (`idEstampado`))
-ENGINE = InnoDB;
+CREATE TABLE IF NOT EXISTS `empresa` (
+  `idEmpresa` int(11) NOT NULL AUTO_INCREMENT,
+  `nombreEmpresa` varchar(45) DEFAULT NULL,
+  `dirEmpresa` varchar(50) NOT NULL,
+  `cuitEmpresa` varchar(13) NOT NULL,
+  `telEmpresa` varchar(20) NOT NULL,
+  `emailEmpresa` varchar(100) NOT NULL,
+  `logoEmpresa` varchar(200) NOT NULL,
+  PRIMARY KEY (`idEmpresa`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
+-- --------------------------------------------------------
 
--- -----------------------------------------------------
--- Table `ecleptica`.`Tela`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `ecleptica`.`Tela` ;
+--
+-- Estructura de tabla para la tabla `estacion`
+--
 
-CREATE TABLE IF NOT EXISTS `ecleptica`.`Tela` (
-  `idTela` INT NOT NULL AUTO_INCREMENT,
-  `detalleTela` VARCHAR(45) NULL,
-  PRIMARY KEY (`idTela`))
-ENGINE = InnoDB;
+CREATE TABLE IF NOT EXISTS `estacion` (
+  `idEstacion` int(11) NOT NULL AUTO_INCREMENT,
+  `detalleEstacion` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`idEstacion`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+-- --------------------------------------------------------
 
--- -----------------------------------------------------
--- Table `ecleptica`.`Talle`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `ecleptica`.`Talle` ;
+--
+-- Estructura de tabla para la tabla `estampado`
+--
 
-CREATE TABLE IF NOT EXISTS `ecleptica`.`Talle` (
-  `idTalle` INT NOT NULL AUTO_INCREMENT,
-  `detalleTalle` VARCHAR(45) NULL,
-  PRIMARY KEY (`idTalle`))
-ENGINE = InnoDB;
+CREATE TABLE IF NOT EXISTS `estampado` (
+  `idEstampado` int(11) NOT NULL AUTO_INCREMENT,
+  `detalleEstampado` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`idEstampado`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
+-- --------------------------------------------------------
 
--- -----------------------------------------------------
--- Table `ecleptica`.`Estacion`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `ecleptica`.`Estacion` ;
+--
+-- Estructura de tabla para la tabla `marca`
+--
 
-CREATE TABLE IF NOT EXISTS `ecleptica`.`Estacion` (
-  `idEstacion` INT NOT NULL AUTO_INCREMENT,
-  `detalleEstacion` VARCHAR(45) NULL,
-  PRIMARY KEY (`idEstacion`))
-ENGINE = InnoDB;
+CREATE TABLE IF NOT EXISTS `marca` (
+  `idMarca` int(11) NOT NULL AUTO_INCREMENT,
+  `detalleMarca` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`idMarca`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
+-- --------------------------------------------------------
 
--- -----------------------------------------------------
--- Table `ecleptica`.`Empresa`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `ecleptica`.`Empresa` ;
+--
+-- Estructura de tabla para la tabla `persona`
+--
 
-CREATE TABLE IF NOT EXISTS `ecleptica`.`Empresa` (
-  `idEmpresa` INT NOT NULL AUTO_INCREMENT,
-  `detalleEmpresa` VARCHAR(45) NULL,
-  PRIMARY KEY (`idEmpresa`))
-ENGINE = InnoDB;
+CREATE TABLE IF NOT EXISTS `persona` (
+  `idPersona` int(11) NOT NULL AUTO_INCREMENT,
+  `apellido` varchar(100) DEFAULT NULL,
+  `nombre` varchar(45) DEFAULT NULL,
+  `direccion` varchar(45) DEFAULT NULL,
+  `telefono` varchar(45) DEFAULT NULL,
+  `codigoVendedor` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`idPersona`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+-- --------------------------------------------------------
 
--- -----------------------------------------------------
--- Table `ecleptica`.`TipoVenta`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `ecleptica`.`TipoVenta` ;
+--
+-- Estructura de tabla para la tabla `prenda`
+--
 
-CREATE TABLE IF NOT EXISTS `ecleptica`.`TipoVenta` (
-  `idTipoVenta` INT NOT NULL AUTO_INCREMENT,
-  `detalleTipoVenta` VARCHAR(45) NULL,
-  `grupoTipoVenta` INT NULL,
-  PRIMARY KEY (`idTipoVenta`))
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `ecleptica`.`Marca`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `ecleptica`.`Marca` ;
-
-CREATE TABLE IF NOT EXISTS `ecleptica`.`Marca` (
-  `idMarca` INT NOT NULL AUTO_INCREMENT,
-  `detalleMarca` VARCHAR(45) NULL,
-  PRIMARY KEY (`idMarca`))
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `ecleptica`.`Prenda`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `ecleptica`.`Prenda` ;
-
-CREATE TABLE IF NOT EXISTS `ecleptica`.`Prenda` (
-  `idPrenda` INT NOT NULL AUTO_INCREMENT,
-  `detallePrenda` VARCHAR(100) NOT NULL,
-  `idColor` INT NOT NULL,
-  `idEstampado` INT NOT NULL,
-  `idTela` INT NOT NULL,
-  `idTalle` INT NOT NULL,
-  `idEstacion` INT NOT NULL,
-  `idEmpresa` INT NOT NULL,
-  `idProveedor` INT NOT NULL,
-  `idMarca` INT NOT NULL,
+CREATE TABLE IF NOT EXISTS `prenda` (
+  `idPrenda` int(11) NOT NULL AUTO_INCREMENT,
+  `codigoPrenda` varchar(9) NOT NULL,
+  `detallePrenda` varchar(100) NOT NULL,
+  `idColorPrenda` int(11) NOT NULL,
+  `idEstampadoPrenda` int(11) NOT NULL,
+  `idTelaPrenda` int(11) NOT NULL,
+  `idTallePrenda` int(11) NOT NULL,
+  `idEstacionPrenda` int(11) NOT NULL,
+  `idEmpresaPrenda` int(11) NOT NULL,
+  `idProveedorPrenda` int(11) NOT NULL,
+  `idMarcaPrenda` int(11) NOT NULL,
+  `cantidadPrenda` int(10) NOT NULL,
   PRIMARY KEY (`idPrenda`),
-  INDEX `fk_Prenda_Color_idx` (`idColor` ASC),
-  INDEX `fk_Prenda_Estampado1_idx` (`idEstampado` ASC),
-  INDEX `fk_Prenda_Tela1_idx` (`idTela` ASC),
-  INDEX `fk_Prenda_Talle1_idx` (`idTalle` ASC),
-  INDEX `fk_Prenda_Estacion1_idx` (`idEstacion` ASC),
-  INDEX `fk_Prenda_Empresa1_idx` (`idEmpresa` ASC),
-  INDEX `fk_Prenda_Proveedor1_idx` (`idProveedor` ASC),
-  INDEX `fk_Prenda_Marca1_idx` (`idMarca` ASC),
-  CONSTRAINT `fk_Prenda_Color`
-    FOREIGN KEY (`idColor`)
-    REFERENCES `ecleptica`.`Color` (`idColor`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Prenda_Estampado1`
-    FOREIGN KEY (`idEstampado`)
-    REFERENCES `ecleptica`.`Estampado` (`idEstampado`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Prenda_Tela1`
-    FOREIGN KEY (`idTela`)
-    REFERENCES `ecleptica`.`Tela` (`idTela`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Prenda_Talle1`
-    FOREIGN KEY (`idTalle`)
-    REFERENCES `ecleptica`.`Talle` (`idTalle`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Prenda_Estacion1`
-    FOREIGN KEY (`idEstacion`)
-    REFERENCES `ecleptica`.`Estacion` (`idEstacion`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Prenda_Empresa1`
-    FOREIGN KEY (`idEmpresa`)
-    REFERENCES `ecleptica`.`Empresa` (`idEmpresa`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Prenda_Proveedor1`
-    FOREIGN KEY (`idProveedor`)
-    REFERENCES `ecleptica`.`Proveedor` (`idProveedor`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Prenda_Marca1`
-    FOREIGN KEY (`idMarca`)
-    REFERENCES `ecleptica`.`Marca` (`idMarca`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+  KEY `fk_Prenda_Color_idx` (`idColorPrenda`),
+  KEY `fk_Prenda_Estampado1_idx` (`idEstampadoPrenda`),
+  KEY `fk_Prenda_Tela1_idx` (`idTelaPrenda`),
+  KEY `fk_Prenda_Talle1_idx` (`idTallePrenda`),
+  KEY `fk_Prenda_Estacion1_idx` (`idEstacionPrenda`),
+  KEY `fk_Prenda_Empresa1_idx` (`idEmpresaPrenda`),
+  KEY `fk_Prenda_Proveedor1_idx` (`idProveedorPrenda`),
+  KEY `fk_Prenda_Marca1_idx` (`idMarcaPrenda`),
+  KEY `idEstacionPrenda` (`idEstacionPrenda`),
+  KEY `idEstacionPrenda_2` (`idEstacionPrenda`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+-- --------------------------------------------------------
 
--- -----------------------------------------------------
--- Table `ecleptica`.`TipoVenta_Prenda`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `ecleptica`.`TipoVenta_Prenda` ;
+--
+-- Estructura de tabla para la tabla `proveedor`
+--
 
-CREATE TABLE IF NOT EXISTS `ecleptica`.`TipoVenta_Prenda` (
-  `idTipoVenta_Prenda` INT NOT NULL AUTO_INCREMENT,
-  `detalleTipoVenta_Prenda` VARCHAR(45) NOT NULL,
-  `valor` DECIMAL(2) NOT NULL,
-  `idTipoVenta` INT NOT NULL,
-  `idPrenda` INT NOT NULL,
-  PRIMARY KEY (`idTipoVenta_Prenda`, `idTipoVenta`, `idPrenda`),
-  INDEX `fk_TipoVent_TipoVenta1_idx` (`idTipoVenta` ASC),
-  INDEX `fk_TipoVent_Prenda1_idx` (`idPrenda` ASC),
-  CONSTRAINT `fk_TipoVent_TipoVenta1`
-    FOREIGN KEY (`idTipoVenta`)
-    REFERENCES `ecleptica`.`TipoVenta` (`idTipoVenta`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_TipoVent_Prenda1`
-    FOREIGN KEY (`idPrenda`)
-    REFERENCES `ecleptica`.`Prenda` (`idPrenda`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+CREATE TABLE IF NOT EXISTS `proveedor` (
+  `idProveedor` int(11) NOT NULL AUTO_INCREMENT,
+  `nombreProveedor` varchar(45) DEFAULT NULL,
+  `cuitProveedor` varchar(13) NOT NULL,
+  `condIvaProveedor` varchar(50) NOT NULL,
+  `direccionProveedor` varchar(150) DEFAULT NULL,
+  `localidadProveedor` varchar(11) NOT NULL,
+  `telefonoProveedor` varchar(45) DEFAULT NULL,
+  `contactoProveedor` varchar(100) NOT NULL,
+  `bancoProveedor` varchar(100) NOT NULL,
+  `cbuProveedor` varchar(100) NOT NULL,
+  PRIMARY KEY (`idProveedor`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
+-- --------------------------------------------------------
 
--- -----------------------------------------------------
--- Table `ecleptica`.`Venta`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `ecleptica`.`Venta` ;
+--
+-- Estructura de tabla para la tabla `talle`
+--
 
-CREATE TABLE IF NOT EXISTS `ecleptica`.`Venta` (
-  `idVenta` INT NOT NULL AUTO_INCREMENT,
-  `estado` VARCHAR(45) NULL,
-  `cliente` INT NOT NULL,
-  `vendedor` INT NOT NULL,
-  `idPrenda` INT NOT NULL,
-  `idTipoVenta` INT NOT NULL,
+CREATE TABLE IF NOT EXISTS `talle` (
+  `idTalle` int(11) NOT NULL AUTO_INCREMENT,
+  `detalleTalle` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`idTalle`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `tela`
+--
+
+CREATE TABLE IF NOT EXISTS `tela` (
+  `idTela` int(11) NOT NULL AUTO_INCREMENT,
+  `detalleTela` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`idTela`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=19 ;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `tipoventa`
+--
+
+CREATE TABLE IF NOT EXISTS `tipoventa` (
+  `idTipoVenta` int(11) NOT NULL AUTO_INCREMENT,
+  `detalleTipoVenta` varchar(45) DEFAULT NULL,
+  `grupoTipoVenta` int(11) DEFAULT NULL,
+  PRIMARY KEY (`idTipoVenta`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `tipoventa_prenda`
+--
+
+CREATE TABLE IF NOT EXISTS `tipoventa_prenda` (
+  `idTipoVenta_Prenda` int(11) NOT NULL AUTO_INCREMENT,
+  `detalleTipoVenta_Prenda` varchar(45) NOT NULL,
+  `valor` decimal(2,0) NOT NULL,
+  `idTipoVenta` int(11) NOT NULL,
+  `idPrenda` int(11) NOT NULL,
+  PRIMARY KEY (`idTipoVenta_Prenda`,`idTipoVenta`,`idPrenda`),
+  KEY `fk_TipoVent_TipoVenta1_idx` (`idTipoVenta`),
+  KEY `fk_TipoVent_Prenda1_idx` (`idPrenda`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `venta`
+--
+
+CREATE TABLE IF NOT EXISTS `venta` (
+  `idVenta` int(11) NOT NULL AUTO_INCREMENT,
+  `estado` varchar(45) DEFAULT NULL,
+  `cliente` int(11) NOT NULL,
+  `vendedor` int(11) NOT NULL,
+  `idPrenda` int(11) NOT NULL,
+  `precioVenta` double NOT NULL,
+  `idTipoVenta` int(11) NOT NULL,
   PRIMARY KEY (`idVenta`),
-  INDEX `fk_Venta_Persona1_idx` (`cliente` ASC),
-  INDEX `fk_Venta_Persona2_idx` (`vendedor` ASC),
-  INDEX `fk_Venta_Prenda1_idx` (`idPrenda` ASC),
-  INDEX `fk_Venta_TipoVenta_Prenda1_idx` (`idTipoVenta` ASC),
-  CONSTRAINT `fk_Venta_Persona1`
-    FOREIGN KEY (`cliente`)
-    REFERENCES `ecleptica`.`Persona` (`idPersona`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Venta_Persona2`
-    FOREIGN KEY (`vendedor`)
-    REFERENCES `ecleptica`.`Persona` (`idPersona`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Venta_Prenda1`
-    FOREIGN KEY (`idPrenda`)
-    REFERENCES `ecleptica`.`Prenda` (`idPrenda`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Venta_TipoVenta_Prenda1`
-    FOREIGN KEY (`idTipoVenta`)
-    REFERENCES `ecleptica`.`TipoVenta_Prenda` (`idTipoVenta_Prenda`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+  KEY `fk_Venta_Persona1_idx` (`cliente`),
+  KEY `fk_Venta_Persona2_idx` (`vendedor`),
+  KEY `fk_Venta_Prenda1_idx` (`idPrenda`),
+  KEY `fk_Venta_TipoVenta_Prenda1_idx` (`idTipoVenta`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
+--
+-- Restricciones para tablas volcadas
+--
 
-SET SQL_MODE=@OLD_SQL_MODE;
-SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
-SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+--
+-- Filtros para la tabla `prenda`
+--
+ALTER TABLE `prenda`
+  ADD CONSTRAINT `fk_Prenda_Color` FOREIGN KEY (`idColorPrenda`) REFERENCES `color` (`idColor`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_Prenda_Empresa1` FOREIGN KEY (`idEmpresaPrenda`) REFERENCES `empresa` (`idEmpresa`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_Prenda_Estacion1` FOREIGN KEY (`idEstacionPrenda`) REFERENCES `estacion` (`idEstacion`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_Prenda_Estampado1` FOREIGN KEY (`idEstampadoPrenda`) REFERENCES `estampado` (`idEstampado`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_Prenda_Marca1` FOREIGN KEY (`idMarcaPrenda`) REFERENCES `marca` (`idMarca`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_Prenda_Proveedor1` FOREIGN KEY (`idProveedorPrenda`) REFERENCES `proveedor` (`idProveedor`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_Prenda_Talle1` FOREIGN KEY (`idTallePrenda`) REFERENCES `talle` (`idTalle`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_Prenda_Tela1` FOREIGN KEY (`idTelaPrenda`) REFERENCES `tela` (`idTela`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Filtros para la tabla `tipoventa_prenda`
+--
+ALTER TABLE `tipoventa_prenda`
+  ADD CONSTRAINT `fk_TipoVent_Prenda1` FOREIGN KEY (`idPrenda`) REFERENCES `prenda` (`idPrenda`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_TipoVent_TipoVenta1` FOREIGN KEY (`idTipoVenta`) REFERENCES `tipoventa` (`idTipoVenta`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Filtros para la tabla `venta`
+--
+ALTER TABLE `venta`
+  ADD CONSTRAINT `fk_Venta_Persona1` FOREIGN KEY (`cliente`) REFERENCES `persona` (`idPersona`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_Venta_Persona2` FOREIGN KEY (`vendedor`) REFERENCES `persona` (`idPersona`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_Venta_Prenda1` FOREIGN KEY (`idPrenda`) REFERENCES `prenda` (`idPrenda`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_Venta_TipoVenta_Prenda1` FOREIGN KEY (`idTipoVenta`) REFERENCES `tipoventa_prenda` (`idTipoVenta_Prenda`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

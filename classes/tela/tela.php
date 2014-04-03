@@ -77,3 +77,4 @@ Class tela {
 		return $arrResultado;
 	}
 }
+?>

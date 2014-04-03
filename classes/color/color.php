@@ -77,3 +77,4 @@ Class color {
 		return $arrResultado;
 	}
 }
+?>

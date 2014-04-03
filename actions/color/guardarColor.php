@@ -17,3 +17,4 @@ if ($idColor) {
 
 header('Location: '.$_SERVER['HTTP_REFERER']);
 exit;
+?>

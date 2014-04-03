@@ -7,9 +7,24 @@
 	<tr style="vertical-align: middle;">
 		<td style="text-align: left; " >
 			<form action="actions/estampado/guardarEstampado.php">
-				<h2>Estampado</h2>
-				Nombre: &nbsp;<input type="text" name="detalleEstampado" placeholder="ingresar" class="textCaracteristicas"/>
-				<input  type="submit" value="Agregar" class="buttonCaracteristicas"/>
+				<table style="width: 100%;">
+                <tr>
+                <td style="padding:0">
+                <h2>Estampado</h2>
+				
+                </td>
+                <td style="text-align: right;">
+                <input type="submit" value="Agregar" class="buttonCaracteristicas Estampado"/>
+				</td>
+                <td style="text-align: right;">
+                <input type="button" value="Limpiar Campos" class="buttonLimpiar Estampado no"/></td>
+                </tr>
+                <tr>
+                <td colspan="3"> Nombre: &nbsp;<input type="text" name="detalleEstampado" placeholder="ingresar" class="textCaracteristicas"/>
+				<input type="hidden" value="" name="idEstampado"/>
+			</td></tr>
+               	
+			</table>
 			</form>
 		</td>
 	</tr>
@@ -31,7 +46,8 @@
 					?>					
 					<tr style='text-align: center'>
 						<td>
-							<a  title='Modificar datos'><img src='./imagenes/iconos/edit.png' width='14' height='14' /></a>
+							<a title='Modificar datos' class="editButtonEstampado" name="editEstampado" data-idestampado="<?php echo $estampado['idEstampado']?>" data-detalleestampado="<?php echo $estampado['detalleEstampado']?>">
+<img src='./imagenes/iconos/edit.png' width='14' height='14' /></a>
 						</td>
 						<td>
 							<?php echo $estampado['detalleEstampado']?>
@@ -44,3 +60,20 @@
 		</td>
 	</tr>
 </table>
+
+
+<script type="text/javascript">
+$('.editButtonEstampado').click(function(){
+	$('input[name=idEstampado]').val($(this).data('idestampado'));
+	$('input[name=detalleEstampado]').val($(this).data('detalleestampado'));
+	$('.buttonCaracteristicas.Estampado').val('Modificar');
+	$('.buttonLimpiar.Estampado').removeClass('no');
+});
+$('.buttonLimpiar.Estampado').click(function(){
+	$('.buttonCaracteristicas.Estampado').val('Agregar');
+	$('input[name=idEstampado]').val('');
+	$('input[name=detalleEstampado]').val('');
+	$('.buttonLimpiar.Estampado').addClass('no');
+});
+
+</script>
