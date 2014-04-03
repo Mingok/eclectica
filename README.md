@@ -1,4 +1,0 @@
-ecleptica
-=========
-
-Soft para tienda

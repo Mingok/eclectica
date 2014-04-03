@@ -6,7 +6,7 @@
 <table style="vertical-align: middle; width: 100%;" >
 	<tr style="vertical-align: middle;">
 		<td style="text-align: left; " >
-			<form action="actions/color/guardarColor.php">
+			<form action="actions/color/guardarColor.php" class="formColor">
 				<table style="width: 100%;">
                 <tr>
                 <td>
@@ -20,7 +20,7 @@
                 <input type="button" value="Limpiar Campos" class="buttonLimpiar Color no"/></td>
                 </tr>
                 <tr>
-                <td colspan="3"> Nombre: &nbsp;<input type="text" name="detalleColor" placeholder="ingresar" class="textCaracteristicas"/>
+                <td colspan="3"> Nombre: &nbsp;<input type="text" name="detalleColor" placeholder="ingresar" class="textCaracteristicas" required/>
 				<input type="hidden" value="" name="idColor"/>
 			</td></tr>
                	
@@ -63,12 +63,16 @@
 	</tr>
 </table>
 <script type="text/javascript">
+
+//Boton Agregar o modificar color
 $('.editButtonColor').click(function(){
 	$('input[name=idColor]').val($(this).data('idcolor'));
 	$('input[name=detalleColor]').val($(this).data('detallecolor'));
 	$('.buttonCaracteristicas.Color').val('Modificar');
 	$('.buttonLimpiar.Color').removeClass('no');
 });
+
+//Boton limpiar campos
 $('.buttonLimpiar.Color').click(function(){
 	$('.buttonCaracteristicas.Color').val('Agregar');
 	$('input[name=idColor]').val('');
@@ -76,4 +80,6 @@ $('.buttonLimpiar.Color').click(function(){
 	$('.buttonLimpiar.Color').addClass('no');
 });
 
+//Validacion de formulario
+$('.formColor').validate();
 </script>
