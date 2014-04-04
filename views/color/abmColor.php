@@ -3,6 +3,7 @@
 				$colorList = new color();
 				$colores = $colorList->coloresDisponibles();
 				?>
+
 <table style="vertical-align: middle; width: 100%;" >
 	<tr style="vertical-align: middle;">
 		<td style="text-align: left; " >
@@ -64,7 +65,7 @@
 </table>
 <script type="text/javascript">
 
-//Boton Agregar o modificar color
+//Boton Agregar o modificar
 $('.editButtonColor').click(function(){
 	$('input[name=idColor]').val($(this).data('idcolor'));
 	$('input[name=detalleColor]').val($(this).data('detallecolor'));

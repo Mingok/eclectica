@@ -1,24 +1,22 @@
 <?php
-Class prenda {
-	public function prendasDisponibles(){
+Class tipoVenta {
+	public function tipoVentasDisponibles(){
 		require_once (__DIR__.'\..\..\base\manejoMySQL.php');
 		
 		$objManejoMySQL= new manejoMySQL();
-		$strSql="	SELECT * FROM `prenda`
-					ORDER BY `detallePrenda` ASC";
+		$strSql="	SELECT * FROM `tipoVenta`
+					ORDER BY `detalleTipoVenta` ASC";
 		$arrResultado=null;
 		$objManejoMySQL->consultar($strSql, $arrResultado);
 		return $arrResultado;
 	}
-	/*SELECT p.*, est.detalleEstacion FROM `prenda` p
-                    LEFT JOIN `estacion` est ON p.idEstacion = est.idEstacion
-					ORDER BY `detallePrenda` ASC";*/
-	public function agregarNuevoColor($arrColor){
+	
+	public function agregarNuevoTipoVenta($arrTipoVenta){
 		require_once (__DIR__.'\..\..\base\manejoMySQL.php');
 		$strValoresCampos = "";
 		$strNombresCampos = "";
 		$objManejoMySQL = new manejoMySQL();
-		foreach ($arrColor as $nombreCampo=>$valorCampo){
+		foreach ($arrTipoVenta as $nombreCampo=>$valorCampo){
 			$strValoresCampos .= $strValoresCampos == '' ? '' : ',';
 			$strNombresCampos .= ($strNombresCampos == '' ? '' : ',') . '`' . $nombreCampo . '`';
 			if(is_null($valorCampo)){
@@ -32,30 +30,30 @@ Class prenda {
 			}
 		}
 		
-		$strSql = "INSERT INTO `color`($strNombresCampos) VALUES($strValoresCampos)";
+		$strSql = "INSERT INTO `tipoVenta`($strNombresCampos) VALUES($strValoresCampos)";
 		$arrResultado = null;
 		$objManejoMySQL->consultar($strSql, $arrResultado);
 		return $arrResultado;
 	}
 	
-	public function eliminarColor($objColor){
+	public function eliminarTipoVenta($objTipoVenta){
 		require_once (__DIR__.'\..\..\base\manejoMySQL.php');
 		
 		$objManejoMySQL = new manejoMySQL();
-		$lngIdColor = $objColor['idColor'];
-		$strSql = "DELETE FROM `color` WHERE `idColor`=$lngIdColor";
+		$lngIdTipoVenta = $objTipoVenta['idTipoVenta'];
+		$strSql = "DELETE FROM `tipoVenta` WHERE `idTipoVenta`=$lngIdTipoVenta";
 		$arrResultado = null;
 		$objManejoMySQL->consultar($strSql, $arrResultado);
 		return $arrResultado;
 	}
 	
-	public function modificarColor($arrColor){
+	public function modificarTipoVenta($arrTipoVenta){
 		require_once (__DIR__.'\..\..\base\manejoMySQL.php');
 		$strValoresCampos = "";
 		$strNombresCampos = "";
 		$strUpdate = "";
-		foreach ($arrColor as $nombreCampo=>$valorCampo){
-			if($nombreCampo != 'idColor'){
+		foreach ($arrTipoVenta as $nombreCampo=>$valorCampo){
+			if($nombreCampo != 'idTipoVenta'){
 				$strUpdate .= $strUpdate == '' ? '' : ',';
 				if(is_null($valorCampo)){
 					$strUpdate .= "$nombreCampo='null'";
@@ -67,15 +65,16 @@ Class prenda {
 					}
 				}
 			}else{
-				$lngIdColor = $valorCampo;
+				$lngIdTipoVenta = $valorCampo;
 			}
 		}
 		
 		$objManejoMySQL = new manejoMySQL();
-		$strSql = "UPDATE `color` SET $strUpdate
-					WHERE `idColor`=$lngIdColor";
+		$strSql = "UPDATE `tipoVenta` SET $strUpdate
+					WHERE `idTipoVenta` = $lngIdTipoVenta";
 		$arrResultado = null;
 		$objManejoMySQL->consultar($strSql, $arrResultado);
 		return $arrResultado;
 	}
 }
+?>

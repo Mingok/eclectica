@@ -5,12 +5,12 @@
 <table class="tablaCaracteristicas">
 	<tr>
 		<td style="width: 32%;">
-			<?php include_once 'views/color/abmColor.php'; ?>
+			<?php include_once 'views/tela/abmTela.php'; ?>
 		</td>
 		<td style="width: 1%;">
 		</td>
 		<td style="width: 32%;">
-			<?php include_once 'views/tela/abmTela.php'; ?>
+			<?php include_once 'views/color/abmColor.php'; ?>
 		</td>
 		<td style="width: 1%;">
 		</td>
@@ -30,7 +30,7 @@
 		<td style="width: 1%;">
 		</td>
 		<td style="width: 32%;">
-			<?php include_once 'views/listPrec/abmListPrec.php'; ?>
+			<?php include_once 'views/tipoVenta/abmTipoVenta.php'; ?>
 		</td>
 	</tr>
 </table>

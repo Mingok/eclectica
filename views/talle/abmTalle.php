@@ -6,7 +6,7 @@
 <table style="vertical-align: middle; width: 100%;" >
 	<tr style="vertical-align: middle;">
 		<td style="text-align: left; " >
-			<form action="actions/talle/guardarTalle.php">
+			<form action="actions/talle/guardarTalle.php" class="formTalle">
 				<table style="width: 100%;">
                 <tr>
                 <td>
@@ -20,7 +20,7 @@
                 <input type="button" value="Limpiar Campos" class="buttonLimpiar Talle no"/></td>
                 </tr>
                 <tr>
-                <td colspan="3"> Nombre: &nbsp;<input type="text" name="detalleTalle" placeholder="ingresar" class="textCaracteristicas"/>
+                <td colspan="3"> Nombre: &nbsp;<input type="text" name="detalleTalle" placeholder="ingresar" class="textCaracteristicas" required/>
 				<input type="hidden" value="" name="idTalle"/>
 			</td></tr>
                	
@@ -63,17 +63,22 @@
 	</tr>
 </table>
 <script type="text/javascript">
+
+//Boton Agregar o modificar
 $('.editButtonTalle').click(function(){
 	$('input[name=idTalle]').val($(this).data('idtalle'));
 	$('input[name=detalleTalle]').val($(this).data('detalletalle'));
 	$('.buttonCaracteristicas.Talle').val('Modificar');
 	$('.buttonLimpiar.Talle').removeClass('no');
 });
+
+//Boton limpiar campos
 $('.buttonLimpiar.Talle').click(function(){
 	$('.buttonCaracteristicas.Talle').val('Agregar');
 	$('input[name=idTalle]').val('');
 	$('input[name=detalleTalle]').val('');
 	$('.buttonLimpiar.Talle').addClass('no');
 });
-
+//Validacion de formulario
+$('.formTalle').validate();
 </script>

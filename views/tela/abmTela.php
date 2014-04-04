@@ -6,7 +6,7 @@
 <table style="vertical-align: middle; width: 100%;" >
 	<tr style="vertical-align: middle;">
 		<td style="text-align: left; " >
-			<form action="actions/tela/guardarTela.php">
+			<form action="actions/tela/guardarTela.php"  class="formTela">
 				<table style="width: 100%;">
                 <tr>
                 <td>
@@ -20,7 +20,7 @@
                 <input type="button" value="Limpiar Campos" class="buttonLimpiar Tela no"/></td>
                 </tr>
                 <tr>
-                <td colspan="3"> Nombre: &nbsp;<input type="text" name="detalleTela" placeholder="ingresar"  class="textCaracteristicas"/>
+                <td colspan="3"> Nombre: &nbsp;<input type="text" name="detalleTela" placeholder="ingresar"  class="textCaracteristicas" required/>
 				<input type="hidden" value="" name="idTela"/>
 			</td></tr>
                	
@@ -63,12 +63,16 @@
 	</tr>
 </table>
 <script type="text/javascript">
+
+//Boton Agregar o modificar
 $('.editButtonTela').click(function(){
 	$('input[name=idTela]').val($(this).data('idtela'));
 	$('input[name=detalleTela]').val($(this).data('detalletela'));
 	$('.buttonCaracteristicas.Tela').val('Modificar');
 	$('.buttonLimpiar.Tela').removeClass('no');
 });
+
+//Boton limpiar campos
 $('.buttonLimpiar.Tela').click(function(){
 	$('.buttonCaracteristicas.Tela').val('Agregar');
 	$('input[name=idTela]').val('');
@@ -76,4 +80,6 @@ $('.buttonLimpiar.Tela').click(function(){
 	$('.buttonLimpiar.Tela').addClass('no');
 });
 
+//Validacion de formulario
+$('.formTela').validate();
 </script>

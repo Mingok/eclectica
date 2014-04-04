@@ -6,7 +6,7 @@
 <table style="vertical-align: middle; width: 100%;" >
 	<tr style="vertical-align: middle;">
 		<td style="text-align: left; " >
-			<form action="actions/estampado/guardarEstampado.php">
+			<form action="actions/estampado/guardarEstampado.php" class="formEstampado">
 				<table style="width: 100%;">
                 <tr>
                 <td style="padding:0">
@@ -20,7 +20,7 @@
                 <input type="button" value="Limpiar Campos" class="buttonLimpiar Estampado no"/></td>
                 </tr>
                 <tr>
-                <td colspan="3"> Nombre: &nbsp;<input type="text" name="detalleEstampado" placeholder="ingresar" class="textCaracteristicas"/>
+                <td colspan="3"> Nombre: &nbsp;<input type="text" name="detalleEstampado" placeholder="ingresar" class="textCaracteristicas" required/>
 				<input type="hidden" value="" name="idEstampado"/>
 			</td></tr>
                	
@@ -60,15 +60,17 @@
 		</td>
 	</tr>
 </table>
-
-
 <script type="text/javascript">
+
+//Boton Agregar o modificar
 $('.editButtonEstampado').click(function(){
 	$('input[name=idEstampado]').val($(this).data('idestampado'));
 	$('input[name=detalleEstampado]').val($(this).data('detalleestampado'));
 	$('.buttonCaracteristicas.Estampado').val('Modificar');
 	$('.buttonLimpiar.Estampado').removeClass('no');
 });
+
+//Boton limpiar campos
 $('.buttonLimpiar.Estampado').click(function(){
 	$('.buttonCaracteristicas.Estampado').val('Agregar');
 	$('input[name=idEstampado]').val('');
@@ -76,4 +78,6 @@ $('.buttonLimpiar.Estampado').click(function(){
 	$('.buttonLimpiar.Estampado').addClass('no');
 });
 
+//Validacion de formulario
+$('.formEstampado').validate();
 </script>
