@@ -20,6 +20,10 @@ $arrEmpresa = array(
     
 );
 }else{
+copy($_FILES['logoEmpresa']['tmp_name'],$_FILES['logoEmpresa']['name']);
+                                $archivo_origen = $_FILES['logoEmpresa']['tmp_name']; 
+                                $archivo_final = $logoEmpressa.".jpg"; 
+                                move_uploaded_file($archivo_origen, $archivo_final);
 $logoEmpressa = $_REQUEST['logoEmpresa'];
   $arrEmpresa = array(
 	'nombreEmpresa' => $nombreEmpresa,

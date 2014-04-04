@@ -27,7 +27,13 @@
 				require_once 'classes/estampado/estampado.php';
 				$estampadoList = new estampado();
 				$estampados = $estampadoList->estampadosDisponibles();
-				?>				
+				?>	
+				
+<?php 
+				require_once 'classes/tipoVenta/tipoVenta.php';
+				$tipoVentaList = new tipoVenta();
+				$tipoVentas = $tipoVentaList->tipoVentasDisponibles();
+				?>								
 <script>
 	function mostrarOcultarTablas(id) {
 		mostrado = 0;
@@ -41,7 +47,9 @@
 <div id="ver" style="display: none; padding-top:10px; ">
   <table class="tablaPrendas">
     <tr>
-      <td><table width="100%" >
+      <td>
+	  <form action="actions/prenda/guardarPrenda.php" class="formPrenda">
+	  <table width="100%" >
           <tr>
             <td ><h1 style="text-align: left;"> Datos de la prenda </h1></td>
 			<td style="text-align: right;"> Codigo&nbsp;
@@ -125,32 +133,26 @@
             </td>
             
           </tr>
-        </table></td>
+        </table>
+		</form>
+		</td>
     </tr>
-    <tr>
+
+
+					 	
+
       <td colspan="2"><h1 style="text-align: left;"> Precios </h1>
         <table width="100%">
           <tr>
-            <td style="text-align: right;"> Prec 1:
-              <input type="text" class="textPrendas" name="pcod" value="00,00" size="10"/>
+            <?php	foreach ($tipoVentas as $tipoVenta) {?>
+
+			<td style="text-align: right;"><?php echo $tipoVenta["detalleTipoVenta"]?>
+              <input type="text" class="textPrendas" name="tipoVenta<?php echo $tipoVenta["idTipoVenta"]?>" value="00,00" size="10"/>
             </td>
-            <td style="text-align: right;"> Prec 2:
-              <input type="text" class="textPrendas" name="pcod"value="00,00" size="10"/>
-            </td>
-            <td style="text-align: right;"> Prec 3:
-              <input type="text" class="textPrendas" name="pcod" value="00,00" size="10"/>
-            </td>
-            <td style="text-align: right;"> Prec 4:
-              <input type="text" class="textPrendas" name="pcod" value="00,00" size="10"/>
-            </td>
-            <td style="text-align: right;"> Prec 5:
-              <input type="text" class="textPrendas" name="pcod" value="00,00" size="10"/>
-            </td>
-            <td style="text-align: right;"> Prec 6:
-              <input type="text" class="textPrendas" name="pcod" value="00,00" size="10"/>
-            </td>
+<?php                        } ?>
           </tr>
         </table></td>
     </tr>
+
   </table>
 </div>
