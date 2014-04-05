@@ -9,7 +9,7 @@
 	&nbsp;Empresa &nbsp;
 </h1>
 <hr />
-<form action="actions/empresa/moificarEmpresa.php">
+<form action="actions/empresa/moificarEmpresa.php" >
 <table class="tablaProv">
 	 <?php 
 					foreach ($empresas as $empresa) {
@@ -23,7 +23,7 @@
 		</td>
 		<td colspan="2">
 			Logo:&nbsp;
-			<input type="file" id="logo" name="logoEmpresa" title="Seleccionar archivo desde su PC" accept="image/x-png, image/gif, image/jpeg" />
+			<input type="file" id="logoEmpresa" name="logoEmpresa" title="Seleccionar archivo desde su PC" accept="image/x-png, image/gif, image/jpeg" />
 		</td>
 		</td>
 	</tr>
