@@ -4,15 +4,35 @@ Class prenda {
 		require_once (__DIR__.'\..\..\base\manejoMySQL.php');
 		
 		$objManejoMySQL= new manejoMySQL();
-		$strSql="	SELECT * FROM `prenda`
-					ORDER BY `detallePrenda` ASC";
+		$strSql="SELECT prenda.*, proveedor.nombreProveedor, color.detalleColor , estampado.detalleEstampado, tela.detalleTela,talle.detalleTalle, estacion.detalleEstacion, marca.detalleMarca
+FROM prenda AS prenda 
+LEFT JOIN proveedor AS proveedor ON prenda.idProveedorPrenda = proveedor.idProveedor
+LEFT JOIN color AS color ON prenda.idColorPrenda = color.idColor
+LEFT JOIN estampado AS estampado ON prenda.idEstampadoPrenda = estampado.idEstampado
+LEFT JOIN tela AS tela ON prenda.idTelaPrenda = tela.idTela
+LEFT JOIN talle AS talle ON prenda.idTallePrenda = talle.idTalle
+LEFT JOIN estacion AS estacion ON prenda.idTallePrenda = estacion.idEstacion
+LEFT JOIN marca AS marca ON prenda.idMarcaPrenda = marca.idMarca;";
 		$arrResultado=null;
 		$objManejoMySQL->consultar($strSql, $arrResultado);
-		return $arrResultado;
+        $prendaList = new prenda();
+				$prendas = $prendaList->ordenarTablaPrenda($arrResultado);
+       	return $prendas;
 	}
-	/*SELECT p.*, est.detalleEstacion FROM `prenda` p
-                    LEFT JOIN `estacion` est ON p.idEstacion = est.idEstacion
-					ORDER BY `detallePrenda` ASC";*/
+    
+    	public function ordenarTablaPrenda($prendaList){
+		require_once (__DIR__.'\..\..\base\manejoMySQL.php');
+		foreach ($prendaList as $key => $row) {
+             $aux[$key] = $row['cantidadPrenda'];
+            }
+        array_multisort($aux, SORT_ASC ,$prendaList);
+        	return $prendaList;
+		}
+		
+	/*SELECT p.detallePrenda, p.cantidadPrenda, t.detalleTalle, c.detalleColor
+FROM prenda AS p
+LEFT JOIN talle AS t ON p.idTallePrenda = t.idTalle
+LEFT JOIN color AS c ON p.idColorPrenda = c.idColor;*/
 	public function agregarNuevoPrenda($arrPrenda){
 		require_once (__DIR__.'\..\..\base\manejoMySQL.php');
 		$strValoresCampos = "";
