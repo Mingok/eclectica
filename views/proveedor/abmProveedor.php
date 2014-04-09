@@ -1,5 +1,8 @@
-<?php require_once 'classes/proveedor/proveedor.php'; $proveedorList=new proveedor(); $proveedores=$proveedorList->
-	proveedoresDisponibles(); ?>
+<?php 
+require_once 'classes/proveedor/proveedor.php'; 
+$proveedorList = new proveedor(); 
+$proveedores = $proveedorList->proveedoresDisponibles(); 
+?>
 	<h1 style="text-align: left;">
 		&nbsp;Proveedores &nbsp;
 	</h1>
@@ -71,7 +74,7 @@
 				<table style="width:635px;">
 					<tr style="vertical-align: middle;">
 						<td style="text-align: center;">
-							<form action="actions/proveedor/guardarProveedor.php">
+							<form action="actions/proveedor/guardarProveedor.php" class="formProveedor">
 								<table style="width:630px; ">
 									<tr style="vertical-align: middle;">
 										<td style="text-align: center;" colspan="4 ">
@@ -82,44 +85,44 @@
 									</tr>
 									<tr>
 										<td style=" text-align:Right; ">
-											Razón Soc.:&nbsp;
-											<input type="text " style="width: 100px; " maxlength="50px " name="nombreProveedor" placeholder="ingrese " />
+											Razï¿½n Soc.:&nbsp;
+											<input type="text " style="width: 100px; " maxlength="50px " name="nombreProveedor" placeholder="ingrese " required />
 										</td>
 										<td style=" text-align:Right; ">
 											CUIT:&nbsp;
-											<input type="text " style="width: 120px; " maxlength="50px " name="cuitProveedor" placeholder="ingrese " />
+											<input type="text " style="width: 120px; " maxlength="50px " name="cuitProveedor" placeholder="ingrese "  required />
 										</td>
 										<td style=" text-align:Right; ">
 											Cond. IVA:
-											<input type="text " style="width: 100px; " maxlength="50px " name="condIvaProveedor" placeholder="ingrese " />
+											<input type="text " style="width: 100px; " maxlength="50px " name="condIvaProveedor" placeholder="ingrese "  required />
 										</td>
 									</tr>
 									<tr>
 										<td style=" text-align:Right; ">
 											Domicilio:&nbsp;
-											<input type="text " style="width: 150px; " name="direccionProveedor" placeholder="ingrese " />
+											<input type="text " style="width: 150px; " name="direccionProveedor" placeholder="ingrese "  required />
 										</td>
 										<td style=" text-align:Right; ">
 											Localidad:&nbsp;&nbsp;
-											<input type="text " style="width: 100px; " maxlength="50px " name="localidadProveedor" placeholder="ingrese " />
+											<input type="text " style="width: 100px; " maxlength="50px " name="localidadProveedor" placeholder="ingrese "  required />
 										</td>
 										<td style=" text-align:Right; ">
 											Banco:&nbsp;
-											<input type="text " style="width: 100px; " name="bancoProveedor" placeholder="ingrese "/>
+											<input type="text " style="width: 100px; " name="bancoProveedor" placeholder="ingrese "  required  required/>
 										</td>
 									</tr>
 									<tr>
 										<td style=" text-align:Right; ">
 											Contacto:&nbsp;
-											<input type="text " style="width: 100px; " maxlength="50px " name="contactoProveedor" placeholder="ingrese " />
+											<input type="text " style="width: 100px; " maxlength="50px " name="contactoProveedor" placeholder="ingrese "  required />
 										</td>
 										<td style=" text-align:Right; ">
 											Telefono:&nbsp;
-											<input type="text " style="width: 120px; " maxlength="50px " name="telefonoProveedor" placeholder="ingrese " />
+											<input type="text " style="width: 120px; " maxlength="50px " name="telefonoProveedor" placeholder="ingrese "  required />
 										</td>
 										<td style=" text-align:Right; ">
 											CBU&nbsp;
-											<input type="text " style="width: 100px; " maxlength="50px " name="cbuProveedor" placeholder="ingrese " />
+											<input type="text " style="width: 100px; " maxlength="50px " name="cbuProveedor" placeholder="ingrese "  required />
 										</td>
 									</tr>
 									<tr>
@@ -135,3 +138,7 @@
 			</td>
 		</tr>
 	</table>
+<script type="text/javascript">
+
+$('.formProveedor').validate();
+</script>
