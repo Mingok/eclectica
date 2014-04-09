@@ -30,7 +30,20 @@
 		<td style="width: 1%;">
 		</td>
 		<td style="width: 32%;">
-			<?php include_once 'views/tipoVenta/abmTipoVenta.php'; ?>
-		</td>
+			<?php include_once 'views/estacion/abmEstacion.php'; ?></td>
 	</tr>
+    <tr>
+        <td colspan="5"  >
+            <table style="width: 100%;" >
+                <tr>
+                    <td style="width: 50%;">
+                        <?php include_once 'views/tipoVenta/abmTipoVenta.php'; ?>
+                    </td>
+                    <td style="width: 50%;">
+                        <img src="./imagenes/logos/logo.png" style="border: 5px solid Darkred;"/>
+                    </td>	
+                </tr>
+            </table>
+        <td>
+    </tr>
 </table>

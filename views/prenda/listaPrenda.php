@@ -3,7 +3,11 @@
 				$prendaList = new prenda();
 				$prendas = $prendaList->prendasDisponibles();
 				?>
+<h1 style="text-align: left;">
+	Prendas
+</h1>
 <div class="prendas">
+
 	<table class="tablaPrendas">
 		<tr>
 			<td style="text-align: left; height: 40px;">
@@ -15,7 +19,7 @@
 				<input type="text" name="pbusc" value="palabra Clave" size="90"class="textPrendas"/>
 			</td>
 			<td style="text-align: left; height: 40px;">
-				<input type="button" name="pNuevo" value="Nuevo" class="buttonPrendas" onclick="javascript:mostrarOcultarTablas('ver')"/>
+				<input type="button" value="Nuevo" class="buttonPrendasNueva" onclick="javascript:document.getElementById('ver').style.display = 'block'"/>
 			</td>
 		</tr>
 		<tr>
@@ -70,11 +74,14 @@
 							</td>
 						</tr>
 						<?php 
-					foreach ($prendas as $prenda) {
+				if (isset($prendas)){	foreach ($prendas as $prenda) {
 					?>	
 						<tr style='text-align: center'>
 							<td>
-								<a title='Modificar datos'><img src='./imagenes/iconos/edit.png' width='14' height='14' /></a>
+								<a title='Modificar datos' class="editButtonPrenda" name="editButtonPrenda" data-cantidadprenda="<?php echo $prenda['cantidadPrenda']?>" data-idprenda="<?php echo $prenda['idPrenda']?>" data-idestampadoprenda="<?php echo $prenda['idEstampadoPrenda']?>" data-idtelaprenda="<?php echo $prenda['idTelaPrenda']?>" data-idtalleprenda="<?php echo $prenda['idTallePrenda']?>" data-codigoprenda="<?php echo $prenda['codigoPrenda']?>"  data-detalleprenda="<?php echo $prenda['detallePrenda']?>" data-idmarcaprenda="<?php echo $prenda['idMarcaPrenda']?>" data-idproveedorprenda="<?php echo $prenda['idProveedorPrenda']?>" data-idestacionprenda="<?php echo $prenda['idEstacionPrenda']?>" data-idcolorprenda="<?php echo $prenda['idColorPrenda']?>" onclick="javascript:document.getElementById('ver').style.display = 'block'"/>
+                                
+								<img src='./imagenes/iconos/edit.png' width='14' height='14' />
+							</a>
 							</td>
                             <td>
 								<?php echo $prenda['codigoPrenda']?>
@@ -115,7 +122,7 @@
 								<a title='Borrar'><img src='./imagenes/iconos/eliminar.png' width='14' height='14' /></a>
 							</td>
 						</tr>
-											<?php }?>
+											<?php }}?>
 					</table>
 				</center>
 			</td>

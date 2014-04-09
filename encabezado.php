@@ -1,7 +1,7 @@
 <table style="width:1150px;text-align: left;">
 	<tr >
 		<td  style="width: 230px;"  >
-		    <img src="./imagenes/logos/logoEcle.png" height="78"/>
+		    <img src="./imagenes/logos/logo.png" height="78"/>
 		</td>
 		<td style="vertical-align: top; padding-top: 5px; text-align: left;">
 			

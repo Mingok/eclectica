@@ -3,6 +3,11 @@
 				$telaList = new tela();
 				$telas = $telaList->telasDisponibles();
 				?>
+                <?php 
+				require_once 'classes/estacion/estacion.php';
+				$estacionList = new estacion();
+				$estaciones = $estacionList->estacionesDisponibles();
+				?>
 <?php 
 				require_once 'classes/color/color.php';
 				$colorList = new color();
@@ -35,13 +40,13 @@
 				$tipoVentas = $tipoVentaList->tipoVentasDisponibles();
 				?>								
 <script>
-	function mostrarOcultarTablas(id) {
+/*	function mostrarOcultarTablas(id) {
 		mostrado = 0;
 		elem = document.getElementById(id);
 		if (elem.style.display == 'block') mostrado = 1;
 		elem.style.display = 'none';
 		if (mostrado != 1) elem.style.display = 'block';
-	}
+	}*/
 </script>
 <div id="ver" style="display: none; padding-top:10px; ">
 	<table class="tablaPrendas">
@@ -60,15 +65,16 @@
 								<input type="text" class="textPrendas" name="codigoPrenda" placeholder="#369857"/>
 								<input type="hidden" value="" name="idPrenda"/>
                                 	<input type="hidden"  name="idEmpresaPrenda" value="1"/>
+                                
 							</td>
 							<td style="text-align: right;">
 								Nombre:&nbsp;
 								<input type="text" class="textPrendas" name="detallePrenda" placeholder="ingrese" style="width:200px"/>
 							</td>
 							<td style="text-align: right;">
-								<input type="submit" value="Agregar" class="buttonPrendas "/>
+								<input type="submit" value="Agregar" class="buttonPrendas " onclick="javascript:document.getElementById('ver').style.display = 'none'"/>
 								&nbsp;
-								<input type="button" value="Limpiar Campos" class="buttonLimpiar no"/>
+								<input type="button" value="Limpiar Campos" class="buttonLimpiar no" onclick="javascript:document.getElementById('ver').style.display = 'none'"/>
 							</td>
 						</tr>
 						<tr>
@@ -96,18 +102,7 @@
 									<option value=0>
 										- Elija Una -
 									</option>
-									<option value=1>
-										Verano
-									</option>
-									<option value=2>
-										Otonio
-									</option>
-									<option value=3>
-										Invierno
-									</option>
-									<option value=4>
-										Primavera
-									</option>
+									<?php foreach ($estaciones as $estacion) { if ( isset($estacion)) { echo "<option value=" . $estacion[ "idEstacion"]. ">" . $estacion[ "detalleEstacion"] . "</option>"; }} ?>
 								</select>
 							</td>
 							<td style="text-align: right;">
@@ -175,4 +170,68 @@
 		</tr>
 		</form>
 	</table>
+
 </div>
+<hr />
+<script type="text/javascript">
+
+//Boton Agregar o modificar
+$('.editButtonPrenda').click(function(){
+    
+	$('input[name=idPrenda]').val($(this).data('idprenda'));
+    $('input[name=cantidadPrenda]').val($(this).data('cantidadprenda'));
+    $('input[name=codigoPrenda]').val($(this).data('codigoprenda'));
+	$('input[name=detallePrenda]').val($(this).data('detalleprenda'));
+    $('select[name=idMarcaPrenda]').val($(this).data('idmarcaprenda'));
+    $('select[name=idProveedorPrenda]').val($(this).data('idproveedorprenda'));
+    $('select[name=idEstacionPrenda]').val($(this).data('idestacionprenda'));
+    $('select[name=idColorPrenda]').val($(this).data('idcolorprenda'));
+    $('select[name=idTelaPrenda]').val($(this).data('idtelaprenda'));
+    $('select[name=idTallePrenda]').val($(this).data('idtalleprenda'));
+   	$('select[name=idEstampadoPrenda]').val($(this).data('idestampadoprenda'));
+	$('.buttonPrendas').val('Modificar');
+	$('.buttonLimpiar').removeClass('no');
+
+
+});
+
+//Boton limpiar campos
+$('.buttonLimpiar').click(function(){
+	$('.buttonPrendas').val('Agregar');
+    $('input[name=idPrenda]').val('');
+    $('input[name=cantidadPrenda]').val('');
+    $('input[name=codigoPrenda]').val('');
+	$('input[name=detallePrenda]').val('');
+    $('select[name=idMarcaPrenda]').val('0');
+    $('select[name=idProveedorPrenda]').val('0');
+    $('select[name=idEstacionPrenda]').val('');
+    $('select[name=idColorPrenda]').val('0');
+    $('select[name=idTelaPrenda]').val('0');
+    $('select[name=idTallePrenda]').val('0');
+   	$('select[name=idEstampadoPrenda]').val('0');
+	$('.buttonLimpiar').addClass('no');
+    
+    $("#ver").hide();
+    	$('input[name=idPrenda]').val(null);
+});
+
+
+$('.buttonPrendasNueva').click(function(){
+$('.buttonPrendas').val('Agregar');
+    $('input[name=idPrenda]').val('');
+    $('input[name=cantidadPrenda]').val('');
+    $('input[name=codigoPrenda]').val('');
+	$('input[name=detallePrenda]').val('');
+    $('select[name=idMarcaPrenda]').val('0');
+    $('select[name=idProveedorPrenda]').val('0');
+    $('select[name=idEstacionPrenda]').val('');
+    $('select[name=idColorPrenda]').val('0');
+    $('select[name=idTelaPrenda]').val('0');
+    $('select[name=idTallePrenda]').val('0');
+   	$('select[name=idEstampadoPrenda]').val('0');
+    $('select[name=idEstacionPrenda]').val('0');
+	$('.buttonLimpiar').addClass('no');
+    
+    	$('input[name=idPrenda]').val(null);
+});
+</script>

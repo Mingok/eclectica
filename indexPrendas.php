@@ -22,9 +22,9 @@
 			</tr>
 			<tr>
 				<td>
-					<hr />
+					
 					<?php include_once './form01Prenda.php'?>
-						<hr />
+					
 				</td>
 			</tr>
 		</table>

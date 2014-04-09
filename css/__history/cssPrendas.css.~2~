@@ -28,22 +28,7 @@ Table.formuPrendas tr:first-child {
 	border-bottom:1px #000 solid;
 	text-align:left;
 }
-.buttonPrendasNueva{
-height: 30px;
-font-size: 15px; font-weight: bold; width: 150px; color:black;
-padding-left: 20px; cursor:hand; cursor:pointer;
-margin-left:5px; margin-right:5px; outline-width:0px;
-background-position:5px 5px; 
-text-decoration: none; 
-background-repeat: no-repeat; 
-border-radius: 20px; 
-border:1px solid #555555;
-background-image: url(../imagenes/iconos/add.png	);	
-}
-.buttonPrendasNueva:hover{
 
-border:none;
-}
 .buttonPrendas{
 height: 30px;
 font-size: 15px; font-weight: bold; width: 150px; color:black;

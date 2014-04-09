@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 04-04-2014 a las 11:38:56
+-- Tiempo de generación: 08-04-2014 a las 23:35:09
 -- Versión del servidor: 5.6.12-log
--- Versión de PHP: 5.4.16
+-- Versión de PHP: 5.4.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -32,14 +32,7 @@ CREATE TABLE IF NOT EXISTS `color` (
   `idColor` int(11) NOT NULL AUTO_INCREMENT,
   `detalleColor` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`idColor`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
-
---
--- Volcado de datos para la tabla `color`
---
-
-INSERT INTO `color` (`idColor`, `detalleColor`) VALUES
-(1, 'Negro');
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -56,14 +49,7 @@ CREATE TABLE IF NOT EXISTS `empresa` (
   `emailEmpresa` varchar(100) NOT NULL,
   `logoEmpresa` varchar(200) NOT NULL,
   PRIMARY KEY (`idEmpresa`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
-
---
--- Volcado de datos para la tabla `empresa`
---
-
-INSERT INTO `empresa` (`idEmpresa`, `nombreEmpresa`, `dirEmpresa`, `cuitEmpresa`, `telEmpresa`, `emailEmpresa`, `logoEmpresa`) VALUES
-(1, 'Eclectica Esperanza1', '', '30699872160', '03496 43-0854', 'eclectica.esperanza@facebook.com', 'logoEcle - copia.png');
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -75,14 +61,7 @@ CREATE TABLE IF NOT EXISTS `estacion` (
   `idEstacion` int(11) NOT NULL AUTO_INCREMENT,
   `detalleEstacion` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`idEstacion`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
-
---
--- Volcado de datos para la tabla `estacion`
---
-
-INSERT INTO `estacion` (`idEstacion`, `detalleEstacion`) VALUES
-(1, 'Otoño 2014');
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -94,16 +73,7 @@ CREATE TABLE IF NOT EXISTS `estampado` (
   `idEstampado` int(11) NOT NULL AUTO_INCREMENT,
   `detalleEstampado` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`idEstampado`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
-
---
--- Volcado de datos para la tabla `estampado`
---
-
-INSERT INTO `estampado` (`idEstampado`, `detalleEstampado`) VALUES
-(1, 'Flores'),
-(2, 'RAYADO'),
-(3, 'LUNARES');
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -115,15 +85,7 @@ CREATE TABLE IF NOT EXISTS `marca` (
   `idMarca` int(11) NOT NULL AUTO_INCREMENT,
   `detalleMarca` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`idMarca`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
-
---
--- Volcado de datos para la tabla `marca`
---
-
-INSERT INTO `marca` (`idMarca`, `detalleMarca`) VALUES
-(1, 'Mi MARca'),
-(2, 'Mi otra MArca');
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -139,7 +101,7 @@ CREATE TABLE IF NOT EXISTS `persona` (
   `telefono` varchar(45) DEFAULT NULL,
   `codigoVendedor` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`idPersona`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -151,6 +113,7 @@ CREATE TABLE IF NOT EXISTS `prenda` (
   `idPrenda` int(11) NOT NULL AUTO_INCREMENT,
   `codigoPrenda` varchar(9) NOT NULL,
   `detallePrenda` varchar(100) NOT NULL,
+  `cantidadPrenda` int(10) NOT NULL,
   `idColorPrenda` int(11) NOT NULL,
   `idEstampadoPrenda` int(11) NOT NULL,
   `idTelaPrenda` int(11) NOT NULL,
@@ -159,7 +122,6 @@ CREATE TABLE IF NOT EXISTS `prenda` (
   `idEmpresaPrenda` int(11) NOT NULL,
   `idProveedorPrenda` int(11) NOT NULL,
   `idMarcaPrenda` int(11) NOT NULL,
-  `cantidadPrenda` int(10) NOT NULL,
   PRIMARY KEY (`idPrenda`),
   KEY `fk_Prenda_Color_idx` (`idColorPrenda`),
   KEY `fk_Prenda_Estampado1_idx` (`idEstampadoPrenda`),
@@ -169,14 +131,7 @@ CREATE TABLE IF NOT EXISTS `prenda` (
   KEY `fk_Prenda_Empresa1_idx` (`idEmpresaPrenda`),
   KEY `fk_Prenda_Proveedor1_idx` (`idProveedorPrenda`),
   KEY `fk_Prenda_Marca1_idx` (`idMarcaPrenda`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
-
---
--- Volcado de datos para la tabla `prenda`
---
-
-INSERT INTO `prenda` (`idPrenda`, `codigoPrenda`, `detallePrenda`, `idColorPrenda`, `idEstampadoPrenda`, `idTelaPrenda`, `idTallePrenda`, `idEstacionPrenda`, `idEmpresaPrenda`, `idProveedorPrenda`, `idMarcaPrenda`, `cantidadPrenda`) VALUES
-(11, '', 'Prenda', 1, 2, 8, 1, 1, 1, 2, 2, 10);
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -196,15 +151,7 @@ CREATE TABLE IF NOT EXISTS `proveedor` (
   `bancoProveedor` varchar(100) NOT NULL,
   `cbuProveedor` varchar(100) NOT NULL,
   PRIMARY KEY (`idProveedor`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
-
---
--- Volcado de datos para la tabla `proveedor`
---
-
-INSERT INTO `proveedor` (`idProveedor`, `nombreProveedor`, `cuitProveedor`, `condIvaProveedor`, `direccionProveedor`, `localidadProveedor`, `telefonoProveedor`, `contactoProveedor`, `bancoProveedor`, `cbuProveedor`) VALUES
-(1, 'Proveedor 1 ', '30699872160', 'Inscripto', 'una calle me separa 1234', 'Bs As', '0342 - 154426340', 'Chin Chu lin Su', 'Macro', '258965832215993'),
-(2, 'Proveedor 1 ', '2147483647', 'Inscripto', 'una calle me separa 1234', 'Bs As', '0342 - 154426340', 'Chin Chu lin Su', 'Macro', '258965832215993');
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -216,14 +163,7 @@ CREATE TABLE IF NOT EXISTS `talle` (
   `idTalle` int(11) NOT NULL AUTO_INCREMENT,
   `detalleTalle` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`idTalle`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
-
---
--- Volcado de datos para la tabla `talle`
---
-
-INSERT INTO `talle` (`idTalle`, `detalleTalle`) VALUES
-(1, 'xxxL');
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -235,21 +175,7 @@ CREATE TABLE IF NOT EXISTS `tela` (
   `idTela` int(11) NOT NULL AUTO_INCREMENT,
   `detalleTela` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`idTela`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
-
---
--- Volcado de datos para la tabla `tela`
---
-
-INSERT INTO `tela` (`idTela`, `detalleTela`) VALUES
-(1, 'JEANS'),
-(2, 'GABARDINA'),
-(3, 'LANA FRIA'),
-(4, 'SEDA FRIA'),
-(5, 'CLOQUE'),
-(6, 'GASA'),
-(7, 'RASO'),
-(8, 'LANA  ');
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -262,7 +188,7 @@ CREATE TABLE IF NOT EXISTS `tipoventa` (
   `detalleTipoVenta` varchar(45) DEFAULT NULL,
   `grupoTipoVenta` int(11) DEFAULT NULL,
   PRIMARY KEY (`idTipoVenta`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -279,7 +205,7 @@ CREATE TABLE IF NOT EXISTS `tipoventa_prenda` (
   PRIMARY KEY (`idTipoVenta_Prenda`,`idTipoVenta`,`idPrenda`),
   KEY `fk_TipoVent_TipoVenta1_idx` (`idTipoVenta`),
   KEY `fk_TipoVent_Prenda1_idx` (`idPrenda`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -300,7 +226,7 @@ CREATE TABLE IF NOT EXISTS `venta` (
   KEY `fk_Venta_Persona2_idx` (`vendedor`),
   KEY `fk_Venta_Prenda1_idx` (`idPrenda`),
   KEY `fk_Venta_TipoVenta_Prenda1_idx` (`idTipoVenta`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Restricciones para tablas volcadas

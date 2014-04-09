@@ -14,10 +14,12 @@ LEFT JOIN talle AS talle ON prenda.idTallePrenda = talle.idTalle
 LEFT JOIN estacion AS estacion ON prenda.idTallePrenda = estacion.idEstacion
 LEFT JOIN marca AS marca ON prenda.idMarcaPrenda = marca.idMarca;";
 		$arrResultado=null;
-		$objManejoMySQL->consultar($strSql, $arrResultado);
+		$objManejoMySQL->consultar($strSql, $arrResultado); var_dump($arrResultado);
+        if ($arrResultado){
         $prendaList = new prenda();
 				$prendas = $prendaList->ordenarTablaPrenda($arrResultado);
        	return $prendas;
+        }
 	}
     
     	public function ordenarTablaPrenda($prendaList){

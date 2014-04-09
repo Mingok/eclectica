@@ -9,28 +9,27 @@
 			<form action="actions/tipoVenta/guardarTipoVenta.php" class="formTipoVenta">
 				<table style="width: 100%;">
                 <tr>
-                <td colspan="2">
+                <td style="width:45%">
                 <h2>Pregios y Grupos</h2>
 				
                 </td>
-                
+                <td style="text-align: right;width:55%">    
+			<input type="submit" value="Modificar" class="buttonCaracteristicas TipoVenta no"/>
+           <input type="button" value="Limpiar Campos" class="buttonLimpiar TipoVenta no"/></td>
+		</td>  
                 </tr>
                 <tr> 
                 	<td style="text-align: left; ">
 			Nombre: &nbsp;
 			<input type="text" class="textCaracteristicas" name="detalleTipoVenta" placeholder="ingrese" style="width: 130px;" required/>
             </td>
-            <td>Grupo: &nbsp;
+            <td align="Left">Grupo: &nbsp;
             <input type="text" class="textCaracteristicas" name="grupoTipoVenta" placeholder="1-2-3" style="width: 30px;" required />
             <input type="hidden" value="" name="idTipoVenta"/>
 		</td>
         </tr>
         <tr>
-		<td style="text-align: right; ">
-			<input type="submit" value="Modificar" class="buttonCaracteristicas TipoVenta no"/>
-            </td>
-            <td><input type="button" value="Limpiar Campos" class="buttonLimpiar TipoVenta no"/></td>
-		</td>       
+		     
         </tr>
         
                	
