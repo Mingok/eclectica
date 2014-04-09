@@ -1,8 +1,8 @@
-	<?php 
-				require_once 'classes/estampado/estampado.php';
-				$estampadoList = new estampado();
-				$estampados = $estampadoList->estampadosDisponibles();
-				?>
+<?php 
+require_once 'classes/estampado/estampado.php';
+$estampadoList = new estampado();
+$estampados = $estampadoList->estampadosDisponibles();
+?>
 <table style="vertical-align: middle; width: 100%;" >
 	<tr style="vertical-align: middle;">
 		<td style="text-align: left; " >
