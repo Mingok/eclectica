@@ -80,8 +80,8 @@ LEFT JOIN color AS c ON p.idColorPrenda = c.idColor;*/
         $cont=0;
         foreach ($arrPrecioPrenda as $nombreCampo=>$valorCampo){
         $cont++;
-		$strSql = "INSERT INTO `tipoventa_prenda`(`idTipoVenta_Prenda`, `detalleTipoVenta_Prenda`, `valor`, `idTipoVenta`, `idPrenda`) 
-        VALUES ('','".$nombreCampo."','".$valorCampo."','".$cont."','".$varPrenda['idPrenda']."')";
+		$strSql = "INSERT INTO `tipoventa_prenda`(`detalleTipoVenta_Prenda`, `valor`, `idTipoVenta`, `idPrenda`) 
+        VALUES (".$nombreCampo."','".$valorCampo."','".$cont."','".$varPrenda['idPrenda']."')";
   
         $arrResultado = null;
 		$objManejoMySQL->consultar($strSql, $arrResultado);
