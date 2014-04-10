@@ -5,21 +5,23 @@ Class prenda {
 		
 		$objManejoMySQL= new manejoMySQL();
 		$strSql="SELECT prenda.*, proveedor.nombreProveedor, color.detalleColor , estampado.detalleEstampado, tela.detalleTela,talle.detalleTalle, estacion.detalleEstacion, marca.detalleMarca
-FROM prenda AS prenda 
-LEFT JOIN proveedor AS proveedor ON prenda.idProveedorPrenda = proveedor.idProveedor
-LEFT JOIN color AS color ON prenda.idColorPrenda = color.idColor
-LEFT JOIN estampado AS estampado ON prenda.idEstampadoPrenda = estampado.idEstampado
-LEFT JOIN tela AS tela ON prenda.idTelaPrenda = tela.idTela
-LEFT JOIN talle AS talle ON prenda.idTallePrenda = talle.idTalle
-LEFT JOIN estacion AS estacion ON prenda.idTallePrenda = estacion.idEstacion
-LEFT JOIN marca AS marca ON prenda.idMarcaPrenda = marca.idMarca;";
+			FROM prenda AS prenda 
+			LEFT JOIN proveedor AS proveedor ON prenda.idProveedorPrenda = proveedor.idProveedor
+			LEFT JOIN color AS color ON prenda.idColorPrenda = color.idColor
+			LEFT JOIN estampado AS estampado ON prenda.idEstampadoPrenda = estampado.idEstampado
+			LEFT JOIN tela AS tela ON prenda.idTelaPrenda = tela.idTela
+			LEFT JOIN talle AS talle ON prenda.idTallePrenda = talle.idTalle
+			LEFT JOIN estacion AS estacion ON prenda.idTallePrenda = estacion.idEstacion
+			LEFT JOIN marca AS marca ON prenda.idMarcaPrenda = marca.idMarca
+			ORDER BY prenda.`cantidadPrenda` DESC";
 		$arrResultado=null;
-		$objManejoMySQL->consultar($strSql, $arrResultado); var_dump($arrResultado);
-        if ($arrResultado){
-        $prendaList = new prenda();
-				$prendas = $prendaList->ordenarTablaPrenda($arrResultado);
-       	return $prendas;
-        }
+		$objManejoMySQL->consultar($strSql, $arrResultado);
+		return $arrResultado;
+//        if ($arrResultado){
+//        	$prendaList = new prenda();
+//			$prendas = $prendaList->ordenarTablaPrenda($arrResultado);
+//       		return $prendas;
+//        }
 	}
     
     	public function ordenarTablaPrenda($prendaList){
@@ -73,15 +75,15 @@ LEFT JOIN color AS c ON p.idColorPrenda = c.idColor;*/
 		$objManejoMySQL->consultar($strSql, $prendaId);
         
         
-         foreach ($prendaId as $nombreCampo1=>$valorCampo1){
-            $varPrenda=$valorCampo1;
-            }
+        foreach ($prendaId as $nombreCampo1=>$valorCampo1){
+            $varPrenda = $valorCampo1;
+        }
       
         $cont=0;
         foreach ($arrPrecioPrenda as $nombreCampo=>$valorCampo){
         $cont++;
 		$strSql = "INSERT INTO `tipoventa_prenda`(`detalleTipoVenta_Prenda`, `valor`, `idTipoVenta`, `idPrenda`) 
-        VALUES (".$nombreCampo."','".$valorCampo."','".$cont."','".$varPrenda['idPrenda']."')";
+        			VALUES ('$nombreCampo','$valorCampo','$cont','{$varPrenda['idPrenda']}')";
   
         $arrResultado = null;
 		$objManejoMySQL->consultar($strSql, $arrResultado);
