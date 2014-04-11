@@ -85,7 +85,7 @@ $proveedores = $proveedorList->proveedoresDisponibles();
 									</tr>
 									<tr>
 										<td style=" text-align:Right; ">
-											Raz�n Soc.:&nbsp;
+											Raz&oacute;n Soc.:&nbsp;
 											<input type="text " style="width: 100px; " maxlength="50px " name="nombreProveedor" placeholder="ingrese " required />
 										</td>
 										<td style=" text-align:Right; ">

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 08-04-2014 a las 23:35:09
+-- Tiempo de generación: 10-04-2014 a las 23:18:49
 -- Versión del servidor: 5.6.12-log
 -- Versión de PHP: 5.4.12
 
@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS `color` (
   `idColor` int(11) NOT NULL AUTO_INCREMENT,
   `detalleColor` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`idColor`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=38 ;
 
 -- --------------------------------------------------------
 
@@ -49,7 +49,7 @@ CREATE TABLE IF NOT EXISTS `empresa` (
   `emailEmpresa` varchar(100) NOT NULL,
   `logoEmpresa` varchar(200) NOT NULL,
   PRIMARY KEY (`idEmpresa`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 -- --------------------------------------------------------
 
@@ -61,7 +61,7 @@ CREATE TABLE IF NOT EXISTS `estacion` (
   `idEstacion` int(11) NOT NULL AUTO_INCREMENT,
   `detalleEstacion` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`idEstacion`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
 -- --------------------------------------------------------
 
@@ -73,7 +73,7 @@ CREATE TABLE IF NOT EXISTS `estampado` (
   `idEstampado` int(11) NOT NULL AUTO_INCREMENT,
   `detalleEstampado` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`idEstampado`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=14 ;
 
 -- --------------------------------------------------------
 
@@ -85,7 +85,7 @@ CREATE TABLE IF NOT EXISTS `marca` (
   `idMarca` int(11) NOT NULL AUTO_INCREMENT,
   `detalleMarca` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`idMarca`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=15 ;
 
 -- --------------------------------------------------------
 
@@ -101,7 +101,7 @@ CREATE TABLE IF NOT EXISTS `persona` (
   `telefono` varchar(45) DEFAULT NULL,
   `codigoVendedor` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`idPersona`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -131,7 +131,7 @@ CREATE TABLE IF NOT EXISTS `prenda` (
   KEY `fk_Prenda_Empresa1_idx` (`idEmpresaPrenda`),
   KEY `fk_Prenda_Proveedor1_idx` (`idProveedorPrenda`),
   KEY `fk_Prenda_Marca1_idx` (`idMarcaPrenda`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -151,7 +151,7 @@ CREATE TABLE IF NOT EXISTS `proveedor` (
   `bancoProveedor` varchar(100) NOT NULL,
   `cbuProveedor` varchar(100) NOT NULL,
   PRIMARY KEY (`idProveedor`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 -- --------------------------------------------------------
 
@@ -163,7 +163,7 @@ CREATE TABLE IF NOT EXISTS `talle` (
   `idTalle` int(11) NOT NULL AUTO_INCREMENT,
   `detalleTalle` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`idTalle`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=33 ;
 
 -- --------------------------------------------------------
 
@@ -175,7 +175,7 @@ CREATE TABLE IF NOT EXISTS `tela` (
   `idTela` int(11) NOT NULL AUTO_INCREMENT,
   `detalleTela` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`idTela`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=35 ;
 
 -- --------------------------------------------------------
 
@@ -188,7 +188,7 @@ CREATE TABLE IF NOT EXISTS `tipoventa` (
   `detalleTipoVenta` varchar(45) DEFAULT NULL,
   `grupoTipoVenta` int(11) DEFAULT NULL,
   PRIMARY KEY (`idTipoVenta`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
 
 -- --------------------------------------------------------
 
@@ -198,14 +198,13 @@ CREATE TABLE IF NOT EXISTS `tipoventa` (
 
 CREATE TABLE IF NOT EXISTS `tipoventa_prenda` (
   `idTipoVenta_Prenda` int(11) NOT NULL AUTO_INCREMENT,
-  `detalleTipoVenta_Prenda` varchar(45) NOT NULL,
   `valor` decimal(2,0) NOT NULL,
   `idTipoVenta` int(11) NOT NULL,
   `idPrenda` int(11) NOT NULL,
   PRIMARY KEY (`idTipoVenta_Prenda`,`idTipoVenta`,`idPrenda`),
   KEY `fk_TipoVent_TipoVenta1_idx` (`idTipoVenta`),
   KEY `fk_TipoVent_Prenda1_idx` (`idPrenda`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -226,7 +225,7 @@ CREATE TABLE IF NOT EXISTS `venta` (
   KEY `fk_Venta_Persona2_idx` (`vendedor`),
   KEY `fk_Venta_Prenda1_idx` (`idPrenda`),
   KEY `fk_Venta_TipoVenta_Prenda1_idx` (`idTipoVenta`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 --
 -- Restricciones para tablas volcadas

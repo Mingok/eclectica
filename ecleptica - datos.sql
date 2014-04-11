@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 09-04-2014 a las 02:16:42
+-- Tiempo de generación: 10-04-2014 a las 23:19:42
 -- Versión del servidor: 5.6.12-log
 -- Versión de PHP: 5.4.12
 
@@ -73,6 +73,16 @@ INSERT INTO `empresa` (`idEmpresa`, `nombreEmpresa`, `dirEmpresa`, `cuitEmpresa`
 (1, 'Eclectica Esperanza1', '', '30699872160', '03496 43-0854', 'eclectica.esperanza@facebook.com', 'CAM00045.jpg');
 
 --
+-- Volcado de datos para la tabla `estacion`
+--
+
+INSERT INTO `estacion` (`idEstacion`, `detalleEstacion`) VALUES
+(1, 'Verano 2014'),
+(2, 'Otoño 2014'),
+(3, 'Invierno 2014'),
+(4, 'Primavera 2014');
+
+--
 -- Volcado de datos para la tabla `estampado`
 --
 
@@ -90,6 +100,33 @@ INSERT INTO `estampado` (`idEstampado`, `detalleEstampado`) VALUES
 (11, 'BORDADO'),
 (12, 'TACHAS'),
 (13, 'FLECOS');
+
+--
+-- Volcado de datos para la tabla `marca`
+--
+
+INSERT INTO `marca` (`idMarca`, `detalleMarca`) VALUES
+(1, 'Awada '),
+(2, 'Wanama '),
+(3, 'Solido'),
+(4, 'Nahana'),
+(5, 'Cocot'),
+(6, 'Selu'),
+(7, 'Sweet Victorian'),
+(8, 'Peter Pan'),
+(9, 'Papillon'),
+(10, 'Marcela Koury'),
+(11, 'Caro Cuore'),
+(12, 'Ag'),
+(13, 'Sol y Oro'),
+(14, 'Aretha');
+
+--
+-- Volcado de datos para la tabla `proveedor`
+--
+
+INSERT INTO `proveedor` (`idProveedor`, `nombreProveedor`, `cuitProveedor`, `condIvaProveedor`, `direccionProveedor`, `localidadProveedor`, `telefonoProveedor`, `contactoProveedor`, `bancoProveedor`, `cbuProveedor`) VALUES
+(1, 'Proveedor 1', '20296359685', 'Inscripto', 'Domicilio 1234', 'Localidad 1', '03156958', 'Contacto 1', 'Banco 1', '335232168');
 
 --
 -- Volcado de datos para la tabla `talle`

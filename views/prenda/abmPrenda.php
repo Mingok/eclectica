@@ -56,9 +56,10 @@
 					<table style="width:100%;">
 						<tr>
 							<td>
-								<h1 style="text-align: left;">
+								<a id="prenda"/><h1 style="text-align: left;">
 									Datos de la prenda
 								</h1>
+                                </a>
 							</td>
 							<td style="text-align: right;">
 								Codigo&nbsp;
@@ -172,13 +173,27 @@
 	</table>
 
 </div>
-<hr />
+
 <script type="text/javascript">
 
 //Boton Agregar o modificar
-$('.editButtonPrenda').click(function(){
+
+$('.buttonCopiar').click(function(){
+    $('input[name=cantidadPrenda]').val($(this).data('cantidadprenda'));
+    $('input[name=codigoPrenda]').val($(this).data('codigoprenda'));
+	$('input[name=detallePrenda]').val($(this).data('detalleprenda')+"[2]");
+    $('select[name=idMarcaPrenda]').val($(this).data('idmarcaprenda'));
+    $('select[name=idProveedorPrenda]').val($(this).data('idproveedorprenda'));
+    $('select[name=idEstacionPrenda]').val($(this).data('idestacionprenda'));
+    $('select[name=idColorPrenda]').val($(this).data('idcolorprenda'));
+    $('select[name=idTelaPrenda]').val($(this).data('idtelaprenda'));
+    $('select[name=idTallePrenda]').val($(this).data('idtalleprenda'));
+   	$('select[name=idEstampadoPrenda]').val($(this).data('idestampadoprenda'));
     
-	$('input[name=idPrenda]').val($(this).data('idprenda'));
+
+});
+$('.editButtonPrenda').click(function(){
+    $('input[name=idPrenda]').val($(this).data('idprenda'));
     $('input[name=cantidadPrenda]').val($(this).data('cantidadprenda'));
     $('input[name=codigoPrenda]').val($(this).data('codigoprenda'));
 	$('input[name=detallePrenda]').val($(this).data('detalleprenda'));
@@ -189,15 +204,16 @@ $('.editButtonPrenda').click(function(){
     $('select[name=idTelaPrenda]').val($(this).data('idtelaprenda'));
     $('select[name=idTallePrenda]').val($(this).data('idtalleprenda'));
    	$('select[name=idEstampadoPrenda]').val($(this).data('idestampadoprenda'));
+    
 	$('.buttonPrendas').val('Modificar');
 	$('.buttonLimpiar').removeClass('no');
-
-
 });
+
 
 //Boton limpiar campos
 $('.buttonLimpiar').click(function(){
-	$('.buttonPrendas').val('Agregar');
+ location.reload();
+/*	$('.buttonPrendas').val('Agregar');
     $('input[name=idPrenda]').val('');
     $('input[name=cantidadPrenda]').val('');
     $('input[name=codigoPrenda]').val('');
@@ -210,14 +226,14 @@ $('.buttonLimpiar').click(function(){
     $('select[name=idTallePrenda]').val('0');
    	$('select[name=idEstampadoPrenda]').val('0');
 	$('.buttonLimpiar').addClass('no');
-    
     $("#ver").hide();
     	$('input[name=idPrenda]').val(null);
+  */    
 });
 
 
 $('.buttonPrendasNueva').click(function(){
-$('.buttonPrendas').val('Agregar');
+    $('.buttonPrendas').val('Agregar');
     $('input[name=idPrenda]').val('');
     $('input[name=cantidadPrenda]').val('');
     $('input[name=codigoPrenda]').val('');

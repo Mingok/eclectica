@@ -11,9 +11,9 @@ Class prenda {
 			LEFT JOIN estampado AS estampado ON prenda.idEstampadoPrenda = estampado.idEstampado
 			LEFT JOIN tela AS tela ON prenda.idTelaPrenda = tela.idTela
 			LEFT JOIN talle AS talle ON prenda.idTallePrenda = talle.idTalle
-			LEFT JOIN estacion AS estacion ON prenda.idTallePrenda = estacion.idEstacion
+			LEFT JOIN estacion AS estacion ON prenda.idEstacionPrenda = estacion.idEstacion
 			LEFT JOIN marca AS marca ON prenda.idMarcaPrenda = marca.idMarca
-			ORDER BY prenda.`cantidadPrenda` DESC";
+			ORDER BY prenda.`cantidadPrenda` desc";
 		$arrResultado=null;
 		$objManejoMySQL->consultar($strSql, $arrResultado);
 		return $arrResultado;
@@ -24,19 +24,15 @@ Class prenda {
 //        }
 	}
     
-    	public function ordenarTablaPrenda($prendaList){
+ /*   	public function ordenarTablaPrenda($prendaList){
 		require_once (__DIR__.'\..\..\base\manejoMySQL.php');
 		foreach ($prendaList as $key => $row) {
              $aux[$key] = $row['cantidadPrenda'];
             }
         array_multisort($aux, SORT_ASC ,$prendaList);
         	return $prendaList;
-		}
+		}*/
 		
-	/*SELECT p.detallePrenda, p.cantidadPrenda, t.detalleTalle, c.detalleColor
-FROM prenda AS p
-LEFT JOIN talle AS t ON p.idTallePrenda = t.idTalle
-LEFT JOIN color AS c ON p.idColorPrenda = c.idColor;*/
 	public function agregarNuevoPrenda($arrPrenda){
 		require_once (__DIR__.'\..\..\base\manejoMySQL.php');
 		$strValoresCampos = "";
@@ -65,7 +61,7 @@ LEFT JOIN color AS c ON p.idColorPrenda = c.idColor;*/
 		return $arrResultado;
 	}
     
-    public function agregarNuevoPrecioPrenda($arrPrecioPrenda){
+    public function agregarNuevoPrecioPrenda($arrPrecioPrenda,$id){
 		require_once (__DIR__.'\..\..\base\manejoMySQL.php');
         $strValoresCampos = "";
 		$strNombresCampos = "";
@@ -82,9 +78,9 @@ LEFT JOIN color AS c ON p.idColorPrenda = c.idColor;*/
         $cont=0;
         foreach ($arrPrecioPrenda as $nombreCampo=>$valorCampo){
         $cont++;
-		$strSql = "INSERT INTO `tipoventa_prenda`(`detalleTipoVenta_Prenda`, `valor`, `idTipoVenta`, `idPrenda`) 
-        			VALUES ('$nombreCampo','$valorCampo','$cont','{$varPrenda['idPrenda']}')";
-  
+		$strSql = "INSERT INTO `tipoventa_prenda`(`valor`, `idTipoVenta`, `idPrenda`) 
+        			VALUES ('$valorCampo','$cont','$id')";
+ 
         $arrResultado = null;
 		$objManejoMySQL->consultar($strSql, $arrResultado);
 
@@ -99,7 +95,7 @@ LEFT JOIN color AS c ON p.idColorPrenda = c.idColor;*/
     
     
 	
-	public function eliminarColor($objColor){
+/*	public function eliminarColor($objColor){
 		require_once (__DIR__.'\..\..\base\manejoMySQL.php');
 		
 		$objManejoMySQL = new manejoMySQL();
@@ -109,14 +105,14 @@ LEFT JOIN color AS c ON p.idColorPrenda = c.idColor;*/
 		$objManejoMySQL->consultar($strSql, $arrResultado);
 		return $arrResultado;
 	}
-	
-	public function modificarColor($arrColor){
+*/	
+	public function modificarPrenda($arrPrenda){
 		require_once (__DIR__.'\..\..\base\manejoMySQL.php');
 		$strValoresCampos = "";
 		$strNombresCampos = "";
 		$strUpdate = "";
-		foreach ($arrColor as $nombreCampo=>$valorCampo){
-			if($nombreCampo != 'idColor'){
+		foreach ($arrPrenda as $nombreCampo=>$valorCampo){
+			if($nombreCampo != 'idPrenda'){
 				$strUpdate .= $strUpdate == '' ? '' : ',';
 				if(is_null($valorCampo)){
 					$strUpdate .= "$nombreCampo='null'";
@@ -128,15 +124,52 @@ LEFT JOIN color AS c ON p.idColorPrenda = c.idColor;*/
 					}
 				}
 			}else{
-				$lngIdColor = $valorCampo;
+				$lngIdPrenda = $valorCampo;
 			}
 		}
 		
 		$objManejoMySQL = new manejoMySQL();
-		$strSql = "UPDATE `color` SET $strUpdate
-					WHERE `idColor`=$lngIdColor";
+		$strSql = "UPDATE `prenda` SET $strUpdate
+					WHERE `idPrenda`=$lngIdPrenda";
 		$arrResultado = null;
 		$objManejoMySQL->consultar($strSql, $arrResultado);
 		return $arrResultado;
+	}
+
+
+
+public function  modificarPrecioPrenda($arrPrecioPrenda,$id){
+		require_once (__DIR__.'\..\..\base\manejoMySQL.php');
+		$strSql = "UPDATE `tipoventa_prenda` SET `valor`=".floatval($arrPrecioPrenda['tipoVenta1'])." WHERE `idTipoVenta`=1 AND`idPrenda`=".$id;
+		$objManejoMySQL = new manejoMySQL();
+		$arrResultado = null;
+		$objManejoMySQL->consultar($strSql, $arrResultado);
+	
+        $strSql = "UPDATE `tipoventa_prenda` SET `valor`=".floatval($arrPrecioPrenda['tipoVenta2'])." WHERE `idTipoVenta`=2 AND`idPrenda`=".$id;
+		$objManejoMySQL = new manejoMySQL();
+		$arrResultado = null;
+		$objManejoMySQL->consultar($strSql, $arrResultado);
+    
+        $strSql = "UPDATE `tipoventa_prenda` SET `valor`=".floatval($arrPrecioPrenda['tipoVenta3'])." WHERE `idTipoVenta`=3 AND`idPrenda`=".$id;
+		$objManejoMySQL = new manejoMySQL();
+		$arrResultado = null;
+		$objManejoMySQL->consultar($strSql, $arrResultado);
+    
+        $strSql = "UPDATE `tipoventa_prenda` SET `valor`=".floatval($arrPrecioPrenda['tipoVenta4'])." WHERE `idTipoVenta`=4 AND`idPrenda`=".$id;
+		$objManejoMySQL = new manejoMySQL();
+		$arrResultado = null;
+		$objManejoMySQL->consultar($strSql, $arrResultado);
+    
+        $strSql = "UPDATE `tipoventa_prenda` SET `valor`=".floatval($arrPrecioPrenda['tipoVenta5'])." WHERE `idTipoVenta`=5 AND`idPrenda`=".$id;
+		$objManejoMySQL = new manejoMySQL();
+		$arrResultado = null;
+		$objManejoMySQL->consultar($strSql, $arrResultado);
+    
+        $strSql = "UPDATE `tipoventa_prenda` SET `valor`=".floatval($arrPrecioPrenda['tipoVenta6'])." WHERE `idTipoVenta`=6 AND`idPrenda`=".$id;
+		$objManejoMySQL = new manejoMySQL();
+		$arrResultado = null;
+		$objManejoMySQL->consultar($strSql, $arrResultado);
+    
+    	return $arrResultado;
 	}
 }

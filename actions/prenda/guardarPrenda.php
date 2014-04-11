@@ -46,13 +46,30 @@ $arrPrecioPrenda = array(
     'tipoVenta6'=>$tipoVenta6
 );
 
+
+     
+
+
 $prendaClass = new prenda();
 if ($idPrenda) {
-    
+    	$prendas = $prendaClass->modificarPrecioPrenda($arrPrecioPrenda,$arrPrenda['idPrenda']);
 	$prendas = $prendaClass->modificarPrenda($arrPrenda);
+    
+		
 } else {
-	$prendas = $prendaClass->agregarNuevoPrenda($arrPrenda);
-    $prendas = $prendaClass->agregarNuevoPrecioPrenda($arrPrecioPrenda);		
+    $prendas = $prendaClass->agregarNuevoPrenda($arrPrenda);
+    		require_once (__DIR__.'\..\..\base\manejoMySQL.php');
+		$objManejoMySQL= new manejoMySQL();
+$strSql = "SELECT idPrenda FROM prenda ORDER BY idPrenda DESC LIMIT 1;";
+        $prendaId = null;
+		$objManejoMySQL->consultar($strSql, $prendaId);
+        
+        
+        foreach ($prendaId as $nombreCampo1=>$valorCampo1){
+            $varPrenda = $valorCampo1;
+        }
+	
+    $prendas = $prendaClass->agregarNuevoPrecioPrenda($arrPrecioPrenda,$varPrenda['idPrenda']);		
 }
 
 header('Location: '.$_SERVER['HTTP_REFERER']);

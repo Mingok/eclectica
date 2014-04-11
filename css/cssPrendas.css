@@ -81,4 +81,10 @@ border:1px solid #555555;
 .no {
 	display: none;
 }
+
+div.scrolPrenda{
+	overflow: auto;
+	height: 350px;
+
+}
 /*Termina Css Formulario Prendas*/

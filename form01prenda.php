@@ -8,8 +8,8 @@
 			</tr>
 			<tr>
 				<td>
-				
-<?php include_once 'views/prenda/abmPrenda.php'; ?>
+				<?php include_once 'views/prenda/abmPrenda.php'; ?>
+<hr />
 
 				</td>
 			</tr>
