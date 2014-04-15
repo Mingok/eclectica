@@ -10,6 +10,7 @@ $telefonoProveedor = $_REQUEST['telefonoProveedor'];
 $contactoProveedor = $_REQUEST['contactoProveedor']; 
 $bancoProveedor = $_REQUEST['bancoProveedor']; 
 $cbuProveedor = $_REQUEST['cbuProveedor'];
+$idProveedor = $_REQUEST['idProveedor'];
 $arrProveedor = array(
 	'nombreProveedor' => $nombreProveedor,
     'cuitProveedor' => $cuitProveedor, 
@@ -23,7 +24,14 @@ $arrProveedor = array(
 );
 
 $proveedorClass = new proveedor();
-$proveedores = $proveedorClass->agregarNuevoProveedor($arrProveedor);
+
+if ($idProveedor) {
+	$arrProveedor['idProveedor'] = $idProveedor;
+	$proveedores = $proveedorClass->modificarProveedor($arrProveedor);
+} else {
+	$proveedores = $proveedorClass->agregarNuevoProveedor($arrProveedor);	
+}
+
 
 header('Location: '.$_SERVER['HTTP_REFERER']);
 exit;

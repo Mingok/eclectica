@@ -50,7 +50,20 @@ $proveedores = $proveedorList->proveedoresDisponibles();
 									<?php foreach ($proveedores as $proveedor) { ?>
 										<tr style='text-align: center'>
 											<td>
-												<a  tite='Modificar datos del empleado' href='./actions/proveedor/camposProveedor.php?id="<?php echo $proveedor[ "idProveedor"]?>"'><img src='./imagenes/iconos/edit.png' width='14' height='14' /></a>
+												<a  tite='Modificar datos del empleado' class="editButtonProveedor" name="editProveedor"
+												data-idProveedor="<?php echo $proveedor['idProveedor']?>" 
+												data-nombreProveedor="<?php echo $proveedor['nombreProveedor']?>"
+												data-cuitProveedor="<?php echo $proveedor['cuitProveedor']?>"
+												data-condIvaProveedor="<?php echo $proveedor['condIvaProveedor']?>"
+												data-direccionProveedor="<?php echo $proveedor['direccionProveedor']?>"
+												data-localidadProveedor="<?php echo $proveedor['localidadProveedor']?>"
+												data-telefonoProveedor="<?php echo $proveedor['telefonoProveedor']?>"
+												data-contactoProveedor="<?php echo $proveedor['contactoProveedor']?>"
+												data-bancoProveedor="<?php echo $proveedor['bancoProveedor']?>"
+												data-cbuProveedor="<?php echo $proveedor['cbuProveedor']?>"
+												>
+													<img src='./imagenes/iconos/edit.png' width='14' height='14' />
+												</a>
 											</td>
 											<td>
 												<?php echo $proveedor[ 'nombreProveedor']?>
@@ -126,9 +139,13 @@ $proveedores = $proveedorList->proveedoresDisponibles();
 										</td>
 									</tr>
 									<tr>
-										<td style="text-align: right;" colspan="3">
+										<td style="text-align: right;">
+											<input type="hidden" value="" name="idProveedor"/>
 											<input type="submit" value="Agregar" class="buttonProv" />
 										</td>
+										<td style="text-align: right;">
+						                	<input type="button" value="Limpiar Campos" class="buttonLimpiar Proveedor no"/></td>
+						                </tr>
 									</tr>
 								</table>
 							</form>
@@ -139,6 +156,40 @@ $proveedores = $proveedorList->proveedoresDisponibles();
 		</tr>
 	</table>
 <script type="text/javascript">
+$('.editButtonProveedor').click(function(){
+	console.log($(this).data('idProveedor'))
+	$('input[name=idProveedor]').val($(this).data('idproveedor'));
+	$('input[name=nombreProveedor]').val($(this).data('nombreproveedor'));
+	$('input[name=cuitProveedor]').val($(this).data('cuitproveedor'));
+	$('input[name=condIvaProveedor]').val($(this).data('condivaproveedor'));
+	$('input[name=direccionProveedor]').val($(this).data('direccionproveedor'));
+	$('input[name=localidadProveedor]').val($(this).data('localidadproveedor'));
+	$('input[name=telefonoProveedor]').val($(this).data('telefonoproveedor'));
+	$('input[name=contactoProveedor]').val($(this).data('contactoproveedor'));
+	$('input[name=bancoProveedor]').val($(this).data('bancoproveedor'));
+	$('input[name=cbuProveedor]').val($(this).data('cbuproveedor'));
+	
+	$('.buttonProv').val('Modificar');
+	$('.buttonLimpiar.Proveedor').removeClass('no');
+});
 
+//Boton limpiar campos
+$('.buttonLimpiar.Proveedor').click(function(){
+	$('.buttonProv').val('Agregar');
+	$('input[name=idProveedor]').val('');
+	$('input[name=nombreProveedor]').val('');
+	$('input[name=cuitProveedor]').val('');
+	$('input[name=condIvaProveedor]').val('');
+	$('input[name=direccionProveedor]').val('');
+	$('input[name=localidadProveedor]').val('');
+	$('input[name=telefonoProveedor]').val('');
+	$('input[name=contactoProveedor]').val('');
+	$('input[name=bancoProveedor]').val('');
+	$('input[name=cbuProveedor]').val('');
+	$('.buttonLimpiar.Proveedor').addClass('no');
+});
+
+//Validacion de formulario
+$('.formColor').validate();
 $('.formProveedor').validate();
 </script>

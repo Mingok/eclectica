@@ -55,7 +55,7 @@ Class proveedor {
 		foreach ($arrProveedor as $nombreCampo=>$valorCampo){
 			if($nombreCampo != 'idProveedor'){
 				$strUpdate .= $strUpdate == '' ? '' : ',';
-				if(is_null($valorProveedor)){
+				if(is_null($valorCampo)){
 					$strUpdate .= "$nombreCampo='null'";
 				}else{
 					if(gettype($valorCampo) == 'string'){
@@ -71,7 +71,7 @@ Class proveedor {
 		
 		$objManejoMySQL = new manejoMySQL();
 		$strSql = "UPDATE `proveedor` SET $strUpdate
-					WHERE `idProveedor`=$lngIdProveedor";
+					WHERE `idProveedor` = $lngIdProveedor";
 		$arrResultado = null;
 		$objManejoMySQL->consultar($strSql, $arrResultado);
 		return $arrResultado;
