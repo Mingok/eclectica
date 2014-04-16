@@ -87,4 +87,11 @@ div.scrolPrenda{
 	height: 350px;
 
 }
+input[type=search] {
+   
+    height: 30px;
+    width: 200px;
+    background: #CCC;
+    color: DarkBlue;
+}
 /*Termina Css Formulario Prendas*/

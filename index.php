@@ -10,7 +10,7 @@
 		Nombre del programa
 	</title>
 	<link rel="stylesheet" href="<?php echo EMPLEADOS_STYLE_PATH;?>css.css" type="text/css" />
-    <script src="jquery-1.11.0.min.js"></script>
+<script src="jquery-1.11.0.min.js"></script>
     <script src="jquery.validate.js"></script>
 
 

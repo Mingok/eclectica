@@ -1,6 +1,6 @@
 <?php
 require_once 'classes/prenda/prenda.php';
-
+    
 $tipoVenta1 = $_REQUEST['tipoVenta1'];
 $tipoVenta2 = $_REQUEST['tipoVenta2'];
 $tipoVenta3 = $_REQUEST['tipoVenta3'];
@@ -8,7 +8,7 @@ $tipoVenta4 = $_REQUEST['tipoVenta4'];
 $tipoVenta5 = $_REQUEST['tipoVenta5'];
 $tipoVenta6 = $_REQUEST['tipoVenta6'];
 $idPrenda = $_REQUEST['idPrenda'];
-$codigoPrenda = $_REQUEST['codigoPrenda'];
+
 $detallePrenda = $_REQUEST['detallePrenda'];
 $cantidadPrenda =$_REQUEST['cantidadPrenda'];
 $idColorPrenda = $_REQUEST['idColorPrenda'];
@@ -19,8 +19,26 @@ $idEstacionPrenda = $_REQUEST['idEstacionPrenda'];
 $idEmpresaPrenda = $_REQUEST['idEmpresaPrenda'];
 $idProveedorPrenda = $_REQUEST['idProveedorPrenda'];
 $idMarcaPrenda=$_REQUEST['idMarcaPrenda'];
+if ($idPrenda){
+ /*Modificar*/
+      $codigoPrenda=  $_REQUEST['codigoPrenda'];
 
-
+   
+}else{
+ /*Nuevo erpesa 1 prov 000 marca 000 prenda 00000*/
+ 		require_once (__DIR__.'\..\..\base\manejoMySQL.php');
+		$objManejoMySQL= new manejoMySQL();
+$strSql = "SELECT idPrenda FROM prenda ORDER BY idPrenda DESC LIMIT 1;";
+        $prendaId = null;   
+		$objManejoMySQL->consultar($strSql, $prendaId);
+        
+        
+        foreach ($prendaId as $nombreCampo1=>$valorCampo1){
+            $varPrenda = $valorCampo1;
+ }
+   $codigoPrenda= str_pad($idEmpresaPrenda, 1, "0", STR_PAD_LEFT).str_pad($idProveedorPrenda, 3, "0", STR_PAD_LEFT).str_pad($idMarcaPrenda, 3, "0", STR_PAD_LEFT).str_pad($varPrenda['idPrenda']+1, 5, "0", STR_PAD_LEFT);
+   }
+   
 
 $arrPrenda = array(
 'idPrenda' => $idPrenda,
@@ -61,7 +79,7 @@ if ($idPrenda) {
     		require_once (__DIR__.'\..\..\base\manejoMySQL.php');
 		$objManejoMySQL= new manejoMySQL();
 $strSql = "SELECT idPrenda FROM prenda ORDER BY idPrenda DESC LIMIT 1;";
-        $prendaId = null;
+        $prendaId = null;   
 		$objManejoMySQL->consultar($strSql, $prendaId);
         
         

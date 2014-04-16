@@ -63,17 +63,17 @@
 							</td>
 							<td style="text-align: right;">
 								Codigo&nbsp;
-								<input type="text" class="textPrendas" name="codigoPrenda" placeholder="#369857"/>
+								<input type="text" class="textPrendas" name="codigoPrenda" value="" readonly="yes"  />
 								<input type="hidden" value="" name="idPrenda"/>
                                 	<input type="hidden"  name="idEmpresaPrenda" value="1"/>
                                 
 							</td>
 							<td style="text-align: right;">
 								Nombre:&nbsp;
-								<input type="text" class="textPrendas" name="detallePrenda" placeholder="ingrese" style="width:200px"/>
+								<input type="text" class="textPrendas" name="detallePrenda" placeholder="ingrese" style="width:200px" required/>
 							</td>
 							<td style="text-align: right;">
-								<input type="submit" value="Agregar" class="buttonPrendas " onclick="javascript:document.getElementById('ver').style.display = 'none'"/>
+								<input type="submit" value="Agregar" class="buttonPrendas " />
 								&nbsp;
 								<input type="button" value="Limpiar Campos" class="buttonLimpiar no" onclick="javascript:document.getElementById('ver').style.display = 'none'"/>
 							</td>
@@ -81,9 +81,8 @@
 						<tr>
 							<td style="text-align: right;">
 								Marca:&nbsp;
-								<select size="1" name="idMarcaPrenda" id="idMarcaPrenda" style="width: 120px" class="textPrendas">
+								<select size="1" name="idMarcaPrenda" id="idMarcaPrenda" style="width: 120px" class="textPrendas" required>
 									<option value=0>
-										- - Elija Una - -
 									</option>
 									<?php foreach ($marcas as $marca) { if ( isset($marca)) { echo "<option value=" . $marca[ "idMarca"]. ">" . $marca[ "detalleMarca"] . "</option>"; }} ?>
 								</select>
@@ -189,7 +188,7 @@ $('.buttonCopiar').click(function(){
     $('select[name=idTelaPrenda]').val($(this).data('idtelaprenda'));
     $('select[name=idTallePrenda]').val($(this).data('idtalleprenda'));
    	$('select[name=idEstampadoPrenda]').val($(this).data('idestampadoprenda'));
-    
+    $('input[name=codigoPrenda').hide();
 
 });
 $('.editButtonPrenda').click(function(){
@@ -204,7 +203,7 @@ $('.editButtonPrenda').click(function(){
     $('select[name=idTelaPrenda]').val($(this).data('idtelaprenda'));
     $('select[name=idTallePrenda]').val($(this).data('idtalleprenda'));
    	$('select[name=idEstampadoPrenda]').val($(this).data('idestampadoprenda'));
-    
+    $('input[name=codigoPrenda').show( "slow" );
 	$('.buttonPrendas').val('Modificar');
 	$('.buttonLimpiar').removeClass('no');
 });
@@ -247,7 +246,8 @@ $('.buttonPrendasNueva').click(function(){
    	$('select[name=idEstampadoPrenda]').val('0');
     $('select[name=idEstacionPrenda]').val('0');
 	$('.buttonLimpiar').addClass('no');
-    
-    	$('input[name=idPrenda]').val(null);
+    $('input[name=idPrenda]').val(null);
+    $('input[name=codigoPrenda').hide();
 });
+$('.formPrenda').validate();
 </script>
