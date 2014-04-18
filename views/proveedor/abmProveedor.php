@@ -3,6 +3,9 @@ require_once 'classes/proveedor/proveedor.php';
 $proveedorList = new proveedor(); 
 $proveedores = $proveedorList->proveedoresDisponibles(); 
 ?>
+ <script src="./lib/jquery.js"></script>
+<script src="./dist/jquery.validate.js"></script>    
+
 	<h1 style="text-align: left;">
 		&nbsp;Proveedores &nbsp;
 	</h1>
@@ -10,28 +13,22 @@ $proveedores = $proveedorList->proveedoresDisponibles();
 	<table class="tablaProv">
 		<tr>
 			<td>
-				<table style="width:500px">
+				<table style="width:470px">
 					<tr style="vertical-align: middle;">
 						<td>
 							<table style="width: 100%;">
 								<tr>
-									<td style="text-align: Left; ">
-										<h2>
-											Proveedores
-										</h2>
-									</td>
-									<td style="text-align: Right; ">
-										Buscar: &nbsp;
-										<select name="select" class="textProv" style="width:250px">
-											<option selected="selected">
-												ESSENCE
-											</option>
-										</select>
+									<td style="text-align: left; " colspan="2">
+										<label for="txtProveedor">Buscar Nombre: </label> &nbsp;&nbsp;&nbsp;
+				<input type="search" style="width:360px" id="txtProveedor" class="textPrendas"
+				placeholder="Escriba el Nombre que desea encontrar y presione la ENTER"
+                autofocus >
 									</td>
 								</tr>
 							</table>
 							<div class="scrolProv">
-								<table class="formuProv" style="width: 100%;">
+								<table class="formuProv" id="tblProveedor" style="width: 100%;">
+                                <thead>
 									<tr style="text-align: center;">
 										<td style="width: 8%;">
 											Mod
@@ -46,22 +43,14 @@ $proveedores = $proveedorList->proveedoresDisponibles();
 											Telefono
 										</td>
                                       
-									</tr>
+								</tr>
+                        
+                        </thead>
+                        <tbody>
 									<?php foreach ($proveedores as $proveedor) { ?>
 										<tr style='text-align: center'>
 											<td>
-												<a  tite='Modificar datos del empleado' class="editButtonProveedor" name="editProveedor"
-												data-idProveedor="<?php echo $proveedor['idProveedor']?>" 
-												data-nombreProveedor="<?php echo $proveedor['nombreProveedor']?>"
-												data-cuitProveedor="<?php echo $proveedor['cuitProveedor']?>"
-												data-condIvaProveedor="<?php echo $proveedor['condIvaProveedor']?>"
-												data-direccionProveedor="<?php echo $proveedor['direccionProveedor']?>"
-												data-localidadProveedor="<?php echo $proveedor['localidadProveedor']?>"
-												data-telefonoProveedor="<?php echo $proveedor['telefonoProveedor']?>"
-												data-contactoProveedor="<?php echo $proveedor['contactoProveedor']?>"
-												data-bancoProveedor="<?php echo $proveedor['bancoProveedor']?>"
-												data-cbuProveedor="<?php echo $proveedor['cbuProveedor']?>"
-												>
+												<a  tite='Modificar datos del empleado' class="editButtonProveedor" name="editProveedor" data-idProveedor="<?php echo $proveedor['idProveedor']?>" data-nombreProveedor="<?php echo $proveedor['nombreProveedor']?>" data-cuitProveedor="<?php echo $proveedor['cuitProveedor']?>"  data-condIvaProveedor="<?php echo $proveedor['condIvaProveedor']?>"data-direccionProveedor="<?php echo $proveedor['direccionProveedor']?>" data-localidadproveedor="<?php echo $proveedor['localidadProveedor']?>" data-telefonoProveedor="<?php echo $proveedor['telefonoProveedor']?>" data-contactoProveedor="<?php echo $proveedor['contactoProveedor']?>" data-bancoProveedor="<?php echo $proveedor['bancoProveedor']?>" data-cbuProveedor="<?php echo $proveedor['cbuProveedor']?>" >
 													<img src='./imagenes/iconos/edit.png' width='14' height='14' />
 												</a>
 											</td>
@@ -77,18 +66,22 @@ $proveedores = $proveedorList->proveedoresDisponibles();
                                          
 										</tr>
 										<?php }?>
-								</table>
-							</div>
+                                       
+                         </tbody>
+					</table>
+                    
+                    </div>
+                         
 						</td>
 					</tr>
 				</table>
 			</td>
 			<td>
-				<table style="width:635px;">
+				<table style="width:675px;">
 					<tr style="vertical-align: middle;">
 						<td style="text-align: center;">
-							<form action="actions/proveedor/guardarProveedor.php" class="formProveedor">
-								<table style="width:630px; ">
+							<form action="actions/proveedor/guardarProveedor.php" class="formProveedor" id="formProveedor">
+								<table style="width:670px; ">
 									<tr style="vertical-align: middle;">
 										<td style="text-align: center;" colspan="4 ">
 											<h2>
@@ -99,43 +92,43 @@ $proveedores = $proveedorList->proveedoresDisponibles();
 									<tr>
 										<td style=" text-align:Right; ">
 											Raz&oacute;n Soc.:&nbsp;
-											<input type="text " style="width: 100px; " maxlength="50px " name="nombreProveedor" placeholder="ingrese " required />
+											<input type="text " title="Ingrese Razon Social" style="width: 100px; " maxlength="50px " name="nombreProveedor" placeholder="ingrese " id="nombreProveedor" required />
 										</td>
 										<td style=" text-align:Right; ">
 											CUIT:&nbsp;
-											<input type="text " style="width: 120px; " maxlength="50px " name="cuitProveedor" placeholder="ingrese "  required />
+											<input type="text " style="width: 120px; " title="Ingrese CUIT" maxlength="50px " name="cuitProveedor" placeholder="xx-xxxxxxxxx-xx "  required />
 										</td>
 										<td style=" text-align:Right; ">
 											Cond. IVA:
-											<input type="text " style="width: 100px; " maxlength="50px " name="condIvaProveedor" placeholder="ingrese "  required />
+											<input type="text " style="width: 100px; " maxlength="50px " title="Ingrese CONDICION" name="condIvaProveedor" placeholder="ingrese "  required />
 										</td>
 									</tr>
 									<tr>
 										<td style=" text-align:Right; ">
 											Domicilio:&nbsp;
-											<input type="text " style="width: 150px; " name="direccionProveedor" placeholder="ingrese "  required />
+											<input type="text " style="width: 150px; " name="direccionProveedor" title="Ingrese DOMICILIO" placeholder="ingrese "  required />
 										</td>
 										<td style=" text-align:Right; ">
 											Localidad:&nbsp;&nbsp;
-											<input type="text " style="width: 100px; " maxlength="50px " name="localidadProveedor" placeholder="ingrese "  required />
+											<input type="text " style="width: 100px; " maxlength="50px " title="Ingrese LOCALIDAD" name="localidadProveedor" placeholder="ingrese "  required />
 										</td>
 										<td style=" text-align:Right; ">
 											Banco:&nbsp;
-											<input type="text " style="width: 100px; " name="bancoProveedor" placeholder="ingrese "  required  required/>
+											<input type="text " style="width: 100px; " name="bancoProveedor" title="Ingrese BANCO" placeholder="ingrese "  required  required/>
 										</td>
 									</tr>
 									<tr>
 										<td style=" text-align:Right; ">
 											Contacto:&nbsp;
-											<input type="text " style="width: 100px; " maxlength="50px " name="contactoProveedor" placeholder="ingrese "  required />
+											<input type="text " style="width: 100px; " maxlength="50px" title="Ingrese CONTACTO" name="contactoProveedor" placeholder="ingrese "  required />
 										</td>
 										<td style=" text-align:Right; ">
 											Telefono:&nbsp;
-											<input type="text " style="width: 120px; " maxlength="50px " name="telefonoProveedor" placeholder="ingrese "  required />
+											<input type="text " style="width: 120px; " maxlength="50px " name="telefonoProveedor" title="Ingrese TELEFONO " placeholder="ingrese "  required />
 										</td>
 										<td style=" text-align:Right; ">
 											CBU&nbsp;
-											<input type="text " style="width: 100px; " maxlength="50px " name="cbuProveedor" placeholder="ingrese "  required />
+											<input type="text " style="width: 100px; " maxlength="50px " name="cbuProveedor" placeholder="ingrese " title="Ingrese CBU"  required />
 										</td>
 									</tr>
 									<tr>
@@ -155,6 +148,8 @@ $proveedores = $proveedorList->proveedoresDisponibles();
 			</td>
 		</tr>
 	</table>
+
+
 <script type="text/javascript">
 $('.editButtonProveedor').click(function(){
 	console.log($(this).data('idProveedor'))
@@ -190,6 +185,6 @@ $('.buttonLimpiar.Proveedor').click(function(){
 });
 
 //Validacion de formulario
-$('.formColor').validate();
-$('.formProveedor').validate();
+
+	$("#formProveedor").validate();
 </script>

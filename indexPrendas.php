@@ -11,8 +11,10 @@
 	</title>
     <link rel="stylesheet" href="<?php echo EMPLEADOS_STYLE_PATH;?>css.css" type="text/css" />
     <link rel="stylesheet" href="<?php echo EMPLEADOS_STYLE_PATH;?>cssPrendas.css" type="text/css" />
+    <script src="jquery-1.11.0.min.js"></script>
+    <script src="jquery.validate.js"></script>
     <script type="text/javascript" src="js/ext/jquery-1.8.2.min.js"></script>
-		<script type="text/javascript" src="js/buscar-en-tabla.js"></script>
+    <script type="text/javascript" src="js/buscar-en-tabla.js"></script>
 
 </head>
 <body>

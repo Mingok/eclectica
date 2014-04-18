@@ -6,6 +6,12 @@
 				$tipoVentaList = new tipoVenta();
 				$tipoVentas = $tipoVentaList->tipoVentasDisponibles();
 				?>
+                <script language="JavaScript">
+function A(c,i)
+{
+document.getElementById(i).style.backgroundColor=c;
+}
+</script>
 <h1 style="text-align: left;">
 	Prendas
 </h1>
@@ -14,8 +20,8 @@
 	<table class="tablaPrendas">
 		<tr>
 			<td style="text-align: left; height: 40px;" colspan="2">
-			<label for="txtBuscar">Codigo: </label>
-				<input type="search"  id="txtBuscar" class="textPrendas"
+			<label for="txtPrenda">Codigo: </label>
+				<input type="search"  id="txtPrenda" class="textPrendas"
 				placeholder="Digite el texto que desea encontrar y presione la ENTER. Para cancelar la tecla ESCAPE."
                 autofocus style="width:300px">
 			</td>
@@ -27,7 +33,7 @@
 			<td colspan="3" style="text-align: right;">
 				<center>
                 <div class="scrolPrenda">
-					<table class="formuPrendas" id="tblTabla" style="width: 98%; ">
+					<table class="formuPrendas" id="tblPrenda" style="width: 98%; ">
 						<thead>
                         <tr style='text-align: center'>
 							<td>
@@ -66,12 +72,7 @@
 						</tr>
                         </thead>
                         <tbody>
-                        <script language="JavaScript">
-function A(c,i)
-{
-document.getElementById(i).style.backgroundColor=c;
-}
-</script>
+
 						<?php 
                         
                        $cont=0;
@@ -121,10 +122,11 @@ document.getElementById(i).style.backgroundColor=c;
 														
 						</tr>
 											<?php }}?>
+                                            </tbody>
 					</table>
-                    </tbody>
+                    
                     </div>
-				</center>
+				
 			</td>
 		</tr>
 	</table>

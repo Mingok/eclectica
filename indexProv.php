@@ -11,10 +11,19 @@
 	</title>
 	<link rel="stylesheet" href="<?php echo EMPLEADOS_STYLE_PATH;?>css.css" type="text/css" />
     <link rel="stylesheet" href="<?php echo EMPLEADOS_STYLE_PATH;?>cssProv.css" type="text/css" />
+    <link rel="stylesheet" media="screen" href="<?php echo EMPLEADOS_STYLE_PATH;?>screen.css" />    
     <script src="jquery-1.11.0.min.js"></script>
     <script src="jquery.validate.js"></script>
+    <script type="text/javascript" src="js/ext/jquery-1.8.2.min.js"></script>
+	<script type="text/javascript" src="js/buscar-en-tabla.js"></script>
 </head>
+
 <body>
+
+
+       
+
+
 	<center>
 		<table class="tablaGral">
 			<tr>
@@ -38,6 +47,9 @@
 			</tr>
 		</table>
 	</center>
+    
+
+
 </body>
 
 </html>

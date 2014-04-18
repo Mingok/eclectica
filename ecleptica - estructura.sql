@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 10-04-2014 a las 23:18:49
+-- Tiempo de generación: 18-04-2014 a las 12:48:45
 -- Versión del servidor: 5.6.12-log
 -- Versión de PHP: 5.4.12
 
@@ -111,7 +111,7 @@ CREATE TABLE IF NOT EXISTS `persona` (
 
 CREATE TABLE IF NOT EXISTS `prenda` (
   `idPrenda` int(11) NOT NULL AUTO_INCREMENT,
-  `codigoPrenda` varchar(9) NOT NULL,
+  `codigoPrenda` varchar(12) NOT NULL,
   `detallePrenda` varchar(100) NOT NULL,
   `cantidadPrenda` int(10) NOT NULL,
   `idColorPrenda` int(11) NOT NULL,
@@ -131,7 +131,7 @@ CREATE TABLE IF NOT EXISTS `prenda` (
   KEY `fk_Prenda_Empresa1_idx` (`idEmpresaPrenda`),
   KEY `fk_Prenda_Proveedor1_idx` (`idProveedorPrenda`),
   KEY `fk_Prenda_Marca1_idx` (`idMarcaPrenda`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 -- --------------------------------------------------------
 
@@ -204,7 +204,7 @@ CREATE TABLE IF NOT EXISTS `tipoventa_prenda` (
   PRIMARY KEY (`idTipoVenta_Prenda`,`idTipoVenta`,`idPrenda`),
   KEY `fk_TipoVent_TipoVenta1_idx` (`idTipoVenta`),
   KEY `fk_TipoVent_Prenda1_idx` (`idPrenda`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=19 ;
 
 -- --------------------------------------------------------
 

@@ -37,7 +37,13 @@ hr {
 }
 
 img {border: 0;}		
-
+input[type=search] {
+   
+    height: 30px;
+    width: 200px;
+    background: #CCC;
+    color: DarkBlue;
+}
 /*
 table {background-color: #cccccc;}
 	

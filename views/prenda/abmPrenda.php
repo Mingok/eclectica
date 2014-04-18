@@ -48,11 +48,14 @@
 		if (mostrado != 1) elem.style.display = 'block';
 	}*/
 </script>
+ <script src="./lib/jquery.js"></script>
+<script src="./dist/jquery.validate.js"></script>   
 <div id="ver" style="display: none; padding-top:10px; ">
-	<table class="tablaPrendas">
+	<form action="actions/prenda/guardarPrenda.php" class="formPrendas" id="formPrendas">
+    <table class="tablaPrendas">
 		<tr>
 			<td>
-				<form action="actions/prenda/guardarPrenda.php" class="formPrenda">
+				
 					<table style="width:100%;">
 						<tr>
 							<td>
@@ -62,15 +65,15 @@
                                 </a>
 							</td>
 							<td style="text-align: right;">
-								Codigo&nbsp;
-								<input type="text" class="textPrendas" name="codigoPrenda" value="" readonly="yes"  />
+								<label for="codigoPrenda" id="lp"> Codigo&nbsp;</label>
+								<input type="text"  name="codigoPrenda" value="" readonly="yes"  />
 								<input type="hidden" value="" name="idPrenda"/>
                                 	<input type="hidden"  name="idEmpresaPrenda" value="1"/>
                                 
 							</td>
 							<td style="text-align: right;">
 								Nombre:&nbsp;
-								<input type="text" class="textPrendas" name="detallePrenda" placeholder="ingrese" style="width:200px" required/>
+								<input type="text"  name="detallePrenda" id="detallePrenda" placeholder="ingrese" style="width: 165px" />
 							</td>
 							<td style="text-align: right;">
 								<input type="submit" value="Agregar" class="buttonPrendas " />
@@ -81,73 +84,66 @@
 						<tr>
 							<td style="text-align: right;">
 								Marca:&nbsp;
-								<select size="1" name="idMarcaPrenda" id="idMarcaPrenda" style="width: 120px" class="textPrendas" required>
-									<option value=0>
+								<select size="1"  name="idMarcaPrenda" id="idMarcaPrenda" style="width: 165px"   >
+									<option>
 									</option>
 									<?php foreach ($marcas as $marca) { if ( isset($marca)) { echo "<option value=" . $marca[ "idMarca"]. ">" . $marca[ "detalleMarca"] . "</option>"; }} ?>
 								</select>
 							</td>
 							<td style="text-align: right;">
 								Proveedor:&nbsp;
-								<select size="1" name="idProveedorPrenda" id="idProveedorPrenda" style="width: 120px" class="textPrendas">
-									<option value=0>
-										- - Elija Uno - -
+								<select size="1"  title="Ingrese Proveedor" name="idProveedorPrenda" id="idProveedorPrenda" style="width: 165px"  >
+									<option >
+									
 									</option>
 									<?php foreach ($proveedores as $proveedor) { if ( isset($proveedor)) { echo "<option value=" . $proveedor[ "idProveedor"]. ">" . $proveedor[ "nombreProveedor"] . "</option>"; }} ?>
 								</select>
 							</td>
 							<td style="text-align: right;">
 								Temporada:&nbsp;
-								<select size="1" style="width: 120px" class="textPrendas" name="idEstacionPrenda" id="idEstacionPrenda">
-									<option value=0>
-										- Elija Una -
+								<select size="1"  title="Ingrese Temporada" style="width: 165px"  name="idEstacionPrenda" id="idEstacionPrenda"  >
+									<option >
+									
 									</option>
 									<?php foreach ($estaciones as $estacion) { if ( isset($estacion)) { echo "<option value=" . $estacion[ "idEstacion"]. ">" . $estacion[ "detalleEstacion"] . "</option>"; }} ?>
 								</select>
 							</td>
 							<td style="text-align: right;">
 								Cantidad :
-								<input type="number" style="width: 30px;" name="cantidadPrenda" min="0" max="10" value="0" />
-							</td>
+								<input type="number" title="Indresar Cantidad" style="width: 30px;" name="cantidadPrenda" min="0" max="20" value="0"   /> <br />							 </td>
 						</tr>
 						<tr>
 							<td style="text-align: right;">
 								Tela:&nbsp;
-								<select size="1" name="idTelaPrenda" id="idTelaPrenda" style="width: 120px" class="textPrendas">
-									<option value=0>
-										- - Elija Una - -
-									</option>
+								<select size="1"  title="Ingrese Razon Social"name="idTelaPrenda" id="idTelaPrenda" style="width: 165px"    />
+									<option></option>
+									
 									<?php foreach ($telas as $tela) { if ( isset($telas)) { echo "<option value=" . $tela[ "idTela"]. ">" . $tela[ "detalleTela"] . "</option>"; }} ?>
 								</select>
 							</td>
 							<td style="text-align: right;">
 								Color:&nbsp;
-								<select size="1" name="idColorPrenda" id="idColorPrenda" style="width: 120px" class="textPrendas">
-									<option value=0>
-										- - Elija Uno - -
-									</option>
+								<select size="1"  title="Ingrese Razon Social"name="idColorPrenda" id="idColorPrenda" style="width: 165px"  />
+									<option ></option>
 									<?php foreach ($colores as $color) { if ( isset($color)) { echo "<option value=" . $color[ "idColor"]. ">" . $color[ "detalleColor"] . "</option>"; }} ?>
 								</select>
 							</td>
 							<td style="text-align: right;">
 								Talle:&nbsp;
-								<select size="1" name="idTallePrenda" id="idTallePrenda" style="width: 120px" class="textPrendas">
-									<option value=0>
-										- - Elija Uno - -
-									</option>
+								<select size="1" title="Ingrese Razon Social" name="idTallePrenda" id="idTallePrenda" style="width: 165px"  />
+									<option ></option>
 									<?php foreach ($talles as $talle) { if ( isset($talles)) { echo "<option value=" . $talle[ "idTalle"]. ">" . $talle[ "detalleTalle"] . "</option>"; }} ?>
 								</select>
 							</td>
 							<td style="text-align: right;">
 								Estampado:&nbsp;
-								<select size="1" name="idEstampadoPrenda" id="idEstampadoPrenda" style="width: 120px" class="textPrendas">
-									<option value=0>
-										- - Elija Uno - -
-									</option>
+								<select size="1" name="idEstampadoPrenda" id="idEstampadoPrenda" style="width: 165px"  />
+									<option></option>
 									<?php foreach ($estampados as $estampado) { if ( isset($estampado)) { echo "<option value=" . $estampado[ "idEstampado"]. ">" . $estampado[ "detalleEstampado"] . "</option>"; }} ?>
 								</select>
 							</td>
 						</tr>
+                        
 					</table>
 			</td>
 		</tr>
@@ -161,16 +157,16 @@
 						<?php foreach ($tipoVentas as $tipoVenta) {?>
 							<td style="text-align: right;">
 								<?php echo $tipoVenta[ "detalleTipoVenta"];?>
-									<input type="text" class="textPrendas" name="tipoVenta<?php echo $tipoVenta["idTipoVenta"];?>" value="00,00" size="10"/>
+									<input type="text"  style="width: 80px"  name="tipoVenta<?php echo $tipoVenta["idTipoVenta"];?>" />
 							</td>
 							<?php } ?>
 					</tr>
 				</table>
 			</td>
 		</tr>
-		</form>
+		
 	</table>
-
+</form>
 </div>
 
 <script type="text/javascript">
@@ -178,6 +174,8 @@
 //Boton Agregar o modificar
 
 $('.buttonCopiar').click(function(){
+     $('.buttonPrendas').val('Agregar');
+    $('input[name=idPrenda]').val('');
     $('input[name=cantidadPrenda]').val($(this).data('cantidadprenda'));
     $('input[name=codigoPrenda]').val($(this).data('codigoprenda'));
 	$('input[name=detallePrenda]').val($(this).data('detalleprenda')+"[2]");
@@ -204,6 +202,7 @@ $('.editButtonPrenda').click(function(){
     $('select[name=idTallePrenda]').val($(this).data('idtalleprenda'));
    	$('select[name=idEstampadoPrenda]').val($(this).data('idestampadoprenda'));
     $('input[name=codigoPrenda').show( "slow" );
+    $('label[for=codigoPrenda').show( "slow" );
 	$('.buttonPrendas').val('Modificar');
 	$('.buttonLimpiar').removeClass('no');
 });
@@ -248,6 +247,143 @@ $('.buttonPrendasNueva').click(function(){
 	$('.buttonLimpiar').addClass('no');
     $('input[name=idPrenda]').val(null);
     $('input[name=codigoPrenda').hide();
+    $('label[for=codigoPrenda').hide();
 });
-$('.formPrenda').validate();
+$("#formPrendas ").validate({rules: {
+				idEstacionPrenda: {
+				required:true
+			
+			},
+            idMarcaPrenda: {
+				required:true
+			
+			},
+            	idProveedorPrenda: {
+			required:true
+			
+			},
+            	idTemporadaPrenda: {
+			required:true
+			
+			},
+            
+            	idTelaPrenda: {
+			required:true
+			},
+            	idTallePrenda: {
+			required:true
+			},
+            	idColorPrenda: {
+			required:true
+			
+			},
+            	cantidadPrenda: {
+			required:true    
+			
+			},
+              	idEstampadoPrenda: {
+			required:true    
+			
+			},
+           
+                detallePrenda: {
+					required:true,
+				    minlength: 5
+				},
+                tipoVenta1: {
+					required:true,
+				
+					number:true	
+				},
+				tipoVenta2: {
+					required:true,
+					number:true	
+				},
+                tipoVenta3: {
+					required:true,
+					number:true	
+				},
+                tipoVenta4: {
+					required:true,
+					number:true	
+				},
+                tipoVenta5: {
+					required:true,
+					number:true	
+				},
+                tipoVenta6: {
+					required:true,
+					number:true	
+				},
+			},
+		messages: {
+			
+			idTemporadaPrenda: {
+				required: "Ingrese Estacion",
+			
+			},
+            idMarcaPrenda: {
+				required: "Ingrese Marca",
+			
+			},
+            
+            idEstampadoPrenda: {
+				required: "Ingrese Estampado",
+			
+			},
+            	idProveedorPrenda: {
+				required: "Ingrese Proveedor",
+			
+			},
+            	idTemporadaPrenda: {
+				required: "Ingrese Temporada",
+			
+			},
+            
+            	idTelaPrenda: {
+				required: "Ingrese Tela",
+			
+			},
+            	idTallePrenda: {
+				required: "Ingrese Talle",
+			
+			},
+            	idColorPrenda: {
+				required: "Ingrese Color",
+			
+			},
+            	cantidadPrenda: {
+				required: "Ingrese Cantidad",
+			
+			},
+            
+            detallePrenda: {
+				required: "Ingrese Nombre",
+				minlength: "Debe mas de 5 caracteres"
+			},
+            tipoVenta1: {
+				required: "Ingrese Precio",
+				number: "Debe ser un numero"
+			},   
+            tipoVenta2: {
+				required: "Ingrese Precio",
+				number: "Debe ser un numero"
+			},
+            tipoVenta3: {
+				required: "Ingrese Precio",
+				number: "Debe ser un numero"
+			},
+            tipoVenta4: {
+				required: "Ingrese Precio",
+				number: "Debe ser un numero"
+			},
+            tipoVenta5: {
+				required: "Ingrese Precio",
+				number: "Debe ser un numero"
+			},
+            tipoVenta6: {
+				required: "Ingrese Precio",
+				number: "Debe ser un numero"
+			}}
+	});
 </script>
