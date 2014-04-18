@@ -81,13 +81,51 @@ document.getElementById(i).style.backgroundColor=c;
 					?>	
 						<tr id="<?php echo $cont;?>" style="text-align: center">
 							<td onclick="A('#FF0000',<?php echo $cont;?>);">
-								<a title="Modificar datos" href="#prenda" class="editButtonPrenda" name="editButtonPrenda" data-cantidadprenda="<?php echo $prenda['cantidadPrenda']?>" data-idprenda="<?php echo $prenda['idPrenda']?>" data-idestampadoprenda="<?php echo $prenda['idEstampadoPrenda']?>" data-idtelaprenda="<?php echo $prenda['idTelaPrenda']?>" data-idtalleprenda="<?php echo $prenda['idTallePrenda']?>" data-codigoprenda="<?php echo $prenda['codigoPrenda']?>"  data-detalleprenda="<?php echo $prenda['detallePrenda']?>" data-idmarcaprenda="<?php echo $prenda['idMarcaPrenda']?>" data-idproveedorprenda="<?php echo $prenda['idProveedorPrenda']?>" data-idestacionprenda="<?php echo $prenda['idEstacionPrenda']?>" data-idcolorprenda="<?php echo $prenda['idColorPrenda']?>" onclick="javascript:document.getElementById('ver').style.display = 'block'" />
+								<a title="Modificar datos" href="#prenda" class="editButtonPrenda" name="editButtonPrenda" 
+									data-cantidadprenda="<?php echo $prenda['cantidadPrenda']?>" 
+									data-idprenda="<?php echo $prenda['idPrenda']?>" 
+									data-idestampadoprenda="<?php echo $prenda['idEstampadoPrenda']?>" 
+									data-idtelaprenda="<?php echo $prenda['idTelaPrenda']?>" 
+									data-idtalleprenda="<?php echo $prenda['idTallePrenda']?>" 
+									data-codigoprenda="<?php echo $prenda['codigoPrenda']?>"  
+									data-detalleprenda="<?php echo $prenda['detallePrenda']?>" 
+									data-idmarcaprenda="<?php echo $prenda['idMarcaPrenda']?>" 
+									data-idproveedorprenda="<?php echo $prenda['idProveedorPrenda']?>" 
+									data-idestacionprenda="<?php echo $prenda['idEstacionPrenda']?>" 
+									data-idcolorprenda="<?php echo $prenda['idColorPrenda']?>" 
+									data-valor1="<?php echo $prenda['valor1']?>"
+									data-valor2="<?php echo $prenda['valor2']?>"
+									data-valor3="<?php echo $prenda['valor3']?>"
+									data-valor4="<?php echo $prenda['valor4']?>"
+									data-valor5="<?php echo $prenda['valor5']?>"
+									data-valor6="<?php echo $prenda['valor6']?>"
+									
+									
+									onclick="javascript:document.getElementById('ver').style.display = 'block'" />
                                 
 								<img src='./imagenes/iconos/layout_edit.png' width='14' height='14' />
 							</a>
 							</td>
                             <td onclick="A('#FFff00',<?php echo $cont;?>);">
-								<a title='copiar' href="#prenda" class="buttonCopiar" name="buttonCopiar" data-cantidadprenda="<?php echo $prenda['cantidadPrenda']?>" data-idestampadoprenda="<?php echo $prenda['idEstampadoPrenda']?>" data-idtelaprenda="<?php echo $prenda['idTelaPrenda']?>" data-idtalleprenda="<?php echo $prenda['idTallePrenda']?>" data-codigoprenda="<?php echo  $prenda['codigoPrenda']?>"  data-detalleprenda="<?php echo $prenda['detallePrenda']?>" data-idmarcaprenda="<?php echo $prenda['idMarcaPrenda']?>" data-idproveedorprenda="<?php echo $prenda['idProveedorPrenda']?>" data-idestacionprenda="<?php echo $prenda['idEstacionPrenda']?>" data-idcolorprenda="<?php echo $prenda['idColorPrenda']?>" onclick="javascript:document.getElementById('ver').style.display = 'block'" />
+								<a title='copiar' href="#prenda" class="buttonCopiar" name="buttonCopiar" 
+								data-cantidadprenda="<?php echo $prenda['cantidadPrenda']?>" 
+								data-idestampadoprenda="<?php echo $prenda['idEstampadoPrenda']?>" 
+								data-idtelaprenda="<?php echo $prenda['idTelaPrenda']?>" 
+								data-idtalleprenda="<?php echo $prenda['idTallePrenda']?>" 
+								data-codigoprenda="<?php echo  $prenda['codigoPrenda']?>"  
+								data-detalleprenda="<?php echo $prenda['detallePrenda']?>" 
+								data-idmarcaprenda="<?php echo $prenda['idMarcaPrenda']?>" 
+								data-idproveedorprenda="<?php echo $prenda['idProveedorPrenda']?>" 
+								data-idestacionprenda="<?php echo $prenda['idEstacionPrenda']?>" 
+								data-idcolorprenda="<?php echo $prenda['idColorPrenda']?>" 
+								data-valor1="<?php echo $prenda['valor1']?>"
+								data-valor2="<?php echo $prenda['valor2']?>"
+								data-valor3="<?php echo $prenda['valor3']?>"
+								data-valor4="<?php echo $prenda['valor4']?>"
+								data-valor5="<?php echo $prenda['valor5']?>"
+								data-valor6="<?php echo $prenda['valor6']?>"
+								
+								onclick="javascript:document.getElementById('ver').style.display = 'block'" />
                                 <img src='./imagenes/iconos/copiar.png' width='14' height='14' /></a>
 							</td>
                             <td>

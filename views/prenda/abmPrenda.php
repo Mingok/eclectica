@@ -186,7 +186,13 @@ $('.buttonCopiar').click(function(){
     $('select[name=idTelaPrenda]').val($(this).data('idtelaprenda'));
     $('select[name=idTallePrenda]').val($(this).data('idtalleprenda'));
    	$('select[name=idEstampadoPrenda]').val($(this).data('idestampadoprenda'));
-    $('input[name=codigoPrenda').hide();
+   	$('input[name=tipoVenta1]').val($(this).data('valor1'));
+   	$('input[name=tipoVenta2]').val($(this).data('valor2'));
+   	$('input[name=tipoVenta3]').val($(this).data('valor3'));
+   	$('input[name=tipoVenta4]').val($(this).data('valor4'));
+   	$('input[name=tipoVenta5]').val($(this).data('valor5'));
+   	$('input[name=tipoVenta6]').val($(this).data('valor6'));
+    $('input[name=codigoPrenda]').hide();
 
 });
 $('.editButtonPrenda').click(function(){
@@ -201,8 +207,14 @@ $('.editButtonPrenda').click(function(){
     $('select[name=idTelaPrenda]').val($(this).data('idtelaprenda'));
     $('select[name=idTallePrenda]').val($(this).data('idtalleprenda'));
    	$('select[name=idEstampadoPrenda]').val($(this).data('idestampadoprenda'));
-    $('input[name=codigoPrenda').show( "slow" );
-    $('label[for=codigoPrenda').show( "slow" );
+   	$('input[name=tipoVenta1]').val($(this).data('valor1'));
+   	$('input[name=tipoVenta2]').val($(this).data('valor2'));
+   	$('input[name=tipoVenta3]').val($(this).data('valor3'));
+   	$('input[name=tipoVenta4]').val($(this).data('valor4'));
+   	$('input[name=tipoVenta5]').val($(this).data('valor5'));
+   	$('input[name=tipoVenta6]').val($(this).data('valor6'));
+    $('input[name=codigoPrenda]').show( "slow" );
+    $('label[for=codigoPrenda]').show( "slow" );
 	$('.buttonPrendas').val('Modificar');
 	$('.buttonLimpiar').removeClass('no');
 });
@@ -246,7 +258,7 @@ $('.buttonPrendasNueva').click(function(){
     $('select[name=idEstacionPrenda]').val('0');
 	$('.buttonLimpiar').addClass('no');
     $('input[name=idPrenda]').val(null);
-    $('input[name=codigoPrenda').hide();
+    $('input[name=codigoPrenda]').hide();
     $('label[for=codigoPrenda').hide();
 });
 $("#formPrendas ").validate({rules: {

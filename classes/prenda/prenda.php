@@ -4,7 +4,10 @@ Class prenda {
 		require_once (__DIR__.'\..\..\base\manejoMySQL.php');
 		
 		$objManejoMySQL= new manejoMySQL();
-		$strSql="SELECT prenda.*, proveedor.nombreProveedor, color.detalleColor , estampado.detalleEstampado, tela.detalleTela,talle.detalleTalle, estacion.detalleEstacion, marca.detalleMarca
+		$strSql="SELECT prenda.*, proveedor.nombreProveedor, color.detalleColor , estampado.detalleEstampado, tela.detalleTela,
+					talle.detalleTalle, estacion.detalleEstacion, marca.detalleMarca,
+					tvp1.valor as valor1, tvp2.valor as valor2, tvp3.valor as valor3, tvp4.valor as valor4, tvp5.valor as valor5,
+					tvp6.valor as valor6
 			FROM prenda AS prenda 
 			LEFT JOIN proveedor AS proveedor ON prenda.idProveedorPrenda = proveedor.idProveedor
 			LEFT JOIN color AS color ON prenda.idColorPrenda = color.idColor
@@ -13,6 +16,12 @@ Class prenda {
 			LEFT JOIN talle AS talle ON prenda.idTallePrenda = talle.idTalle
 			LEFT JOIN estacion AS estacion ON prenda.idEstacionPrenda = estacion.idEstacion
 			LEFT JOIN marca AS marca ON prenda.idMarcaPrenda = marca.idMarca
+			JOIN tipoventa_prenda AS tvp1 ON tvp1.idPrenda = prenda.idPrenda AND tvp1.idTipoVenta = 1
+			JOIN tipoventa_prenda AS tvp2 ON tvp2.idPrenda = prenda.idPrenda AND tvp2.idTipoVenta = 2
+            JOIN tipoventa_prenda AS tvp3 ON tvp3.idPrenda = prenda.idPrenda AND tvp3.idTipoVenta = 3
+            JOIN tipoventa_prenda AS tvp4 ON tvp4.idPrenda = prenda.idPrenda AND tvp4.idTipoVenta = 4
+            JOIN tipoventa_prenda AS tvp5 ON tvp5.idPrenda = prenda.idPrenda AND tvp5.idTipoVenta = 5
+            JOIN tipoventa_prenda AS tvp6 ON tvp6.idPrenda = prenda.idPrenda AND tvp6.idTipoVenta = 6
 			ORDER BY prenda.`cantidadPrenda` desc";
 		$arrResultado=null;
 		$objManejoMySQL->consultar($strSql, $arrResultado);
