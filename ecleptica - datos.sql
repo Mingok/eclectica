@@ -17,10 +17,10 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Base de datos: `ecleptica`
+-- Base de datos: `eclectica`
 --
-CREATE DATABASE IF NOT EXISTS `ecleptica` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `ecleptica`;
+CREATE DATABASE IF NOT EXISTS `eclectica` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `eclectica`;
 
 --
 -- Volcado de datos para la tabla `color`

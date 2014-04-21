@@ -1,5 +1,5 @@
 <?php
- define('EMPLEADOS_STYLE_PATH', 'http://localhost/ecleptica/css/');
+ define('EMPLEADOS_STYLE_PATH', 'http://localhost/eclectica/css/');
 
 ?>
 <!DOCTYPE HTML>

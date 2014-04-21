@@ -1,7 +1,7 @@
 <?php
 Class manejoMySQL {
 	var $host='localhost';
-	var $database='ecleptica';
+	var $database='eclectica';
 	var $username='root';
 	var $password='';
 	
