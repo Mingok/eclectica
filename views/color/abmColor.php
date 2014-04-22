@@ -15,7 +15,7 @@
 				
                 </td>
                 <td style="text-align: right;">
-                <input type="submit" value="Agregar" class="buttonCaracteristicas Color"/>
+                <input type="submit" value="Agregar" class="btn btn-success Color"/>
 				</td>
                 <td style="text-align: right;">
                 <input type="button" value="Limpiar Campos" class="buttonLimpiar Color no"/></td>

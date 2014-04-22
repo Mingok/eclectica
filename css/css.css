@@ -44,6 +44,10 @@ input[type=search] {
     background: #CCC;
     color: DarkBlue;
 }
+
+.no {
+	display: none;
+}
 /*
 table {background-color: #cccccc;}
 	
