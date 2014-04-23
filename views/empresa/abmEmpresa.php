@@ -8,14 +8,14 @@
 <h1 style="text-align: left;">
 	&nbsp;Empresa &nbsp;
 </h1>
-<hr />
+
 <form action="actions/empresa/moificarEmpresa.php" >
 <table class="tablaProv">
 	 <?php 
 					foreach ($empresas as $empresa) {
 					?>	
     <tr>       
-		<td style="text-align: left; height: 40px;">
+		<td style="height:30px; text-align: left; height: 40px;">
 			<h2>
             
 				Datos de la Empresa
@@ -30,27 +30,27 @@
    
 	<tr>
     		
-		<td style=" text-align:Right; ">
+		<td style="height:30px;  text-align:Right; ">
 			Razón Social:&nbsp;&nbsp;
 			<input type="text" style="width: 150px;" maxlength="50px" name="nombreEmpresa" value="<?php echo $empresa['nombreEmpresa'];?>"/>
 		</td>
-		<td style=" text-align:Right; ">
+		<td style="height:30px;  text-align:Right; ">
 			CUIT:&nbsp;
 			<input type="text" style="width: 120px;" maxlength="50px" name="cuitEmpresa" value="<?php echo $empresa['cuitEmpresa'];?>"/>
 		</td>
-		<td style=" text-align:Right;">
+		<td style="height:30px;  text-align:Right;">
 			Tel.:
 			<input type="text" style="width: 150px;" maxlength="50px" name="telEmpresa" value="<?php echo $empresa['telEmpresa'];?>"/>
 		</td>
-		<td style="text-align: right;" rowspan="3">
-			<input type="submit" name="pNuevo" value="Modificar" class="buttonProv"/>
+		<td style="height:30px; text-align: right;" rowspan="3">
+			<input type="submit" name="pNuevo" value="Modificar" class="btn btn-success"/>
 	</tr>
 	<tr>
-		<td style=" text-align:Right;" colspan="2">
+		<td style="height:30px;  text-align:Right;" colspan="2">
 			E-mail:&nbsp;
 			<input type="text" style="width: 250px;" name="emailEmpresa" value="<?php echo $empresa['emailEmpresa'];?>"/>
 		</td>
-		<td style=" text-align:Right; ">
+		<td style="height:30px;  text-align:Right; ">
 			Domicilio:&nbsp;&nbsp;
 			<input type="text" style="width: 150px;" maxlength="50px" name="dirEmpresa" value="<?php echo $empresa['dirEmpresa'];?>"/>
 		</td>

@@ -1,7 +1,7 @@
 <h1 style="text-align: left;">
 	&nbsp;Clientes&nbsp;
 </h1>
-<hr />
+
 <table class="tablaClientes">
 	<tr style="height:180px;">
 		<td>
@@ -10,12 +10,12 @@
 					<td>
 						<table style="width: 100%;">
 							<tr>
-								<td style="text-align: Left; ">
+								<td style="height:30px; text-align: Left; ">
 									<h2>
 										Cliente
 									</h2>
 								</td>
-								<td style="text-align: Right; ">
+								<td style="height:30px; text-align: Right; ">
 									Buscar: &nbsp;
 									<select name="select" class="textClientes" style="width:350px">
 										<option selected="selected">
@@ -144,7 +144,7 @@
 		<td>
 			<table style="width:500px; height: 215px; border:solid">
 				<tr style="vertical-align: middle;">
-					<td style="text-align: center;">
+					<td style="height:30px; text-align: center;">
 						<h1>
 							Datos del Cliente Seleccionado
 						</h1>
@@ -152,7 +152,7 @@
 				</tr>
 			</table>
 		</td>
-		<td style="text-align: right;">
+		<td style="height:30px; text-align: right;">
 			<input type="button" name="pNuevo" value="Ver" class="buttonClientes" onclick="javascript:mostrarOcultarTablas('ver')"/>
 			<br />
 			<br />
@@ -184,7 +184,7 @@
 			</td>
 		</tr>
 		<tr style="vertical-align: middle;">
-			<td style="text-align: right;">
+			<td style="height:30px; text-align: right;">
 				Tipo de venta:&nbsp;
 				<select name="select" class="textClientes">
 					<option selected="selected">
@@ -204,27 +204,27 @@
 					</option>
 				</select>
 			</td>
-			<td style="text-align: right;">
+			<td style="height:30px; text-align: right;">
 				Desde: &nbsp;
 				<input type="date" value="<?php
 				echo date('Y-m-d');
 				?>" class="textClientes"/>
 			</td>
-			<td style="text-align: right;">
+			<td style="height:30px; text-align: right;">
 				Hasta:&nbsp;
 				<input type="date" value="<?php
 				echo date('Y-m-d');
 				?>" class="textClientes" />
 			</td>
-			<td style="text-align: right;">
+			<td style="height:30px; text-align: right;">
 				Min: &nbsp;
 				<input type="text" maxlength="6" name="pNuevo" value="100,00" class="textClientes" size="8" />
 			</td>
-			<td style="text-align: right;">
+			<td style="height:30px; text-align: right;">
 				Max: &nbsp;
 				<input type="text" maxlength="6" name="pNuevo" value="100,00" class="textClientes" size="8" />
 			</td>
-			<td style="text-align: Center; height: 40px;" rowspan="2">
+			<td style="height:30px; text-align: Center; height: 40px;" rowspan="2">
 				<input type="button" name="pNuevo" value="Buscar" class="buttonClientes" />
 			</td>
 		</tr>
@@ -287,7 +287,7 @@
 						</td>
 					</tr>
 					<tr style="text-align: center;" bgcolor="#00FFFF">
-						<td style="text-align: left;" colspan="6">
+						<td style="height:30px; text-align: left;" colspan="6">
 							23/03/2014&nbsp;&nbsp;&nbsp;&nbsp;ENTREGA
 						</td>
 						<td>
@@ -324,7 +324,7 @@
 						</td>
 					</tr>
 					<tr style="text-align: center;" bgcolor="#00FFFF">
-						<td style="text-align: left;" colspan="6">
+						<td style="height:30px; text-align: left;" colspan="6">
 							23/03/2014&nbsp;&nbsp;&nbsp;&nbsp;ENTREGA
 						</td>
 						<td>
@@ -335,7 +335,7 @@
 						</td>
 					</tr>
 					<tr style="text-align: center;" bgcolor="#00FFFF">
-						<td style="text-align: left;" colspan="6">
+						<td style="height:30px; text-align: left;" colspan="6">
 							23/03/2014&nbsp;&nbsp;&nbsp;&nbsp;ENTREGA
 						</td>
 						<td>
@@ -372,7 +372,7 @@
 						</td>
 					</tr>
 					<tr style="text-align: center;" bgcolor="#00FFFF">
-						<td style="text-align: left;" colspan="6">
+						<td style="height:30px; text-align: left;" colspan="6">
 							23/03/2014&nbsp;&nbsp;&nbsp;&nbsp;ENTREGA
 						</td>
 						<td>
@@ -383,7 +383,7 @@
 						</td>
 					</tr>
 					<tr style="text-align: center;" bgcolor="#00FFFF">
-						<td style="text-align: left;" colspan="6">
+						<td style="height:30px; text-align: left;" colspan="6">
 							23/03/2014&nbsp;&nbsp;&nbsp;&nbsp;ENTREGA
 						</td>
 						<td>
@@ -471,8 +471,8 @@
 							800,00
 						</td>
 					</tr>
-					<tr style="text-align: center;" bgcolor="#ffff00">
-						<td style="text-align: right;" colspan="7">
+					<tr style="text-align: center;padding-bottom: 15px;" bgcolor="#ffff00 ">
+						<td style="height:30px; text-align: right;" colspan="7">
 							<div style=" font-weight:bolder">
 								Saldo
 							</div>
@@ -485,10 +485,10 @@
 					</tr>
 				</table>
 			</td>
-			<td>
+			<td >
 				<table style="width:300px" border="1">
 					<tr style="vertical-align: middle;">
-						<td style="text-align: center;">
+						<td style="height:30px; text-align: center;">
 							<br />
 							<h1>
 								Actualizar CC

@@ -5,19 +5,19 @@
 				?>
 <table style="vertical-align: middle; width: 100%;" >
 	<tr style="vertical-align: middle;">
-		<td style="text-align: left; " >
-			<form action="actions/Marca/guardarMarca.php" class="formMarca" >
+		<td style="height:30px; text-align: left; " >
+			<form action="actions/Marca/guardarMarca.php" id="formMarca" >
 				<table style="width: 100%;">
                 <tr>
                 <td>
                 <h2>Marca</h2>
 				
                 </td>
-                <td style="text-align: right;">
-                <input type="submit" value="Agregar" class="buttonCaracteristicas Marca"/>
+                <td style="height:30px; text-align: right;">
+                <input type="submit" value="Agregar" class="btn-success Marca"/>
 				</td>
-                <td style="text-align: right;">
-                <input type="button" value="Limpiar Campos" class="buttonLimpiar Marca no"/></td>
+                <td style="height:30px; text-align: left; padding-left: 15px;">
+                <input type="button" value="Limpiar Campos" class="btn-danger Marca no"/></td>
                 </tr>
                 <tr>
                 <td colspan="3"> Nombre: &nbsp;<input type="text" name="detalleMarca" placeholder="ingresar" class="textCaracteristicas" required/>
@@ -29,9 +29,10 @@
 		</td>
 	</tr>
 	<tr>
-		<td style="text-align: right;">
-			<div class="scrolCaracteristicas"> 
-				<table class="formuCaracteristicas" style="width: 100%;">
+		<td style="height:30px; text-align: right;">
+			<div class="scrol"> 
+				<table class="formu" style="width: 100%;">
+			<thead>
 					<tr style="text-align: center;">
 						<td>
 							Mod
@@ -41,6 +42,7 @@
 						</td>
 
 					</tr>
+                    </thead>
 					<?php 
 					foreach ($marcas as $marca) {
 					?>					
@@ -69,18 +71,18 @@
 $('.editButtonMarca').click(function(){
 	$('input[name=idMarca]').val($(this).data('idmarca'));
 	$('input[name=detalleMarca]').val($(this).data('detallemarca'));
-	$('.buttonCaracteristicas.Marca').val('Modificar');
-	$('.buttonLimpiar.Marca').removeClass('no');
+	$('.btn-success.Marca').val('Modificar');
+	$('.btn-danger.Marca').removeClass('no');
 });
 
 //Boton limpiar campos
-$('.buttonLimpiar.Marca').click(function(){
-	$('.buttonCaracteristicas.Marca').val('Agregar');
+$('.btn-danger.Marca').click(function(){
+	$('.btn-success.Marca').val('Agregar');
 	$('input[name=idMarca]').val('');
 	$('input[name=detalleMarca]').val('');
-	$('.buttonLimpiar.Marca').addClass('no');
+	$('.btn-danger.Marca').addClass('no');
 });
 //Validacion de formulario
-$('.formMarca').validate();
+$('#formMarca').validate();
 
 </script>

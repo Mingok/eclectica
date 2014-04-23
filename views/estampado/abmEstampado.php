@@ -5,19 +5,19 @@ $estampados = $estampadoList->estampadosDisponibles();
 ?>
 <table style="vertical-align: middle; width: 100%;" >
 	<tr style="vertical-align: middle;">
-		<td style="text-align: left; " >
-			<form action="actions/estampado/guardarEstampado.php" class="formEstampado">
+		<td style="height:30px; text-align: left; " >
+			<form action="actions/estampado/guardarEstampado.php" id="formEstampado">
 				<table style="width: 100%;">
                 <tr>
-                <td style="padding:0">
+                <td style="height:30px; padding:0">
                 <h2>Estampado</h2>
 				
                 </td>
-                <td style="text-align: right;">
-                <input type="submit" value="Agregar" class="buttonCaracteristicas Estampado"/>
+                <td style="height:30px; text-align: right;">
+                <input type="submit" value="Agregar" class="btn-success Estampado"/>
 				</td>
-                <td style="text-align: right;">
-                <input type="button" value="Limpiar Campos" class="buttonLimpiar Estampado no"/></td>
+                <td style="height:30px; text-align: left; padding-left: 15px;">
+                <input type="button" value="Limpiar Campos" class="btn-danger Estampado no"/></td>
                 </tr>
                 <tr>
                 <td colspan="3"> Nombre: &nbsp;<input type="text" name="detalleEstampado" placeholder="ingresar" class="textCaracteristicas" required/>
@@ -29,9 +29,10 @@ $estampados = $estampadoList->estampadosDisponibles();
 		</td>
 	</tr>
 	<tr>
-		<td style="text-align: right;">
-			<div class="scrolCaracteristicas"> 
-				<table class="formuCaracteristicas" style="width: 100%;">
+		<td style="height:30px; text-align: right;">
+		<div class="scrol"> 
+				<table class="formu" style="width: 100%;">
+			<thead>
 					<tr style="text-align: center;">
 						<td>
 							Mod
@@ -41,6 +42,7 @@ $estampados = $estampadoList->estampadosDisponibles();
 						</td>
 
 					</tr>
+                    </thead>
 					<?php 
 					foreach ($estampados as $estampado) {
 					?>					
@@ -66,18 +68,18 @@ $estampados = $estampadoList->estampadosDisponibles();
 $('.editButtonEstampado').click(function(){
 	$('input[name=idEstampado]').val($(this).data('idestampado'));
 	$('input[name=detalleEstampado]').val($(this).data('detalleestampado'));
-	$('.buttonCaracteristicas.Estampado').val('Modificar');
-	$('.buttonLimpiar.Estampado').removeClass('no');
+	$('.btn-success.Estampado').val('Modificar');
+	$('.btn-danger.Estampado').removeClass('no');
 });
 
 //Boton limpiar campos
-$('.buttonLimpiar.Estampado').click(function(){
-	$('.buttonCaracteristicas.Estampado').val('Agregar');
+$('.btn-danger.Estampado').click(function(){
+	$('.btn-success.Estampado').val('Agregar');
 	$('input[name=idEstampado]').val('');
 	$('input[name=detalleEstampado]').val('');
-	$('.buttonLimpiar.Estampado').addClass('no');
+	$('.btn-danger.Estampado').addClass('no');
 });
 
 //Validacion de formulario
-$('.formEstampado').validate();
+$('#formEstampado').validate();
 </script>

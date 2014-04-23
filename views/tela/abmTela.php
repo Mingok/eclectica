@@ -1,23 +1,23 @@
-	<?php 
-				require_once 'classes/tela/tela.php';
-				$telaList = new tela();
-				$telas = $telaList->telasDisponibles();
-				?>
+<?php 
+    require_once 'classes/tela/tela.php';
+    $telaList = new tela();
+    $telas = $telaList->telasDisponibles();
+?>
 <table style="vertical-align: middle; width: 100%;" >
 	<tr style="vertical-align: middle;">
-		<td style="text-align: left; " >
-			<form action="actions/tela/guardarTela.php"  class="formTela">
+		<td style="height:30px; text-align: left; " >
+			<form action="actions/tela/guardarTela.php" id="formTela">
 				<table style="width: 100%;">
                 <tr>
                 <td>
                 <h2>Tela</h2>
 				
                 </td>
-                <td style="text-align: right;">
-                <input type="submit" value="Agregar" class="buttonCaracteristicas Tela"/>
+                <td style="height:30px; text-align: right;">
+                <input type="submit" value="Agregar" class="btn-success Tela"/>
 				</td>
-                <td style="text-align: right;">
-                <input type="button" value="Limpiar Campos" class="buttonLimpiar Tela no"/></td>
+                <td style="height:30px; text-align: left; padding-left: 15px;">
+                <input type="button" value="Limpiar Campos" class="btn-danger Tela no"/></td>
                 </tr>
                 <tr>
                 <td colspan="3"> Nombre: &nbsp;<input type="text" name="detalleTela" placeholder="ingresar"  class="textCaracteristicas" required/>
@@ -29,10 +29,10 @@
 		</td>
 	</tr>
 	<tr>
-		<td style="text-align: right;">
-			<div class="scrolCaracteristicas"> 
-				<table class="formuCaracteristicas" style="width: 100%;">
-			
+		<td style="height:30px; text-align: right;">
+		<div class="scrol"> 
+				<table class="formu" style="width: 100%;">
+			<thead>
 					<tr style="text-align: center;">
 						<td>
 							Mod
@@ -42,6 +42,7 @@
 						</td>
 
 					</tr>
+                    </thead>
 					<?php 
 					foreach ($telas as $tela) {
 					?>					
@@ -68,18 +69,18 @@
 $('.editButtonTela').click(function(){
 	$('input[name=idTela]').val($(this).data('idtela'));
 	$('input[name=detalleTela]').val($(this).data('detalletela'));
-	$('.buttonCaracteristicas.Tela').val('Modificar');
-	$('.buttonLimpiar.Tela').removeClass('no');
+	$('.btn-success.Tela').val('Modificar');
+	$('.btn-danger.Tela').removeClass('no');
 });
 
 //Boton limpiar campos
-$('.buttonLimpiar.Tela').click(function(){
-	$('.buttonCaracteristicas.Tela').val('Agregar');
+$('.btn-danger.Tela').click(function(){
+	$('.btn-success.Tela').val('Agregar');
 	$('input[name=idTela]').val('');
 	$('input[name=detalleTela]').val('');
-	$('.buttonLimpiar.Tela').addClass('no');
+	$('.btn-danger.Tela').addClass('no');
 });
 
 //Validacion de formulario
-$('.formTela').validate();
+$('#formTela').validate();
 </script>

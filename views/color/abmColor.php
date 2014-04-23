@@ -1,24 +1,24 @@
-	<?php 
-				require_once 'classes/color/color.php';
-				$colorList = new color();
-				$colores = $colorList->coloresDisponibles();
-				?>
+<?php 
+    require_once 'classes/color/color.php';
+    $colorList = new color();
+    $colores = $colorList->coloresDisponibles();
+?>
 
 <table style="vertical-align: middle; width: 100%;" >
 	<tr style="vertical-align: middle;">
-		<td style="text-align: left; " >
-			<form action="actions/color/guardarColor.php" class="formColor">
+		<td style="height:30px; text-align: left; " >
+			<form action="actions/color/guardarColor.php" id="formColor">
 				<table style="width: 100%;">
                 <tr>
                 <td>
                 <h2>Color</h2>
 				
                 </td>
-                <td style="text-align: right;">
-                <input type="submit" value="Agregar" class="btn btn-success Color"/>
+                <td style="height:30px; text-align: right;">
+                <input type="submit" value="Agregar" class="btn-success Color"/>
 				</td>
-                <td style="text-align: right;">
-                <input type="button" value="Limpiar Campos" class="buttonLimpiar Color no"/></td>
+                <td style="height:30px; text-align: left; padding-left: 15px;">
+                <input type="button" value="Limpiar Campos" class="btn-danger Color no"/></td>
                 </tr>
                 <tr>
                 <td colspan="3"> Nombre: &nbsp;<input type="text" name="detalleColor" placeholder="ingresar" class="textCaracteristicas" required/>
@@ -30,10 +30,10 @@
 		</td>
 	</tr>
 	<tr>
-		<td style="text-align: right;">
-			<div class="scrolCaracteristicas"> 
-				<table class="formuCaracteristicas" style="width: 100%;">
-			
+		<td style="height:30px; text-align: right;">
+			<div class="scrol"> 
+				<table class="formu" style="width: 100%;">
+			<thead>
 					<tr style="text-align: center;">
 						<td>
 							Mod
@@ -43,6 +43,7 @@
 						</td>
 
 					</tr>
+                    </thead>
 					<?php 
 					foreach ($colores as $color) {
 					?>					
@@ -69,18 +70,18 @@
 $('.editButtonColor').click(function(){
 	$('input[name=idColor]').val($(this).data('idcolor'));
 	$('input[name=detalleColor]').val($(this).data('detallecolor'));
-	$('.buttonCaracteristicas.Color').val('Modificar');
-	$('.buttonLimpiar.Color').removeClass('no');
+	$('.btn-success.Color').val('Modificar');
+	$('.btn-danger.Color').removeClass('no');
 });
 
 //Boton limpiar campos
-$('.buttonLimpiar.Color').click(function(){
-	$('.buttonCaracteristicas.Color').val('Agregar');
+$('.btn-danger.Color').click(function(){
+	$('.btn-success.Color').val('Agregar');
 	$('input[name=idColor]').val('');
 	$('input[name=detalleColor]').val('');
-	$('.buttonLimpiar.Color').addClass('no');
+	$('.btn-danger.Color').addClass('no');
 });
 
 //Validacion de formulario
-$('.formColor').validate();
+$('#formColor').validate();
 </script>

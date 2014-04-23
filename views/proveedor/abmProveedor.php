@@ -9,7 +9,7 @@ $proveedores = $proveedorList->proveedoresDisponibles();
 	<h1 style="text-align: left;">
 		&nbsp;Proveedores &nbsp;
 	</h1>
-	<hr />
+	
 	<table class="tablaProv">
 		<tr>
 			<td>
@@ -18,7 +18,7 @@ $proveedores = $proveedorList->proveedoresDisponibles();
 						<td>
 							<table style="width: 100%;">
 								<tr>
-									<td style="text-align: left; " colspan="2">
+									<td style="height:30px; text-align: left; " colspan="2">
 										<label for="txtProveedor">Buscar Nombre: </label> &nbsp;&nbsp;&nbsp;
 				<input type="search" style="width:360px" id="txtProveedor" class="textPrendas"
 				placeholder="Escriba el Nombre que desea encontrar y presione la ENTER"
@@ -30,7 +30,7 @@ $proveedores = $proveedorList->proveedoresDisponibles();
 								<table class="formuProv" id="tblProveedor" style="width: 100%;">
                                 <thead>
 									<tr style="text-align: center;">
-										<td style="width: 8%;">
+										<td style="height:30px; width: 8%;">
 											Mod
 										</td>
 										<td width="40">
@@ -79,64 +79,64 @@ $proveedores = $proveedorList->proveedoresDisponibles();
 			<td>
 				<table style="width:675px;">
 					<tr style="vertical-align: middle;">
-						<td style="text-align: center;">
+						<td style="height:30px; text-align: center;">
 							<form action="actions/proveedor/guardarProveedor.php" class="formProveedor" id="formProveedor">
 								<table style="width:670px; ">
 									<tr style="vertical-align: middle;">
-										<td style="text-align: center;" colspan="4 ">
+										<td style="height:30px; text-align: center;" colspan="4 ">
 											<h2>
 												Datos del Proveedor
 											</h2>
 										</td>
 									</tr>
 									<tr>
-										<td style=" text-align:Right; ">
+										<td style="height:30px;  text-align:Right; ">
 											Raz&oacute;n Soc.:&nbsp;
 											<input type="text " title="Ingrese Razon Social" style="width: 100px; " maxlength="50px " name="nombreProveedor" placeholder="ingrese " id="nombreProveedor" required />
 										</td>
-										<td style=" text-align:Right; ">
+										<td style="height:30px;  text-align:Right; ">
 											CUIT:&nbsp;
 											<input type="text " style="width: 120px; " title="Ingrese CUIT" maxlength="50px " name="cuitProveedor" placeholder="xx-xxxxxxxxx-xx "  required />
 										</td>
-										<td style=" text-align:Right; ">
+										<td style="height:30px;  text-align:Right; ">
 											Cond. IVA:
 											<input type="text " style="width: 100px; " maxlength="50px " title="Ingrese CONDICION" name="condIvaProveedor" placeholder="ingrese "  required />
 										</td>
 									</tr>
 									<tr>
-										<td style=" text-align:Right; ">
+										<td style="height:30px;  text-align:Right; ">
 											Domicilio:&nbsp;
 											<input type="text " style="width: 150px; " name="direccionProveedor" title="Ingrese DOMICILIO" placeholder="ingrese "  required />
 										</td>
-										<td style=" text-align:Right; ">
+										<td style="height:30px;  text-align:Right; ">
 											Localidad:&nbsp;&nbsp;
 											<input type="text " style="width: 100px; " maxlength="50px " title="Ingrese LOCALIDAD" name="localidadProveedor" placeholder="ingrese "  required />
 										</td>
-										<td style=" text-align:Right; ">
+										<td style="height:30px;  text-align:Right; ">
 											Banco:&nbsp;
 											<input type="text " style="width: 100px; " name="bancoProveedor" title="Ingrese BANCO" placeholder="ingrese "  required  required/>
 										</td>
 									</tr>
 									<tr>
-										<td style=" text-align:Right; ">
+										<td style="height:30px;  text-align:Right; ">
 											Contacto:&nbsp;
 											<input type="text " style="width: 100px; " maxlength="50px" title="Ingrese CONTACTO" name="contactoProveedor" placeholder="ingrese "  required />
 										</td>
-										<td style=" text-align:Right; ">
+										<td style="height:30px;  text-align:Right; ">
 											Telefono:&nbsp;
 											<input type="text " style="width: 120px; " maxlength="50px " name="telefonoProveedor" title="Ingrese TELEFONO " placeholder="ingrese "  required />
 										</td>
-										<td style=" text-align:Right; ">
+										<td style="height:30px;  text-align:Right; ">
 											CBU&nbsp;
 											<input type="text " style="width: 100px; " maxlength="50px " name="cbuProveedor" placeholder="ingrese " title="Ingrese CBU"  required />
 										</td>
 									</tr>
 									<tr>
-										<td style="text-align: right;">
+										<td style="height:30px; text-align: right;">
 											<input type="hidden" value="" name="idProveedor"/>
 											<input type="submit" value="Agregar" class="buttonProv" />
 										</td>
-										<td style="text-align: right;">
+										<td style="height:30px; text-align: right;">
 						                	<input type="button" value="Limpiar Campos" class="buttonLimpiar Proveedor no"/></td>
 						                </tr>
 									</tr>

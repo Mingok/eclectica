@@ -13,10 +13,9 @@
 	<link rel="stylesheet" href="<?php echo EMPLEADOS_STYLE_PATH;?>css.css" type="text/css" />
     <link rel="stylesheet" href="<?php echo EMPLEADOS_STYLE_PATH;?>bootstrap/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="<?php echo EMPLEADOS_STYLE_PATH;?>bootstrap/bootstrap-theme.min.css" type="text/css" />
-	   
     <script src="jquery-1.11.0.min.js"></script>
     <script src="jquery.validate.js"></script>
-    <script src=""<?php echo EMPLEADOS_SCRIPTS_PATH;?>bootstrap/bootstrap.min.js"></script>
+    <script src="<?php echo EMPLEADOS_SCRIPTS_PATH;?>bootstrap/bootstrap.min.js"></script>
 
 </head>
 <body>
@@ -29,9 +28,7 @@
 			</tr>
 			<tr>
 				<td>
-					<hr />
 					<?php include_once './form02Caracteristicas.php'?>
-						<hr />
 				</td>
 			</tr>
 		</table>

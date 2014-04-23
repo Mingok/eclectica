@@ -5,21 +5,21 @@
 				?>
 <table style="vertical-align: middle; width: 100%;" >
 	<tr style="vertical-align: middle;">
-		<td style="text-align: left; " >
-			<form action="actions/tipoVenta/guardarTipoVenta.php" class="formTipoVenta">
+		<td style="height:30px; text-align: left; " >
+			<form action="actions/tipoVenta/guardarTipoVenta.php" id="formTipoVenta">
 				<table style="width: 100%;">
                 <tr>
-                <td style="width:45%">
-                <h2>Pregios y Grupos</h2>
+                <td style="height:30px; width:45%">
+                <h2>PreCios y Grupos</h2>
 				
                 </td>
-                <td style="text-align: right;width:55%">    
-			<input type="submit" value="Modificar" class="buttonCaracteristicas TipoVenta no"/>
-           <input type="button" value="Limpiar Campos" class="buttonLimpiar TipoVenta no"/></td>
+                <td style="height:30px; text-align: left; padding-left: 15px;">    
+			<input type="submit" value="Modificar" class="btn-success TipoVenta no"/>
+           <input type="button" value="Limpiar Campos" class="btn-danger TipoVenta no"/></td>
 		</td>  
                 </tr>
                 <tr> 
-                	<td style="text-align: left; ">
+                	<td style="height:30px; text-align: left; ">
 			Nombre: &nbsp;
 			<input type="text" class="textCaracteristicas" name="detalleTipoVenta" placeholder="ingrese" style="width: 130px;" required/>
             </td>
@@ -39,8 +39,10 @@
 	</tr>
 	<tr>
 		<td colspan="2" style="text-align: right;">
-			<table class="formuCaracteristicas" style="width: 100%;">
-				<tr style="text-align: center;">
+			<table class="formu" style="width: 100%;">
+				
+                <thead>
+                <tr style="text-align: center;">
 					<td>
 						Mod
 					</td>
@@ -51,19 +53,20 @@
 						Grupo
 					</td>
 				</tr>
+                </thead>
 				<?php 
 					foreach ($tipoVentas as $tipoVenta) {
 					?>					
 					<tr style='text-align: center'>
-						<td style="width: 10%;">
+						<td style="height:30px; width: 10%;">
 							<a title='Modificar datos' class="editButtonTipoVenta" name="editTipoVenta" data-idtipoventa="<?php echo $tipoVenta['idTipoVenta']?>" data-grupotipoventa="<?php echo $tipoVenta['grupoTipoVenta']?>" data-detalletipoventa="<?php echo $tipoVenta['detalleTipoVenta']?>">
 								<img src='./imagenes/iconos/edit.png' width='14' height='14' />
 							</a>
 						</td>
-						<td style="width: 70%;">
+						<td style="height:30px; width: 70%;">
 							<?php echo $tipoVenta['detalleTipoVenta']?>
 						</td>
-                        <td style="width: 20%;">
+                        <td style="height:30px; width: 20%;">
 							<?php echo $tipoVenta['grupoTipoVenta']?>
 						</td>
 
@@ -81,23 +84,23 @@ $('.editButtonTipoVenta').click(function(){
     $('input[name=idTipoVenta]').val($(this).data('idtipoventa'));
 	$('input[name=detalleTipoVenta]').val($(this).data('detalletipoventa'));
     $('input[name=grupoTipoVenta]').val($(this).data('grupotipoventa'));
-	$('.buttonCaracteristicas.TipoVenta').val('Modificar');
-	$('.buttonLimpiar.TipoVenta').removeClass('no');
-    $('.buttonCaracteristicas.TipoVenta').removeClass('no');
+	$('.btn-success.TipoVenta').val('Modificar');
+	$('.btn-danger.TipoVenta').removeClass('no');
+    $('.btn-success.TipoVenta').removeClass('no');
 	
 });
 
 //Boton limpiar campos
-$('.buttonLimpiar.TipoVenta').click(function(){
-	$('.buttonCaracteristicas.TipoVenta').val('Agregar');
+$('.btn-danger.TipoVenta').click(function(){
+	$('.btn-success.TipoVenta').val('Agregar');
 	$('input[name=idTipoVenta]').val('');
 	$('input[name=detalleTipoVenta]').val('');
     $('input[name=grupoTipoVenta]').val('');
-	$('.buttonLimpiar.TipoVenta').addClass('no');
-    $('.buttonCaracteristicas.TipoVenta').addClass('no');
+	$('.btn-danger.TipoVenta').addClass('no');
+    $('.btn-success.TipoVenta').addClass('no');
 	
 });
 
 //Validacion de formulario
-$('.formTipoVenta').validate();
+$('#formTipoVenta').validate();
 </script>

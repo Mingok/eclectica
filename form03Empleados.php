@@ -1,7 +1,7 @@
 <h1 style="text-align: left;">
 	&nbsp;Empleados&nbsp;
 </h1>
-<hr />
+
 <div style="padding-bottom: 10px">
 	<table class="tablaEmpleados">
 		<tr style="height:180px;">
@@ -116,7 +116,7 @@
 						<td>
 							<table style="width:500px; height: 170px; border:solid">
 								<tr style="vertical-align: middle;">
-									<td style="text-align: center;">
+									<td style="height:30px; text-align: center;">
 										<h1>
 											Datos del empleado Seleccionado
 										</h1>
@@ -124,7 +124,7 @@
 								</tr>
 							</table>
 						</td>
-						<td style="text-align: right;">
+						<td style="height:30px; text-align: right;">
 							<input type="button" name="pNuevo" value="Agregar" class="buttonEmpleados" />
 							<br />
 							<br />
@@ -147,7 +147,7 @@
 						</td>
 					</tr>
 					<tr style="vertical-align: middle;">
-						<td style="text-align: right;">
+						<td style="height:30px; text-align: right;">
 							Cliente:&nbsp;
 							<select name="select" class="textEmpleados">
 								<option selected="selected">
@@ -164,7 +164,7 @@
 								</option>
 							</select>
 						</td>
-						<td style="text-align: right;">
+						<td style="height:30px; text-align: right;">
 							Tipo de venta:&nbsp;
 							<select name="select" class="textEmpleados">
 								<option selected="selected">
@@ -184,20 +184,20 @@
 								</option>
 							</select>
 						</td>
-						<td style="text-align: right;">
+						<td style="height:30px; text-align: right;">
 							Desde: &nbsp;
 							<input type="date" value="<?php echo date('Y-m-d')?>" class="textEmpleados"/>
 						</td>
-						<td style="text-align: right;">
+						<td style="height:30px; text-align: right;">
 							Hasta:&nbsp;
 							<input type="date" value="<?php echo date('Y-m-d')?>" class="textEmpleados" />
 						</td>
-						<td style="text-align: Center; height: 40px;" rowspan="3">
+						<td style="height:30px; text-align: Center; height: 40px;" rowspan="3">
 							<input type="button" name="pNuevo" value="Buscar" class="buttonEmpleados" />
 						</td>
 					</tr>
 					<tr style="vertical-align: middle;">
-						<td style="text-align: right;">
+						<td style="height:30px; text-align: right;">
 							Prenda:&nbsp;
 							<select name="select" class="textEmpleados">
 								<option selected="selected">
@@ -214,7 +214,7 @@
 								</option>
 							</select>
 						</td>
-						<td style="text-align: right;">
+						<td style="height:30px; text-align: right;">
 							Marca: &nbsp;
 							<select name="select" class="textEmpleados">
 								<option selected="selected">
@@ -231,17 +231,17 @@
 								</option>
 							</select>
 						</td>
-						<td style="text-align: right;">
+						<td style="height:30px; text-align: right;">
 							Min: &nbsp;
 							<input type="text" maxlength="6" name="pNuevo" value="100,00" class="textEmpleados" size="8" />
 						</td>
-						<td style="text-align: right;">
+						<td style="height:30px; text-align: right;">
 							Max: &nbsp;
 							<input type="text" maxlength="6" name="pNuevo" value="100,00" class="textEmpleados" size="8" />
 						</td>
 					</tr>
 					<tr style="vertical-align: middle;">
-						<td style="text-align: right;">
+						<td style="height:30px; text-align: right;">
 							Color: &nbsp;
 							<select name="select" class="textEmpleados">
 								<option selected="selected">
@@ -258,7 +258,7 @@
 								</option>
 							</select>
 						</td>
-						<td style="text-align: right;">
+						<td style="height:30px; text-align: right;">
 							Talle: &nbsp;
 							<select name="select" class="textEmpleados">
 								<option selected="selected">
@@ -275,7 +275,7 @@
 								</option>
 							</select>
 						</td>
-						<td style="text-align: right;">
+						<td style="height:30px; text-align: right;">
 							Tela: &nbsp;
 							<select name="select" class="textEmpleados">
 								<option selected="selected">
@@ -292,7 +292,7 @@
 								</option>
 							</select>
 						</td>
-						<td style="text-align: right;">
+						<td style="height:30px; text-align: right;">
 							Textura: &nbsp;
 							<select name="select" class="textEmpleados">
 								<option selected="selected">
@@ -473,14 +473,14 @@
 				<br />
 				<table class="tablaEmpleados" style=" height: 170px; ">
 					<tr style="vertical-align: middle;">
-						<td style="text-align: center;">
+						<td style="height:30px; text-align: center;">
 							<h1>
 								Informe Segun Historial
 							</h1>
 						</td>
 					</tr>
 				</table>
-            </td>
+			</td>
 		</tr>
 	</table>
 </div>

@@ -158,15 +158,9 @@
 			&nbsp;Ventas&nbsp;
 			</a>
 			|
-			<a class="fancybox fancybox.iframe" href="form05cc.php" style="font-style: italic; "  >
-			<img src="./imagenes/iconos/25.png" height="15px" title="Cuentas Corrientes" />
-			&nbsp;Cuentas Corrientes&nbsp;
-			</a>
+			
 			|
-			<a href="#"><img src="./imagenes/iconos/24.png" height="15px" title="Informes"/>&nbsp;Informes&nbsp;</a>
-			|
-			<a href="./help/index.html" target="_blank">
-            <!--<img src="./imagenes/iconos/ayuda4.png" height="15px" title="Ayuda"/>&nbsp;-->Ayuda&nbsp;</a>
+			
 			|
 		</td>
 	</tr>

@@ -6,19 +6,19 @@
 
 <table style="vertical-align: middle; width: 100%;" >
 	<tr style="vertical-align: middle;">
-		<td style="text-align: left; " >
-			<form action="actions/Estacion/guardarEstacion.php" class="formEstacion">
+		<td style="height:30px; text-align: left; " >
+			<form action="actions/Estacion/guardarEstacion.php" id="formEstacion">
 				<table style="width: 100%;">
                 <tr>
                 <td>
                 <h2>Estacion</h2>
 				
                 </td>
-                <td style="text-align: right;">
-                <input type="submit" value="Agregar" class="buttonCaracteristicas Estacion"/>
+                <td style="height:30px; text-align: right;">
+                <input type="submit" value="Agregar" class="btn-success Estacion"/>
 				</td>
-                <td style="text-align: right;">
-                <input type="button" value="Limpiar Campos" class="buttonLimpiar Estacion no"/></td>
+                <td style="height:30px; text-align: left; padding-left: 15px;">
+                <input type="button" value="Limpiar Campos" class="btn-danger Estacion no"/></td>
                 </tr>
                 <tr>
                 <td colspan="3"> Nombre: &nbsp;<input type="text" name="detalleEstacion" placeholder="ingresar" class="textCaracteristicas" required/>
@@ -30,10 +30,10 @@
 		</td>
 	</tr>
 	<tr>
-		<td style="text-align: right;">
-			<div class="scrolCaracteristicas"> 
-				<table class="formuCaracteristicas" style="width: 100%;">
-			
+		<td style="height:30px; text-align: right;">
+			<div class="scrol"> 
+				<table class="formu" style="width: 100%;">
+			<thead>
 					<tr style="text-align: center;">
 						<td>
 							Mod
@@ -43,6 +43,7 @@
 						</td>
 
 					</tr>
+                    </thead>
 					<?php 
 					foreach ($estaciones as $estacion) {
 					?>					
@@ -69,18 +70,18 @@
 $('.editButtonEstacion').click(function(){
 	$('input[name=idEstacion]').val($(this).data('idestacion'));
 	$('input[name=detalleEstacion]').val($(this).data('detalleestacion'));
-	$('.buttonCaracteristicas.Estacion').val('Modificar');
-	$('.buttonLimpiar.Estacion').removeClass('no');
+	$('.btn-success.Estacion').val('Modificar');
+	$('.btn-danger.Estacion').removeClass('no');
 });
 
 //Boton limpiar campos
-$('.buttonLimpiar.Estacion').click(function(){
-	$('.buttonCaracteristicas.Estacion').val('Agregar');
+$('.btn-danger.Estacion').click(function(){
+	$('.btn-success.Estacion').val('Agregar');
 	$('input[name=idEstacion]').val('');
 	$('input[name=detalleEstacion]').val('');
-	$('.buttonLimpiar.Estacion').addClass('no');
+	$('.btn-danger.Estacion').addClass('no');
 });
 
 //Validacion de formulario
-$('.formEstacion').validate();
+$('#formEstacion').validate();
 </script>
