@@ -1,49 +1,17 @@
 <h1 style="text-align: left;">
 	&nbsp;Caracteristicas&nbsp;
 </h1>
-
-<table class="tablaCaracteristicas">
-	<tr>
-		<td style="height:30px; width: 32%;">
-			<?php include_once 'views/tela/abmTela.php'; ?>
-		</td>
-		<td style="height:30px; width: 1%;">
-		</td>
-		<td style="height:30px; width: 32%;">
-			<?php include_once 'views/color/abmColor.php'; ?>
-		</td>
-		<td style="height:30px; width: 1%;">
-		</td>
-		<td style="height:30px; width: 32%;">
-			<?php include_once 'views/marca/abmMarca.php'; ?>
-		</td>
-	</tr>
-	<tr>
-		<td style="height:30px; width: 32%;">
-			<?php include_once 'views/talle/abmTalle.php'; ?>
-		</td>
-		<td style="height:30px; width: 1%;">
-		</td>
-		<td style="height:30px; width: 32%;">
-			<?php include_once 'views/estampado/abmEstampado.php'; ?>
-		</td>
-		<td style="height:30px; width: 1%;">
-		</td>
-		<td style="height:30px; width: 32%;">
-			<?php include_once 'views/estacion/abmEstacion.php'; ?></td>
-	</tr>
-    <tr>
-        <td colspan="5" style="padding-bottom: 15px;"  >
-            <table style="width: 100%;" >
-                <tr>
-                    <td style="height:30px; width: 50%;">
-                        <?php include_once 'views/tipoVenta/abmTipoVenta.php'; ?>
-                    </td>
-                    <td style="height:30px; width: 50%; text-align: center;">
-                        <img src="./imagenes/logos/logo.png" style="border: 5px solid Darkred;"/>
-                    </td>	
-                </tr>
-            </table>
-        <td>
-    </tr>
-</table>
+<div class="row tablaCaracteristicas">
+	<div class="col-md-4"><?php include_once 'views/tela/abmTela.php'; ?></div>
+	<div class="col-md-4"><?php include_once 'views/color/abmColor.php'; ?></div>
+	<div class="col-md-4"><?php include_once 'views/marca/abmMarca.php'; ?></div>
+</div>
+<div class="row tablaCaracteristicas">
+	<div class="col-md-4"><?php include_once 'views/talle/abmTalle.php'; ?></div>
+	<div class="col-md-4"><?php include_once 'views/estampado/abmEstampado.php'; ?></div>
+	<div class="col-md-4"><?php include_once 'views/estacion/abmEstacion.php'; ?></div>
+</div>
+<div class="row">
+	<div class="col-xs-12 col-md-8"><?php include_once 'views/tipoVenta/abmTipoVenta.php'; ?></div>
+	<div class="col-xs-6 col-md-4"><img src="./imagenes/logos/logo.png" style="border: 5px solid Darkred;"/></div>
+</div>

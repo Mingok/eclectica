@@ -121,14 +121,14 @@ $(function(){
 	};
 	
 //hacemos la busqueda en el evento search del control de busqueda
-	$('#txtPrenda').on('search',function(){
-		//le decimos a la funcion que busque en la tabla tblTabla el
-		//valor que contiene el campo actual
-			$.fntBuscarEnTablaPrenda($(this).val(),'tblPrenda');
+	$('#txtPrenda').keydown(function(e) {
+	    if (e.keyCode === 13) {
+	    	$.fntBuscarEnTablaPrenda($(this).val(),'tblPrenda');
+	    }
 	});
-	$('#txtProveedor').on('search',function(){
-		//le decimos a la funcion que busque en la tabla tblTabla el
-		//valor que contiene el campo actual
-		$.fntBuscarEnTablaProv($(this).val(),'tblProveedor');
+	$('#txtProveedor').keydown(function(e) {
+	    if (e.keyCode === 13) {
+	    	$.fntBuscarEnTablaProv($(this).val(),'tblProveedor');
+	    }
 	});
 });

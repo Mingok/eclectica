@@ -46,7 +46,7 @@ input[type=search] {
 }
 
 .no {
-	display: none;
+	display: none!important;
 }
 div.error { display: none; }
 input {	border: 1px solid black; }
@@ -64,7 +64,6 @@ select.error { border: 1px dotted red; }
 div.scrol{
 	overflow: auto;
 	height: 150px;
-	width: 390px;
 }
 div.scrol1{
 	overflow: auto;

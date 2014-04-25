@@ -3,45 +3,35 @@
     $telaList = new tela();
     $telas = $telaList->telasDisponibles();
 ?>
-<table style="vertical-align: middle; width: 100%;" >
-	<tr style="vertical-align: middle;">
-		<td style="height:30px; text-align: left; " >
-			<form action="actions/tela/guardarTela.php" id="formTela">
-				<table style="width: 100%;">
-                <tr>
-                <td>
-                <h2>Tela</h2>
-				
-                </td>
-                <td style="height:30px; text-align: right;">
-                <input type="submit" value="Agregar" class="btn-success Tela"/>
-				</td>
-                <td style="height:30px; text-align: left; padding-left: 15px;">
-                <input type="button" value="Limpiar Campos" class="btn-danger Tela no"/></td>
-                </tr>
-                <tr>
-                <td colspan="3"> Nombre: &nbsp;<input type="text" name="detalleTela" placeholder="ingresar"  class="textCaracteristicas" required/>
-				<input type="hidden" value="" name="idTela"/>
-			</td></tr>
-               	
-			</table>
-            </form>
-		</td>
-	</tr>
-	<tr>
-		<td style="height:30px; text-align: right;">
-		<div class="scrol"> 
-				<table class="formu" style="width: 100%;">
-			<thead>
-					<tr style="text-align: center;">
-						<td>
-							Mod
-						</td>
-						<td>
-							Nombre
-						</td>
 
-					</tr>
+<div class="panel panel-success">
+	<div class="panel-heading">
+		<h3 class="panel-title">Tela</h3>
+	</div>
+	<div class="panel-body">
+			<form action="actions/tela/guardarTela.php" id="formTela">
+				<div class="row">
+					<div class="col-md-8">
+						 Nombre:<input type="text" name="detalleTela" placeholder="ingresar"  class="textCaracteristicas" required/>
+						<input type="hidden" value="" name="idTela"/>
+					</div>
+					<div class="col-md-4">
+						<input type="submit" value="Agregar" class="btn btn-sm btn-success Tela"/>
+						<input type="button" value="Limpiar Campos" class="btn btn-sm btn-danger Tela no"/>
+					</div>
+				</div>
+			</form>
+			<div class="row scrol"> 
+				<table class="table table-condensed">
+					<thead>
+						<tr style="text-align: center;">
+							<td>
+								Mod
+							</td>
+							<td>
+								Nombre
+							</td>
+						</tr>
                     </thead>
 					<?php 
 					foreach ($telas as $tela) {
@@ -60,9 +50,8 @@
 					<?php }?>		
 				</table>
 			</div>
-		</td>
-	</tr>
-</table>
+	</div>
+</div>
 <script type="text/javascript">
 
 //Boton Agregar o modificar
