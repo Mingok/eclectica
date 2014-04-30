@@ -1,12 +1,10 @@
-<table>
-	<tr>
-		<td>
+<div class="row">
+	<div class="col-md-12">
 			<?php include_once 'views/prenda/listaPrenda.php'; ?>
-		</td>
-	</tr>
-	<tr style="padding-bottom: 15px;">
-		<td>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-12">
 			<?php include_once 'views/prenda/abmPrenda.php'; ?>
-		</td>
-	</tr>
-</table>
+	</div>
+</div>  

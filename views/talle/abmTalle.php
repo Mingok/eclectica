@@ -15,8 +15,8 @@
 					<input type="hidden" value="" name="idTalle"/>
 				</div>
 				<div class="col-md-4">
-					<input type="submit" value="Agregar" class="btn btn-sm btn-success Talle"/>
-					<input type="button" value="Limpiar Campos" class="btn btn-sm btn-danger Talle no"/>
+					<input type="submit" style="width: 100px;" value="Agregar" class="btn btn-sm btn-success Talle"/>
+				<br /><br />	<input type="button" style="width: 100px;" value="Limpiar Campos" class="btn btn-sm btn-danger Talle no"/>
 				</div>
 			</div>
 		</form>

@@ -15,8 +15,8 @@
 					<input type="hidden" value="" name="idEstacion"/>
 				</div>
 				<div class="col-md-4">
-					<input type="submit" value="Agregar" class="btn btn-sm btn-success Estacion"/>
-					<input type="button" value="Limpiar Campos" class="btn btn-sm btn-danger Estacion no"/>
+					<input type="submit" style="width: 100px;" value="Agregar" class="btn btn-sm btn-success Estacion"/>
+					<br /><br /><input type="button" style="width: 100px;" value="Limpiar Campos" class="btn btn-sm btn-danger Estacion no"/>
 				</div>
 			</div>
 		</form>

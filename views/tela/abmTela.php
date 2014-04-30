@@ -16,8 +16,8 @@
 						<input type="hidden" value="" name="idTela"/>
 					</div>
 					<div class="col-md-4">
-						<input type="submit" value="Agregar" class="btn btn-sm btn-success Tela"/>
-						<input type="button" value="Limpiar Campos" class="btn btn-sm btn-danger Tela no"/>
+						<input type="submit" value="Agregar" style="width: 100px;" class="btn btn-sm btn-success Tela"/><br /><br />
+						<input type="button" value="Limpiar" style="width: 100px;" class="btn btn-sm btn-danger Tela no"/>
 					</div>
 				</div>
 			</form>

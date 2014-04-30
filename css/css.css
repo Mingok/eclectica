@@ -10,7 +10,7 @@ border-spacing: 5px; /* cellspacing */
 padding: 5px;/* cellpadding */
 }
 
-a {
+/*a {
 	text-decoration: none;	
 	font-size: 13	px;
 	color:#000000;
@@ -28,7 +28,7 @@ h1,h2,h3,h4,h5,h6 {
 	margin-top: 5px; 
 	margin-bottom:5px;
 }
-
+*/
 hr {
 	color: #1E90FF; 
 	background-color: #1E90FF; 
@@ -60,7 +60,15 @@ select.error { border: 1px dotted red; }
 #formPrendas label { width: 160px;}
 #formPrendas label.error, #formPrendas input.submit {margin-left: 13px; color:red; text-align: right	; }
 #formProveedor label { width: 50px;}
-#formProveedor label.error, #formProveedor input.submit {width: 210px; margin-left: 23px; color:red; text-align: right	; }
+#formProveedor label.error, #formProveedor input.submit {width: 150px; margin-left: 23px; color:red; text-align: right	; }
+#formTela label { width: 50px;}
+#formTela label.error, #formTela input.submit {width: 150px;color:red; text-align: right	; }
+#formColor label.error, #formTela input.submit {width: 150px;color:red; text-align: right	; }
+#formMarca label.error, #formTela input.submit {width: 150px;color:red; text-align: right	; }
+#formTalle label.error, #formTela input.submit {width: 150px;color:red; text-align: right	; }
+#formEstampado label.error, #formTela input.submit {width: 150px;color:red; text-align: right	; }
+#formEstacion label.error, #formTela input.submit {width: 150px;color:red; text-align: right	; }
+#formTipoVenta label.error, #formTela input.submit {width: 150px;color:red; text-align: right	; }
 div.scrol{
 	overflow: auto;
 	height: 150px;
@@ -69,6 +77,12 @@ div.scrol1{
 	overflow: auto;
 	height: 300px;
 	padding:10px; 
+}
+div.scrolPrv{
+	overflow: auto;
+	height: 165px;
+	width: 480px;
+
 }
 table.tabla{
 border-spacing: 5px; /* cellspacing */
@@ -92,4 +106,6 @@ Table.formu thead {
 	border-bottom:1px #000 solid;
 	text-align:left;
 }
-
+.formEmpresa input[type=file] {
+	display: inline;S
+}

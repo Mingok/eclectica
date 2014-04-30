@@ -15,8 +15,8 @@ $estampados = $estampadoList->estampadosDisponibles();
 					<input type="hidden" value="" name="idEstampado"/>
 				</div>
 				<div class="col-md-4">
-					<input type="submit" value="Agregar" class="btn btn-sm btn-success Estampado"/>
-					<input type="button" value="Limpiar Campos" class="btn btn-sm btn-danger Estampado no"/>
+					<input type="submit" style="width: 100px;" value="Agregar" class="btn btn-sm btn-success Estampado"/>
+					<br /><br /><input type="button" style="width: 100px;" value="Limpiar Campos" class="btn btn-sm btn-danger Estampado no"/>
 				</div>
 			</div>
 		</form>

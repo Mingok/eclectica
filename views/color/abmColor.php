@@ -3,7 +3,7 @@
     $colorList = new color();
     $colores = $colorList->coloresDisponibles();
 ?>
-<div class="panel panel-success">
+<div class="panel panel-default">
 	<div class="panel-heading">
 		<h3 class="panel-title">Color</h3>
 	</div>
@@ -15,20 +15,20 @@
 					<input type="hidden" value="" name="idColor"/>
 				</div>
 				<div class="col-md-4">
-					<input type="submit" value="Agregar" class="btn btn-sm btn-success Color "/>
-					<input type="button" value="Limpiar Campos" class="btn btn-sm btn-danger Color no"/>
+					<input type="submit" style="width: 100px;" value="Agregar" class="btn btn-sm btn-success Color "/>
+					<br /><br /><input type="button" style="width: 100px;" value="Limpiar Campos" class="btn btn-sm btn-danger Color no"/>
 				</div>
 			</div>
 		</form>
 		<div class="row scrol"> 
 			<table class="table table-condensed">
-				<thead>
+			<thead >
 					<tr style="text-align: center;">
 							<td>
-								Mod
+							<strong>Mod</strong>
 							</td>
 							<td>
-								Nombre
+								<strong>Nombre</strong>
 							</td>
 						</tr>
                     </thead>
@@ -51,6 +51,8 @@
 		</div>
 	</div>
 </div>
+<div id="message_ajax"></div>
+
 <script type="text/javascript">
 
 //Boton Agregar o modificar
@@ -71,4 +73,6 @@ $('.btn-danger.Color').click(function(){
 
 //Validacion de formulario
 $('#formColor').validate();
+
+
 </script>

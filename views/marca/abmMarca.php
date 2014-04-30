@@ -16,8 +16,8 @@
 					<input type="hidden" value="" name="idMarca"/>
 				</div>
 				<div class="col-md-4">
-					<input type="submit" value="Agregar" class="btn btn-sm btn-success Marca"/>
-					<input type="button" value="Limpiar Campos" class="btn btn-sm btn-danger Marca no"/>
+					<input type="submit" style="width: 100px;" value="Agregar" class="btn btn-sm btn-success Marca"/>
+				<br /><br />	<input type="button" style="width: 100px;" value="Limpiar Campos" class="btn btn-sm btn-danger Marca no"/>
 				</div>
 			</div>
 		</form>

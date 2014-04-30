@@ -1,4 +1,4 @@
-      <div class="navbar navbar-inverse"  style="top: 2px;">
+      <div class="navbar navbar-inverse navbar-fixed-top"  style="top: 2px;">
         <div class="container" >
           <div class="navbar-header" >
              <a href="index.php">  <img style="padding-top: 3px;"  src="./imagenes/logos/logo.png" height="46px" /></a>
@@ -20,6 +20,7 @@
                   <li><a href="./indexClientes.php">&nbsp;Clientes&nbsp;</a></li>
                   <li>	<a href="./indexEmpleados.php"> &nbsp;Empleados&nbsp;</a></li>
                   <li><a href="./indexProv.php">&nbsp;Proveedores&nbsp; </a></li>
+                  <li><a href="./indexProv.php#Empresa">&nbsp;Empresa&nbsp; </a></li>
                   <li class="divider"></li>
                   <li><a href="indexCaracteristicas.php">&nbsp;Caracteristicas&nbsp;</a></li>
                 </ul>

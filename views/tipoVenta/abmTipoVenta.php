@@ -22,8 +22,8 @@ $tipoVentas = $tipoVentaList->tipoVentasDisponibles();
 					<input type="hidden" value="" name="idTipoVenta"/>
 				</div>
 				<div class="col-md-4">
-					<input type="submit" value="Modificar" class="btn btn-sm btn-success TipoVenta no"/>
-					<input type="button" value="Limpiar Campos" class="btn btn-sm btn-danger TipoVenta no"/>
+					<input type="submit" style="width: 100px;" value="Modificar" class="btn btn-sm btn-success TipoVenta no"/>
+					<br /><br /><input type="button" style="width: 100px;" value="Limpiar Campos" class="btn btn-sm btn-danger TipoVenta no"/>
 				</div>
 			</div>
 		</form>

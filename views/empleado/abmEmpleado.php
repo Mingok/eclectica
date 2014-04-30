@@ -14,7 +14,7 @@
 							<label for="txtProveedor">
 								Buscar:
 							</label>
-							<input type="search" style="width:375px" id="txtProveedor" class="textPrendas" placeholder="Escriba el Nombre que desea encontrar y presione la ENTER" autofocus /> &nbsp;&nbsp;&nbsp;<input type="button" value="Nuevo" style="width: 100px;" class="buttonProvNuevo btn btn-sm btn-success" onclick="javascript:document.getElementById('ver').style.display = 'block'"/>
+							<input type="search" style="width:375px" id="txtProveedor" class="textPrendas" placeholder="Escriba el Nombre que desea encontrar y presione la ENTER" autofocus />
 						</div>
 						<table class="table table-condensed" id="tblProveedor">
 							<thead  class="btn-success">
@@ -63,8 +63,7 @@
             </div>
             <div class="row">
 			<div class="col-md-12">
-				<div id="divProv" style="display:none;">
-					<form action="actions/proveedor/guardarProveedor.php" class="formProveedor" id="formProveedor">
+				<form action="actions/proveedor/guardarProveedor.php" class="formProveedor" id="formProveedor">
 					<div class="panel panel-success">
 						<div class="panel-heading">
 							<h3 class="panel-title">Datos del Proveedor</h3>
@@ -124,7 +123,6 @@
                 </form>
 			</div>
 		</div>
-		</div>
 
 		<script type="text/javascript">
 			
@@ -141,7 +139,7 @@
 				$('input[name=contactoProveedor]').val($(this).data('contactoproveedor'));
 				$('input[name=bancoProveedor]').val($(this).data('bancoproveedor'));
 				$('input[name=cbuProveedor]').val($(this).data('cbuproveedor'));
-$('#divProv').show("slow");
+
 				$('.btn-success').val('Modificar');
 				$('.btn-danger').removeClass('no');
 			});
@@ -160,14 +158,7 @@ $('#divProv').show("slow");
 				$('input[name=bancoProveedor]').val('');
 				$('input[name=cbuProveedor]').val('');
 				$('.btn-danger').addClass('no');
-				$('#divProv').hide("slow");
 			});
-			$('.buttonProvNuevo').click(function() {
-			$('.btn-success').val('Agregar');
-			$('#divProv').show("slow");
-			$('.btn-danger').removeClass('no');
-
-		});
 
 			//Validacion de formulario
 

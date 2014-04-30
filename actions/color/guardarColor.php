@@ -12,9 +12,10 @@ $colorClass = new color();
 if ($idColor) {
 	$colores = $colorClass->modificarColor($arrColor);
 } else {
-	$colores = $colorClass->agregarNuevoColor($arrColor);	
-}
+	$colores = $colorClass->agregarNuevoColor($arrColor);
+       
+    }
 
-header('Location: '.$_SERVER['HTTP_REFERER']);
+header('Location: '.$_SERVER['HTTP_REFERER'].'?guardado=ok');
 exit;
 ?>
