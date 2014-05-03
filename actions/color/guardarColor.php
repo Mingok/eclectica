@@ -16,6 +16,7 @@ if ($idColor) {
        
     }
 
-header('Location: '.$_SERVER['HTTP_REFERER'].'?guardado=ok');
+$url=strtok($_SERVER["HTTP_REFERER"],'?');
+header('Location: '.$url.'?guardaColor=ok');
 exit;
 ?>

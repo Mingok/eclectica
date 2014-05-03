@@ -4,7 +4,7 @@
     $telas = $telaList->telasDisponibles();
 ?>
 
-<div class="panel panel-success">
+<div class="panel panel-default">
 	<div class="panel-heading">
 		<h3 class="panel-title">Tela</h3>
 	</div>
@@ -21,15 +21,19 @@
 					</div>
 				</div>
 			</form>
+             <div  id="exitoTela" >
+        <p class="alert-error">
+        Se creo nueva Talle</p>
+        </div>
 			<div class="row scrol"> 
 				<table class="table table-condensed">
 					<thead>
 						<tr style="text-align: center;">
 							<td>
-								Mod
+								<strong>Mod</strong>
 							</td>
 							<td>
-								Nombre
+								<strong>Nombre</strong>
 							</td>
 						</tr>
                     </thead>
@@ -39,7 +43,7 @@
 					<tr style='text-align: center'>
 						<td>
 							<a title='Modificar datos' class="editButtonTela" name="editTela" data-idtela="<?php echo $tela['idTela']?>" data-detalletela="<?php echo $tela['detalleTela']?>">
-								<img src='./imagenes/iconos/edit.png' width='14' height='14' />
+								<img src='./imagenes/iconos/edit.png' width='18px' height='18px' />
 							</a>
 						</td>
 						<td>
@@ -53,7 +57,23 @@
 	</div>
 </div>
 <script type="text/javascript">
+function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+    return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
 
+$(document).ready(function(){
+    
+    $("#exitoTela").hide();
+    mostrar = getParameterByName('guardaTela');
+    if (mostrar=='ok'){    
+         $("#exitoTela").show("slow");
+        $("#exitoTela").delay(5000).hide(1000);
+     } 
+     
+ });
 //Boton Agregar o modificar
 $('.editButtonTela').click(function(){
 	$('input[name=idTela]').val($(this).data('idtela'));

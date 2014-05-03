@@ -29,6 +29,8 @@ h1,h2,h3,h4,h5,h6 {
 	margin-bottom:5px;
 }
 */
+.alert-error{background-color:#f2dede;border-color:#eed3d7;color:#b94a48; text-align: center}
+
 hr {
 	color: #1E90FF; 
 	background-color: #1E90FF; 
@@ -60,7 +62,7 @@ select.error { border: 1px dotted red; }
 #formPrendas label { width: 160px;}
 #formPrendas label.error, #formPrendas input.submit {margin-left: 13px; color:red; text-align: right	; }
 #formProveedor label { width: 50px;}
-#formProveedor label.error, #formProveedor input.submit {width: 150px; margin-left: 23px; color:red; text-align: right	; }
+#formProveedor label.error, #formProveedor input.submit {width: 170px; margin-left: 23px; color:red; text-align: right	; }
 #formTela label { width: 50px;}
 #formTela label.error, #formTela input.submit {width: 150px;color:red; text-align: right	; }
 #formColor label.error, #formTela input.submit {width: 150px;color:red; text-align: right	; }
@@ -69,7 +71,9 @@ select.error { border: 1px dotted red; }
 #formEstampado label.error, #formTela input.submit {width: 150px;color:red; text-align: right	; }
 #formEstacion label.error, #formTela input.submit {width: 150px;color:red; text-align: right	; }
 #formTipoVenta label.error, #formTela input.submit {width: 150px;color:red; text-align: right	; }
-div.scrol{
+#formcliente label.error, #formTela input.submit {width: 170px;color:red; text-align: right	; }
+	
+	div.scrol{
 	overflow: auto;
 	height: 150px;
 }

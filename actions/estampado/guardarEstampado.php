@@ -15,6 +15,7 @@ if ($idEstampado) {
 	$estampados = $estampadoClass->agregarNuevoEstampado($arrEstampado);	
 }
 
-header('Location: '.$_SERVER['HTTP_REFERER']);
+$url=strtok($_SERVER["HTTP_REFERER"],'?');
+header('Location: '.$url.'?guardaEstampado=ok');
 exit;
 ?>	

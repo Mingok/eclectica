@@ -11,6 +11,7 @@ $contactoProveedor = $_REQUEST['contactoProveedor'];
 $bancoProveedor = $_REQUEST['bancoProveedor']; 
 $cbuProveedor = $_REQUEST['cbuProveedor'];
 $idProveedor = $_REQUEST['idProveedor'];
+$emailProveedor = $_REQUEST['emailProveedor'];
 $arrProveedor = array(
 	'nombreProveedor' => $nombreProveedor,
     'cuitProveedor' => $cuitProveedor, 
@@ -20,6 +21,7 @@ $arrProveedor = array(
     'telefonoProveedor'=> $telefonoProveedor, 
     'contactoProveedor'=> $contactoProveedor, 
     'bancoProveedor' => $bancoProveedor, 
+    'emailProveedor' => $emailProveedor, 
     'cbuProveedor' => $cbuProveedor
 );
 

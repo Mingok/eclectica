@@ -12,6 +12,6 @@
 	<div class="col-md-4"><?php include_once 'views/estacion/abmEstacion.php'; ?></div>
 </div>
 <div class="row">
-	<div class="col-xs-12 col-md-8"><?php include_once 'views/tipoVenta/abmTipoVenta.php'; ?></div>
-	<div class="col-xs-6 col-md-4"><img src="./imagenes/logos/logo.png" style="border: 5px solid Darkred;"/></div>
+	<div class="col-md-7"><?php include_once 'views/tipoVenta/abmTipoVenta.php'; ?></div>
+	<div class="col-md-5"><img src="./imagenes/logos/logo.png" style="border: 5px solid Darkred;"/></div>
 </div>

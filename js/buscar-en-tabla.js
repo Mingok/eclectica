@@ -188,4 +188,11 @@ $(function(){
 	    	$.fntBuscarEnTablaProv($(this).val(),'tblProveedor');
 	    }
 	});
+    $('#txtPersona').keydown(function(e) {
+	    if (e.keyCode === 13) {
+	    	$.fntBuscarEnTablaPrendaCod($(this).val(),'tblPersona');
+	    }
+	});
+    
+    
 });

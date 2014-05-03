@@ -10,9 +10,9 @@
     
     <div class="row">
         <div class="col-md-12">
-            <div class="panel panel-success">
-                <div class="panel-heading">
-                    <h3 class="panel-title">
+            <div class="panel panel-default">
+	<div class="panel-heading">
+		<h3 class="panel-title">
                     Datos de la prenda
                     </h3>
                 </div>

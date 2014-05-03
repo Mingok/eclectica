@@ -41,7 +41,7 @@
 											data-cuitProveedor="<?php echo $proveedor['cuitProveedor']?>" data-condIvaProveedor="<?php echo $proveedor['condIvaProveedor']?>"data-direccionProveedor="<?php echo $proveedor['direccionProveedor']?>"
 											data-localidadproveedor="<?php echo $proveedor['localidadProveedor']?>" data-telefonoProveedor="<?php echo $proveedor['telefonoProveedor']?>" data-contactoProveedor="<?php echo $proveedor['contactoProveedor']?>"
 											data-bancoProveedor="<?php echo $proveedor['bancoProveedor']?>" data-cbuProveedor="<?php echo $proveedor['cbuProveedor']?>">
-											<img src='./imagenes/iconos/edit.png' width='14' height='14' />
+											<img src='./imagenes/iconos/edit.png' width='18px' height='18px' />
 											</a>
 										</td>
 										<td>
@@ -128,7 +128,7 @@
 			
 			
 			$('.editButtonProveedor').click(function() {
-				console.log($(this).data('idProveedor'))
+				
 				$('input[name=idProveedor]').val($(this).data('idproveedor'));
 				$('input[name=nombreProveedor]').val($(this).data('nombreproveedor'));
 				$('input[name=cuitProveedor]').val($(this).data('cuitproveedor'));

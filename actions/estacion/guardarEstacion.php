@@ -15,6 +15,6 @@ if ($idEstacion) {
 	$estaciones = $estacionClass->agregarNuevoEstacion($arrEstacion);	
 }
 $url=strtok($_SERVER["HTTP_REFERER"],'?');
-header('Location: '.$url.'?guardado=ok');
+header('Location: '.$url.'?guardaEstacion=ok');
 exit;
 ?>

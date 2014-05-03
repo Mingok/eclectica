@@ -2,11 +2,15 @@
 require_once 'classes/tipoVenta/tipoVenta.php';
 $detalleTipoVenta = $_REQUEST['detalleTipoVenta'];
 $grupoTipoVenta = $_REQUEST['grupoTipoVenta'];
+$operacionTipoVenta= $_REQUEST['operacionTipoVenta'];
+$porcentajeTipoVenta= $_REQUEST['porcentajeTipoVenta'];
 $idTipoVenta = $_REQUEST['idTipoVenta'];
 $arrTipoVenta = array(
 	'detalleTipoVenta' => $detalleTipoVenta,
 	'idTipoVenta' => $idTipoVenta,
-    'grupoTipoVenta' => $grupoTipoVenta
+    'grupoTipoVenta' => $grupoTipoVenta,
+    'porcentajeTipoVenta' => $porcentajeTipoVenta,
+    'operacionTipoVenta' => $operacionTipoVenta
 );
 
 

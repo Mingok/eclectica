@@ -20,6 +20,10 @@
 				</div>
 			</div>
 		</form>
+        <div  id="exitoColor" >
+        <p class="alert-error">
+        Se creo nuevo Color</p>
+        </div>
 		<div class="row scrol"> 
 			<table class="table table-condensed">
 			<thead >
@@ -38,7 +42,7 @@
 				<tr style='text-align: center'>
 					<td>
 						<a title='Modificar datos' class="editButtonColor" name="editColor" data-idcolor="<?php echo $color['idColor']?>" data-detallecolor="<?php echo $color['detalleColor']?>">
-							<img src='./imagenes/iconos/edit.png' width='14' height='14' />
+							<img src='./imagenes/iconos/edit.png' width='18px' height='18px' />
 						</a>
 					</td>
 					<td>
@@ -51,10 +55,26 @@
 		</div>
 	</div>
 </div>
-<div id="message_ajax"></div>
+
 
 <script type="text/javascript">
+function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+    return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
 
+$(document).ready(function(){
+    
+    $("#exitoColor").hide();
+    mostrar = getParameterByName('guardaColor');
+    if (mostrar=='ok'){    
+         $("#exitoColor").show("slow");
+        $("#exitoColor").delay(5000).hide(1000);
+     } 
+     
+ });
 //Boton Agregar o modificar
 $('.editButtonColor').click(function(){
 	$('input[name=idColor]').val($(this).data('idcolor'));

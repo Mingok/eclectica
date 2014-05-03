@@ -14,7 +14,7 @@ if ($idMarca) {
 } else {
 	$marcas = $marcaClass->agregarNuevoMarca($arrMarca);	
 }
-
-header('Location: '.$_SERVER['HTTP_REFERER']);
+$url=strtok($_SERVER["HTTP_REFERER"],'?');
+header('Location: '.$url.'?guardaMarca=ok');
 exit;
 ?>
