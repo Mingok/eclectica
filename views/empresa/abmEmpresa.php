@@ -1,16 +1,19 @@
-<?php require_once 'classes/empresa/empresa.php'; $empresaList=new empresa(); $empresas=$empresaList->
-	datosEmpresa(); ?>
+<?php 
+	require_once 'classes/empresa/empresa.php'; 
+	$empresaList = new empresa(); 
+	$empresas = $empresaList->datosEmpresa(); 
+?>
 	<div id="Empresa">
 		<h1>
 			Empresa
 		</h1>
 		<div class="panel panel-success">
 			<div class="panel-body">
-				<form action="actions/empresa/moificarEmpresa.php" class="formEmpresa">
+				<form action="actions/empresa/moificarEmpresa.php" class="formEmpresa" enctype="multipart/form-data" method="post">
 					<?php foreach ($empresas as $empresa) { ?>
 						<div class="row" style="height: 35px;">
 							<div class="col-md-4" style="text-align: right;">
-								<label for="nombreEmpresa">Razón Social:</label>
+								<label for="nombreEmpresa">Razï¿½n Social:</label>
 								<input type="text" style="width: 150px;" maxlength="50px" name="nombreEmpresa" value="<?php echo $empresa['nombreEmpresa'];?>"/>
 							</div>
 							<div class="col-md-4" style="text-align: right;">

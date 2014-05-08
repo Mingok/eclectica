@@ -6,31 +6,30 @@ $dirEmpresa = $_REQUEST['dirEmpresa'];
 $cuitEmpresa = $_REQUEST['cuitEmpresa'];
 $telEmpresa = $_REQUEST['telEmpresa'];
 $emailEmpresa = $_REQUEST['emailEmpresa'];
+$empresaClass = new empresa();
 
-    if (! isset( $_REQUEST['logoEmpresa'])){
-    
-
-$arrEmpresa = array(
-	'nombreEmpresa' => $nombreEmpresa,
-    'dirEmpresa' => $dirEmpresa,
-    'cuitEmpresa' => $cuitEmpresa,
-    'telEmpresa' => $telEmpresa,
-    'emailEmpresa' => $emailEmpresa
-);
+if (!isset( $_FILES['logoEmpresa'])){
+	$arrEmpresa = array(
+		'nombreEmpresa' => $nombreEmpresa,
+	    'dirEmpresa' => $dirEmpresa,
+	    'cuitEmpresa' => $cuitEmpresa,
+	    'telEmpresa' => $telEmpresa,
+	    'emailEmpresa' => $emailEmpresa
+	);
 }else{
                    
-$logoEmpressa = $_REQUEST['logoEmpresa'];
-  $arrEmpresa = array(
-	'nombreEmpresa' => $nombreEmpresa,
-    'dirEmpresa' => $dirEmpresa,
-    'cuitEmpresa' => $cuitEmpresa,
-    'telEmpresa' => $telEmpresa,
-    'logoEmpresa' => $logoEmpressa,
-'emailEmpresa' => $emailEmpresa
-    
-);  
+	$logoEmpressa = $_FILES['logoEmpresa'];
+  	$arrEmpresa = array(
+		'nombreEmpresa' => $nombreEmpresa,
+	    'dirEmpresa' => $dirEmpresa,
+	    'cuitEmpresa' => $cuitEmpresa,
+	    'telEmpresa' => $telEmpresa,
+	    'logoEmpresa' => $logoEmpressa['name'],
+		'emailEmpresa' => $emailEmpresa
+		);  
+	$empresaClass->guardarLogoEmpresa($logoEmpressa);
 }
-$empresaClass = new empresa();
+
 $empresas = $empresaClass->modificarEmpresa($arrEmpresa);
 
 header('Location: '.$_SERVER['HTTP_REFERER']);

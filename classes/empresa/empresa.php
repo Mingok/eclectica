@@ -76,4 +76,11 @@ Class empresa {
 		$objManejoMySQL->consultar($strSql, $arrResultado);
 		return $arrResultado;
 	}
+	
+	public function guardarLogoEmpresa($archivo){
+		$origen = $archivo['tmp_name'];
+		$destino = "../../imagenes/logos/" . $archivo['name'];
+		
+		move_uploaded_file($origen , $destino );
+	}
 }
