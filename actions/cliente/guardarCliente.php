@@ -1,6 +1,9 @@
 <?php
 require_once 'classes/persona/persona.php';
 $idPersona = $_REQUEST['idPersona'];
+$dniPersona = $_REQUEST['dniPersona'];
+$telTrabajoPersona =$_REQUEST['telTrabajoPersona'];
+$trabajoPersona =$_REQUEST['trabajoPersona'];
 $nombrePersona = $_REQUEST['nombrePersona'];
 $apellidoPersona = $_REQUEST['apellidoPersona'];
 $direccionPersona = $_REQUEST['direccionPersona']; 
@@ -11,6 +14,9 @@ $fechaNacPersona = $_REQUEST['fechaNacPersona'];
 $facebookPersona = $_REQUEST['facebookPersona']; 
 $cuentaCorrientePersona = $_REQUEST['cuentaCorrientePersona'];
 $arrPersona = array(
+    'trabajoPersona'=>$trabajoPersona,
+    'dniPersona'=>$dniPersona,
+    'telTrabajoPersona'=>$telTrabajoPersona,
 	'nombrePersona' => $nombrePersona,
     'apellidoPersona' => $apellidoPersona, 
     'direccionPersona' => $direccionPersona, 

@@ -1,5 +1,6 @@
 <?php define( 'EMPLEADOS_STYLE_PATH', 'http://localhost/eclectica/css/'); define( 'EMPLEADOS_SCRIPTS_PATH', 'http://localhost/eclectica/js/'); ?>
 	<!DOCTYPE HTML>
+    <html>
 	<head>
 		<meta http-equiv="content-type" content="text/html" />
 		<meta name="author" content="Emmanuel" />

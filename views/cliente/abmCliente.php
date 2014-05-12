@@ -1,6 +1,6 @@
 <div class="row">
-	<div class="col-md-8">
-		<form action="actions/persona/guardarPersona.php" class="formcliente" id="formcliente">
+	<div class="col-md-12">
+		<form action="actions/cliente/guardarCliente.php" class="formcliente" id="formcliente">
 			<div class="panel panel-default">
 				<div class="panel-heading">
 					<h3 class="panel-title">
@@ -10,54 +10,74 @@
 				<div class="panel-body">
 					<div class="row" style="height: 35px;">
 						<div class="col-md-4" style="text-align: right;">
-							<label for="nombrePersona" style="width: 100px;">
+							<label for="nombrePersona"  style="width: 120px;">
 								Nombre:
 							</label>
-							<input type="text" id="nombrePersona" name="nombrePersona" title="Ingrese Nombre" style="width: 100px;" maxlength="50px" placeholder="Nombre" required />
+							<input type="text" id="nombrePersona" name="nombrePersona" title="Ingrese Nombre"  style="width: 120px;" maxlength="50px" placeholder="Nombre" required />
 						</div>
 						<div class="col-md-4" style="text-align: right;">
-							<label for="apellidoPersona" style="width: 100px;">
+							<label for="apellidoPersona"  style="width: 120px;">
 								Apellido:
 							</label>
-							<input type="text" id="apellidoPersona" name="apellidoPersona" style="width: 100px;" title="Ingrese Apellido" maxlength="50px" placeholder="Apellido" required />
+							<input type="text" id="apellidoPersona" name="apellidoPersona"  style="width: 120px;" title="Ingrese Apellido" maxlength="50px" placeholder="Apellido" required />
 						</div>
 						<div class="col-md-4" style="text-align: right;">
-							<label for="celuPersona" style="width: 100px;">
+							<label for="celuPersona"  style="width: 120px;">
 								Celular:
 							</label>
-							<input type="text" id="celuPersona" name="celuPersona" style="width: 100px;" title="Ingrese Celu" placeholder="Ingrese" required required/>
+							<input type="text" id="celuPersona" name="celuPersona"  style="width: 120px;" title="Ingrese Celu" placeholder="Ingrese" required required/>
 						</div>
 					</div>
 					<div class="row" style="height: 35px;">
 						<div class="col-md-4" style="text-align: right;">
-							<label for="localidadPersona" style="width: 100px;">
+							<label for="localidadPersona"  style="width: 120px;">
 								Localidad:
 							</label>
 							<input type="text" id="localidadPersona" name="localidadPersona" style="width: 120px;" title="Ingrese DOMICILIO" placeholder="Ingrese" required />
 						</div>
 						<div class="col-md-4" style="text-align: right;">
-							<label for="direccionPersona" style="width: 100px;">
+							<label for="direccionPersona"  style="width: 120px;">
 								Direccion:
 							</label>
-							<input type="text" id="direccionPersona" name="direccionPersona" style="width: 100px;" maxlength="50px" title="Ingrese CONDICION" placeholder="Ingrese" required />
+							<input type="text" id="direccionPersona" name="direccionPersona"  style="width: 120px;" maxlength="50px" title="Ingrese CONDICION" placeholder="Ingrese" required />
 						</div>
 						<div class="col-md-4" style="text-align: right;">
-							<label for="telefonoPersona" style="width: 100px;">
+							<label for="telefonoPersona"  style="width: 120px;">
 								Telefono:
 							</label>
-							<input type="text" id="telefonoPersona" name="telefonoPersona" style="width: 100px;" maxlength="50px" title="Ingrese LOCALIDAD" placeholder="Ingrese" required />
+							<input type="text" id="telefonoPersona" name="telefonoPersona"  style="width: 120px;" maxlength="50px" title="Ingrese LOCALIDAD" placeholder="Ingrese" required />
+						</div>
+					</div>
+                    <div class="row" style="height: 35px;">
+						<div class="col-md-4" style="text-align: right;">
+							<label for="dniPersona"  style="width: 120px;">
+								DNI:
+							</label>
+							<input type="text" id="dniPersona" name="dniPersona" style="width: 120px;" title="Ingrese DOMICILIO" placeholder="Ingrese" required />
+						</div>
+						<div class="col-md-4" style="text-align: right;">
+							<label for="trabajoPersona"  style="width: 120px;">
+								Trabajo:
+							</label>
+							<input type="text" id="trabajoPersona" name="trabajoPersona"  style="width: 120px;" maxlength="50px" title="Ingrese CONDICION" placeholder="Ingrese" required />
+						</div>
+						<div class="col-md-4" style="text-align: right;">
+							<label for="telTrabajoPersona"  style="width: 120px;">
+								Tel. trabajo:
+							</label>
+							<input type="text" id="telTrabajoPersona" name="telTrabajoPersona"  style="width: 120px;" maxlength="50px" title="Ingrese LOCALIDAD" placeholder="Ingrese" required />
 						</div>
 					</div>
 					<div class="row" style="height: 35px;">
 						<div class="col-md-6" style="text-align: right;">
-							<label for="facebookPersona" style="width: 100px;">
+							<label for="facebookPersona"  style="width: 120px;">
 								Email/Face:
 							</label>
 							<input type="email" title="Ingrese Email Correcto" id="facebookPersona" name="facebookPersona" placeholder="Ingrese" style="width: 250px;" required />
 						</div>
 						<div class="col-md-6" style="text-align: right; height: 55px;">
-							<label for="fechaNacPersona" style="width: 100px;">
-								Contacto:
+							<label for="fechaNacPersona"  style="width: 120px;">
+								F. Nacimiento:
 							</label>
 							<input type="date" id="fechaNacPersona" name="fechaNacPersona" title="Ingrese Fecha" required />
 						</div>
@@ -66,48 +86,16 @@
 						<div class="col-md-12" style="text-align: right;">
 							<input type="hidden" value="" name="idPersona"/>
                             <input type="hidden" value="" name="cuentaCorrientePersona"/> 
-							<input type="submit" value="Agregar" style="width: 100px;" class="btn btn-sm btn-success Persona " />
-							<input type="button" value="Limpiar" style="width: 100px;" class="btn btn-sm btn-danger no"/>
-                            <input type="button" value=">>"  id="Actualizar" class="btn btn-info" />
+							<input type="submit" value="Agregar"  style="width: 120px;" class="btn btn-sm btn-success Persona " />
+							<input type="button" value="Limpiar"  style="width: 120px;" class="btn btn-sm btn-danger no"/>
+                            
 						</div>
 					</div>
 				</div>
 			</div>
 		</form>
 	</div>
-<div class="cuentaC" id="cuentaC">
-	<div class="col-md-4">
-        <div class="panel panel-default">
-				<div class="panel-heading">
-					<h3 class="panel-title">
-                    Actualizar CC
-                    </h3>
-                </div>
-                <div class="panel-body">
-                <form action="actions/persona/actualizaCcPersona.php" class="formCcCliente" id="formCcCliente">
-            		<table style="width: 100%;" >
-            			<tr style="vertical-align: middle;width: 200px;">
-                        	<td style="height:30px; text-align: left;">  <div id="CC" style="width: 100px;">sdasdasdasd;</div></td>
-                         </tr>
-                         <tr style="vertical-align: middle;">    
-            				<td style="height:30px; text-align: center;">
-            					<input type="hidden" value="" name="idPersona"/>
-                                 <input type="hidden" value="" name="cuentaCorrientePersona"/> 
-            					Entrega: &nbsp;
-            					<input type="text" name="entregaCliente" placeholder="ingresar" style="width: 120px;" class="textCaracteristicas"/>
-            					<input type="submit" name="pNuevo" value="Actualizar" class="btn btn-sm btn-success" />
-            				</td>
-                            <td><strong>
-									
-										</strong></td>
-            			</tr>
-            		</table>
-                    </form>
-                </div>
-                </div>
-                </div>
-	</div>
-</div>
+
 </div>
 <script type="text/javascript">
         $('.buttonVerHistorial').click(function() {
@@ -123,6 +111,10 @@
                 $('input[name=nombrePersona]').val($(this).data('nombrepersona'));
                 $('input[name=apellidoPersona]').val($(this).data('apellidopersona'));
                 $('input[name=celuPersona]').val($(this).data('celupersona'));
+                $('input[name=trabajoPersona]').val($(this).data('trabajopersona'));
+                
+                $('input[name=dniPersona]').val($(this).data('dnipersona'));
+                $('input[name=telTrabajoPersona]').val($(this).data('teltrabajopersona'));
                 $('input[name=telefonoPersona]').val($(this).data('telefonopersona'));
                 $('input[name=localidadPersona]').val($(this).data('localidadpersona'));
                 $('input[name=direccionPersona]').val($(this).data('direccionpersona'));
@@ -135,11 +127,7 @@
 				$('.btn-success.Prov').val('Modificar');
 				$('.btn-danger').removeClass('no');
 			});
-            $('#Actualizar').click(function() {
-				$('#cuentaC').show("3000");
-                $('#CC').html('<strong>Debe:</strong>'+$('input[name=cuentaCorrientePersona]').val());
-    		});
-			//Boton limpiar campos
+            //Boton limpiar campos
 			$('.btn-danger').click(function() {
 			location.reload();
 			});
@@ -148,7 +136,10 @@
                 $('input[name=facebookPersona]').val('');
                 $('input[name=nombrePersona]').val('');
                 $('input[name=apellidoPersona]').val('');
-                $('input[name=celuPersona]').val($(this).data('celupersona'));
+                $('input[name=celuPersona]').val('');
+                $('input[name=dniPersona]').val('');
+                $('input[name=telTrabajoPersona]').val('');
+                $('input[name=trabajoPersona]').val('');
                 $('input[name=telefonoPersona]').val('');
                 $('input[name=localidadPersona]').val('');
                 $('input[name=direccionPersona]').val('');

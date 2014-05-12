@@ -21,20 +21,20 @@
 								<tr style="text-align: center;">
 									<td style="height:30px; width: 8%;">
 										<strong>
-											His
-										</strong>
-									</td>
-									<td style="height:30px; width: 8%;">
-										<strong>
 											Mod
 										</strong>
 									</td>
-									<td style="width:25%">
+                                    <td style="width:10%">
+										<strong>
+											DNI
+										</strong>
+									</td>
+									<td style="width:28%">
 										<strong>
 											Nombre
 										</strong>
 									</td>
-									<td style="width:25%">
+									<td style="width:20%">
 										<strong>
 											Direccion
 										</strong>
@@ -58,18 +58,17 @@
 								</tr>
 							</thead>
 							<tbody>
-								<?php foreach ($personas as $persona) { ?>
+								<?php foreach ($personas as $persona) { 
+								   
+								    if ( $persona["codigoVendedor"] ==null){?>
 									<tr style='text-align: center'>
-										<td>
-											<a class="buttonVerHistorial" name="histPersona">
-											<img src='./imagenes/iconos/time.png' width='18' height='18' />
-											</a>
-											</a>
-										</td>
-									   <td>
-											<a  class="editButtonPersona" name="editPersona" data-nombrepersona="<?php echo $persona['nombrePersona']?>" data-cuentacorrientepersona="<?php echo $persona['cuentaCorrientePersona']?>" data-localidadpersona="<?php echo $persona['localidadPersona']?>" data-fechanacpersona="<?php echo $persona['fechaNacPersona']?>" data-direccionpersona="<?php echo $persona['direccionPersona']?>" data-facebookpersona="<?php echo $persona['facebookPersona']?>" data-apellidopersona="<?php echo $persona['apellidoPersona']?>" data-celupersona="<?php echo $persona['celuPersona']?>" data-telefonopersona="<?php echo $persona['telefonoPersona']?>" data-idpersona="<?php echo $persona['idPersona']?>">
+                                        <td>
+											<a  class="editButtonPersona" name="editPersona"  data-trabajopersona="<?php echo $persona['trabajoPersona']?>" data-dnipersona="<?php echo $persona['dniPersona']?>" data-nombrepersona="<?php echo $persona['nombrePersona']?>" data-teltrabajopersona="<?php echo $persona['telTrabajoPersona']?>" data-cuentacorrientepersona="<?php echo $persona['cuentaCorrientePersona']?>" data-localidadpersona="<?php echo $persona['localidadPersona']?>" data-fechanacpersona="<?php echo $persona['fechaNacPersona']?>" data-direccionpersona="<?php echo $persona['direccionPersona']?>" data-facebookpersona="<?php echo $persona['facebookPersona']?>" data-apellidopersona="<?php echo $persona['apellidoPersona']?>" data-celupersona="<?php echo $persona['celuPersona']?>" data-telefonopersona="<?php echo $persona['telefonoPersona']?>" data-idpersona="<?php echo $persona['idPersona']?>">
 											<img src='./imagenes/iconos/edit.png' width='18px' height='18px' />
 											</a>
+										</td>
+                                        <td>
+											<?php echo $persona['dniPersona']?>
 										</td>
                                        	<td>
 											<?php echo $persona['nombrePersona']. " ".$persona[ 'apellidoPersona']?>
@@ -87,7 +86,7 @@
 											<?php echo $persona['cuentaCorrientePersona']?>
 										</td>
 									</tr>
-									<?php }?>
+									<?php }}?>
 							</tbody>
 						</table>
 					</div>
