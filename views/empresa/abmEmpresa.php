@@ -14,25 +14,25 @@
 						<div class="row" style="height: 35px;">
 							<div class="col-md-4" style="text-align: right;">
 								<label for="nombreEmpresa">Raz�n Social:</label>
-								<input type="text" style="width: 150px;" maxlength="50px" name="nombreEmpresa" value="<?php echo $empresa['nombreEmpresa'];?>"/>
+								<input type="text" style="width: 150px;" maxlength="50px" name="nombreEmpresa" value="<?php echo $empresa['nombreEmpresa'];?>" required/>
 							</div>
 							<div class="col-md-4" style="text-align: right;">
 								<label for="cuitEmpresa">CUIT:</label>
-								<input type="text" style="width: 120px;" maxlength="50px" name="cuitEmpresa" value="<?php echo $empresa['cuitEmpresa'];?>"/>
+								<input type="text" style="width: 120px;" maxlength="50px" name="cuitEmpresa" value="<?php echo $empresa['cuitEmpresa'];?>" required/>
 							</div>
 							<div class="col-md-4" style="text-align: right;">
 								<label for="telEmpresa">Tel.:</label>
-								<input type="text" style="width: 150px;" maxlength="50px" name="telEmpresa" value="<?php echo $empresa['telEmpresa'];?>"/>
+								<input type="text" style="width: 150px;" maxlength="50px" name="telEmpresa" value="<?php echo $empresa['telEmpresa'];?>" required/>
 							</div>
 						</div>
 						<div class="row" style="height: 35px;">
 							<div class="col-md-4" style="text-align: right;">
 							<label for="emailEmpresa">	E-mail:</label>
-								<input type="text" style="width: 250px;" name="emailEmpresa" value="<?php echo $empresa['emailEmpresa'];?>"/>
+								<input type="text" style="width: 250px;" name="emailEmpresa" value="<?php echo $empresa['emailEmpresa'];?>" required/>
 							</div>
 							<div class="col-md-4" style="text-align: right;">
 								<label for="dirEmpresa">Domicilio:</label>
-								<input type="text" style="width: 150px;" maxlength="50px" name="dirEmpresa" value="<?php echo $empresa['dirEmpresa'];?>"/>
+								<input type="text" style="width: 150px;" maxlength="50px" name="dirEmpresa" value="<?php echo $empresa['dirEmpresa'];?>" required/>
 							</div>
 							<div class="col-md-4" style="text-align: right;">
 								<label for="logoEmpresa">
@@ -50,3 +50,7 @@
 				</form>
 			</div>
 		</div>
+		
+		<script type="text/javascript">
+		$("#formEmpresa").validate();
+		</script>
