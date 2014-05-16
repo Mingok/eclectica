@@ -7,8 +7,7 @@ $cuitEmpresa = $_REQUEST['cuitEmpresa'];
 $telEmpresa = $_REQUEST['telEmpresa'];
 $emailEmpresa = $_REQUEST['emailEmpresa'];
 $empresaClass = new empresa();
-
-if (!isset( $_FILES['logoEmpresa'])){
+if (empty( $_FILES['logoEmpresa']['size'])){
 	$arrEmpresa = array(
 		'nombreEmpresa' => $nombreEmpresa,
 	    'dirEmpresa' => $dirEmpresa,
