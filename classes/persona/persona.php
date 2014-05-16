@@ -1,5 +1,14 @@
 <?php
 Class persona {
+	public function eligePersona($id){
+		require_once (__DIR__.'\..\..\base\manejoMySQL.php');
+		
+		$objManejoMySQL= new manejoMySQL();
+		$strSql="SELECT * FROM `persona` where idPersona=".$id;
+		$arrResultado=null;
+		$objManejoMySQL->consultar($strSql, $arrResultado);
+		return $arrResultado;
+	}
 	public function personasDisponibles(){
 		require_once (__DIR__.'\..\..\base\manejoMySQL.php');
 		
@@ -10,7 +19,6 @@ Class persona {
 		$objManejoMySQL->consultar($strSql, $arrResultado);
 		return $arrResultado;
 	}
-	
 	public function agregarNuevaPersona($arrPersona){
 		require_once (__DIR__.'\..\..\base\manejoMySQL.php');
 		$strValoresCampos = "";

@@ -104,56 +104,49 @@
                 scrollTop: $("#verHistorial").offset().top}, 2000);
 				
 			});
-            
-		$('.editButtonPersona').click(function() {
-  		        $('input[name=idPersona]').val($(this).data('idpersona'));
-                $('input[name=facebookPersona]').val($(this).data('facebookpersona'));
-                $('input[name=nombrePersona]').val($(this).data('nombrepersona'));
-                $('input[name=apellidoPersona]').val($(this).data('apellidopersona'));
-                $('input[name=celuPersona]').val($(this).data('celupersona'));
-                $('input[name=trabajoPersona]').val($(this).data('trabajopersona'));
-                
-                $('input[name=dniPersona]').val($(this).data('dnipersona'));
-                $('input[name=telTrabajoPersona]').val($(this).data('teltrabajopersona'));
-                $('input[name=telefonoPersona]').val($(this).data('telefonopersona'));
-                $('input[name=localidadPersona]').val($(this).data('localidadpersona'));
-                $('input[name=direccionPersona]').val($(this).data('direccionpersona'));
-                $('#fechaNacPersona').val($(this).data('fechanacpersona'));
-                $('input[name=cuentaCorrientePersona]').val($(this).data('cuentacorrientepersona'));
-                $('.btn-success.Persona').val('Modificar');
-                $('#divPersona').show(1000);
-                $('#cuentaC').hide();
-                $('#verHistorial').hide(2000);
-				$('.btn-success.Prov').val('Modificar');
-				$('.btn-danger').removeClass('no');
-			});
-            //Boton limpiar campos
-			$('.btn-danger').click(function() {
-			location.reload();
-			});
-			$('.buttonPersonaNuevo').click(function() {
-			 $('input[name=idPersona]').val($(this).data('idpersona'));
-                $('input[name=facebookPersona]').val('');
-                $('input[name=nombrePersona]').val('');
-                $('input[name=apellidoPersona]').val('');
-                $('input[name=celuPersona]').val('');
-                $('input[name=dniPersona]').val('');
-                $('input[name=telTrabajoPersona]').val('');
-                $('input[name=trabajoPersona]').val('');
-                $('input[name=telefonoPersona]').val('');
-                $('input[name=localidadPersona]').val('');
-                $('input[name=direccionPersona]').val('');
-                $('#fechaNacPersona').val('');
-                $('input[name=cuentaCorrientePersona]').val('');
-             
-       			$('.btn-success.Persona').val('Agregar');
-    			$('#divPersona').show("slow");
-       			$('.btn-danger').removeClass('no');
-        	});
-
-			//Validacion de formulario
-
-			$("#formcliente").validate();
-		
-		
+    	$('.editButtonPersona').click(function() {
+	        $('input[name=idPersona]').val($(this).data('idpersona'));
+            $('input[name=facebookPersona]').val($(this).data('facebookpersona'));
+            $('input[name=nombrePersona]').val($(this).data('nombrepersona'));
+            $('input[name=apellidoPersona]').val($(this).data('apellidopersona'));
+            $('input[name=celuPersona]').val($(this).data('celupersona'));
+            $('input[name=trabajoPersona]').val($(this).data('trabajopersona'));
+            $('input[name=dniPersona]').val($(this).data('dnipersona'));
+            $('input[name=telTrabajoPersona]').val($(this).data('teltrabajopersona'));
+            $('input[name=telefonoPersona]').val($(this).data('telefonopersona'));
+            $('input[name=localidadPersona]').val($(this).data('localidadpersona'));
+            $('input[name=direccionPersona]').val($(this).data('direccionpersona'));
+            $('#fechaNacPersona').val($(this).data('fechanacpersona'));
+            $('input[name=cuentaCorrientePersona]').val($(this).data('cuentacorrientepersona'));
+            $('.btn-success.Persona').val('Modificar');
+            $('#divPersona').show(1000);
+            $('#cuentaC').hide();
+            $('#verHistorial').hide(2000);
+			$('.btn-success.Prov').val('Modificar');
+			$('.btn-danger').removeClass('no');
+		});
+        //Boton limpiar campos
+		$('.btn-danger').click(function() {
+    		location.reload();
+		});
+		$('.buttonPersonaNuevo').click(function() {
+            $('input[name=idPersona]').val($(this).data('idpersona'));
+            $('input[name=facebookPersona]').val('');
+            $('input[name=nombrePersona]').val('');
+            $('input[name=apellidoPersona]').val('');
+            $('input[name=celuPersona]').val('');
+            $('input[name=dniPersona]').val('');
+            $('input[name=telTrabajoPersona]').val('');
+            $('input[name=trabajoPersona]').val('');
+            $('input[name=telefonoPersona]').val('');
+            $('input[name=localidadPersona]').val('');
+            $('input[name=direccionPersona]').val('');
+            $('#fechaNacPersona').val('');
+            $('input[name=cuentaCorrientePersona]').val('');
+   			$('.btn-success.Persona').val('Agregar');
+			$('#divPersona').show("slow");
+   			$('.btn-danger').removeClass('no');
+    	});
+		//Validacion de formulario
+		$("#formcliente").validate();
 		</script>

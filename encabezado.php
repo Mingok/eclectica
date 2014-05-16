@@ -1,4 +1,6 @@
+<?php define( 'EMPLEADOS_STYLE_PATH', 'http://localhost/eclectica/css/'); define( 'EMPLEADOS_SCRIPTS_PATH', 'http://localhost/eclectica/js/'); ?>
 <?php 
+
 	require_once 'classes/empresa/empresa.php'; 
 	$empresaList = new empresa(); 
 	$empresas = $empresaList->datosEmpresa();
@@ -6,7 +8,23 @@
 	if (is_array($empresas)) {
 		$empresa = array_shift($empresas);
 	}
+
 ?>
+    <link rel="stylesheet" href="<?php echo EMPLEADOS_STYLE_PATH;?>css.css" type="text/css" />
+    <link rel="stylesheet" href="<?php echo EMPLEADOS_STYLE_PATH;?>bootstrap/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="<?php echo EMPLEADOS_STYLE_PATH;?>bootstrap/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="<?php echo EMPLEADOS_STYLE_PATH;?>select2/select2.css" type="text/css" />
+    <link rel="stylesheet" href="<?php echo EMPLEADOS_STYLE_PATH;?>select2/bootstrap.min.css" type="text/css" />
+    <script type="text/javascript" src="<?php echo EMPLEADOS_SCRIPTS_PATH;?>validacion/lib/jquery.js"></script>
+    <script type="text/javascript" src="<?php echo EMPLEADOS_SCRIPTS_PATH;?>validacion/dist/jquery.validate.js"></script>
+    <script type="text/javascript" src="<?php echo EMPLEADOS_SCRIPTS_PATH;?>bootstrap/bootstrap.min.js"></script>
+    <script type="text/javascript" src="<?php echo EMPLEADOS_SCRIPTS_PATH;?>buscar-en-tabla.js"></script>
+    <script type="text/javascript" src="<?php echo EMPLEADOS_SCRIPTS_PATH;?>select2/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="<?php echo EMPLEADOS_SCRIPTS_PATH;?>select2/select2.js"></script>
+    <script type="text/javascript" src="<?php echo EMPLEADOS_SCRIPTS_PATH;?>fancybox/jquery.mousewheel-3.0.6.pack.js"></script>
+    <script type="text/javascript" src="<?php echo EMPLEADOS_SCRIPTS_PATH;?>fancybox/jquery.fancybox.js"></script>
+    <link rel="stylesheet" type="text/css" href="<?php echo EMPLEADOS_STYLE_PATH;?>fancybox/jquery.fancybox.css?v=2.1.5" media="screen" />
+
 <div class="navbar navbar-inverse navbar-fixed-top" style="top: 2px;">
 <div class="container">
 <div class="navbar-header">
@@ -35,7 +53,7 @@
             </a>
         </li>
 		<li>
-            <a href="form05CC.php">
+            <a class="fancybox fancybox.iframe" href="form05CC.php">
                 <img src="./imagenes/iconos/25.png" width='18px' height='18px' title="Cuentas Corrientes" />
                 &nbsp;Cuenta Corriente&nbsp;
             </a>
@@ -69,5 +87,6 @@
 		</li>
 	</ul>
 </div>
-<!--/.nav-collapse --></div>
 </div>
+</div>
+
