@@ -23,7 +23,7 @@
 			</form>
              <div  id="exitoTela" >
         <p class="alert-error">
-        Se creo nueva Tela</p>
+        Se creo nueva Talle</p>
         </div>
 			<div class="row scrol"> 
 				<table class="table table-condensed">

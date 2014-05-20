@@ -1,16 +1,18 @@
 <?php
 require_once 'classes/persona/persona.php';
-$personaClass = new persona();
-$estaPersona = $personaClass->eligePersona($_REQUEST['idPersona']);
-
-$cuentaCorrientePersona = $estaPersona['0']['cuentaCorrientePersona'] - $_REQUEST['entregaCliente'];
-
+$idPersona = $_REQUEST['idPersona'];
+$cuentaCorrientePersona = $_REQUEST['cuentaCorrientePersona']-$_REQUEST['entregaCliente'];
 $arrPersona = array(
-    'cuentaCorrientePersona' => $cuentaCorrientePersona,
-    'idPersona' =>  $_REQUEST['idPersona']
+    'cuentaCorrientePersona' => $cuentaCorrientePersona
 );
-
+$personaClass = new persona();
+if ($idPersona) {
+	$arrPersona['idPersona'] = $idPersona;
 	$personas = $personaClass->modificarPersona($arrPersona);
+} else {
+	$personas = $personaClass->agregarNuevaPersona($arrPersona);	
+}
 
-return $personas;
+
+header('Location: '.$_SERVER['HTTP_REFERER']);
 exit;
