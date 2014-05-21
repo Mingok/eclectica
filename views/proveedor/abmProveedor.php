@@ -17,7 +17,7 @@ $proveedores = $proveedorList->proveedoresDisponibles ();
 	onclick="javascript:document.getElementById('ver').style.display = 'block'" />
 </div>
 <div class="scrol1">
-<table class="table table-condensed" id="tblProveedor">
+<table class="table table-striped" id="tblProveedor">
 	<thead class="btn-success">
 		<tr style="text-align: center;">
 			<td style="height: 30px; width: 8%;"><strong> Mod </strong></td>

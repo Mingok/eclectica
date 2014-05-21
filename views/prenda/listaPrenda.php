@@ -44,7 +44,7 @@ $tipoVentas = $tipoVentaList->tipoVentasDisponibles ();
 		<td colspan="3" style="text-align: right;">
 		<center>
 		<div class="scrol1">
-		<table class="table table-condensed" id="tblPrenda">
+		<table class="table table-striped" id="tblPrenda">
 			<thead class="btn-success"
 				style="font-weight: bolder; text-align: center;">
 				<tr>
@@ -154,7 +154,7 @@ $tipoVentas = $tipoVentaList->tipoVentasDisponibles ();
 														echo $prenda ['valor6']?>" /> <img
 						src='./imagenes/iconos/copiar.png' width='18px' height='18px' /> </a>
 					</td>
-					<td><a class="fancyPrecios"
+					<td><a class="fancybox fancybox.iframe"
 						href="./indexPreciosPrenda.php?idPrenda=<?php
 														echo $prenda ['idPrenda'];
 														?>">
@@ -219,9 +219,4 @@ $tipoVentas = $tipoVentaList->tipoVentasDisponibles ();
 </div>
 </div>
 
-<script type="text/javascript">
-$(document).ready(function() {
-	$('.fancyPrecios').fancybox();
-});
-	
-</script>
+

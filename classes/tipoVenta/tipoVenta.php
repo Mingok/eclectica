@@ -5,7 +5,7 @@ Class tipoVenta {
 		
 		$objManejoMySQL= new manejoMySQL();
 		$strSql="	SELECT * FROM `tipoVenta`
-					ORDER BY `detalleTipoVenta` ASC";
+					ORDER BY `idTipoVenta` ASC";
 		$arrResultado=null;
 		$objManejoMySQL->consultar($strSql, $arrResultado);
 		return $arrResultado;
