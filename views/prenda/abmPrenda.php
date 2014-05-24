@@ -57,7 +57,7 @@ $tipoVentas = $tipoVentaList->tipoVentasDisponibles ();
 											<td style="text-align: right;">
 												<input type="submit" value="Agregar" style="width: 100px;" class="btn btn-sm btn-success" />
 												&nbsp;
-												<input type="button" value="Limpiar" style="width: 100px;" class="btn btn-sm btn-danger no" onclick="javascript:document.getElementById('ver').style.display = 'none'" />
+												<input type="button" value="Limpiar" style="width: 100px;" class="btn btn-sm btn-danger no"/>
 											</td>
 										</tr>
 										<tr style="height: 35px;">
@@ -132,22 +132,59 @@ $tipoVentas = $tipoVentaList->tipoVentasDisponibles ();
 								<td colspan="2">
 									<table style="width: 100%;">
 										<tr>
-											<td>
+											<td colspan="1">
 												<h4 style="text-align: left;">
 													Precios
 												</h4>
+						                      </td>
+											 <td colspan="2">
+										   		<?php echo $tipoVentas["0"][ "detalleTipoVenta"]; ?>
+													<input type="text" id="idTipoVenta0" style="width: 80px" name="tipoVenta<?php
+													echo $tipoVentas["0"]["idTipoVenta"];
+												?>" />
+                                                <input type="button" value="Calcular" style="width: 100px;" class="btn btn-sm" id="mostrarPrecios" />
+											</td>
+                                            <td colspan="3">
+											&nbsp;
 											</td>
 										</tr>
-										<tr>
-											<?php foreach ( $tipoVentas as $tipoVenta ) { ?>
+                                       
+										<tr id="montoto">
+											
 												<td style="text-align: right;">
-													<?php echo $tipoVenta [ "detalleTipoVenta"]; ?>
+													<?php echo $tipoVentas["1"][ "detalleTipoVenta"]; ?>
 														<input type="text" style="width: 80px" name="tipoVenta<?php
-														echo $tipoVenta ["idTipoVenta"];
+														echo $tipoVentas["1"]["idTipoVenta"];
 														?>" />
 												</td>
-												<?php } ?>
+                                                <td style="text-align: right;">
+													<?php echo $tipoVentas["2"][ "detalleTipoVenta"]; ?>
+														<input type="text" style="width: 80px" name="tipoVenta<?php
+														echo $tipoVentas["2"]["idTipoVenta"];
+														?>" />
+												</td>
+                                                <td style="text-align: right;">
+													<?php echo $tipoVentas["3"][ "detalleTipoVenta"]; ?>
+														<input type="text" style="width: 80px" name="tipoVenta<?php
+														echo $tipoVentas["3"]["idTipoVenta"];
+														?>" />
+												</td>
+                                                <td style="text-align: right;">
+													<?php echo $tipoVentas["4"][ "detalleTipoVenta"]; ?>
+														<input type="text" id="idTipoVenta4" style="width: 80px" name="tipoVenta<?php
+														echo $tipoVentas["4"]["idTipoVenta"];
+														?>" />
+                                                        
+												</td>
+                                                <td style="text-align: right;">
+													<?php echo $tipoVentas["5"][ "detalleTipoVenta"]; ?>
+														<input type="text" style="width: 80px" name="tipoVenta<?php
+														echo $tipoVentas["5"]["idTipoVenta"];
+														?>" />
+												</td>
+											
 										</tr>
+          
 									</table>
 								</td>
 							</tr>
@@ -208,14 +245,91 @@ $tipoVentas = $tipoVentaList->tipoVentasDisponibles ();
 			$('label[for=codigoPrenda]').show("slow");
 			$('.btn-success').val('Modificar');
 			$('.btn-danger').removeClass('no');
-
 		});
+        $('#mostrarPrecios').click(function() {
+    if ( <?php echo $tipoVentas["1"]["operacionTipoVenta"]; ?>=="0") {
+        $('input[name=tipoVenta2]').val($('#idTipoVenta0').val());
+    } else {
+        if ( <?php echo $tipoVentas["1"]["operacionTipoVenta"]; ?>=="2") {
+            valor = ($('#idTipoVenta0').val() * ( <?php echo $tipoVentas["1"]["porcentajeTipoVenta"] / 100; ?>));
+            valor = valor + parseInt($('#idTipoVenta0').val());
+            $('input[name=tipoVenta2]').val(valor);
+
+        } else {
+            valor = ($('#idTipoVenta0').val() * ( <?php echo $tipoVentas["1"]["porcentajeTipoVenta"] / 100; ?>));
+            valor = parseInt($('#idTipoVenta0').val())-valor;
+            $('input[name=tipoVenta2]').val(valor);
+        }
+    }
+    if ( <?php echo $tipoVentas["2"]["operacionTipoVenta"]; ?>=="0") {
+        $('input[name=tipoVenta3]').val($('#idTipoVenta0').val());
+    } else {
+        if ( <?php echo $tipoVentas["2"]["operacionTipoVenta"]; ?>=="2") {
+            valor = ($('#idTipoVenta0').val() * ( <?php echo $tipoVentas["2"]["porcentajeTipoVenta"] / 100; ?>));
+            valor = valor + parseInt($('#idTipoVenta0').val());
+            $('input[name=tipoVenta3]').val(valor);
+
+        } else {
+            valor = ($('#idTipoVenta0').val() * ( <?php echo $tipoVentas["2"]["porcentajeTipoVenta"] / 100; ?>));
+            valor = parseInt($('#idTipoVenta0').val())-valor;
+            $('input[name=tipoVenta3]').val(valor);
+        }
+    }
+   if ( <?php echo $tipoVentas["3"]["operacionTipoVenta"]; ?>=="0") {
+        $('input[name=tipoVenta4]').val($('#idTipoVenta0').val());
+    } else {
+        if ( <?php echo $tipoVentas["3"]["operacionTipoVenta"]; ?>=="2") {
+            valor = ($('#idTipoVenta0').val() * ( <?php echo $tipoVentas["3"]["porcentajeTipoVenta"] / 100; ?>));
+            valor = valor + parseInt($('#idTipoVenta0').val());
+            $('input[name=tipoVenta4]').val(valor);
+
+        } else {
+            valor = ($('#idTipoVenta0').val() * ( <?php echo $tipoVentas["3"]["porcentajeTipoVenta"] / 100; ?>));
+            valor = parseInt($('#idTipoVenta0').val())-valor;
+            $('input[name=tipoVenta4]').val(valor);
+        }
+
+    }
+    if ( <?php echo $tipoVentas["4"]["operacionTipoVenta"]; ?>=="0") {
+        $('input[name=tipoVenta5]').val($('#idTipoVenta0').val());
+    } else {
+
+        if ( <?php echo $tipoVentas["4"]["operacionTipoVenta"]; ?>=="2") {
+            valor = ($('#idTipoVenta0').val() * ( <?php echo $tipoVentas["4"]["porcentajeTipoVenta"] / 100; ?>));
+            valor = valor + parseInt($('#idTipoVenta0').val());
+            $('input[name=tipoVenta5]').val(valor);
+
+        } else {
+            valor = ($('#idTipoVenta0').val() * ( <?php echo $tipoVentas["4"]["porcentajeTipoVenta"] / 100; ?>));
+            valor = parseInt($('#idTipoVenta0').val())-valor;
+            $('input[name=tipoVenta5]').val(valor);
+        }
+    }
+    if ( <?php echo $tipoVentas["5"]["operacionTipoVenta"]; ?>=="0") {
+        $('input[name=tipoVenta6]').val($('#idTipoVenta0').val());
+    } else {
+        if ( <?php echo $tipoVentas["5"]["operacionTipoVenta"]; ?>=="2") {
+            valor = ($('#idTipoVenta0').val() * ( <?php echo $tipoVentas["5"]["porcentajeTipoVenta"] / 100; ?>));
+            valor = valor + parseInt($('#idTipoVenta0').val());
+            $('input[name=tipoVenta6]').val(valor);
+
+        } else {
+            valor = ($('#idTipoVenta0').val() * ( <?php echo $tipoVentas["5"]["porcentajeTipoVenta"] / 100; ?>));
+            valor = parseInt($('#idTipoVenta0').val())-valor;
+            $('input[name=tipoVenta6]').val(valor);
+        }
+
+    }
+
+    $('#montoto').show("slow");
+});
 		//Boton limpiar campos
 		$('.btn-danger').click(function() {
 			location.reload();
 		});
 		$('.buttonPrendasNueva').click(function() {
-    		$('#ver').show("slow");
+		  $('#montoto').hide();
+	   		$('#ver').show("slow");
     		$('html,body').animate({ scrollTop: $("#ver").offset().top}, 2000);
     		$('.btn-success').val('Agregar');
     		$('input[name=idPrenda]').val('');
