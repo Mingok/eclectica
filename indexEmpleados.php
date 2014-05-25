@@ -21,6 +21,7 @@
         
 		</head>
 		<body>
+        
 			<center>
 				<table class="tablaGral">
 					<tr>
