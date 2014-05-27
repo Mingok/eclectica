@@ -9,8 +9,8 @@ $arrPersona = array(
     'cuentaCorrientePersona' => $cuentaCorrientePersona,
     'idPersona' =>  $_REQUEST['idPersona']
 );
+$persona = null;
+$persona = json_encode($personaClass->modificarPersona($arrPersona));
 
-	$personas = $personaClass->modificarPersona($arrPersona);
-
-return $personas;
+echo $persona;
 exit;

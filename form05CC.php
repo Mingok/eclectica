@@ -90,14 +90,13 @@ persona(); $personas=$personaList->
     $(".formCcCliente").submit(function() {
 
         var url = $(this).attr('action');
-        console.log(url);
         $.ajax({
                type: "POST",
                url: url,
                data: $(this).serialize(), // serializes the form's elements.
                success: function(data)
                {
-                   alert(data); // show response from the php script.
+                   $.fancybox.close();
                }
              });
     
