@@ -1,46 +1,55 @@
 body {
-font-family:Verdana, Geneva, Arial, Helvetica, sans-serif;  
-font-size: 12px; 
-background-image: linear-gradient(to bottom,#fcf8e3 0,#f8efc0 100%);}
+    font-family:Verdana, Geneva, Arial, Helvetica, sans-serif;  
+    font-size: 12px; 
+    background-image: linear-gradient(to bottom,#fcf8e3 0,#f8efc0 100%);}
 
+body.image-back-body {
+    font-family:Verdana, Geneva, Arial, Helvetica, sans-serif;  
+    font-size: 12px; 
+    background: url(http://localhost/eclectica/imagenes/background/muresco.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
 Table.tablaGral{
-background-image: linear-gradient(to bottom,#fcf8e3 0,#f8efc0 100%);
-width:1200px;
-border-spacing: 5px; /* cellspacing */
-padding: 5px;/* cellpadding */
+    /*background-image: linear-gradient(to bottom,#fcf8e3 0,#f8efc0 100%);*/
+    width:1200px;
+    border-spacing: 5px; /* cellspacing */
+    padding: 5px;/* cellpadding */
 }
 
 /*a {
-	text-decoration: none;	
-	font-size: 13	px;
-	color:#000000;
-	background: inherit;	
+        text-decoration: none;	
+        font-size: 13	px;
+        color:#000000;
+        background: inherit;	
 }
 a:hover {
-		color:#000000;
-		background: inherit;	
-		font-size: 13px;
-		text-decoration:none;
-		font-weight: bold;	
+                color:#000000;
+                background: inherit;	
+                font-size: 13px;
+                text-decoration:none;
+                font-weight: bold;	
 }
 h1,h2,h3,h4,h5,h6 {
-	 color: #1E90FF; 
-	margin-top: 5px; 
-	margin-bottom:5px;
+         color: #1E90FF; 
+        margin-top: 5px; 
+        margin-bottom:5px;
 }
 */
 .alert-error{background-color:#f2dede;border-color:#eed3d7;color:#b94a48; text-align: center}
 
 hr {
-	color: #1E90FF; 
-	background-color: #1E90FF; 
-	height: 2px; 
-	border: 0px;
+    color: #1E90FF; 
+    background-color: #1E90FF; 
+    height: 2px; 
+    border: 0px;
 }
 
 img {border: 0;}		
 input[type=search] {
-   font-weight: bolder;
+    font-weight: bolder;
     height: 30px;
     width: 200px;
     background: gray;
@@ -48,12 +57,12 @@ input[type=search] {
 }
 
 .no {
-	display: none!important;
+    display: none!important;
 }
 div.error { display: none; }
 input {	border: 1px solid black; }
 select{
-	border: 1px solid black;
+    border: 1px solid black;
 }
 input.checkbox { border: none }
 input:focus { border: 1px dotted black; }
@@ -72,44 +81,44 @@ select.error { border: 1px dotted red; }
 #formEstacion label.error, #formTela input.submit {width: 150px;color:red; text-align: right	; }
 #formTipoVenta label.error, #formTela input.submit {width: 150px;color:red; text-align: right	; }
 #formcliente label.error, #formTela input.submit {width: 170px;color:red; text-align: right	; }
-	
-	div.scrol{
-	overflow: auto;
-	height: 150px;
+
+div.scrol{
+    overflow: auto;
+    height: 150px;
 }
 div.scrol1{
-	overflow: auto;
-	height: 300px;
-	padding:10px; 
+    overflow: auto;
+    height: 300px;
+    padding:10px; 
 }
 div.scrolPrv{
-	overflow: auto;
-	height: 165px;
-	width: 480px;
+    overflow: auto;
+    height: 165px;
+    width: 480px;
 
 }
 table.tabla{
-border-spacing: 5px; /* cellspacing */
-padding: 15px;/* cellpadding */
-width:1150px;	
-margin: 5px;
-text-align: center;
+    border-spacing: 5px; /* cellspacing */
+    padding: 15px;/* cellpadding */
+    width:1150px;	
+    margin: 5px;
+    text-align: center;
 }
 Table.formu,Table.formu td{
-	border: 1px solid;
+    border: 1px solid;
 }
 
 Table.formu tr:not(:first-child):hover {
-	background:#aaFFFF;
+    background:#aaFFFF;
 }
 
 Table.formu thead {
-	font-weight: bold;
-	color:#fff;
-	background-color: #444;
-	border-bottom:1px #000 solid;
-	text-align:left;
+    font-weight: bold;
+    color:#fff;
+    background-color: #444;
+    border-bottom:1px #000 solid;
+    text-align:left;
 }
 .formEmpresa input[type=file] {
-	display: inline;S
+    display: inline;
 }

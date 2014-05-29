@@ -29,7 +29,7 @@ if(!isset($_SESSION['backuped'])) {
         <script type="text/javascript" src="<?php echo EMPLEADOS_SCRIPTS_PATH; ?>fancybox/jquery.mousewheel-3.0.6.pack.js"></script>
 
     </head>
-    <body>
+    <body class="image-back-body">
         <div class="row">
             <div class="col-md-4">
 <?php include_once './encabezado.php'; ?>
