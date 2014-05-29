@@ -26,7 +26,7 @@ $_SESSION['superUsu'] = "Mostrar";
         <script type="text/javascript" src="<?php echo EMPLEADOS_SCRIPTS_PATH; ?>fancybox/jquery.mousewheel-3.0.6.pack.js"></script>
 
     </head>
-    <body>
+    <body class="image-back-body">
     <center>
         <table class="tablaGral">
             <tr>
