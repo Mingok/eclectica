@@ -1,5 +1,8 @@
-<?php define('EMPLEADOS_STYLE_PATH', 'http://localhost/eclectica/css/');
-define('EMPLEADOS_SCRIPTS_PATH', 'http://localhost/eclectica/js/'); ?>
+<?php
+session_start();
+define('EMPLEADOS_STYLE_PATH', 'http://localhost/eclectica/css/');
+define('EMPLEADOS_SCRIPTS_PATH', 'http://localhost/eclectica/js/');
+?>
 <!DOCTYPE HTML>
 <head>
     <meta http-equiv="content-type" content="text/html" />
@@ -20,7 +23,7 @@ define('EMPLEADOS_SCRIPTS_PATH', 'http://localhost/eclectica/js/'); ?>
     <script type="text/javascript" src="<?php echo EMPLEADOS_SCRIPTS_PATH; ?>fancybox/jquery.mousewheel-3.0.6.pack.js"></script>
 
 </head>
-<body class="image-back-body">
+<body>
 <center>
     <table class="tablaGral">
         <tr>
@@ -36,6 +39,7 @@ define('EMPLEADOS_SCRIPTS_PATH', 'http://localhost/eclectica/js/'); ?>
         </tr>
     </table>
 </center>
+<?php include_once './indexRol.php'; ?> 
 </body>
 
 </html>

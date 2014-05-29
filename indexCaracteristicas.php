@@ -1,5 +1,8 @@
-<?php define('EMPLEADOS_STYLE_PATH', 'http://localhost/eclectica/css/');
-define('EMPLEADOS_SCRIPTS_PATH', 'http://localhost/eclectica/js/'); ?>
+<?php
+session_start();
+define('EMPLEADOS_STYLE_PATH', 'http://localhost/eclectica/css/');
+define('EMPLEADOS_SCRIPTS_PATH', 'http://localhost/eclectica/js/');
+?>
 <!DOCTYPE HTML>
 <head>
     <meta http-equiv="content-type" content="text/html" />
@@ -25,19 +28,18 @@ define('EMPLEADOS_SCRIPTS_PATH', 'http://localhost/eclectica/js/'); ?>
     <table class="tablaGral">
         <tr>
             <td>
-<?php include_once './encabezado.php'; ?>
+                <?php include_once './encabezado.php'; ?>
             </td>
         </tr>
         <tr><td><br /><br /><br /><br /></td></tr>
         <tr>
             <td>
-<?php include_once './form02Caracteristicas.php' ?>
+                <?php include_once './form02Caracteristicas.php' ?>
             </td>
         </tr>
     </table>
 </center>
-
-
+<?php include_once './indexRol.php'; ?> 
 </body>
 
 </html>

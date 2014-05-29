@@ -1,6 +1,3 @@
-<h1 style="text-align: left;">
-	&nbsp;Clientes&nbsp;
-</h1>
 <div class="row">
 	<div class="col-md-12">
         <?php include_once 'views/empleado/listaEmpleado.php'; ?>
