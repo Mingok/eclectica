@@ -1,4 +1,6 @@
-<?php define( 'EMPLEADOS_STYLE_PATH', 'http://localhost/eclectica/css/'); define( 'EMPLEADOS_SCRIPTS_PATH', 'http://localhost/eclectica/js/'); ?>
+<?php session_start(); 
+define( 'EMPLEADOS_STYLE_PATH', 'http://localhost/eclectica/css/'); 
+define( 'EMPLEADOS_SCRIPTS_PATH', 'http://localhost/eclectica/js/'); ?>
 	<!DOCTYPE HTML>
 	<html>
 		<head>
@@ -29,12 +31,21 @@
 							<?php include_once './encabezado.php'; ?>
 						</td>
 					</tr>
-					<tr>
+				<tr>
+					<td>
+                    
+						<br />
+						<br />
+						<br />
+						<br />
+					</td>
+				</tr>	<tr>
 						<td>
 							<?php include_once './form03Empleados.php'?>
 						</td>
 					</tr>
 				</table>
 			</center>
+             <?php include_once './indexRol.php'; ?>
 		</body>
 	</html>

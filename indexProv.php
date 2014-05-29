@@ -1,4 +1,6 @@
-<?php define( 'EMPLEADOS_STYLE_PATH', 'http://localhost/eclectica/css/'); define( 'EMPLEADOS_SCRIPTS_PATH', 'http://localhost/eclectica/js/'); ?>
+<?php session_start();
+ define( 'EMPLEADOS_STYLE_PATH', 'http://localhost/eclectica/css/'); 
+ define( 'EMPLEADOS_SCRIPTS_PATH', 'http://localhost/eclectica/js/'); ?>
 	<!DOCTYPE HTML>
 	<head>
 		<meta http-equiv="content-type" content="text/html" />
@@ -35,6 +37,7 @@
 				</tr>
 			</table>
 		</center>
+        <?php include_once './indexRol.php'; ?> 
 	</body>
 	
 	</html>

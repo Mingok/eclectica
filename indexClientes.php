@@ -1,4 +1,9 @@
-<?php define( 'EMPLEADOS_STYLE_PATH', 'http://localhost/eclectica/css/'); define( 'EMPLEADOS_SCRIPTS_PATH', 'http://localhost/eclectica/js/'); ?>
+<?php session_start();
+define( 'EMPLEADOS_STYLE_PATH', 'http://localhost/eclectica/css/'); 
+define( 'EMPLEADOS_SCRIPTS_PATH', 'http://localhost/eclectica/js/'); 
+
+$_SESSION['superUsu']= "Mostrar";
+?>
 	<!DOCTYPE HTML>
 	<html>
 		<head>
