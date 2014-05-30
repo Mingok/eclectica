@@ -8,6 +8,7 @@ $(document).ready(function(){
             }else{
                 $('#form').bind('submit', function(){
                 parent.$.fancybox.close();
+                location=window.location.pathname+'?pasar=1';                
 				return false;
                 }); 
             }
@@ -29,12 +30,10 @@ $(document).ready(function(){
       });
       
   
-  <?php  if(($_SESSION['superUsu']=="Mostrar")){
 
-    ?>
    $("#ancla").eq(0).trigger('click');   
    
-  <?php  $_SESSION['superUsu'] = 'noMostrar';} ?>
+ 
   
 });
 </script>

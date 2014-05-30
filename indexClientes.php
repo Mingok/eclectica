@@ -3,7 +3,7 @@ session_start();
 define('EMPLEADOS_STYLE_PATH', 'http://localhost/eclectica/css/');
 define('EMPLEADOS_SCRIPTS_PATH', 'http://localhost/eclectica/js/');
 
-$_SESSION['superUsu'] = "Mostrar";
+$_SESSION['pasar']= "0";
 ?>
 <!DOCTYPE HTML>
 <html>

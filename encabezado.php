@@ -23,7 +23,7 @@
             </a>
         </li>
 		<li>
-            <a href="indexPrendas.php">
+            <a href="./indexPrendas.php?pasar=<?php echo $_SESSION['pasar'];?>">
                 <img src="./imagenes/iconos/1.png" width='18px' height='18px' title="Prendas" />
                 &nbsp;Prendas&nbsp;
             </a>
@@ -60,11 +60,11 @@
             </a>
 		<ul class="dropdown-menu">
 			<li><a href="./indexClientes.php">&nbsp;Clientes&nbsp;</a></li>
-			<li><a href="./indexEmpleados.php"> &nbsp;Empleados&nbsp;</a></li>
-			<li><a href="./indexProv.php">&nbsp;Proveedores&nbsp; </a></li>
-			<li><a href="./indexProv.php#Empresa">&nbsp;Empresa&nbsp; </a></li>
+			<li><a href="./indexEmpleados.php?pasar=<?php echo $_SESSION['pasar'];?>"> &nbsp;Empleados&nbsp;</a></li>
+			<li><a href="./indexProv.php?pasar=<?php echo $_SESSION['pasar'];?>">&nbsp;Proveedores&nbsp; </a></li>
+			<li><a href="./indexProv.php?pasar=<?php echo $_SESSION['pasar'];?>#Empresa">&nbsp;Empresa&nbsp; </a></li>
 			<li class="divider"></li>
-			<li><a href="indexCaracteristicas.php">&nbsp;Caracteristicas&nbsp;</a></li>
+			<li><a href="indexCaracteristicas.php?pasar=<?php echo $_SESSION['pasar'];?>">&nbsp;Caracteristicas&nbsp;</a></li>
 		</ul>
 		</li>
 	</ul>

@@ -2,7 +2,7 @@
 define('EMPLEADOS_STYLE_PATH', 'http://localhost/eclectica/css/');
 define('EMPLEADOS_SCRIPTS_PATH', 'http://localhost/eclectica/js/');
 
-$_SESSION['superUsu']= "Mostrar";
+$_SESSION['pasar']= "0";
 
 if(!isset($_SESSION['backuped'])) {
     include_once (__DIR__.'\\base\\backup_db.php');
@@ -32,16 +32,21 @@ if(!isset($_SESSION['backuped'])) {
 
     </head>
     <body class="image-back-body">
-        <div class="row">
-            <div class="col-md-4">
-<?php include_once './encabezado.php'; ?>
-            </div>
-        </div>
-        <div class="col-md-4">
-<?php include_once './home.php' ?>
-
-        </div>
-    </div>
+     <table class="tablaGral">
+        <tr>
+            <td>
+                <?php include_once './encabezado.php'; ?>
+            </td>
+        </tr>
+        <tr><td><br /><br /><br /><br /></td></tr>
+        <tr>
+            <td>
+             
+                <?php include_once './home.php' ?>
+            </td>
+        </tr>
+    </table>
+   
 </body>
 
 </html>
