@@ -29,13 +29,13 @@
             </a>
         </li>
 		<li>
-            <a href="#">
+            <a href="./indexVenta.php?pasar=<?php echo $_SESSION['pasar'];?>">
                 <img src="./imagenes/iconos/venta.png" width='18px' height='18px' title="Ventas" />
                 &nbsp;Ventas&nbsp;
             </a>
         </li>
 		<li>
-            <a class="fancybox fancybox.iframe" href="form05CC.php">
+            <a id="fancyboxCC" class="fancyboxCC" href="form05CC.php">
                 <img src="./imagenes/iconos/25.png" width='18px' height='18px' title="Cuentas Corrientes" />
                 &nbsp;Cuenta Corriente&nbsp;
             </a>
@@ -71,12 +71,11 @@
 </div>
 <!--/.nav-collapse --></div>
 </div>
-
-
-
-	<script type="text/javascript">
-
-	$(document).ready(function() {
-        $(".fancybox").fancybox();
-	});
+<script type="text/javascript">
+    $("#fancyboxCC").fancybox({
+        maxWidth: 500,
+        maxHeight: 250,
+        type   : 'iframe',
+        closeEffect : 'elastic'
+    });
 </script>

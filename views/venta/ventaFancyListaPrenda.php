@@ -19,7 +19,7 @@ $tipoVentas = $tipoVentaList->tipoVentasDisponibles ();
 				}
 			}
 		}
-</script>
+	</script>
 <h1>
 	Prendas
 </h1>
@@ -140,7 +140,7 @@ $tipoVentas = $tipoVentaList->tipoVentasDisponibles ();
 															</a>
 														</td>
 														<td>
-															<a class="fancyboxPrecios" id="fancyboxPrecios" href="./indexPreciosPrenda.php?idPrenda=<?php
+															<a class="fancybox fancybox.iframe" href="./indexPreciosPrenda.php?idPrenda=<?php
 															echo $prenda ['idPrenda'];
 															?>">
 															<?php
@@ -181,3 +181,5 @@ $tipoVentas = $tipoVentaList->tipoVentasDisponibles ();
 		</div>
 	</div>
 </div>
+
+

@@ -20,9 +20,9 @@
 				</div>
 			</div>
 		</form>
-         <div  id="exitoTalle" >
+         <div id="exitoTalle" >
         <p class="alert-error">
-        Se creo nueva Talle</p>
+        Se Creo/Modifico Talle</p>
         </div>
 		<div class="row scrol"> 
 			<table class="table table-condensed">

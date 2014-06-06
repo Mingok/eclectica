@@ -48,6 +48,10 @@ $tipoVentas = $tipoVentaList->tipoVentasDisponibles();
 			</div>
 	   </div>
 	</form>
+    <div id="exitoTipoVenta" >
+    <p class="alert-error">
+    Se Modifico Tipo de Venta</p>
+    </div>
 	<div class="row scrol">
 		<table class="table table-condensed">
 			<thead>
@@ -112,7 +116,14 @@ $tipoVentas = $tipoVentaList->tipoVentasDisponibles();
 </div>
 <script type="text/javascript">
 $(document).ready(function(){
-    
+        
+    $("#exitoTipoVenta").hide();
+    mostrar = getParameterByName('guardaTipoVenta');
+    if (mostrar=='ok'){    
+         $("#exitoTipoVenta").show("slow");
+        $("#exitoTipoVenta").delay(5000).hide(1000);
+     } 
+
    
          $("#muestraForm").hide();
        

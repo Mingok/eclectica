@@ -16,6 +16,6 @@ if ($idTalle) {
 }
 
 $url=strtok($_SERVER["HTTP_REFERER"],'?');
-header('Location: '.$url.'?guardaTalle=ok');
+header('Location: '.$url.'?pasar=1&guardaTalle=ok');
 exit;
 ?>

@@ -11,7 +11,15 @@ Class tipoVenta {
 		return $arrResultado;
 	}
 	
-	
+	public function tipoVentasFiltro($filtro){
+		require_once (__DIR__.'\..\..\base\manejoMySQL.php');
+		
+		$objManejoMySQL= new manejoMySQL();
+		$strSql="	SELECT * FROM `tipoVenta` WHERE grupoTipoVenta=".$filtro." ORDER BY `idTipoVenta` ASC";
+		$arrResultado=null;
+		$objManejoMySQL->consultar($strSql, $arrResultado);
+		return $arrResultado;
+	}
 	
 	public function modificarTipoVenta($arrTipoVenta){
 		require_once (__DIR__.'\..\..\base\manejoMySQL.php');

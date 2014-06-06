@@ -13,7 +13,7 @@
 						</label>
 						<input type="search" style="width:375px" id="txtPersona" class="txtPersona" placeholder="Escriba el Nombre que desea encontrar y presione la ENTER" autofocus />
 						&nbsp;&nbsp;&nbsp;
-						<input type="button" value="Nuevo" style="width: 100px;" class="buttonPersonaNuevo btn btn-sm btn-success" onclick="javascript:document.getElementById('ver').style.display = 'block'"/>
+						<input type="button" value="Nuevo" style="width: 100px;" class="buttonPersonaNuevo btn btn-sm btn-success"/>
 					</div>
 					<div class="scrol">
 						<table class="table table-condensed" id="tblPersona">

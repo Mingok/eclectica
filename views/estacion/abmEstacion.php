@@ -22,7 +22,7 @@
 		</form>
         <div  id="exitoEstacion" >
         <p class="alert-error">
-        Se creo nueva Estacion</p>
+        Se Creo/Modifico Estacion</p>
         </div>
 		<div class="row scrol"> 
 			<table class="table table-condensed">

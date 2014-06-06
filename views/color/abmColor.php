@@ -22,7 +22,7 @@
 		</form>
         <div  id="exitoColor" >
         <p class="alert-error">
-        Se creo nuevo Color</p>
+        Se Creo/Modifico Color</p>
         </div>
 		<div class="row scrol"> 
 			<table class="table table-condensed">

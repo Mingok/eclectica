@@ -23,7 +23,7 @@
 		</form>
          <div  id="exitoMarca" >
         <p class="alert-error">
-        Se creo nueva Marca</p>
+        Se Creo/Modifico Marca</p>
         </div>
 		<div class="row scrol"> 
 			<table class="table table-condensed">

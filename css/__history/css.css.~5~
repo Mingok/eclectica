@@ -14,7 +14,7 @@ body.image-back-body {
 }
 Table.tablaGral{
     /*background-image: linear-gradient(to bottom,#fcf8e3 0,#f8efc0 100%);*/
-    width:1190px;
+    width:1198px;
     border-spacing: 5px; /* cellspacing */
     padding: 5px;/* cellpadding */
 }
@@ -78,7 +78,7 @@ div.scrolPrv{
 table.tabla{
     border-spacing: 5px; /* cellspacing */
     padding: 15px;/* cellpadding */
-    width:1050px;	
+    width:1150px;	
     margin: 5px;
     text-align: center;
 }

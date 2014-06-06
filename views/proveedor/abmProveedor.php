@@ -13,8 +13,7 @@ $proveedores = $proveedorList->proveedoresDisponibles ();
 	style="width: 375px" id="txtProveedor" class="textPrendas"
 	placeholder="Escriba el Nombre que desea encontrar y presione la ENTER"
 	autofocus /> &nbsp;&nbsp;&nbsp; <input type="button" value="Nuevo"
-	style="width: 100px;" class="buttonProvNuevo btn btn-sm btn-success"
-	onclick="javascript:document.getElementById('ver').style.display = 'block'" />
+	style="width: 100px;" class="buttonProvNuevo btn btn-sm btn-success"/>
 </div>
 <div class="scrol1">
 <table class="table table-striped" id="tblProveedor">

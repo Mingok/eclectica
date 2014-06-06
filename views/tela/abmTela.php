@@ -21,10 +21,10 @@
 					</div>
 				</div>
 			</form>
-             <div  id="exitoTela" >
-        <p class="alert-error">
-        Se creo nueva Tela</p>
-        </div>
+            <div  id="exitoTela" >
+            <p class="alert-error">
+            Se Creo/Modifico Tela</p>
+            </div>
 			<div class="row scrol"> 
 				<table class="table table-condensed">
 					<thead>

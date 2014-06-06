@@ -16,6 +16,6 @@ if ($idTela) {
 }
 
 $url=strtok($_SERVER["HTTP_REFERER"],'?');
-header('Location: '.$url.'?guardaTela=ok');
+header('Location: '.$url.'?pasar=1&guardaTela=ok');
 exit;
 ?>

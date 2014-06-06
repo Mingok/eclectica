@@ -19,6 +19,11 @@ $tipoVentaClass = new tipoVenta();
    
 
 
-header('Location: '.$_SERVER['HTTP_REFERER']);
+
+$url=strtok($_SERVER["HTTP_REFERER"],'?');
+header('Location: '.$url.'?pasar=1&guardaTipoVenta=ok');
+
+
+
 exit;
 ?>
