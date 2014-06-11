@@ -13,8 +13,7 @@ Class persona {
 		require_once (__DIR__.'\..\..\base\manejoMySQL.php');
 		
 		$objManejoMySQL= new manejoMySQL();
-		$strSql="SELECT * FROM `persona`
-					ORDER BY `apellidoPersona` ASC";
+		$strSql="SELECT * FROM `persona`";
 		$arrResultado=null;
 		$objManejoMySQL->consultar($strSql, $arrResultado);
 		return $arrResultado;

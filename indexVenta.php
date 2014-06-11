@@ -24,12 +24,9 @@ $_SESSION['pasar']= "0";
     <script type="text/javascript" src="<?php echo EMPLEADOS_SCRIPTS_PATH; ?>select2/select2.js"></script>
     <script type="text/javascript" src="<?php echo EMPLEADOS_SCRIPTS_PATH; ?>fancybox/jquery.mousewheel-3.0.6.pack.js"></script>
     <script type="text/javascript" src="<?php echo EMPLEADOS_SCRIPTS_PATH; ?>fancybox/jquery.fancybox.js"></script>
-    <script type="text/javascript" src="<?php echo EMPLEADOS_SCRIPTS_PATH; ?>tabla/copiaTabla.js"></script>
-
-
+    <script type="text/javascript" src="<?php echo EMPLEADOS_SCRIPTS_PATH; ?>tablaItemVenta/controlItemVenta.js"></script>
 </head>
 <body class="image-back-body">
- 
 <center>
     <table class="tablaGral">
         <tr>

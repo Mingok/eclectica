@@ -8,7 +8,7 @@ function fn_agregar(){
     cadena = "<tr>";
     cadena = cadena + "<td>" + $("#codItemVenta").val() + "</td>";
     cadena = cadena + "<td>" + $("#detalleItemVenta").val() + "</td>";
-    cadena = cadena + "<td>" + $("#selecCondicionItem").val() + "</td>";
+    cadena = cadena + "<td>" + $("#condItemVenta").val() + "</td>";
     cadena = cadena + "<td>" + $("#precioItemVenta").val() + "</td>";
     cadena = cadena + "<td>" + $("#cantidadItemVenta").val() + "</td>";
     cadena = cadena + "<td>" + $("#cantidadItemVenta").val()*$("#precioItemVenta").val() + "</td>";

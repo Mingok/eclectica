@@ -9,16 +9,23 @@ $tipoVentas = $tipoVentaList->tipoVentasDisponibles ();
 <h1>
 	Pendas
 </h1>
+<input type="hidden" id="precio1" name="precio1"  />
+<input type="hidden" id="precio2" name="precio2"  />
+<input type="hidden" id="precio3" name="precio3"  />
+<input type="hidden" id="precio4" name="precio4"  />
+<input type="hidden" id="precio5" name="precio5"  />
+<input type="hidden" id="precio6" name="precio6"  />
 <div class="row">
-<form action="javascript: fn_agregar();" method="post" id="frm_usu">
+<form action="JavaScript:agregarCampo();" method="post">
+
 <input type="hidden" id="idItemVenta" name="idItemVenta" />
-<input type="hidden" id="condItem" name="condItem" />detalleItemVenta
+<input type="hidden" id="condItemVenta" name="condItemVenta" />
 <input type="hidden" id="ItemVenta" name="ItemVenta" />
 <input type="hidden" id="detalleItemVenta" name="detalleItemVenta" />
-<input type="hidden" id="precioItemVenta" name="precioItemVenta" value="123" />
+<input type="hidden" id="precioItemVenta" name="precioItemVenta"  />
     <div class="col-md-12">
 		<div class="panel panel-success">
-			<div class="panel-body  ">
+			<div class="panel-body">
 				<div class="row" style="height: 40px;">
 					<div class="col-md-8" style="text-align: right;">
 						<label for="codItemVenta">
@@ -46,14 +53,13 @@ $tipoVentas = $tipoVentaList->tipoVentasDisponibles ();
 				</div>
 				<div class="row"style="height: 40px;">
 					<div class="col-md-12" style="text-align: right;">
-						<label for="selecCondicion">
+						<label for="selecCondicionItem">
 							Condicion :
 						</label>
-						<select id="selecCondicionItem" class="form-control input-sm"style="width: 250px" required>
-							<optgroup label="Elija Uno">
-								<?php foreach ($tipoVentas as $tipoVenta) { if (isset($tipoVenta)) { echo "<option value=" . $tipoVenta[ "idTipoVenta"] . ">" . $tipoVenta[ "detalleTipoVenta"]. "</option>"; } } ?>
-							</optgroup>
+						<select id="selecCondicionItem" name="selecCondicionItem" style="width: 250px" required >
+                        <option></option>
 						</select>
+                        <img id="imgCondicionItem" style="display: none;" src="./imagenes/iconos/loading.gif" alt="Cargando" />
 					</div>
 				</div>
 			</div>
@@ -61,6 +67,22 @@ $tipoVentas = $tipoVentaList->tipoVentasDisponibles ();
 	</div>
 </form>    
 </div>
+<script type="text/javascript">
+$('#selecCondicionItem').select2().on("change", function(e) {
+    var aux=e.val;
+    $('#condItemVenta').val(this.options[aux].text);
+    alert (aux);
+    switch (aux){
+        case '1':$('input[name=precioItemVenta]').val($('#precio1').val()); break;
+        case '2':$('input[name=precioItemVenta]').val($('#precio2').val()); break;
+        case '3':$('input[name=precioItemVenta]').val($('#precio3').val()); break;
+        case '4':$('input[name=precioItemVenta]').val($('#precio4').val()); break;
+        case '5':$('input[name=precioItemVenta]').val($('#precio5').val()); break;
+        case '6':$('input[name=precioItemVenta]').val($('#precio6').val()); break;
+    }
+})
+</script>
+
 <!-- comienzo Div/Fancy Consulta Codigo-->
 <div id="elemento" style="display:none">
     <div id="informacion"style="display:none">
@@ -70,7 +92,7 @@ $tipoVentas = $tipoVentaList->tipoVentasDisponibles ();
         <div class="row">
             <div class="col-md-12">
                 <div class="panel panel-success">
-                    <div class="panel-body  ">
+                    <div class="panel-body">
                         <div class="col-md-10" style="text-align: right;">
                             <label for="txtCodPrenda">
                             Nombre:
@@ -126,12 +148,27 @@ $tipoVentas = $tipoVentaList->tipoVentasDisponibles ();
                                                               if (!($prenda [ 'cantidadPrenda']=='0')) {{ ?>
 														<tr >
 															<td style="text-align: center;">
-																<a title="Modificar datos" href="#" class="editButtonPrenda" name="editButtonPrenda" 
-                                                                data-cantidadprenda="<?php echo $prenda ['idPrenda']?>" 
-                                                                data-codigoprenda="<?php echo $prenda ['codigoPrenda']?>"
-                                                                data-detalleprenda="<?php echo $prenda ['detallePrenda']?>" />
-																<img src='./imagenes/iconos/layout_edit.png' width='18px' height='18px' />
-																</a>
+																<a title="Modificar datos" class="itemAVender" id="itemAVender" data-cantidadprenda="<?php
+															echo $prenda ['cantidadPrenda']?>" data-idprenda="<?php
+															echo $prenda ['idPrenda']?>" data-idestampadoprenda="<?php
+															echo $prenda ['idEstampadoPrenda']?>" data-idtelaprenda="<?php
+															echo $prenda ['idTelaPrenda']?>" data-idtalleprenda="<?php
+															echo $prenda ['idTallePrenda']?>" data-codigoprenda="<?php
+															echo $prenda ['codigoPrenda']?>" data-detalleprenda="<?php
+															echo $prenda ['detallePrenda']?>" data-idmarcaprenda="<?php
+															echo $prenda ['idMarcaPrenda']?>" data-idproveedorprenda="<?php
+															echo $prenda ['idProveedorPrenda']?>" data-idestacionprenda="<?php
+															echo $prenda ['idEstacionPrenda']?>" data-idcolorprenda="<?php
+															echo $prenda ['idColorPrenda']?>" data-valor1="<?php
+															echo $prenda ['valor1']?>" data-valor2="<?php
+															echo $prenda ['valor2']?>" data-valor3="<?php
+															echo $prenda ['valor3']?>" data-valor4="<?php
+															echo $prenda ['valor4']?>" data-valor5="<?php
+															echo $prenda ['valor5']?>" data-valor6="<?php
+															echo $prenda ['valor6']?>" />
+															<img src='./imagenes/iconos/layout_edit.png' width='18px' height='18px' />
+															</a>
+															
 															</td>
 															<td>
 															    <?php echo $prenda ['codigoPrenda']?>
@@ -176,15 +213,21 @@ $tipoVentas = $tipoVentaList->tipoVentasDisponibles ();
 </div>    
 <script type="text/javascript">
     $("#fancyboxPrenda").fancybox({
-            minWidth: 300,
-            minHeight: 400,
-            closeEffect : 'elastic'
+        minWidth: 300,
+        minHeight: 400,
+        closeEffect : 'elastic'
     });
-    $('.editButtonPrenda').click(function() {
-            $('#idItemVenta').val($(this).data('idprenda'));
-    		$('#codItemVenta').val($(this).data('codigoprenda'));
-            $('#detalleItemVenta').val($(this).data('detalleprenda'));
-            $('#agregarItem').show();
-			$.fancybox.close();
-		});
+    $('.itemAVender').click(function() {
+        $('#idItemVenta').val($(this).data('idprenda'));
+    	$('#codItemVenta').val($(this).data('codigoprenda'));
+        $('#detalleItemVenta').val($(this).data('detalleprenda'));
+        $('#precio1').val($(this).data('valor1'));
+        $('#precio2').val($(this).data('valor2'));
+        $('#precio3').val($(this).data('valor3'));
+        $('#precio4').val($(this).data('valor4'));
+        $('#precio5').val($(this).data('valor5'));
+        $('#precio6').val($(this).data('valor6'));
+        $('#agregarItem').show();
+        $.fancybox.close();
+    });
 </script>
