@@ -1,24 +1,24 @@
 <?php
 
-Class color {
+Class ventaRenglon {
 
-    public function coloresDisponibles() {
+    public function ventaRenglonesDisponibles() {
         require_once (__DIR__ . '\..\..\base\manejoMySQL.php');
 
         $objManejoMySQL = new manejoMySQL();
-        $strSql = "	SELECT * FROM `color`
-					ORDER BY `detalleColor` ASC";
+        $strSql = "	SELECT * FROM `venta_renglon`
+					ORDER BY `idVentaRenglon` ASC";
         $arrResultado = null;
         $objManejoMySQL->consultar($strSql, $arrResultado);
         return $arrResultado;
     }
 
-    public function agregarNuevoColor($arrColor) {
+    public function agregarNuevaVentaRenglon($arrVentaRenglon) {
         require_once (__DIR__ . '\..\..\base\manejoMySQL.php');
         $strValoresCampos = "";
         $strNombresCampos = "";
         $objManejoMySQL = new manejoMySQL();
-        foreach ($arrColor as $nombreCampo => $valorCampo) {
+        foreach ($arrVentaRenglon as $nombreCampo => $valorCampo) {
             $strValoresCampos .= $strValoresCampos == '' ? '' : ',';
             $strNombresCampos .= ($strNombresCampos == '' ? '' : ',') . '`' . $nombreCampo . '`';
             if (is_null($valorCampo)) {
@@ -32,30 +32,30 @@ Class color {
             }
         }
 
-        $strSql = "INSERT INTO `color`($strNombresCampos) VALUES($strValoresCampos)";
+        $strSql = "INSERT INTO `venta_renglon`($strNombresCampos) VALUES($strValoresCampos)";
         $arrResultado = null;
         $objManejoMySQL->consultar($strSql, $arrResultado);
         return $arrResultado;
     }
 
-    public function eliminarColor($objColor) {
+    public function eliminarVentaRenglon($objVentaRenglon) {
         require_once (__DIR__ . '\..\..\base\manejoMySQL.php');
 
         $objManejoMySQL = new manejoMySQL();
-        $lngIdColor = $objColor['idColor'];
-        $strSql = "DELETE FROM `color` WHERE `idColor`=$lngIdColor";
+        $lngIdVentaRenglon = $objVentaRenglon['idVentaRenglon'];
+        $strSql = "DELETE FROM `venta_renglon` WHERE `idVentaRenglon`=$lngIdVentaRenglon";
         $arrResultado = null;
         $objManejoMySQL->consultar($strSql, $arrResultado);
         return $arrResultado;
     }
 
-    public function modificarColor($arrColor) {
+    public function modificarVentaRenglon($arrVentaRenglon) {
         require_once (__DIR__ . '\..\..\base\manejoMySQL.php');
         $strValoresCampos = "";
         $strNombresCampos = "";
         $strUpdate = "";
-        foreach ($arrColor as $nombreCampo => $valorCampo) {
-            if ($nombreCampo != 'idColor') {
+        foreach ($arrVentaRenglon as $nombreCampo => $valorCampo) {
+            if ($nombreCampo != 'idVentaRenglon') {
                 $strUpdate .= $strUpdate == '' ? '' : ',';
                 if (is_null($valorCampo)) {
                     $strUpdate .= "$nombreCampo='null'";
@@ -67,13 +67,13 @@ Class color {
                     }
                 }
             } else {
-                $lngIdColor = $valorCampo;
+                $lngIdVentaRenglon = $valorCampo;
             }
         }
 
         $objManejoMySQL = new manejoMySQL();
-        $strSql = "UPDATE `color` SET $strUpdate
-					WHERE `idColor`=$lngIdColor";
+        $strSql = "UPDATE `venta_renglon` SET $strUpdate
+					WHERE `idVentaRenglon`=$lngIdVentaRenglon";
         $arrResultado = null;
         $objManejoMySQL->consultar($strSql, $arrResultado);
         return $arrResultado;
