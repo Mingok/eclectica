@@ -6,12 +6,12 @@ function getCondicion(){
     
   $arrResultado=null;
 		$objManejoMySQL->consultar($strSql, $arrResultado);
-
+$resp ='';
   if($arrResultado){
-    if(mysql_num_rows($arrResultado)>0){
+    if(count($arrResultado)>0){
 		$resp.="<option value=''>- Elija Una -</option>";
-        while($r=mysql_fetch_object($arrResultado)){
-          $resp.="<option value='".$r->idTipoVenta."'>".$r->detalleTipoVenta."</option>";
+        foreach ($arrResultado as $arrResultado1){
+          $resp.="<option value='".$arrResultado1["idTipoVenta"]."'>".$arrResultado1["detalleTipoVenta"]."</option>";
             }
     }else $resp.="<option value='1'>".$strSql."</option>
                     <option value='2'>- Elija Una -</option>
