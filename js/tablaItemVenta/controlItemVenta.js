@@ -1,6 +1,7 @@
 var campos = 0;
 
 function agregarCampo(){
+  
 	campos = campos + 1;
 	NvoCampo= 
 		"   <tr id= 'divcampo_"+(campos)+"'>" +

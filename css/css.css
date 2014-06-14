@@ -62,15 +62,19 @@ select.error { border: 1px dotted red; }
 
 div.scrol{
     overflow: auto;
+     overflow-x: hidden; 
     height: 150px;
 }
 div.scrol1{
     overflow: auto;
+    overflow-x: hidden; 
     height: 300px;
     padding:10px; 
+    
 }
 div.scrolPrv{
     overflow: auto;
+     overflow-x: hidden; 
     height: 165px;
     width: 480px;
 

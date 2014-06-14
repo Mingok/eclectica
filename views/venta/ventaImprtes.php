@@ -1,15 +1,21 @@
 <div class="row">
     <div class="col-md-12">
-        <div class="panel panel-success">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    Clinete
+                </h3>
+            </div>
+       
             <div class="panel-body">
-                Ciente: <span id="cliente1"></span><br />
-                Entrega: <input type="text" placeholder="Ingrese" name="entrega" id="entrega" required><br />
-                Vendedor: <input type="text" placeholder="Ingrese" name="vendedor" id="vendedor" required><br />
-                
+                Ciente: <span id="cliente1" class="form-control" ></span>&nbsp;&nbsp;&nbsp;
+                Entrega: <input type="text" placeholder="Ingrese" name="entrega" class="form-control" id="entrega" style="width: 100px" required>&nbsp;&nbsp;&nbsp;
+                Vendedor: <input type="text" placeholder="Ingrese" name="vendedor" class="form-control" id="vendedor" style="width: 100px" required>&nbsp;&nbsp;&nbsp;
                 <input type="submit" value="Vender" name="Guardar">
             </div>
         </div>
     </div>
-</div>   
+</div>  
+
 
 </form>

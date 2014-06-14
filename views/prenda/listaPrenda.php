@@ -42,13 +42,12 @@ $tipoVentas = $tipoVentaList->tipoVentasDisponibles ();
 				<div class="col-md-2">
 					<a href="#prenda"> <input type="button"
 					value="Nuevo" style="width: 100px;"
-					class="buttonPrendasNueva btn btn-sm btn-success" /></a>
+                                        class="buttonPrendasNueva btn btn-sm btn-success" /></a>
 				</div>
 				<div class="row">
 					<table class="tabla">
 						<tr>
 							<td colspan="3" style="text-align: right;">
-								<center>
 									<div class="scrol1">
 										<table class="table table-striped" id="tblPrenda">
 											<thead class="btn-success" style="font-weight: bolder; text-align: center;">
