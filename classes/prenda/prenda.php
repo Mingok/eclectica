@@ -178,7 +178,7 @@ class prenda {
 		SELECT * FROM `tipoventa_prenda` `tvp`
 		JOIN  `tipoVenta` as tv ON tv.idTipoVenta = tvp.idTipoVenta 
 		WHERE `tvp`.`idPrenda`=$idPrenda
-		ORDER BY tv.`detalleTipoVenta`";
+		ORDER BY tv.`idTipoVenta`";
 		$objManejoMySQL = new manejoMySQL ();
 		$arrResultado = null;
 		$objManejoMySQL->consultar ( $strSql, $arrResultado );
