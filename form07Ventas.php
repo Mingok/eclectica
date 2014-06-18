@@ -28,6 +28,7 @@
         var estado = 1; /*selecCliente*/
         $('#selecCliente').on("change", function(e) {
             $('#clienteVenta').val(this.options[this.value].text);
+            $('#idClienteVenta').val(this.value);
             $("#cliente1").html(this.options[this.value].text);
              $("#cliente1").show('Slow');
         });

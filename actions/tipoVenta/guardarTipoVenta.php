@@ -15,7 +15,7 @@ $arrTipoVenta = array(
 
 
 $tipoVentaClass = new tipoVenta();
-	$tipoVentas = $tipoVentaClass->modificarTipoVenta($arrTipoVenta);
+$tipoVentas = $tipoVentaClass->modificarTipoVenta($arrTipoVenta);
    
 
 
