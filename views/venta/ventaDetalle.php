@@ -1,4 +1,5 @@
-<form id="formdinamico" name="formdinamico" action="./js/tablaItemVenta/prueba.php">
+<form id="formdinamico" name="formdinamico" action="actions/venta/efectuarVenta.php">
+    <input type="hidden" id="idClienteVenta" name="idClienteVenta" />
     <input type="hidden" id="clienteVenta" name="clienteVenta" />
     <div class="row">
         <div class="col-md-12">
