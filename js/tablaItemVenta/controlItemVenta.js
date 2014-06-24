@@ -65,4 +65,3 @@ function quitarCampo(iddiv) {
 $("#span_cantidad").html(camposTotal);
 
 }
-

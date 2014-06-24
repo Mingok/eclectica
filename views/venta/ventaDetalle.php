@@ -62,7 +62,6 @@
 
 <form id="formdinamico" name="formdinamico" action="actions/venta/efectuarVenta.php">
             <div class="panel-body">
-                
                     <input type="hidden" id="idClienteVenta" name="idClienteVenta" />
                     <input type="hidden" id="clienteVenta" name="clienteVenta" />
                     <table id="contenedorcampos" class="table table-striped">
@@ -146,6 +145,4 @@
                 break;
         }
     });
-    
-    
 </script>

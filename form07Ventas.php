@@ -75,6 +75,7 @@
         $('#ventaDetalle').hide();
 
 
+
     });
   $("#formdinamico").validate({
         rules: {
@@ -100,4 +101,5 @@
             }
         }
     });
+    /* $("#formItemVenta").validate({});*/
 </script>
