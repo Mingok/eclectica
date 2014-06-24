@@ -170,7 +170,7 @@ $(document).ready(function() {
     		$('input[name=codigoPrenda]').hide();
     		$('label[for=codigoPrenda').hide();
 		});
-		$("#formPrendas ").validate({
+		$("#formPrendas").validate({
 			rules: {
 				idEstacionPrenda: {
 					required: true

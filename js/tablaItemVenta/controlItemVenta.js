@@ -1,7 +1,9 @@
 var campos = 0;
+var importe =new Array();
+var importeTotal=0;
 
 function agregarCampo(){
-  
+ 
 	campos = campos + 1;
 	NvoCampo= 
 		"   <tr id= 'divcampo_"+(campos)+"'>" +
@@ -27,12 +29,31 @@ function agregarCampo(){
 		"        <a href='JavaScript:quitarCampo(" + campos +");'> <img src='./imagenes/iconos/delete.png' /></a>" +
 		"     </td>" +
         "   </tr>";
-    $("#contenedorcampos").append(NvoCampo);$("#span_cantidad").val(campos);
+
+    importe[campos]=$("#cantidadItemVenta").val()*$("#precioItemVenta").val() ;
+    
+    for ( var i = 1; i < importe.length; i = i + 1 ) {
+ 
+    ( importeTotal=importeTotal+ importe[i] );
+ 
+    }
+    $("#contenedorcampos").append(NvoCampo);
+    $("#span_cantidad").html(campos);
+    $("#span_Total").html(importeTotal);
+    $('#codItemVenta').val('0');
+    $('#cantidadItemVenta').val('1');
+    $('#selecCondicionItem').val(["0"]).select2();
+    $('#agregarItem').hide();
+    $('#areaItemAVender').hide('slow');
+    
   }
 
 function quitarCampo(iddiv){
   var eliminar = document.getElementById("divcampo_" + iddiv);
+  importeTotal=importeTotal - importe[iddiv]; 
   var contenedor= document.getElementById("contenedorcampos");
   contenedor.removeChild(eliminar);
+      $("#span_Total").html(importeTotal);
+
 }
 
