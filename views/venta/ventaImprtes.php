@@ -9,8 +9,8 @@
        
             <div class="panel-body">
                 Ciente: <span id="cliente1" class="form-control" ></span>&nbsp;&nbsp;&nbsp;
-                Entrega: <input type="text" placeholder="Ingrese" name="entrega" class="form-control" id="entrega" style="width: 100px" required>&nbsp;&nbsp;&nbsp;
-                Vendedor: <input type="text" placeholder="Ingrese" name="vendedor" class="form-control" id="vendedor" style="width: 100px" required>&nbsp;&nbsp;&nbsp;
+                Entrega: <input type="text" placeholder="Ingrese" name="entrega" class="form-control" id="entrega" style="width: 100px" >&nbsp;&nbsp;&nbsp;
+                Vendedor: <input type="text" placeholder="Ingrese" name="vendedor" class="form-control" id="vendedor" style="width: 100px">&nbsp;&nbsp;&nbsp;
                 <input type="submit" value="Vender" name="Guardar">
             </div>
         </div>
@@ -19,3 +19,4 @@
 
 
 </form>
+
