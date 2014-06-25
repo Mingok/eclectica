@@ -35,7 +35,7 @@ $tipoVentas = $tipoVentaList->tipoVentasDisponibles();
                 </div>
                 <div class="panel-body">
                     <form action="actions/prenda/guardarPrenda.php" class="formPrendas" id="formPrendas">
-                        <table class="tabla">
+                        <table class="table">
                             <tr>
                                 <td>
                                     <table style="width: 98%;">
@@ -44,7 +44,7 @@ $tipoVentas = $tipoVentaList->tipoVentasDisponibles();
                                                 <label for="codigoPrenda" id="lp">
                                                     Codigo&nbsp;
                                                 </label>
-                                                <input type="text" name="codigoPrenda" value="" readonly="yes" />
+                                                <input type="text" name="codigoPrenda" value="" readonly="readonly" />
                                                 <input type="hidden" value="" name="idPrenda" />
                                                 <input type="hidden" name="idEmpresaPrenda" value="1" />
                                             </td>

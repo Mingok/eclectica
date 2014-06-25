@@ -34,7 +34,9 @@
             $("#cliente1").html(this.options[this.value].text);
             $("#cliente1").show('Slow');
             $('#selecCliente').empty().attr("disabled", "disabled");
+            
         });
+        
         $("#selecCondicionGral").change(function() {
             $("#selecCondicionItem").empty().attr("disabled", "disabled");
             if ($(this).val() != "") {
@@ -75,9 +77,7 @@
         $('#ventaDetalle').hide();
 
 
-
-    });
-  $("#formdinamico").validate({
+$("#formdinamico").validate({
         rules: {
             entrega: {
                 required: true,
@@ -85,8 +85,8 @@
 
             },
             vendedor: {
-                required: true,
-                equalTo: <?php echo "pass" ;?>
+                required: true
+               
 
             }
         },
@@ -96,10 +96,11 @@
                 number: "Tiene que ser un numero"
             },
             vendedor: {
-                required: "Ingrese vendedor",
-                equalTo: "Tiene que ser Igual"
+                required: "Ingrese vendedor"
+                
             }
         }
     });
-    /* $("#formItemVenta").validate({});*/
+    });
+ 
 </script>

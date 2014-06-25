@@ -62,6 +62,7 @@
 
 <form id="formdinamico" name="formdinamico" action="actions/venta/efectuarVenta.php">
             <div class="panel-body">
+                
                     <input type="hidden" id="idClienteVenta" name="idClienteVenta" />
                     <input type="hidden" id="clienteVenta" name="clienteVenta" />
                     <table id="contenedorcampos" class="table table-striped">
@@ -123,7 +124,7 @@
 <script type="text/javascript">
     $('#selecCondicionItem').on("change", function(e) {
 
-        $("#condItemVenta").val(this.options[this.value].text);
+        $("#condItemVenta").val(this.options[this.selectedIndex].text);
         switch (this.value) {
             case '1':
                 $('input[name=precioItemVenta]').val($('#precio1').val());
@@ -145,4 +146,6 @@
                 break;
         }
     });
+    
+    
 </script>

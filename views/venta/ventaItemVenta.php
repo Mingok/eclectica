@@ -124,11 +124,15 @@
 
 
     $("#fancyboxPrenda").fancybox({
+        
         minWidth: 300,
         minHeight: 400,
         closeEffect: 'elastic'
     });
     $('.itemAVender').click(function() {
+        $('#codItemVenta').val('0');
+    $('#cantidadItemVenta').val('1');
+    $('#selecCondicionItem').val(["0"]).select2();
         $('#idItemVenta').val($(this).data('idprenda'));
         $('#codItemVenta').val($(this).data('codigoprenda'));
         $('#detalleItemVenta').val($(this).data('detalleprenda'));

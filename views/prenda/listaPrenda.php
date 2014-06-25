@@ -45,7 +45,7 @@ $tipoVentas = $tipoVentaList->tipoVentasDisponibles();
                                               class="buttonPrendasNueva btn btn-sm btn-success" /></a>
                 </div>
                 <div class="row">
-                    <table class="tabla">
+                    <table class="table">
                         <tr>
                             <td colspan="3" style="text-align: right;">
                                 <div class="scrol1">
