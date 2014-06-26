@@ -2,10 +2,8 @@
 define('EMPLEADOS_STYLE_PATH', 'http://localhost/eclectica/css/');
 define('EMPLEADOS_SCRIPTS_PATH', 'http://localhost/eclectica/js/');
 require_once 'classes/persona/persona.php';
-$personaList = new
-        persona();
-$personas = $personaList->
-        personasDisponibles();
+$personaList = new persona();
+$personas = $personaList->personasDisponibles();
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -15,7 +13,7 @@ $personas = $personaList->
         <title>
             Nombre del programa
         </title>
-            <link rel="stylesheet" href="<?php echo EMPLEADOS_STYLE_PATH; ?>css.css" type="text/css" />
+        <link rel="stylesheet" href="<?php echo EMPLEADOS_STYLE_PATH; ?>css.css" type="text/css" />
     <link rel="stylesheet" href="<?php echo EMPLEADOS_STYLE_PATH; ?>bootstrap/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="<?php echo EMPLEADOS_STYLE_PATH; ?>bootstrap/bootstrap-theme.min.css" type="text/css" />
     <link rel="stylesheet" href="<?php echo EMPLEADOS_STYLE_PATH; ?>select2/select2.css" type="text/css" />
@@ -24,16 +22,16 @@ $personas = $personaList->
     <script type="text/javascript" src="<?php echo EMPLEADOS_SCRIPTS_PATH; ?>validacion/dist/jquery.validate.js"></script>
     <script type="text/javascript" src="<?php echo EMPLEADOS_SCRIPTS_PATH; ?>bootstrap/bootstrap.min.js"></script>
     <script type="text/javascript" src="<?php echo EMPLEADOS_SCRIPTS_PATH; ?>buscar-en-tabla.js"></script>
-    <script type="text/javascript" src="<?php echo EMPLEADOS_SCRIPTS_PATH; ?>select2/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="<?php echo EMPLEADOS_SCRIPTS_PATH; ?>select2/select2.js"></script>
     <script type="text/javascript" src="<?php echo EMPLEADOS_SCRIPTS_PATH; ?>fancybox/jquery.mousewheel-3.0.6.pack.js"></script>
     <script type="text/javascript" src="<?php echo EMPLEADOS_SCRIPTS_PATH; ?>fancybox/jquery.fancybox.js"></script>
         <script>
             $(function() {
                 $('#selecCliente').select2().on("change", function(e) {
+                    var deuda = $($(this).select2('data').element).data('deuda');
                     $('input[name=idPersona]').val(e.val);
-
-                })
+                    $('.deudaCliente').html("$ " + deuda);
+                });
             });
         </script>
     </head>
@@ -49,39 +47,42 @@ $personas = $personaList->
                     </div>
                     <div class="panel-body">
                         <form action="actions/cliente/actualizaCcCliente.php" class="formCcCliente" id="formCcCliente">
+                            <input type="hidden" value="" name="idPersona"/>
+                            <input type="hidden" value="" name="cuentaCorrientePersona"/>
                             <table style="width: 100%;">
-                                <tr style="vertical-align: middle;width: 500px;">
-                                    Cliente: <select id="selecCliente" style="width: 250px" required >
-                                    <optgroup label="Elija Uno">
+                                <tr style="vertical-align: middle;width: 500px;">   
+                                    <td style="height:45px; text-align: left;">
+                                        Cliente: 
+                                        <select id="selecCliente" style="width: 250px" required >
+                                            <option value="">Seleccione un cliente</option>
                                         <?php
                                         foreach ($personas as $persona) {
                                             if (isset($persona)) {
-                                                echo "<option value=" . $persona["idPersona"] . ">" . $persona["apellidoPersona"] . " " . $persona["nombrePersona"] . "</option>";
+                                                echo "<option value=" . $persona["idPersona"] . " data-deuda=" . $persona['cuentaCorrientePersona'] .">" . $persona["apellidoPersona"] . " " . $persona["nombrePersona"] . "</option>";
                                             }
                                         }
                                         ?>
-                                    </optgroup>
-                                </select>
-                                <td style="height:30px; text-align: left;">
-                                    <div id="CC" style="width: 300px;">
-                                    </div>
-                                </td>
+                                            
+                                        </select>
+                                    </td>
+                                    <td style="height:45px; text-align: left;">
+                                        <strong>Deuda: </strong>
+                                        <span class="deudaCliente"></span>
+                                    </td>
                                 </tr>
-                                <tr >
-                                    <td style="height:30px; text-align: middle;">
-                                        <input type="hidden" value="" name="idPersona"/>
-                                        <input type="hidden" value="" name="cuentaCorrientePersona"/>
+                                <tr>
+                                    <td style="height:45px; text-align: middle;">
                                         Entrega:
                                         <input type="text" class=" input input-sm" name="entregaCliente" placeholder="ingresar" style="width: 100px;" />
-                                        <br />
-                                        <br />
+                                    </td>
+                                    <td style="height:30px; text-align: middle;">
                                         Control:
                                         <input type="pass" class=" input input-sm" name="control" placeholder="ingresar" style="width: 100px;" required />
-                                        <br />
-                                        <br />
                                     </td>
-                                    <td rowspan="2" style="height:30px; text-align: middle;">
-                                        <input type="button" name="pNuevo" onclick="formSubmitCC()" value="Actualizar" class="btn btn-sm btn-success" />
+                                </tr>
+                                <tr>
+                                    <td colspan="2" style="height:45px; text-align: right;">
+                                        <input type="submit" name="pNuevo" onclick="" value="Actualizar" class="btn btn-sm btn-success" />
                                     </td>
                                 </tr>
                             </table>
@@ -95,19 +96,34 @@ $personas = $personaList->
 
 </html>
 <script>
-
-    $("#formCcCliente").validate();
-
-    function formSubmitCC() {
-        var url = $(".formCcCliente").attr('action');
-            $.ajax({
-                type: "POST",
-                url: url,
-                data: $(".formCcCliente").serialize(), // serializes the form's elements.
-                success: function(data) {
-                    parent.$.fancybox.close();
+    $(document).ready(function() {
+        $("#formCcCliente").validate({
+                submitHandler: function (form) {
+                    var url = $(form).attr('action');
+                    $.ajax({
+                        type: "POST",
+                        url: url,
+                        data: $(form).serialize(), // serializes the form's elements.
+                        success: function(data) {
+                            parent.$.fancybox.close();
+                        }
+                    });
                 }
             });
-        
-    }
+
+            
+    });
+//    function formSubmitCC() {
+//            var url = $(".formCcCliente").attr('action');
+//            $.ajax({
+//                type: "POST",
+//                url: url,
+//                data: $(".formCcCliente").serialize(), // serializes the form's elements.
+//                success: function(data) {
+//                    parent.$.fancybox.close();
+//                }
+//            });
+//
+//        }
+    
 </script>
