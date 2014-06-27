@@ -13,7 +13,7 @@ Class entrega {
         return $arrResultado;
     }
     
-    public function entregasCliente() {
+    public function entregasCliente($lngIdCliente) {
         require_once (__DIR__ . '\..\..\base\manejoMySQL.php');
 
         $objManejoMySQL = new manejoMySQL();

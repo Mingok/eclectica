@@ -9,6 +9,10 @@ $codigoVendedor = $_REQUEST['control'];
 $personaClass = new persona();
 $cliente = $personaClass->eligePersona($idPersona);
 $vendedor = $personaClass->eligeVendedor($codigoVendedor);
+if (empty($vendedor)) {
+    echo 'error:no_vendedor';
+    exit;
+}
 
 $cuentaCorrientePersona = doubleval($cliente['cuentaCorrientePersona']) - $entrega;
 

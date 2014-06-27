@@ -82,7 +82,7 @@ $personas = $personaList->personasDisponibles();
                                 </tr>
                                 <tr>
                                     <td colspan="2" style="height:45px; text-align: right;">
-                                        <input type="submit" name="pNuevo" onclick="" value="Actualizar" class="btn btn-sm btn-success" />
+                                        <input type="submit" name="ccSubmit" onclick="" value="Actualizar" class="btn btn-sm btn-success" />
                                     </td>
                                 </tr>
                             </table>
@@ -100,12 +100,19 @@ $personas = $personaList->personasDisponibles();
         $("#formCcCliente").validate({
                 submitHandler: function (form) {
                     var url = $(form).attr('action');
+                    $('input[name=ccSubmit]').attr('disabled', 'disabled');
                     $.ajax({
                         type: "POST",
                         url: url,
                         data: $(form).serialize(), // serializes the form's elements.
                         success: function(data) {
-                            parent.$.fancybox.close();
+                            if (data == 'error:no_vendedor') {
+                                $('input[name=ccSubmit]').removeAttr('disabled');
+                                alert('El codigo de vendedor es incorrecto.');
+                            } else {
+                                parent.$.fancybox.close();
+                                
+                            }
                         }
                     });
                 }
