@@ -7,6 +7,22 @@ Class persona {
 		$strSql="SELECT * FROM `persona` where idPersona=".$id;
 		$arrResultado=null;
 		$objManejoMySQL->consultar($strSql, $arrResultado);
+                if (!empty($arrResultado)) {
+                    $arrResultado = current($arrResultado);
+                }
+		return $arrResultado;
+	}
+        
+        public function eligeVendedor($codVendedor){
+		require_once (__DIR__.'\..\..\base\manejoMySQL.php');
+		
+		$objManejoMySQL= new manejoMySQL();
+		$strSql="SELECT * FROM `persona` where codigoVendedor='$codVendedor'";
+		$arrResultado=null;
+		$objManejoMySQL->consultar($strSql, $arrResultado);
+                if (!empty($arrResultado)) {
+                    $arrResultado = current($arrResultado);
+                }
 		return $arrResultado;
 	}
 	public function personasDisponibles(){

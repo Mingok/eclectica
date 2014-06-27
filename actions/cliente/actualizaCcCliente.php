@@ -1,16 +1,36 @@
 <?php
 require_once 'classes/persona/persona.php';
-$personaClass = new persona();
-$estaPersona = $personaClass->eligePersona($_REQUEST['idPersona']);
+require_once 'classes/entrega/entrega.php';
 
-$cuentaCorrientePersona = $estaPersona['0']['cuentaCorrientePersona'] - $_REQUEST['entregaCliente'];
+$idPersona = $_REQUEST['idPersona'];
+$entrega = $_REQUEST['entregaCliente'];
+$codigoVendedor = $_REQUEST['control'];
+
+$personaClass = new persona();
+$cliente = $personaClass->eligePersona($idPersona);
+$vendedor = $personaClass->eligeVendedor($codigoVendedor);
+
+$cuentaCorrientePersona = doubleval($cliente['cuentaCorrientePersona']) - $entrega;
 
 $arrPersona = array(
     'cuentaCorrientePersona' => $cuentaCorrientePersona,
-    'idPersona' =>  $_REQUEST['idPersona']
+    'idPersona' =>  $idPersona
 );
-$persona = null;
-$persona = json_encode($personaClass->modificarPersona($arrPersona));
 
-echo $persona;
+$persona = null;
+
+$persona = $personaClass->modificarPersona($arrPersona);
+
+$entregaClass = new entrega();
+
+$arrEntrega = array(
+    'idCliente' => $idPersona,
+    'idVendedor' => $vendedor['idPersona'],
+    'valorEntrega' => $entrega,
+    'fechaEntrega' => date('Y-m-d h:i:s', time())
+);
+$entrega = null;
+$entrega = $entregaClass->agregarNuevaEntrega($arrEntrega);
+
+echo json_encode($persona);
 exit;
