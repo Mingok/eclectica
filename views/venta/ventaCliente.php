@@ -28,7 +28,7 @@ $prendas = $prendaList->prendasDisponibles();
 
                         if (isset($persona)) {
                             if (!($persona["codigoVendedor"] == null)) {
-                                echo "<option value=" . $persona["idPersona"] . ">" . $persona["apellidoPersona"] . " " . $persona["nombrePersona"] . "</option>";
+                                echo "<option value=" . $persona["idPersona"] . " data-codigoVendedor='".$persona["codigoVendedor"]  ."' >" . $persona["apellidoPersona"] . " " . $persona["nombrePersona"] . "</option>";
                             }
                         }
                     }

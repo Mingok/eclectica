@@ -52,34 +52,34 @@ $tipoVentas = $tipoVentaList->tipoVentasDisponibles();
                                     <table class="table table-striped" id="tblPrenda">
                                         <thead class="btn-success" style="font-weight: bolder; text-align: center;">
                                             <tr>
-                                                <td>
+                                                <td style="width: 4%">
                                                     Mod
                                                 </td>
-                                                <td>
+                                                <td style="width: 4%">
                                                     Cop
                                                 </td>
-                                                <td>
+                                                <td style="width: 10%">
                                                     Cod
                                                 </td>
                                                 <td style="width: 30%">
                                                     Nombre
                                                 </td>
-                                                <td>
+                                                <td style="width: 4%">
                                                     Talle
                                                 </td>
-                                                <td>
+                                                <td style="width: 10%">
                                                     Color
                                                 </td>
-                                                <td>
+                                                <td style="width: 10%">
                                                     Estampado
                                                 </td>
-                                                <td>
+                                               <td style="width: 14%">
                                                     Tela
                                                 </td>
-                                                <td>
+                                                 <td style="width: 10%">
                                                     Temporada
                                                 </td>
-                                                <td>
+                                                 <td style="width: 4%">
                                                     Cantidad
                                                 </td>
                                             </tr>

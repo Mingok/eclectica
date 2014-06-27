@@ -63,8 +63,6 @@
 
             <form id="formDinamico" name="formDinamico" action="actions/venta/efectuarVenta.php">
                 <div class="panel-body">
-                    <input type="hidden" id="idClienteVenta" name="idClienteVenta" />
-                    <input type="hidden" id="clienteVenta" name="clienteVenta" />
                     <table id="contenedorcampos" class="table table-striped">
                         <thead class="btn-success" style="font-weight: bolder; text-align: center;">
                             <tr>
@@ -98,7 +96,7 @@
                             <tr>
                                 <td colspan="4">
                                     <strong>
-                                        Prendas:
+                                        Renglones:
                                     </strong>
                                     <span id="span_cantidad">
                                     </span>
@@ -126,14 +124,21 @@
                             <div class="panel-body">
                                 <div class="row">
                                     <div class="col-md-12">
+                                                  <input type="hidden" id="idVendedorVenta" name="idVendedorVenta" />
+                    <input type="hidden" id="idVendedorVentaCod" name="idVendedorVentaCod" />
+                    
+                    
+          <input type="hidden" id="idClienteVenta" name="idClienteVenta" />
+                    <input type="hidden" id="clienteVenta" name="clienteVenta" />
                                         Ciente: <span id="cliente1" class="form-control" ></span>&nbsp;&nbsp;&nbsp;
                                         Entrega: <input type="text" placeholder="Ingrese" name="entrega" class="form-control" id="entrega" style="width: 100px">&nbsp;&nbsp;&nbsp;
+                                        <input type="hidden" id="totalCompra" name="totalCompra" />
                                         Vendedor: <input type="text" placeholder="Ingrese" name="vendedor" class="form-control" id="vendedor" style="width: 100px" >&nbsp;&nbsp;&nbsp;
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12" style="text-align: right">
-                                        <input type="hidden" name="vendedor1" id="vendedor1" >                            
+                                                                  
                                         <input type="submit" value="Confirmar"  name="Guardar" class="btn btn-sm btn-warning">
                                         <input type="button" value="Limpiar" style="width: 100px;" class="btn btn-sm btn-danger" onClick="history.go(0)">
                                     </div>

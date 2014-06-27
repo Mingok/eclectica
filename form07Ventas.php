@@ -24,7 +24,10 @@
 
 <script type="text/javascript">
      $("#selecEmpleado").on("change", function(e) {
-$("#selecEmpleado").empty().attr("disabled", "disabled");
+        $('#idVendedorVentaCod').val($($(this).select2('data').element).data('codigovendedor'));
+        $('#idVendedorVenta').val(this.value);
+       
+        $("#selecEmpleado").empty().attr("disabled", "disabled");
         
     });
     
@@ -87,6 +90,7 @@ $("#selecEmpleado").empty().attr("disabled", "disabled");
                 },
                 vendedor: {
                     required: true,
+                    equalTo:'#idVendedorVentaCod'
                 }
             },
             messages: {
@@ -96,6 +100,7 @@ $("#selecEmpleado").empty().attr("disabled", "disabled");
                 },
                 vendedor: {
                     required: "Ingrese vendedor",
+                    equalTo:"Codigo Erroneo"
                 }
             },
             submitHandler: function(form) {
