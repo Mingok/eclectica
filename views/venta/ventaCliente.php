@@ -19,6 +19,23 @@ $prendas = $prendaList->prendasDisponibles();
             </div>
             <div class="panel-body" style="text-align: right">
                 <label style="text-align:left">
+                    Empleado:
+                </label>
+                <select id="selecEmpleado" name="selecEmpleado" style="width:240px;" required>
+                    <option></option>
+                    <?php
+                    foreach ($personas as $persona) {
+
+                        if (isset($persona)) {
+                            if (!($persona["codigoVendedor"] == null)) {
+                                echo "<option value=" . $persona["idPersona"] . ">" . $persona["apellidoPersona"] . " " . $persona["nombrePersona"] . "</option>";
+                            }
+                        }
+                    }
+                    ?>
+                </select>
+                <div style="height: 10px"></div>
+                <label style="text-align:left">
                     Cliente:
                 </label>
                 <select id="selecCliente" name="selecCliente" style="width:240px;" required>

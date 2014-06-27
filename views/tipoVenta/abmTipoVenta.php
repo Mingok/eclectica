@@ -12,23 +12,23 @@ $tipoVentas = $tipoVentaList->tipoVentasDisponibles();
     <div class="panel-body">
         <form action="actions/tipoVenta/guardarTipoVenta.php" id="formTipoVenta">
             <div id="muestraForm">
-                <div class="row" style="text-align: right; height: 35px;">
+                <div class="row" style="text-align: right; height: 45px;">
                     <div class="col-md-6">
                         Nombre:
-                        <input type="text" name="detalleTipoVenta" placeholder="ingrese" style="width: 140px;" required/>
+                        <input type="text" name="detalleTipoVenta" class="form-control" title="Ingresar Nombre" placeholder="ingrese" style="width: 150px;" required/>
                     </div>
                     <div class="col-md-3">
-                        Porcentaje:<input type="text" name="porcentajeTipoVenta" style="width: 30px;" required/>
+                        Porcentaje:<input type="text" name="porcentajeTipoVenta" class="form-control" title="Ingresar 0 a 100" style="width: 50px;" required/>
                     </div>
                     <div class="col-md-3" >
                         <input type="hidden" value="" name="idTipoVenta"/>
                         <input type="submit" style="width: 100px;" value="Modificar" class="btn btn-sm btn-success TipoVenta no"/>
                     </div>
                 </div>
-                <div class="row"  style="text-align: right; height: 35px;">
+                <div class="row"  style="text-align: right; height: 45px;">
                     <div class="col-md-6">
                         Operacion:
-                        <select size="1" title="Ingrese Grupo" name="operacionTipoVenta" id="operacionTipoVenta" style="width: 100px">
+                        <select size="1" title="Ingrese Grupo" class="form-control" name="operacionTipoVenta" id="operacionTipoVenta" style="width: 130px">
                             <option value="0">---</option>
                             <option value="1">Descuento</option>
                             <option value="2">Recargo</option>
@@ -36,7 +36,7 @@ $tipoVentas = $tipoVentaList->tipoVentasDisponibles();
                     </div>
                     <div class="col-md-3">
                         Grupo:
-                        <select size="1" title="Ingrese Grupo" name="grupoTipoVenta" id="grupoTipoVenta" style="width: 50px">
+                        <select size="1" title="Ingrese Grupo" class="form-control"  name="grupoTipoVenta" id="grupoTipoVenta" style="width: 70px">
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>

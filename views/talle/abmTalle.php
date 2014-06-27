@@ -11,7 +11,7 @@
 		<form action="actions/talle/guardarTalle.php" id="formTalle">
 			<div class="row">
 				<div class="col-md-8">
-					 Nombre:<input type="text" name="detalleTalle" placeholder="ingresar"  class="textCaracteristicas" required/>
+					 Nombre:<input type="text" name="detalleTalle" placeholder="ingresar"  style="width: 160px" class="form-control" title="Ingresar Talle" required/>
 					<input type="hidden" value="" name="idTalle"/>
 				</div>
 				<div class="col-md-4">

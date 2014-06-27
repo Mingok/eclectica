@@ -11,7 +11,7 @@
 		<form action="actions/color/guardarColor.php" id="formColor">
 			<div class="row">
 				<div class="col-md-8">
-					 Nombre:<input type="text" name="detalleColor" placeholder="ingresar" class="textCaracteristicas" required/>
+                                    Nombre:<input type="text" name="detalleColor" style="width: 160px" class="form-control" title="Ingresar Color" placeholder="ingresar" required/>
 					<input type="hidden" value="" name="idColor"/>
 				</div>
 				<div class="col-md-4">

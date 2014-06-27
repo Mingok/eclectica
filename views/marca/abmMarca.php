@@ -12,7 +12,7 @@
 		<form action="actions/Marca/guardarMarca.php" id="formMarca">
 			<div class="row">
 				<div class="col-md-8">
-					 Nombre:<input type="text" name="detalleMarca" placeholder="ingresar"  class="textCaracteristicas" required/>
+					 Nombre:<input type="text" name="detalleMarca" title="Ingresar Marca" placeholder="ingresar"  style="width: 160px" class="form-control" required/>
 					<input type="hidden" value="" name="idMarca"/>
 				</div>
 				<div class="col-md-4">

@@ -11,7 +11,7 @@
 		<form action="actions/Estacion/guardarEstacion.php" id="formEstacion">
 			<div class="row">
 				<div class="col-md-8">
-					 Nombre:<input type="text" name="detalleEstacion" placeholder="ingresar"  class="textCaracteristicas" required/>
+					 Nombre:<input type="text" name="detalleEstacion" title="Ingresar Estacion" placeholder="ingresar"  style="width: 160px" class="form-control" required/>
 					<input type="hidden" value="" name="idEstacion"/>
 				</div>
 				<div class="col-md-4">

@@ -4,9 +4,12 @@ var importe = new Array();
 var importeTotal = 0;
 
 function agregarCampo() {
-    importeTotal = 0;
+   
+   if  ($("#selecCondicionItem").val()!= ''){
+        importeTotal = 0;
     campos = campos + 1;
     camposTotal =camposTotal+ 1;
+    
     NvoCampo =
             "   <tr id= 'divcampo_" + (campos) + "'>" +
             "     <td style=' text-align: center;'>" + $("#codItemVenta").val() +
@@ -45,7 +48,9 @@ function agregarCampo() {
     $('#selecCondicionItem').val(["0"]).select2();
     $('#agregarItem').hide();
     $('#areaItemAVender').hide('slow');
-
+    $('#entrega').val(importeTotal);
+   }else{
+        alert("Elija Condicion de venta");}
 
 }
 
@@ -63,5 +68,6 @@ function quitarCampo(iddiv) {
     contenedor.removeChild(eliminar);
     $("#span_Total").html(importeTotal);
 $("#span_cantidad").html(camposTotal);
+$('#entrega').val(importeTotal);
 
 }

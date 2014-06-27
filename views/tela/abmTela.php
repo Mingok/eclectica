@@ -12,7 +12,7 @@
 			<form action="actions/tela/guardarTela.php" id="formTela">
 				<div class="row">
 					<div class="col-md-8">
-						 Nombre:<input type="text" name="detalleTela" placeholder="ingresar"  class="textCaracteristicas" required/>
+						 Nombre:<input type="text" style="width: 160px" class="form-control" name="detalleTela" placeholder="ingresar"  class="textCaracteristicas" title="Ingresar Tela" required/>
 						<input type="hidden" value="" name="idTela"/>
 					</div>
 					<div class="col-md-4">

@@ -25,7 +25,6 @@
                     <table class="tabla">
                         <tr>
                             <td style="text-align: right;">
-
                                 <div class="scrol1">
                                     <table class="table table-striped" id="tblPrendaVenta">
                                         <thead class="btn-success" style="font-weight: bolder; text-align: center;">
@@ -111,7 +110,6 @@
                                         </tbody>
                                     </table>
                                 </div>
-
                             </td>
                         </tr>
                     </table>
@@ -120,32 +118,3 @@
         </div>
     </div>
 </div>
-<script type="text/javascript">
-
-
-    $("#fancyboxPrenda").fancybox({
-        
-        minWidth: 300,
-        minHeight: 400,
-        closeEffect: 'elastic'
-    });
-    $('.itemAVender').click(function() {
-        $('#codItemVenta').val('0');
-    $('#cantidadItemVenta').val('1');
-    $('#selecCondicionItem').val(["0"]).select2();
-        $('#idItemVenta').val($(this).data('idprenda'));
-        $('#codItemVenta').val($(this).data('codigoprenda'));
-        $('#detalleItemVenta').val($(this).data('detalleprenda'));
-        $('#precio1').val($(this).data('valor1'));
-        $('#precio2').val($(this).data('valor2'));
-        $('#precio3').val($(this).data('valor3'));
-        $('#precio4').val($(this).data('valor4'));
-        $('#precio5').val($(this).data('valor5'));
-        $('#precio6').val($(this).data('valor6'));
-        $('#cuentaCorriente').val($(this).data('cuentaCorrientePersona'));
-        $('#agregarItem').show();
-        $('#areaItemAVender').show();
-        $.fancybox.close();
-
-    });
-</script>

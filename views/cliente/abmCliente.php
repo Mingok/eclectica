@@ -1,6 +1,6 @@
 <div class="row">
 	<div class="col-md-12">
-		<form action="actions/cliente/guardarCliente.php" class="formcliente" id="formcliente">
+		<form action="actions/cliente/guardarCliente.php" class="formCliente" id="formCliente">
 			<div class="panel panel-default">
 				<div class="panel-heading">
 					<h3 class="panel-title">

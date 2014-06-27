@@ -60,9 +60,9 @@
             </div>
 
 
-<form id="formdinamico" name="formdinamico" action="actions/venta/efectuarVenta.php">
-            <div class="panel-body">
-                
+
+            <form id="formDinamico" name="formDinamico" action="actions/venta/efectuarVenta.php">
+                <div class="panel-body">
                     <input type="hidden" id="idClienteVenta" name="idClienteVenta" />
                     <input type="hidden" id="clienteVenta" name="clienteVenta" />
                     <table id="contenedorcampos" class="table table-striped">
@@ -114,13 +114,39 @@
                         </tfoot>
                     </table>
 
-            </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">
+                                    Clinete
+                                </h3>
+                            </div>
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        Ciente: <span id="cliente1" class="form-control" ></span>&nbsp;&nbsp;&nbsp;
+                                        Entrega: <input type="text" placeholder="Ingrese" name="entrega" class="form-control" id="entrega" style="width: 100px">&nbsp;&nbsp;&nbsp;
+                                        Vendedor: <input type="text" placeholder="Ingrese" name="vendedor" class="form-control" id="vendedor" style="width: 100px" >&nbsp;&nbsp;&nbsp;
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12" style="text-align: right">
+                                        <input type="hidden" name="vendedor1" id="vendedor1" >                            
+                                        <input type="submit" value="Confirmar"  name="Guardar" class="btn btn-sm btn-warning">
+                                        <input type="button" value="Limpiar" style="width: 100px;" class="btn btn-sm btn-danger" onClick="history.go(0)">
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>  
+            </form>
         </div>
     </div>
 </div>
-
-
-
 <script type="text/javascript">
     $('#selecCondicionItem').on("change", function(e) {
 
@@ -146,6 +172,32 @@
                 break;
         }
     });
-    
-    
+
+
+
+    $("#fancyboxPrenda").fancybox({
+        minWidth: 300,
+        minHeight: 400,
+        closeEffect: 'elastic'
+    });
+    $('.itemAVender').click(function() {
+        $('#codItemVenta').val('0');
+        $('#cantidadItemVenta').val('1');
+        $('#selecCondicionItem').val(["0"]).select2();
+        $('#idItemVenta').val($(this).data('idprenda'));
+        $('#codItemVenta').val($(this).data('codigoprenda'));
+        $('#detalleItemVenta').val($(this).data('detalleprenda'));
+        $('#precio1').val($(this).data('valor1'));
+        $('#precio2').val($(this).data('valor2'));
+        $('#precio3').val($(this).data('valor3'));
+        $('#precio4').val($(this).data('valor4'));
+        $('#precio5').val($(this).data('valor5'));
+        $('#precio6').val($(this).data('valor6'));
+        $('#cuentaCorriente').val($(this).data('cuentaCorrientePersona'));
+        $('#agregarItem').show();
+        $('#areaItemAVender').show();
+        $.fancybox.close();
+    });
+
+
 </script>
