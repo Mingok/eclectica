@@ -13,6 +13,7 @@ $(document).ready(function() {
    $("#fancyboxPrecios").fancybox({
     autoDimensions:true,
     type   : 'iframe',
+    openEffect  : 'fade',
     closeEffect : 'elastic'
   });
 });

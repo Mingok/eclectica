@@ -35,8 +35,8 @@ $personas = $personaList->personasDisponibles();
             });
         </script>
     </head>
-    <body>
-
+    <body class="image-back-body">
+        <div style="height: 15px"></div>
         <div class="cuentaC" id="cuentaC">
             <div class="col-md-4">
                 <div class="panel panel-default">
@@ -50,7 +50,7 @@ $personas = $personaList->personasDisponibles();
                             <input type="hidden" value="" name="idPersona"/>
                             <input type="hidden" value="" name="cuentaCorrientePersona"/>
                             <table style="width: 100%;">
-                                <tr style="vertical-align: middle;width: 500px;">   
+                                <tr style="vertical-align: middle;">   
                                     <td style="height:45px; text-align: left;">
                                         Cliente: 
                                         <select id="selecCliente" style="width: 250px" required >

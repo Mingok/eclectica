@@ -66,25 +66,25 @@
                     <table id="contenedorcampos" class="table table-striped">
                         <thead class="btn-success" style="font-weight: bolder; text-align: center;">
                             <tr>
-                                <td>
+                                <td style="text-align: center; width: 15%;">
                                     Cod
                                 </td>
-                                <td>
+                                <td style="text-align:left; width: 37%;">
                                     Nombre
                                 </td>
-                                <td>
+                                <td style="text-align: center; width: 20%;">
                                     Condicion
                                 </td>
-                                <td>
+                                <td style="text-align: center; width: 7%;">
                                     Precio
                                 </td>
-                                <td>
-                                    Cantidad
+                                <td style="text-align: center; width: 7%;">
+                                    Cant.
                                 </td>
-                                <td>
+                                <td style="text-align: center; width: 10%;">
                                     P. Total
                                 </td>
-                                <td>
+                                <td style="text-align: center; width: 4%;">
                                     X
                                 </td>
                             </tr>
@@ -133,13 +133,13 @@
                                         Ciente: <span id="cliente1" class="form-control" ></span>&nbsp;&nbsp;&nbsp;
                                         Entrega: <input type="text" placeholder="Ingrese" name="entrega" class="form-control" id="entrega" style="width: 100px">&nbsp;&nbsp;&nbsp;
                                         <input type="hidden" id="totalCompra" name="totalCompra" />
-                                        Vendedor: <input type="text" placeholder="Ingrese" name="vendedor" class="form-control" id="vendedor" style="width: 100px" >&nbsp;&nbsp;&nbsp;
+                                        Vendedor: <input type="password"  placeholder="Ingrese" name="vendedor" class="form-control" id="vendedor" style="width: 100px" >&nbsp;&nbsp;&nbsp;
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12" style="text-align: right">
                                                                   
-                                        <input type="submit" value="Confirmar"  name="Guardar" class="btn btn-sm btn-warning">
+                                        <input type="submit" value="Confirmar"  name="Guardar" class="btn btn-sm btn-success">
                                         <input type="button" value="Limpiar" style="width: 100px;" class="btn btn-sm btn-danger" onClick="history.go(0)">
                                     </div>
                                 </div>

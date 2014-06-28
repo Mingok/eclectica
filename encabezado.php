@@ -72,16 +72,12 @@
 <!--/.nav-collapse --></div>
 </div>
 <script type="text/javascript">
-    $(".fancyboxCC").fancybox({
-        maxWidth: 500,
+    $("#fancyboxCC").fancybox({
+        maxWidth: 600,
         minHeight: 235,
         type: 'iframe',
         closeEffect : 'elastic',
-        onComplete: function () {
-            console.log('lalala');
-            $('#fancybox-iframe').load(function () {
-              $('#fancybox-content').height($(this).contents().find('body').height() + 20);
-            });
-          }
+        'scrolling'   : 'no'
+        
     });
 </script>

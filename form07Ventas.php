@@ -23,44 +23,45 @@
 
 
 <script type="text/javascript">
-     $("#selecEmpleado").on("change", function(e) {
+    var estado = 0; /*selecCliente*/
+var pasar=0;var pasar1=0;var pasar2=0;
+    $("#selecEmpleado").on("change", function(e) {
         $('#idVendedorVentaCod').val($($(this).select2('data').element).data('codigovendedor'));
         $('#idVendedorVenta').val(this.value);
-       
         $("#selecEmpleado").empty().attr("disabled", "disabled");
-        
+
     });
-    
-    $(document).ready(function() {
-        var estado = 1; /*selecCliente*/
-        $('#selecCliente').on("change", function(e) {
-            $('#clienteVenta').val(this.options[this.value].text);
-            $('#idClienteVenta').val(this.value);
-            $("#cliente1").html(this.options[this.value].text);
-            $("#cliente1").show('Slow');
-            $('#selecCliente').empty().attr("disabled", "disabled");
-        });
-        $("#selecCondicionGral").change(function() {
-            $("#selecCondicionItem").empty().attr("disabled", "disabled");
-            if ($(this).val() != "") {
-                var dato = $(this).val();
-                $("#imgCondicionItem").show();
-                $.ajax({
-                    type: "POST",
-                    dataType: "html",
-                    url: "./actions/venta/filtrarCondicion.php",
-                    data: "grupoTipoVenta=" + dato + "&tarea=filtraCondicion",
-                    success: function(msg) {
-                        $("#selecCondicionItem").empty().removeAttr("disabled").append(msg);
-                        $("#imgCondicionItem").hide();
-                    }
-                });
-            } else {
-                $("#selecCondicionGral").empty().attr("disabled", "disabled");
-            }
+    $('#selecCliente').on("change", function(e) {
+        $('#clienteVenta').val(this.options[this.value].text);
+        $('#idClienteVenta').val(this.value);
+        $("#cliente1").html(this.options[this.value].text);
+        $("#cliente1").show('Slow');
+        $('#selecCliente').empty().attr("disabled", "disabled");
+    });
+    $("#selecCondicionGral").change(function() {
+        $("#selecCondicionItem").empty().attr("disabled", "disabled");
+        if ($(this).val() != "") {
+            var dato = $(this).val();
+            $("#imgCondicionItem").show();
+            $.ajax({
+                type: "POST",
+                dataType: "html",
+                url: "./actions/venta/filtrarCondicion.php",
+                data: "grupoTipoVenta=" + dato + "&tarea=filtraCondicion",
+                success: function(msg) {
+                    $("#selecCondicionItem").empty().removeAttr("disabled").append(msg);
+                    $("#imgCondicionItem").hide();
+                }
+            });
+        } else {
             $("#selecCondicionGral").empty().attr("disabled", "disabled");
-            $('#ventaDetalle').show('fast');
-        });
+        }
+        $("#selecCondicionGral").empty().attr("disabled", "disabled");
+        $('#ventaDetalle').show('fast');
+    });
+    $(document).ready(function() {
+
+
         $('#selecEmpleado').select2({
             placeholder: "Seleccionar",
             allowClear: true
@@ -90,7 +91,7 @@
                 },
                 vendedor: {
                     required: true,
-                    equalTo:'#idVendedorVentaCod'
+                    equalTo: '#idVendedorVentaCod'
                 }
             },
             messages: {
@@ -100,47 +101,70 @@
                 },
                 vendedor: {
                     required: "Ingrese vendedor",
-                    equalTo:"Codigo Erroneo"
+                    equalTo: "Codigo Erroneo"
                 }
             },
-            submitHandler: function(form) {
+             submitHandler: function(form) {
                 // do other things for a valid form
-                myFunction();
+                if (campos != 0) {
+                  pasar=1;
+                } else {
+                    alert("Agregue al menos 1 prenda");
+                     pasar=0;
+                     return false;
+                }
+                if ($('#idClienteVenta').val() != '') {
+                   pasar1=1;
+                } else {
+                    pasar1=0;
+                    alert("Eliga Cliente");
+                    return false;
+                     
+                }
+                if ($('#idVendedorVentaCod').val() != '') {
+                   pasar2=1;
+                } else {
+                    alert("Eliga Empleado");
+                     pasar2=0;
+                     
+                }
+                if ((pasar==1)&(pasar1==1)&(pasar2==1)){  myFunction();}
             }
         });
     });
     function myFunction() {
         switch (true) {
             case (importeTotal > $('#entrega').val()):
-                var r = confirm("Confirma Venta \n Entrega: " + $('#entrega').val() + "\n Vende: " + importeTotal
-                        + "\n Ahumentar CC: " + (importeTotal - $('#entrega').val()));
+                var r = confirm("Confirma Venta \n\n Entrega: " + $('#entrega').val() + "\n Vende: " + importeTotal
+                        + "\n Aumentar CC: " + (importeTotal - $('#entrega').val()));
                 if (r == true) {
                     form.submit();
                 } else {
 
                     return false;
                 }
-                alert('Compra MAS de lo que paga');
+                
                 break;
             case (importeTotal == $('#entrega').val()):
-                var r = confirm("Confirma Venta \n Entrega: " + $('#entrega').val() + "\n Vende: " + importeTotal);
+                var r = confirm("Confirma Venta \n\n Entrega: " + $('#entrega').val() + "\n Vende: " + importeTotal);
                 if (r == true) {
                     form.submit();
                 } else {
 
                     return false;
                 }
-                alert('Compra Lo que paga');
+                
                 break;
             case (importeTotal < $('#entrega').val()):
-                var r = confirm("Confirma Venta \n Entrega: " + $('#entrega').val() + "\n Vende: " + importeTotal
+                var r = confirm("Confirma Venta \n\n Entrega: " + $('#entrega').val() + "\n Vende: " + importeTotal
                         + "\n Dispinuir CC: " + (importeTotal - $('#entrega').val()));
                 if (r == true) {
                     form.submit();
                 } else {
 
                     return false;
-                }alert('Compra MENOS de lo que paga');
+                }
+                
                 break;
         }
         /*           var r = confirm("Seguro?");

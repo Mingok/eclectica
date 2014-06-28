@@ -12,7 +12,7 @@ function getCondicion() {
         if (count($arrResultado) > 0) {
             $resp.="<option value=''>- Elija Una -</option>";
             foreach ($arrResultado as $arrResultado1) {
-                $resp.="<option value='" . $arrResultado1["idTipoVenta"] . "'>" . $arrResultado1["idTipoVenta"]."   ".$arrResultado1["detalleTipoVenta"] . "</option>";
+                $resp.="<option value='" . $arrResultado1["idTipoVenta"] . "'>" . $arrResultado1["detalleTipoVenta"] . "</option>";
             }
         } else
             $resp.="<option value=''>- Elija Una -</option>";

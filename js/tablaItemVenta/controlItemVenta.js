@@ -12,7 +12,7 @@ function agregarCampo() {
 
         NvoCampo =
                 "   <tr id= 'divcampo_" + (campos) + "'>" +
-                "     <td style=' text-align: center;'>" + $("#codItemVenta").val() +
+                "     <td style=' text-align: center; '>" + $("#codItemVenta").val() +
                 "        <input type='hidden' value='" + $("#codItemVenta").val() + "' name='venta[" + campos + "][codItemVenta]' id='articu_" + campos + "'>" +
                 "     </td>" +
                 "     <td style=' text-align: left;'>" + $("#detalleItemVenta").val() +

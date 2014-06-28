@@ -1,25 +1,33 @@
-<!-- comienzo Div/Fancy Consulta Codigo-->
-
-<div id="informacion" style="display:none">
-    <h1>
-        Prendas
-    </h1>
-    <div class="panel panel-success">
-        <div class="panel-body">
+<div id="informacion" style="display:none; ">
+    <div class="panel panel-default">
+        <div class="panel-heading">  
             <div class="row" style="text-align: right; padding-right: 20px;">
-                <div class="col-md-6" style="text-align: right; padding-bottom: 10px;">
-                    <label for="txtCodPrendaVenta">
-                        Codigo:
-                    </label>
-                    <input type="search" id="txtCodPrendaVenta" class="txtCodPrendaVenta" placeholder="Ingresar" autofocus style="width: 130px" maxlength="12">
-                </div>
-                <div class="col-md-6" style="text-align: right;">
-                    <label for="txtNomPrendaVenta">
-                        Nombre:
-                    </label>
-                    <input type="search" id="txtNomPrendaVenta" class="txtNomPrendaVenta" placeholder="Digite el texto que desea encontrar y presione la ENTER. Para cancelar la tecla ESCAPE." autofocus style="width: 390px">
-                </div>
+                <table  style="width: 100%">
+                    <tr>
+                        <td style="text-align: left; width: 20%; padding-left: 20px;">
+                            <h3 class="panel-title">
+                                Prendas
+                            </h3>
+                        </td>
+
+                        <td style="text-align: right;width: 40%;">
+                            <label for="txtCodPrendaVenta">
+                                Codigo:
+                            </label>
+                            <input type="search" id="txtCodPrendaVenta" class="txtCodPrendaVenta" placeholder="Ingresar" autofocus style="width: 130px" maxlength="12">
+                        </td>
+                        <td style="text-align: right;width: 40%;">
+                            <label for="txtNomPrendaVenta">
+                                Nombre:
+                            </label>
+                            <input type="search" id="txtNomPrendaVenta" class="txtNomPrendaVenta" placeholder="Digite el texto que desea encontrar y presione la ENTER. Para cancelar la tecla ESCAPE." autofocus style="width: 330px">
+                        </td>
+                    <tr>
+                </table>
             </div>
+        </div>
+        <div class="panel-body">
+
             <div class="row">
                 <div class="col-md-12" >
                     <table class="tabla">
