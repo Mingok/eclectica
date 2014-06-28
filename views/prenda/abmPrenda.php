@@ -44,7 +44,7 @@ $tipoVentas = $tipoVentaList->tipoVentasDisponibles();
                                                 <label for="codigoPrenda" id="lp">
                                                     Codigo&nbsp;
                                                 </label>
-                                                <input type="text" name="codigoPrenda" value="" readonly="readonly" />
+                                                <input type="text" name="codigoPrenda" value="" style="width: 160px" class="form-control" readonly="readonly" />
                                                 <input type="hidden" value="" name="idPrenda" />
                                                 <input type="hidden" name="idEmpresaPrenda" value="1" />
                                             </td>
@@ -52,7 +52,7 @@ $tipoVentas = $tipoVentaList->tipoVentasDisponibles();
                                                 <b>
                                                     Nombre:&nbsp;
                                                 </b>
-                                                <input type="text" name="detallePrenda" id="detallePrenda" placeholder="ingrese" style="width: 450px" />
+                                                <input type="text" name="detallePrenda" id="detallePrenda" class="form-control" placeholder="ingrese" style="width: 450px" />
                                             </td>
                                             <td style="text-align: right;">
                                                 <input type="submit" value="Agregar" style="width: 100px;" class="btn btn-sm btn-success" />
@@ -60,10 +60,10 @@ $tipoVentas = $tipoVentaList->tipoVentasDisponibles();
                                                 <input type="button" value="Limpiar" style="width: 100px;" class="btn btn-sm btn-danger no"/>
                                             </td>
                                         </tr>
-                                        <tr style="height: 35px;">
+                                        <tr style="height: 40px;">
                                             <td style="text-align: right;">
                                                 Marca:&nbsp;
-                                                <select size="1" name="idMarcaPrenda" id="idMarcaPrenda" style="width: 165px">
+                                                <select size="1" name="idMarcaPrenda" id="idMarcaPrenda" style="width: 165px" class="form-control">
                                                     <option>
                                                     </option>
                                                     <?php
@@ -77,7 +77,7 @@ $tipoVentas = $tipoVentaList->tipoVentasDisponibles();
                                             </td>
                                             <td style="text-align: right;">
                                                 Proveedor:&nbsp;
-                                                <select size="1" title="Ingrese Proveedor" name="idProveedorPrenda" id="idProveedorPrenda" style="width: 165px">
+                                                <select size="1" title="Ingrese Proveedor" name="idProveedorPrenda" id="idProveedorPrenda" style="width: 165px" class="form-control">
                                                     <option>
                                                     </option>
                                                     <?php
@@ -91,7 +91,7 @@ $tipoVentas = $tipoVentaList->tipoVentasDisponibles();
                                             </td>
                                             <td style="text-align: right;">
                                                 Temporada:&nbsp;
-                                                <select size="1" title="Ingrese Temporada" style="width: 150px" name="idEstacionPrenda" id="idEstacionPrenda">
+                                                <select size="1" title="Ingrese Temporada" style="width: 150px" name="idEstacionPrenda" id="idEstacionPrenda" class="form-control">
                                                     <option>
                                                     </option>
                                                     <?php
@@ -105,65 +105,65 @@ $tipoVentas = $tipoVentaList->tipoVentasDisponibles();
                                             </td>
                                             <td style="text-align: right;">
                                                 Cantidad :
-                                                <input type="number" title="Indresar Cantidad" style="width: 40px;" name="cantidadPrenda" min="0" max="20" value="0" />
+                                                <input type="number" title="Indresar Cantidad" style="width: 60px;" name="cantidadPrenda" min="0" max="20" value="0" class="form-control" />
                                                 <br />
                                             </td>
                                         </tr>
                                         <tr style="height: 35px;">
                                             <td style="text-align: right;">
                                                 Tela:&nbsp;
-                                                <select size="1" title="Ingrese Razon Social" name="idTelaPrenda" id="idTelaPrenda" style="width: 150px" />
+                                                <select size="1" title="Ingrese Razon Social" name="idTelaPrenda" id="idTelaPrenda" style="width: 150px" class="form-control"/>
                                         <option>
                                         </option>
-<?php
-foreach ($telas as $tela) {
-    if (isset($telas)) {
-        echo "<option value=" . $tela ["idTela"] . ">" . $tela ["detalleTela"] . "</option>";
-    }
-}
-?>
+                                        <?php
+                                        foreach ($telas as $tela) {
+                                            if (isset($telas)) {
+                                                echo "<option value=" . $tela ["idTela"] . ">" . $tela ["detalleTela"] . "</option>";
+                                            }
+                                        }
+                                        ?>
                                         </select>
                                 </td>
                                 <td style="text-align: right;">
                                     Color:&nbsp;
-                                    <select size="1" title="Ingrese Razon Social" name="idColorPrenda" id="idColorPrenda" style="width: 150px" />
+                                    <select size="1" title="Ingrese Razon Social" name="idColorPrenda" id="idColorPrenda" style="width: 150px" class="form-control" />
                             <option>
                             </option>
-<?php
-foreach ($colores as $color) {
-    if (isset($color)) {
-        echo "<option value=" . $color ["idColor"] . ">" . $color ["detalleColor"] . "</option>";
-    }
-}
-?>
+                            <?php
+                            foreach ($colores as $color) {
+                                if (isset($color)) {
+                                    echo "<option value=" . $color ["idColor"] . ">" . $color ["detalleColor"] . "</option>";
+                                }
+                            }
+                            ?>
                             </select>
                             </td>
                             <td style="text-align: right;">
                                 Talle:&nbsp;
-                                <select size="1" title="Ingrese Razon Social" name="idTallePrenda" id="idTallePrenda" style="width: 150px" />
+                                <select size="1" title="Ingrese Razon Social" name="idTallePrenda" id="idTallePrenda" style="width: 150px" class="form-control"/>
                             <option>
                             </option>
-<?php
-foreach ($talles as $talle) {
-    if (isset($talles)) {
-        echo "<option value=" . $talle ["idTalle"] . ">" . $talle ["detalleTalle"] . "</option>";
-    }
-}
-?>
+                            <?php
+                            foreach ($talles as $talle) {
+                                if (isset($talles)) {
+                                    echo "<option value=" . $talle ["idTalle"] . ">" . $talle ["detalleTalle"] . "</option>";
+                                }
+                            }
+                            ?>
                             </select>
                             </td>
                             <td style="text-align: right;">
                                 Estampado:&nbsp;
-                                <select size="1" name="idEstampadoPrenda" id="idEstampadoPrenda" style="width: 140px" />
+                                <select size="1" name="idEstampadoPrenda" id="idEstampadoPrenda" style="width: 140px" class="form-control"/>
                             <option>
                             </option>
-<?php
-foreach ($estampados as $estampado) {
-    if (isset($estampado)) {
-        echo "<option value=" . $estampado ["idEstampado"] . ">" . $estampado ["detalleEstampado"] . "</option>";
-    }
-}
-?>
+                            <?php
+                            foreach ($estampados as $estampado) {
+                                if (isset($estampado)) {
+                                    echo "<option value=" . $estampado ["idEstampado"] . ">" . $estampado ["detalleEstampado"] . "</option>";
+                                }
+                            }
+                            ?>
                             </select>
                             </td>
                             </tr>
@@ -181,10 +181,10 @@ foreach ($estampados as $estampado) {
                                         </td>
                                         <td colspan="2">
                                             <?php echo $tipoVentas["0"]["detalleTipoVenta"]; ?>
-                                            <input type="text" id="idTipoVenta0" style="width: 80px" name="tipoVenta<?php
+                                            <input type="text" id="idTipoVenta0" style="width: 120px" value="0" name="tipoVenta<?php
                                             echo $tipoVentas["0"]["idTipoVenta"];
-                                            ?>" />
-                                            <input type="button" value="Calcular" style="width: 100px;" class="btn btn-sm" id="mostrarPrecios" />
+                                            ?>" class="form-control"/>
+                                            <input type="button" value="Calcular" style="width: 100px;" class="btn btn-sm btn-primary" id="mostrarPrecios" />
                                         </td>
                                         <td colspan="3">
                                             &nbsp;
@@ -195,34 +195,34 @@ foreach ($estampados as $estampado) {
 
                                         <td style="text-align: right;">
                                             <?php echo $tipoVentas["1"]["detalleTipoVenta"]; ?>
-                                            <input type="text" style="width: 80px" name="tipoVenta<?php
+                                            <input type="text" style="width: 100px" name="tipoVenta<?php
                                             echo $tipoVentas["1"]["idTipoVenta"];
-                                            ?>" />
+                                            ?>" class="form-control" />
                                         </td>
                                         <td style="text-align: right;">
                                             <?php echo $tipoVentas["2"]["detalleTipoVenta"]; ?>
-                                            <input type="text" style="width: 80px" name="tipoVenta<?php
+                                            <input type="text" style="width: 100px" name="tipoVenta<?php
                                             echo $tipoVentas["2"]["idTipoVenta"];
-                                            ?>" />
+                                            ?>" class="form-control" />
                                         </td>
                                         <td style="text-align: right;">
-                                                   <?php echo $tipoVentas["3"]["detalleTipoVenta"]; ?>
-                                            <input type="text" style="width: 80px" name="tipoVenta<?php
-                                                   echo $tipoVentas["3"]["idTipoVenta"];
-                                                   ?>" />
+                                            <?php echo $tipoVentas["3"]["detalleTipoVenta"]; ?>
+                                            <input type="text" style="width: 100px" name="tipoVenta<?php
+                                            echo $tipoVentas["3"]["idTipoVenta"];
+                                            ?>" class="form-control"/>
                                         </td>
                                         <td style="text-align: right;">
-<?php echo $tipoVentas["4"]["detalleTipoVenta"]; ?>
-                                            <input type="text" id="idTipoVenta4" style="width: 80px" name="tipoVenta<?php
-echo $tipoVentas["4"]["idTipoVenta"];
-?>" />
+                                            <?php echo $tipoVentas["4"]["detalleTipoVenta"]; ?>
+                                            <input type="text" id="idTipoVenta4" style="width: 100px" name="tipoVenta<?php
+                                            echo $tipoVentas["4"]["idTipoVenta"];
+                                            ?>" class="form-control" />
 
                                         </td>
                                         <td style="text-align: right;">
-<?php echo $tipoVentas["5"]["detalleTipoVenta"]; ?>
-                                            <input type="text" style="width: 80px" name="tipoVenta<?php
-echo $tipoVentas["5"]["idTipoVenta"];
-?>" />
+                                            <?php echo $tipoVentas["5"]["detalleTipoVenta"]; ?>
+                                            <input type="text" style="width: 100px" name="tipoVenta<?php
+                                                   echo $tipoVentas["5"]["idTipoVenta"];
+                                                   ?>" class="form-control" />
                                         </td>
 
                                     </tr>

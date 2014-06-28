@@ -66,7 +66,6 @@ select.error { border: 1px dotted red; }
 #formTipoVenta label.error, #formTipoVenta input.submit {width: 150px;color:red; text-align: right; }
 #formCliente label { width: 50px;}
 #formCliente label.error, #formCliente input.submit {width: 170px;color:red; text-align: right; }
-#formEmpresa label { width: 50px;}
 #formEmpresa label.error, #formEmpresa input.submit {width: 150px;color:red; text-align: right; }
 
 #formDinamico label.error, #formDinamico input.submit {width: 70px;color:red; text-align: right; }

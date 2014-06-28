@@ -14,31 +14,31 @@
 						<div class="row" style="height: 35px;">
 							<div class="col-md-4" style="text-align: right;">
 								<label for="nombreEmpresa">Raz&oacute;n Soc.: </label>
-                                                                <input type="text" style="width: 150px;" maxlength="50px" name="nombreEmpresa" value="<?php echo $empresa['nombreEmpresa'];?>" title="Ingrese Razon Soc." required/>
+                                                                <input type="text" style="width: 150px;" maxlength="50px" name="nombreEmpresa" value="<?php echo $empresa['nombreEmpresa'];?>" title="Ingrese Razon Soc." class="form-control" required/>
 							</div>
 							<div class="col-md-4" style="text-align: right;">
 								<label for="cuitEmpresa">CUIT:</label>
-								<input type="text" style="width: 120px;" maxlength="50px" name="cuitEmpresa" value="<?php echo $empresa['cuitEmpresa'];?>" title="Ingrese CUIT" required/>
+								<input type="text" style="width: 120px;" maxlength="50px" name="cuitEmpresa" value="<?php echo $empresa['cuitEmpresa'];?>" title="Ingrese CUIT" class="form-control" required/>
 							</div>
 							<div class="col-md-4" style="text-align: right;">
 								<label for="telEmpresa">Tel.:</label>
-								<input type="text" style="width: 150px;" maxlength="50px" name="telEmpresa" value="<?php echo $empresa['telEmpresa'];?>" title="Ingrese Telefono" required/>
+								<input type="text" style="width: 150px;" maxlength="50px" name="telEmpresa" value="<?php echo $empresa['telEmpresa'];?>" title="Ingrese Telefono" class="form-control" required/>
 							</div>
 						</div>
 						<div class="row" style="height: 35px;">
 							<div class="col-md-4" style="text-align: right;">
 							<label for="emailEmpresa">	E-mail:</label>
-								<input type="email" style="width: 250px;" name="emailEmpresa" value="<?php echo $empresa['emailEmpresa'];?>" title="Ingrese Email"  required/>
+								<input type="email" style="width: 250px;" name="emailEmpresa" value="<?php echo $empresa['emailEmpresa'];?>" title="Ingrese Email" class="form-control" required/>
 							</div>
 							<div class="col-md-4" style="text-align: right;">
 								<label for="dirEmpresa">Domicilio:</label>
-								<input type="text" style="width: 150px;" maxlength="50px" name="dirEmpresa" value="<?php echo $empresa['dirEmpresa'];?>" title="Ingrese Direccion" required/>
+								<input type="text" style="width: 150px;" maxlength="50px" name="dirEmpresa" value="<?php echo $empresa['dirEmpresa'];?>" title="Ingrese Direccion" class="form-control" required/>
 							</div>
 							<div class="col-md-4" style="text-align: right;">
 								<label for="logoEmpresa">
 									Logo:
 								</label>
-								<input type="file" id="logoEmpresa" name="logoEmpresa" title="Seleccionar" accept="image/x-png, image/gif, image/jpeg" />
+                                                            <input type="file" id="logoEmpresa" name="logoEmpresa" title="Seleccionar" class="form-control"accept="image/x-png, image/gif, image/jpeg" style="width: 300px" />
 							</div>
 						</div>
 						<div class="row" style="height: 55px;">

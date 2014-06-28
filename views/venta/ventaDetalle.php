@@ -42,10 +42,10 @@
                             Codigo:
                         </label>
                         <input type="text" id="codItemVenta" class="codItemVenta form-control" placeholder="Ingresar" style="width: 140px" maxlength="12" autofocus disabled="disabled">
-                        &nbsp;&nbsp;&nbsp;&nbsp;<label for="cantidadPrenda">
+                        &nbsp;&nbsp;&nbsp;&nbsp;<label for="cantidadItemVenta">
                             Cantidad :
                         </label>
-                        <input type="number" title="Indresar Cantidad" name="cantidadItemVenta" id="cantidadItemVenta" style="width: 60px;" class="form-control" min="1" max="20" value="1" />
+                        <input type="number" title="Indresar Cantidad" name="cantidadItemVenta" id="cantidadItemVenta" style="width: 60px;" class="form-control" min="1" value="1" />
 
 
                         <label for="selecCondicionItem">
@@ -186,6 +186,7 @@
         closeEffect: 'elastic'
     });
     $('.itemAVender').click(function() {
+        $("#cantidadItemVenta").attr('max',$(this).data('cantidadprenda'));
         $('#codItemVenta').val('0');
         $('#cantidadItemVenta').val('1');
         $('#selecCondicionItem').val(["0"]).select2();

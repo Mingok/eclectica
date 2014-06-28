@@ -40,8 +40,8 @@
                 &nbsp;Cuenta Corriente&nbsp;
             </a>
         </li>
-		<li>
-            <a href="#">
+	<!--  	<li>
+          <a href="#">
                 <img src="./imagenes/iconos/24.png" width='18px' height='18px' title="Informes" />
                 &nbsp;Informes&nbsp;
             </a>
@@ -51,7 +51,7 @@
                 <img src="./imagenes/iconos/ayuda4.png" width='18px' height='18px' title="Ayuda" />
                 &nbsp;Ayuda&nbsp;
             </a>
-        </li>
+        </li>-->
 		<li class="dropdown">
             <a href="#" class="dropdown-toggle"	data-toggle="dropdown"> 
                 <img src="./imagenes/iconos/reparacion.png" width='18px' height='18px' title="Configuracion" />

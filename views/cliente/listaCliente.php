@@ -11,7 +11,7 @@
 						<label for="txtPersona">
 							Buscar:
 						</label>
-						<input type="search" style="width:375px" id="txtPersona" class="txtPersona" placeholder="Escriba el Nombre que desea encontrar y presione la ENTER" autofocus />
+						<input type="search" style="width:375px" id="txtPersona" class="txtPersona form-control" placeholder="Escriba el Nombre que desea encontrar y presione la ENTER" autofocus />
 						&nbsp;&nbsp;&nbsp;
 						<input type="button" value="Nuevo" style="width: 100px;" class="buttonPersonaNuevo btn btn-sm btn-success" />
 					</div>
