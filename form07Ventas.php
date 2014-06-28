@@ -39,6 +39,18 @@
             $("#cliente1").html(this.options[this.value].text);
             $("#cliente1").show('Slow');
             $('#selecCliente').empty().attr("disabled", "disabled");
+            var url = 'indexComprasCliente.php';
+            var idCliente = $('#idClienteVenta').val();
+            $.ajax({
+                type: "POST",
+                url: url,
+                data: {'idCliente': idCliente}, // serializes the form's elements.
+                success: function(data) {
+                    if (data) {
+                        $('.movimientosClienteCont').html(data);
+                    }
+                }
+            });
         });
         $("#selecCondicionGral").change(function() {
             $("#selecCondicionItem").empty().attr("disabled", "disabled");

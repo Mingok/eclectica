@@ -73,7 +73,7 @@
 </div>
 <script type="text/javascript">
     $(".fancyboxCC").fancybox({
-        maxWidth: 500,
+        maxWidth: 550,
         minHeight: 235,
         type: 'iframe',
         closeEffect : 'elastic',

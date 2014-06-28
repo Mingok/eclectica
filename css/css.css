@@ -115,3 +115,7 @@ Table.formu thead {
 .formEmpresa input[type=file] {
     display: inline;
 }
+
+label.ccLabel {
+    width: 62px;
+}
