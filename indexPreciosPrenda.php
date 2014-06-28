@@ -26,7 +26,7 @@ $precios = $prendaList->preciosPrenda($idPrenda);
 <script type="text/javascript" src="<?php echo EMPLEADOS_SCRIPTS_PATH; ?>fancybox/jquery.fancybox.js"></script>
 </head>
 
-<body class="image-back-body">
+<body class="">
 <center>
     <table class="table table-condensed" id="tblPrecios" >
         <thead class="btn-success" style="font-weight: bolder; text-align: center;">

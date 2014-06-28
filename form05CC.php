@@ -55,7 +55,7 @@ $personas = $personaList->personasDisponibles();
                                     <td style="height:45px; width:330px; text-align: left;">
                                         <label class="ccLabel">Cliente:</label> 
 
-                                        <select id="selecCliente" style="width: 250px" required >
+                                        <select id="selecCliente" style="width: 250px" required title="Seleccione un cliente">
                                             <option value="">Seleccione un cliente</option>
                                         <?php
                                         foreach ($personas as $persona) {
@@ -75,13 +75,13 @@ $personas = $personaList->personasDisponibles();
                                 <tr>
                                     <td style="height:45px; text-align: middle;" colspan="2">
                                         <label class="ccLabel">Entrega:</label>
-                                        <input type="text" class=" input input-sm" name="entregaCliente" placeholder="ingresar" style="width: 100px;" />
+                                        <input type="text" class=" input input-sm" name="entregaCliente" placeholder="ingresar" style="width: 100px;" required title="Ingrese un valor de entrega"/>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td style="height:30px; text-align: middle;">
                                         <label class="ccLabel">Control:</label>
-                                        <input type="password" class=" input input-sm" name="control" placeholder="ingresar" style="width: 100px;" required />
+                                        <input type="password" class=" input input-sm" name="control" placeholder="ingresar" style="width: 100px;" required title="Ingrese un codigo de Vendedor"/>
                                     </td>
                                     <td style="height:45px; text-align: right;">
                                         <input type="submit" name="ccSubmit" onclick="" value="Actualizar" class="btn btn-sm btn-success" />
@@ -122,17 +122,5 @@ $personas = $personaList->personasDisponibles();
 
             
     });
-//    function formSubmitCC() {
-//            var url = $(".formCcCliente").attr('action');
-//            $.ajax({
-//                type: "POST",
-//                url: url,
-//                data: $(".formCcCliente").serialize(), // serializes the form's elements.
-//                success: function(data) {
-//                    parent.$.fancybox.close();
-//                }
-//            });
-//
-//        }
     
 </script>
