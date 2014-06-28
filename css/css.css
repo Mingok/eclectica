@@ -64,7 +64,8 @@ select.error { border: 1px dotted red; }
 #formEstacion label.error, #formEstacion input.submit {width: 150px;color:red; text-align: right; }
 #formTipoVenta label { width: 50px;}
 #formTipoVenta label.error, #formTipoVenta input.submit {width: 150px;color:red; text-align: right; }
-#formCliente label { width: 50px;}
+
+#formEmpleado label.error, #formEmpleado input.submit {width: 170px;color:red; text-align: right; }
 #formCliente label.error, #formCliente input.submit {width: 170px;color:red; text-align: right; }
 #formEmpresa label.error, #formEmpresa input.submit {width: 150px;color:red; text-align: right; }
 

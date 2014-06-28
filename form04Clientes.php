@@ -13,10 +13,4 @@
         </div>
     </div>
 </div>
-<div id="verHistorial" style="display: none; padding-top:10px; ">
-	<div class="row">
-        <div class="col-md-12">    
-            <?php include_once 'views/cliente/historicoCliente.php'; ?>
-        </div>
-    </div>    
-</div>
+

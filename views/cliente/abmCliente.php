@@ -148,5 +148,5 @@
         $('.btn-danger').removeClass('no');
     });
     //Validacion de formulario
-    $("#formcliente").validate();
+    $("#formCliente").validate();
 </script>

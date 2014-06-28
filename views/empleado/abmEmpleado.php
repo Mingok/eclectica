@@ -1,11 +1,11 @@
 
 <div class="row">
     <div class="col-md-12">
-        <form action="actions/empleado/guardarEmpleado.php" class="formcliente" id="formcliente">
+        <form action="actions/empleado/guardarEmpleado.php" class="formEmpleado" id="formEmpleado">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title">
-                        Datos del cliente
+                        Datos del Empleado
                     </h3>
                 </div>
                 <div class="panel-body">
@@ -141,7 +141,7 @@
 
     //Validacion de formulario
 
-    $("#formcliente").validate();
+    $("#formEmpleado").validate();
 
 
 </script>
