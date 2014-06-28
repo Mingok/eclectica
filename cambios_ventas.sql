@@ -1,3 +1,8 @@
+/* Cambios en la tabla tipoventa */
+ALTER TABLE `tipoventa`   
+  ADD COLUMN `porcentajeTipoVenta` INT(2) NOT NULL AFTER `grupoTipoVenta`,		/* Duplicate column name */
+  ADD COLUMN `operacionTipoVenta` INT(1) NOT NULL AFTER `porcentajeTipoVenta`		/* Duplicate column name */;
+
 /* TABLA VENTA */
 DROP TABLE venta;
 CREATE TABLE IF NOT EXISTS `venta` (
