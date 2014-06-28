@@ -69,6 +69,7 @@ select.error { border: 1px dotted red; }
 #formEmpresa label.error, #formEmpresa input.submit {width: 150px;color:red; text-align: right; }
 
 #formDinamico label.error, #formDinamico input.submit {width: 70px;color:red; text-align: right; }
+.formCcCliente .error, .formCcCliente input.submit {width: 150px;color:red; text-align: left; }
 
 div.scrol{
     overflow: auto;
