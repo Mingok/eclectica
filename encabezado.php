@@ -72,8 +72,10 @@
 <!--/.nav-collapse --></div>
 </div>
 <script type="text/javascript">
-    $("#fancyboxCC").fancybox({
-        maxWidth: 600,
+
+    $(".fancyboxCC").fancybox({
+        maxWidth: 550,
+
         minHeight: 235,
         type: 'iframe',
         closeEffect : 'elastic',

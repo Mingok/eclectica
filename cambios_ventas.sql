@@ -24,6 +24,7 @@ CREATE TABLE IF NOT EXISTS `venta_renglon` (
   `idVentaRenglon` int(11) NOT NULL AUTO_INCREMENT,
   `idVenta` int(11) NOT NULL,
   `idPrenda` int(11) NOT NULL,
+  `cantidadPrenda` int(11) NOT NULL,
   `idTipoVenta` int(11) NOT NULL,
   `precioVendido` double NOT NULL,
   PRIMARY KEY (`idVentaRenglon`),

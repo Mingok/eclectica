@@ -31,29 +31,46 @@ var pasar=0;var pasar1=0;var pasar2=0;
         $("#selecEmpleado").empty().attr("disabled", "disabled");
 
     });
-    $('#selecCliente').on("change", function(e) {
-        $('#clienteVenta').val(this.options[this.value].text);
-        $('#idClienteVenta').val(this.value);
-        $("#cliente1").html(this.options[this.value].text);
-        $("#cliente1").show('Slow');
-        $('#selecCliente').empty().attr("disabled", "disabled");
-    });
-    $("#selecCondicionGral").change(function() {
-        $("#selecCondicionItem").empty().attr("disabled", "disabled");
-        if ($(this).val() != "") {
-            var dato = $(this).val();
-            $("#imgCondicionItem").show();
+
+    $(document).ready(function() {
+        var estado = 1; /*selecCliente*/
+        $('#selecCliente').on("change", function(e) {
+            $('#clienteVenta').val(this.options[this.value].text);
+            $('#idClienteVenta').val(this.value);
+            $("#cliente1").html(this.options[this.value].text);
+            $("#cliente1").show('Slow');
+            $('#selecCliente').empty().attr("disabled", "disabled");
+            var url = 'indexComprasCliente.php';
+            var idCliente = $('#idClienteVenta').val();
             $.ajax({
                 type: "POST",
-                dataType: "html",
-                url: "./actions/venta/filtrarCondicion.php",
-                data: "grupoTipoVenta=" + dato + "&tarea=filtraCondicion",
-                success: function(msg) {
-                    $("#selecCondicionItem").empty().removeAttr("disabled").append(msg);
-                    $("#imgCondicionItem").hide();
+                url: url,
+                data: {'idCliente': idCliente}, // serializes the form's elements.
+                success: function(data) {
+                    if (data) {
+                        $('.movimientosClienteCont').html(data);
+                    }
                 }
             });
-        } else {
+        });
+        $("#selecCondicionGral").change(function() {
+            $("#selecCondicionItem").empty().attr("disabled", "disabled");
+            if ($(this).val() != "") {
+                var dato = $(this).val();
+                $("#imgCondicionItem").show();
+                $.ajax({
+                    type: "POST",
+                    dataType: "html",
+                    url: "./actions/venta/filtrarCondicion.php",
+                    data: "grupoTipoVenta=" + dato + "&tarea=filtraCondicion",
+                    success: function(msg) {
+                        $("#selecCondicionItem").empty().removeAttr("disabled").append(msg);
+                        $("#imgCondicionItem").hide();
+                    }
+                });
+            } else {
+                
+
             $("#selecCondicionGral").empty().attr("disabled", "disabled");
         }
         $("#selecCondicionGral").empty().attr("disabled", "disabled");

@@ -50,9 +50,11 @@ $personas = $personaList->personasDisponibles();
                             <input type="hidden" value="" name="idPersona"/>
                             <input type="hidden" value="" name="cuentaCorrientePersona"/>
                             <table style="width: 100%;">
-                                <tr style="vertical-align: middle;">   
-                                    <td style="height:45px; text-align: left;">
-                                        Cliente: 
+
+                                <tr style="vertical-align: middle;width: 500px;">   
+                                    <td style="height:45px; width:330px; text-align: left;">
+                                        <label class="ccLabel">Cliente:</label> 
+
                                         <select id="selecCliente" style="width: 250px" required >
                                             <option value="">Seleccione un cliente</option>
                                         <?php
@@ -71,17 +73,17 @@ $personas = $personaList->personasDisponibles();
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td style="height:45px; text-align: middle;">
-                                        Entrega:
+                                    <td style="height:45px; text-align: middle;" colspan="2">
+                                        <label class="ccLabel">Entrega:</label>
                                         <input type="text" class=" input input-sm" name="entregaCliente" placeholder="ingresar" style="width: 100px;" />
-                                    </td>
-                                    <td style="height:30px; text-align: middle;">
-                                        Control:
-                                        <input type="pass" class=" input input-sm" name="control" placeholder="ingresar" style="width: 100px;" required />
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td colspan="2" style="height:45px; text-align: right;">
+                                    <td style="height:30px; text-align: middle;">
+                                        <label class="ccLabel">Control:</label>
+                                        <input type="password" class=" input input-sm" name="control" placeholder="ingresar" style="width: 100px;" required />
+                                    </td>
+                                    <td style="height:45px; text-align: right;">
                                         <input type="submit" name="ccSubmit" onclick="" value="Actualizar" class="btn btn-sm btn-success" />
                                     </td>
                                 </tr>
