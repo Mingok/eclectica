@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 28-06-2014 a las 19:35:07
+-- Tiempo de generación: 28-06-2014 a las 20:16:44
 -- Versión del servidor: 5.6.12-log
 -- Versión de PHP: 5.4.12
 
@@ -280,10 +280,18 @@ INSERT INTO `marca` (`idMarca`, `detalleMarca`) VALUES
 
 CREATE TABLE IF NOT EXISTS `persona` (
   `idPersona` int(11) NOT NULL AUTO_INCREMENT,
-  `apellido` varchar(100) DEFAULT NULL,
-  `nombre` varchar(45) DEFAULT NULL,
-  `direccion` varchar(45) DEFAULT NULL,
-  `telefono` varchar(45) DEFAULT NULL,
+  `apellidoPersona` varchar(100) DEFAULT NULL,
+  `nombrePersona` varchar(45) DEFAULT NULL,
+  `direccionPersona` varchar(45) DEFAULT NULL,
+  `localidadPersona` varchar(45) NOT NULL,
+  `telefonoPersona` varchar(45) DEFAULT NULL,
+  `celuPersona` varchar(45) NOT NULL,
+  `fechaNacPersona` date NOT NULL,
+  `facebookPersona` varchar(100) NOT NULL,
+  `dniPersona` varchar(10) NOT NULL,
+  `trabajoPersona` varchar(100) NOT NULL,
+  `telTrabajoPersona` varchar(20) NOT NULL,
+  `cuentaCorrientePersona` float(6,2) NOT NULL,
   `codigoVendedor` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`idPersona`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
