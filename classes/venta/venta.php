@@ -20,12 +20,14 @@ Class venta {
                         SELECT 	idVenta AS numero, 
                                 fechaVenta AS fecha,
                                 'Venta' AS tipo,
+                                'N' AS Inicial,
                                 precioVenta AS valor
                                 FROM `venta` WHERE idCliente=$lngIdCliente
                         UNION ALL
                         SELECT 	idEntrega AS numero, 
                                 fechaEntrega AS fecha, 
                                 'Entrega' AS tipo,
+                                inicial AS Inicial,
                                 valorEntrega AS valor 
                                 FROM `entrega` WHERE idCliente=$lngIdCliente
                     ) tmp ORDER BY fecha DESC";

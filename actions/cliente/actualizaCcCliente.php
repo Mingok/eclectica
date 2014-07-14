@@ -31,7 +31,8 @@ $arrEntrega = array(
     'idCliente' => $idPersona,
     'idVendedor' => $vendedor['idPersona'],
     'valorEntrega' => $entrega,
-    'fechaEntrega' => date('Y-m-d h:i:s', time())
+    'fechaEntrega' => date('Y-m-d h:i:s', time()),
+    'inicial' => 'N'
 );
 $entrega = null;
 $entrega = $entregaClass->agregarNuevaEntrega($arrEntrega);

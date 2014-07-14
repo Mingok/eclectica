@@ -42,10 +42,10 @@ input {	border: 1px solid black; }
 select{
     border: 1px solid black;
 }
-input.checkbox { border: none }
+input.checkbox { border: none; }
 input:focus { border: 1px dotted black; }
-input.error { border: 1px dotted red; }
-select.error { border: 1px dotted red; }
+input.error { border: 1px dotted red; background-color: rgb(250, 255, 189);}
+select.error { border: 1px dotted red; background-color: rgb(250, 255, 189);}
 #formPrendas label { width: 160px;}
 #formPrendas label.error, #formPrendas input.submit {margin-left: 13px; color:red; text-align: right	; }
 #formProveedor label { width: 50px;}
@@ -64,13 +64,11 @@ select.error { border: 1px dotted red; }
 #formEstacion label.error, #formEstacion input.submit {width: 150px;color:red; text-align: right; }
 #formTipoVenta label { width: 50px;}
 #formTipoVenta label.error, #formTipoVenta input.submit {width: 150px;color:red; text-align: right; }
-
 #formEmpleado label.error, #formEmpleado input.submit {width: 170px;color:red; text-align: right; }
 #formCliente label.error, #formCliente input.submit {width: 170px;color:red; text-align: right; }
 #formEmpresa label.error, #formEmpresa input.submit {width: 150px;color:red; text-align: right; }
-
 #formDinamico label.error, #formDinamico input.submit {width: 70px;color:red; text-align: right; }
-.formCcCliente .error, .formCcCliente input.submit {width: 150px;color:red; text-align: left; }
+#formCcCliente label.error, #formCcCliente input.submit {width: 200px;color:red; text-align: left;  }
 
 div.scrol{
     overflow: auto;

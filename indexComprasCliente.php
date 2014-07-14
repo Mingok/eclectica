@@ -1,6 +1,9 @@
 <?php
 require_once 'classes/venta/venta.php';
-
+require_once 'classes/persona/persona.php'; 
+$idCliente = $_REQUEST['idCliente'];
+$personaList=new persona(); 
+$personas=$personaList->eligePersona($idCliente); 
 $obj_venta = new venta();
 $idCliente = $_REQUEST['idCliente'];
 
@@ -8,7 +11,7 @@ $moviemientos_cliente = $obj_venta->movimientosCliente($idCliente);
 
 echo '<div class="panel panel-default">';
 echo '<div class="panel-heading">';
-echo '<h3 class="panel-title">Historial de Movimientos</h3>';
+echo '<h3 class="panel-title"><table style="width:100%"><tr><td>Historial de Movimientos</td><td style="text-align: right"><h4>C.C.:$'.$personas["cuentaCorrientePersona"].'</h4></td></tr></table></h3>';
 echo '</div>';
 echo '<div class="panel-body">';
 echo '<div class="row scrol"> ';

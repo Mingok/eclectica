@@ -76,9 +76,15 @@
                             </label>
                             <input type="email" title="Ingrese Email Correcto" id="facebookPersona" name="facebookPersona" placeholder="Ingrese" style="width: 350px;" class="form-control" required />
                         </div>
-                        <div class="col-md-6" style="text-align: right;">
+                        <div class="col-md-3" style="text-align: right;">
+                            <label for="cuentaCorrientePersona"  style="width: 120px;">
+                                C.C. Inicial: 
+                            </label>
+                            <input type="text" id="cuentaCorrientePersona" name="cuentaCorrientePersona"  style="width: 120px;" class="form-control" title="Ingrese LOCALIDAD" placeholder="Ingrese" required />
+                        </div>
+                        <div class="col-md-3" style="text-align: right;">
                             <input type="hidden" value="" name="idPersona"/>
-                            <input type="hidden" value="" name="cuentaCorrientePersona"/> 
+                            
                             <input type="submit" value="Agregar"  style="width: 120px;" class="btn btn-sm btn-success Persona " />
                             <input type="button" value="Limpiar"  style="width: 120px;" class="btn btn-sm btn-danger no"/>
                         </div>
@@ -116,6 +122,7 @@
         $('#verHistorial').hide(2000);
         $('.btn-success.Prov').val('Modificar');
         $('.btn-danger').removeClass('no');
+        $('#cuentaCorrientePersona').prop('disabled', true);
     });
     //Boton limpiar campos
     $('.btn-danger').click(function() {
@@ -134,6 +141,7 @@
         $('input[name=direccionPersona]').val('');
         $('#fechaNacPersona').val('');
         $('input[name=cuentaCorrientePersona]').val('');
+        $('#cuentaCorrientePersona').prop('disabled', false);
         $('.btn-success.Persona').val('Agregar');
         $('#divPersona').show("slow");
         $('.btn-danger').removeClass('no');

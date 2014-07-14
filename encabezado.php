@@ -75,8 +75,7 @@
 
     $(".fancyboxCC").fancybox({
         maxWidth: 550,
-
-        minHeight: 235,
+        minHeight: 325,
         type: 'iframe',
         closeEffect : 'elastic',
         'scrolling'   : 'no'
