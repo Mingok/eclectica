@@ -40,7 +40,7 @@ foreach ($items_venta as $item_venta) {
     $arrVentaRenglon['idVenta'] = $ultima_venta['idVenta'];
     $arrVentaRenglon['idPrenda'] = $prenda['idPrenda'];
     $arrVentaRenglon['cantidadPrenda'] = $item_venta['cantidadItemVenta'];
-    $arrVentaRenglon['idTipoVenta'] = substr($item_venta['condItemVenta'], 0, 1);
+    $arrVentaRenglon['idTipoVenta'] = $item_venta['idCondItemVenta'];
     $arrVentaRenglon['precioVendido'] = $item_venta['precioItemVenta'];
     //insertamos el renglon;
     $obj_venta_renglon->agregarNuevaVentaRenglon($arrVentaRenglon);

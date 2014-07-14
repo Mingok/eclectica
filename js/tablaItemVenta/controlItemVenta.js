@@ -20,6 +20,7 @@ function agregarCampo() {
                 "     </td>" +
                 "     <td style=' text-align: left;'>" + $("#condItemVenta").val() +
                 "        <input type='hidden' value='" + $("#condItemVenta").val() + "'  name='venta[" + campos + "][condItemVenta]' id='articu_" + campos + "'>" +
+                "        <input type='hidden' value='" + $("#idCondItemVenta").val() + "'  name='venta[" + campos + "][idCondItemVenta]' id='articu_" + campos + "'>" +
                 "     </td>" +
                 "     <td style=' text-align: center;'>" + $("#precioItemVenta").val() +
                 "        <input type='hidden' value='" + $("#precioItemVenta").val() + "' name='venta[" + campos + "][precioItemVenta]' id='articu_" + campos + "'>" +

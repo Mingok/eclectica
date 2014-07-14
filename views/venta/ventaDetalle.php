@@ -29,6 +29,7 @@
                     </table>
                     <input type="hidden" id="idItemVenta" name="idItemVenta" />
                     <input type="hidden" id="condItemVenta" name="condItemVenta" />
+                    <input type="hidden" id="idCondItemVenta" name="idCondItemVenta" />
                     <input type="hidden" id="ItemVenta" name="ItemVenta" />
                     <input type="hidden" id="detalleItemVenta" name="detalleItemVenta" />
                     <input type="hidden" id="precioItemVenta" name="precioItemVenta"  />
@@ -156,6 +157,7 @@
     $('#selecCondicionItem').on("change", function(e) {
 
         $("#condItemVenta").val(this.options[this.selectedIndex].text);
+        $("#idCondItemVenta").val(this.value);
         switch (this.value) {
             case '1':
                 $('input[name=precioItemVenta]').val($('#precio1').val());
