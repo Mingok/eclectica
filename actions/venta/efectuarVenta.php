@@ -8,7 +8,7 @@ $entrega            = $_REQUEST['entrega'];
 $totalCompra        = $_REQUEST['totalCompra'];
 $items_venta        = $_REQUEST['venta'];
 
-$saldo = $totalCompra - $entrega;
+$saldo = $entrega - $totalCompra;
 
 $obj_prenda = new prenda();
 $obj_venta = new venta();
@@ -52,7 +52,7 @@ if ($saldo != 0) {
     
     $personaClass = new persona();
     $cliente = $personaClass->eligePersona($idClienteVenta);
-    $cuentaCorrientePersona = doubleval($cliente['cuentaCorrientePersona']) + $saldo;
+    $cuentaCorrientePersona = doubleval($cliente['cuentaCorrientePersona']) - $saldo;
 
     $arrPersona = array(
         'cuentaCorrientePersona' => $cuentaCorrientePersona,
@@ -62,9 +62,10 @@ if ($saldo != 0) {
 
     $entregaClass = new entrega();
     $arrEntrega = array(
-        'idCliente' => $idPersona,
-        'idVendedor' => $vendedor['idPersona'],
-        'valorEntrega' => $entrega,
+        'idCliente' => $idClienteVenta,
+        'idVendedor' => $idVendedor,
+        'valorEntrega' => $saldo,
+        'inicial'=>'NM',
         'fechaEntrega' => date('Y-m-d h:i:s', time())
     );
     $entrega = null;

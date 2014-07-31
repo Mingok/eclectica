@@ -1,5 +1,6 @@
 <?php
 require_once 'classes/persona/persona.php';
+require_once 'classes/entrega/entrega.php';
 $idPersona = $_REQUEST['idPersona'];
 $dniPersona = $_REQUEST['dniPersona'];
 $codigoVendedor =$_REQUEST['codigoVendedor'];
@@ -25,12 +26,22 @@ $arrPersona = array(
     'facebookPersona' => $facebookPersona, 
     'cuentaCorrientePersona' => $cuentaCorrientePersona
 );
-$personaClass = new persona();
+$personaClass = new persona();$entregaClass = new entrega();
 if ($idPersona) {
 	$arrPersona['idPersona'] = $idPersona;
 	$personas = $personaClass->modificarPersona($arrPersona);
 } else {
 	$personas = $personaClass->agregarNuevaPersona($arrPersona);	
+        $UltimaPersona = $personaClass->eligeUltimaPersona();
+    $arrEntrega = array(
+        'idCliente' => $UltimaPersona['idPersona'],
+        'valorEntrega' => $cuentaCorrientePersona,
+        'inicial' => 'S',
+        'fechaEntrega' => date('Y-m-d h:i:s', time())
+    );
+    
+    $entrega = null;
+    $entrega = $entregaClass->agregarNuevaEntrega($arrEntrega);
 }
 
 

@@ -6,8 +6,22 @@ Class ventaRenglon {
         require_once (__DIR__ . '\..\..\base\manejoMySQL.php');
 
         $objManejoMySQL = new manejoMySQL();
-        $strSql = "	SELECT * FROM `venta_renglon`
-					ORDER BY `idVentaRenglon` ASC";
+        $strSql = "SELECT ventaRenglon.*,  prenda.detallePrenda, tipoVenta.detalleTipoVenta FROM `venta_renglon` as ventaRenglon
+                   LEFT JOIN prenda AS prenda ON ventaRenglon.idPrenda = prenda.idPrenda
+                   LEFT JOIN tipoVenta AS tipoVenta ON ventaRenglon.idTipoVenta = tipoVenta.idTipoVenta
+					";
+        $arrResultado = null;
+        $objManejoMySQL->consultar($strSql, $arrResultado);
+        return $arrResultado;
+    }
+    public function ventaParticular($idVentaParticular) {
+        require_once (__DIR__ . '\..\..\base\manejoMySQL.php');
+
+        $objManejoMySQL = new manejoMySQL();
+        $strSql = "SELECT ventaRenglon.*,  prenda.detallePrenda, tipoVenta.detalleTipoVenta FROM `venta_renglon` as ventaRenglon
+                   LEFT JOIN prenda AS prenda ON ventaRenglon.idPrenda = prenda.idPrenda
+                   LEFT JOIN tipoVenta AS tipoVenta ON ventaRenglon.idTipoVenta = tipoVenta.idTipoVenta
+					WHERE ventaRenglon.idVenta=".$idVentaParticular;
         $arrResultado = null;
         $objManejoMySQL->consultar($strSql, $arrResultado);
         return $arrResultado;

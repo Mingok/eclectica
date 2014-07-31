@@ -180,6 +180,11 @@
         }
     });
 
+$("#fancyboxRenglon").fancybox({
+        maxWidth: 700,
+        maxHeight: 400,
+        closeEffect: 'elastic'
+    });
 
 
     $("#fancyboxPrenda").fancybox({

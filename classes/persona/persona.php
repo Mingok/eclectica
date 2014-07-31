@@ -12,7 +12,19 @@ Class persona {
                 }
 		return $arrResultado;
 	}
-        
+        public function eligeUltimaPersona(){
+		require_once (__DIR__.'\..\..\base\manejoMySQL.php');
+		
+		$objManejoMySQL= new manejoMySQL();
+		$strSql="SELECT * FROM `persona` order by idPersona desc limit 1 ";
+		$arrResultado=null;
+		$objManejoMySQL->consultar($strSql, $arrResultado);
+                if (!empty($arrResultado)) {
+                    $arrResultado = current($arrResultado);
+                }
+		return $arrResultado;
+                
+	}
         public function eligeVendedor($codVendedor){
 		require_once (__DIR__.'\..\..\base\manejoMySQL.php');
 		

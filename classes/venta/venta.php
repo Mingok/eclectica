@@ -73,7 +73,18 @@ Class venta {
         }
         return $arrResultado;
     }
-
+    public function obtenerEstaVenta($idMiVenta){
+        require_once (__DIR__.'\..\..\base\manejoMySQL.php');
+		
+        $objManejoMySQL= new manejoMySQL();
+        $strSql="SELECT * FROM `venta` WHERE idVenta=".$idMiVenta;
+        $arrResultado=null;
+        $objManejoMySQL->consultar($strSql, $arrResultado);
+        if (!empty($arrResultado)) {
+            $arrResultado = current($arrResultado);
+        }
+        return $arrResultado;
+    }
     public function eliminarVenta($objVenta) {
         require_once (__DIR__ . '\..\..\base\manejoMySQL.php');
 

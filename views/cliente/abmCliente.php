@@ -104,6 +104,7 @@
 
 </div>
 <script type="text/javascript">
+    
     $('.buttonVerHistorial').click(function() {
         $('#verHistorial').show("slow");
         $('html,body').animate({
@@ -126,6 +127,7 @@
         $('input[name=cuentaCorrientePersona]').val($(this).data('cuentacorrientepersona'));
         $('.btn-success.Persona').val('Modificar');
         $('#divPersona').show(1000);
+        $('html,body').animate({scrollTop: $("#divPersona").offset().top}, 2000);
         $('#cuentaC').hide();
         $('#verHistorial').hide(2000);
         $('.btn-success.Prov').val('Modificar');
@@ -154,6 +156,7 @@
         $('.btn-success.Persona').val('Agregar');
         $('#divPersona').show("slow");
         $('.btn-danger').removeClass('no');
+        $('html,body').animate({scrollTop: $("#divPersona").offset().top}, 2000);
     });
     //Validacion de formulario
     $("#formCliente").validate();

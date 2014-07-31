@@ -46,7 +46,8 @@ Class entrega {
         }
 
         $strSql = "INSERT INTO `entrega`($strNombresCampos) VALUES($strValoresCampos)";
-        
+       
+
         $arrResultado = null;
         $objManejoMySQL->consultar($strSql, $arrResultado);
         return $arrResultado;

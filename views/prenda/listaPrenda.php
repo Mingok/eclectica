@@ -47,7 +47,7 @@ $tipoVentas = $tipoVentaList->tipoVentasDisponibles();
                     <table class="table">
                         <tr>
                             <td colspan="3" style="text-align: right;">
-                                <div class="scrol1">
+                                <div class="scrolPrenda">
                                     <table class="table table-striped" id="tblPrenda">
                                         <thead class="btn-success" style="font-weight: bolder; text-align: center;">
                                             <tr>

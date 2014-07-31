@@ -123,6 +123,7 @@
         $('.btn-success.Prov').val('Modificar');
         $('.btn-danger').removeClass('no');
         $('#cuentaCorrientePersona').prop('disabled', true);
+        $('html,body').animate({scrollTop: $("#divPersona").offset().top}, 2000);
     });
     //Boton limpiar campos
     $('.btn-danger').click(function() {
@@ -145,6 +146,7 @@
         $('.btn-success.Persona').val('Agregar');
         $('#divPersona').show("slow");
         $('.btn-danger').removeClass('no');
+         $('html,body').animate({scrollTop: $("#divPersona").offset().top}, 2000);
     });
 
     //Validacion de formulario

@@ -12,17 +12,21 @@
     <div class="col-md-8">
         <div class="row">
             <div class="col-md-12">
-                <?php include_once './views/venta/ventaItemVenta.php' ?>
+                <?php include_once './views/venta/ventaItemVenta.php';
+                ?>
+
             </div>
             <div class="col-md-12" id="ventaDetalle">
                 <?php include_once './views/venta/ventaDetalle.php' ?>
+
             </div>
         </div>
     </div> 
 </div>
-
+<input type="hidden" id="estaVenta" name="estaVenta" >
 
 <script type="text/javascript">
+
     var estado = 0; /*selecCliente*/
     var pasar = 0;
     var pasar1 = 0;
@@ -30,16 +34,23 @@
     $("#selecEmpleado").on("change", function(e) {
         $('#idVendedorVentaCod').val($($(this).select2('data').element).data('codigovendedor'));
         $('#idVendedorVenta').val(this.value);
-        $("#selecEmpleado").empty().attr("disabled", "disabled");
 
+        auxiliar = this.value;
+       
+
+        $('#selecCliente option[value="' + auxiliar + '"]').empty().css('display', 'none');
+
+        $('#selecCliente option[value="' + auxiliar + '"]').empty().attr('disabled', 'disabled');
+
+        $("#selecEmpleado").empty().attr("disabled", "disabled");
     });
 
     $(document).ready(function() {
         var estado = 1; /*selecCliente*/
         $('#selecCliente').on("change", function(e) {
-            $('#clienteVenta').val(this.options[this.value].text);
+            $('#clienteVenta').val(this.options[this.selectedIndex].text);
             $('#idClienteVenta').val(this.value);
-            $("#cliente1").html(this.options[this.value].text);
+            $("#cliente1").html(this.options[this.selectedIndex].text);
             $("#cliente1").show('Slow');
             $('#selecCliente').empty().attr("disabled", "disabled");
             var url = 'indexComprasCliente.php';
@@ -191,4 +202,7 @@
         }
 
     }
+
+
+
 </script>

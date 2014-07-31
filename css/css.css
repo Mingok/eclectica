@@ -72,23 +72,38 @@ select.error { border: 1px dotted red; background-color: rgb(250, 255, 189);}
 
 div.scrol{
     overflow: auto;
-     overflow-x: hidden; 
-    height: 150px;
+    overflow-x: hidden; 
+    height: 270px;
 }
-div.scrol1{
+div.scrolPrenda{
     overflow: auto;
     overflow-x: hidden; 
-    height: 300px;
+    height: 380px;
+    padding:10px; 
+    
+}
+div.scrolCliente{
+    overflow: auto;
+    overflow-x: hidden; 
+    height: 400px;
+    padding:10px; 
+    
+}
+div.scrolEmpleado{
+    overflow: auto;
+    overflow-x: hidden; 
+    height: 400px;
     padding:10px; 
     
 }
 div.scrolPrv{
     overflow: auto;
-     overflow-x: hidden; 
+    overflow-x: hidden; 
     height: 165px;
     width: 480px;
 
 }
+
 table.tabla{
     border-spacing: 5px; /* cellspacing */
     padding: 15px;/* cellpadding */

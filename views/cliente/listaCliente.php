@@ -15,7 +15,7 @@
 						&nbsp;&nbsp;&nbsp;
 						<input type="button" value="Nuevo" style="width: 100px;" class="buttonPersonaNuevo btn btn-sm btn-success" />
 					</div>
-					<div class="scrol">
+					<div class="scrolCliente">
 						<table class="table table-condensed" id="tblPersona">
 							<thead class="btn-success">
 								<tr style="text-align: center;">
