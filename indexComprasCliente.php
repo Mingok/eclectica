@@ -7,8 +7,9 @@ $personas = $personaList->eligePersona($idCliente);
 $obj_venta = new venta();
 $obj_venta1 = new venta();
 $idCliente = $_REQUEST['idCliente'];
+$idPrenda = isset($_REQUEST['idPrenda'])?$_REQUEST['idPrenda']:NULL;
 
-$moviemientos_cliente = $obj_venta->movimientosCliente($idCliente);
+$moviemientos_cliente = $obj_venta->movimientosCliente($idCliente,$idPrenda);
 
 echo '<div class="panel panel-default" >';
 echo '<div class="panel-heading">';
@@ -19,6 +20,9 @@ echo '<div class="row scrol"> ';
 echo '<table class="table table-condensed">';
 echo '<thead class="btn-success" style="font-weight: bolder; text-align: center;">';
 echo '<tr style="text-align: center;">';
+if(!is_null($idPrenda)) {
+    echo '<td><strong>Sel</strong></td>';
+}
 echo '<td><strong>Fecha</strong></td>';
 echo '<td><strong>Tipo</strong></td>';
 echo '<td><strong>Vendido</strong></td>';
@@ -41,12 +45,20 @@ if (!empty($moviemientos_cliente)) {
                 break;
             case 'Venta': 
                 $ventita = $obj_venta1->obtenerEstaVenta($moviemiento['numero']);
-            echo '<tr style="text-align: center; background-color:#cccccc;font-weight: bolder;">';
-            echo '<td>' . date('d/m/Y', strtotime($moviemiento['fecha'])) . '</td>';
-            echo '<td ><a id="fancyboxRenglon" class="miVenta" data-idEstaVenta="' . $moviemiento['numero'] . '" href="#historicoDetalleCliente">' . $moviemiento['tipo'] . '</a></td>';    
-            echo '<td>' . number_format($moviemiento['valor'], 2) . '</td>';
+                echo '<tr style="text-align: center; background-color:#cccccc;font-weight: bolder;">';
+                if(!is_null($idPrenda)) {
+                    echo '<td>';
+                    echo "<a title='Devolver' class='ventaDev' id='ventaDev' data-idventa='{$moviemiento['numero']}' >";
+                    echo "<img src='./imagenes/iconos/accept.png' width='18px' height='18px' />";
+                    echo "</a>";
+                    echo '</td>';
+                }
             
-            echo '<td>'.number_format($ventita['entregaCliente'],2).'</td>';
+                echo '<td>' . date('d/m/Y', strtotime($moviemiento['fecha'])) . '</td>';
+                echo '<td ><a id="fancyboxRenglon" class="miVenta" data-idEstaVenta="' . $moviemiento['numero'] . '" href="#historicoDetalleCliente">' . $moviemiento['tipo'] . '</a></td>';    
+                echo '<td>' . number_format($moviemiento['valor'], 2) . '</td>';
+
+                echo '<td>'.number_format($ventita['entregaCliente'],2).'</td>';
             
                 break;
             case 'Entrega': 

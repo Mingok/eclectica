@@ -133,3 +133,13 @@ Table.formu thead {
 label.ccLabel {
     width: 62px;
 }
+
+#prendasDevolucion .scrolPrenda {
+    max-height: 180px;
+    overflow-x: auto;
+}
+
+.bodyDevoluciones .movimientosClienteCont .row.scrol {
+    max-height: 160px;
+    overflow-x: auto;
+}

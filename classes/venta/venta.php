@@ -12,7 +12,7 @@ Class venta {
         $objManejoMySQL->consultar($strSql, $arrResultado);
         return $arrResultado;
     }
-    public function movimientosCliente($lngIdCliente) {
+    public function movimientosCliente($lngIdCliente,$lngIdPrenda = NULL) {
         require_once (__DIR__ . '\..\..\base\manejoMySQL.php');
 
         $objManejoMySQL = new manejoMySQL();
@@ -31,6 +31,16 @@ Class venta {
                                 valorEntrega AS valor 
                                 FROM `entrega` WHERE idCliente=$lngIdCliente
                     ) tmp ORDER BY fecha DESC";
+        if (!is_null($lngIdPrenda)) {
+            $strSql = "SELECT vr.`idVenta` AS numero, 
+                        v.fechaVenta AS fecha,
+                        'Venta' AS tipo,
+                        'N' AS Inicial,
+                        v.precioVenta AS valor
+                        FROM `venta_renglon` vr 
+                        JOIN `venta` v ON v.`idVenta` = vr.`idVenta` AND v.`idCliente` = $lngIdCliente
+                        WHERE vr.`idPrenda` = $lngIdPrenda";
+        }
         $arrResultado = null;
         $objManejoMySQL->consultar($strSql, $arrResultado);
         return $arrResultado;
