@@ -135,6 +135,46 @@ Class venta {
         $objManejoMySQL->consultar($strSql, $arrResultado);
         return $arrResultado;
     }
+    
+    public function marcarVentaCambio($lngIdVenta, $lngIdPrenda) {
+        require_once (__DIR__ . '\..\..\base\manejoMySQL.php');
+        $objManejoMySQL = new manejoMySQL();
+        $strSql = "UPDATE `venta` SET estado = 'C'
+					WHERE `idVenta`=$lngIdVenta";
+        $arrResultado = null;
+        $objManejoMySQL->consultar($strSql, $arrResultado);
+        
+        $strSql = "UPDATE `venta_renglon` SET estado = 'C'
+					WHERE `idVenta`=$lngIdVenta AND `idPrenda`=$lngIdPrenda";
+        $arrResultado = null;
+        $objManejoMySQL->consultar($strSql, $arrResultado);
+        
+        $strSql = "SELECT precioVendido `venta_renglon` WHERE `idVenta`=$lngIdVenta AND `idPrenda`=$lngIdPrenda";
+        $arrResultado = null;
+        $objManejoMySQL->consultar($strSql, $arrResultado);
+        
+        if (!empty($arrResultado)) {
+            $arrResultado = current($arrResultado);
+            $precioVendido = $arrResultado['precioVendido'];
+            
+        }
+        return $arrResultado;
+    }
+    
+    public function precioVendidoPrenda($lngIdVenta, $lngIdPrenda) {
+        require_once (__DIR__.'\..\..\base\manejoMySQL.php');
+		
+        $objManejoMySQL= new manejoMySQL();
+        $strSql = "SELECT `precioVendido` FROM `venta_renglon` WHERE `idVenta`=$lngIdVenta AND `idPrenda`=$lngIdPrenda";
+        $resultado=null;
+        $arrResultado=null;
+        $objManejoMySQL->consultar($strSql, $arrResultado);
+        if (!empty($arrResultado)) {
+            $arrResultado = current($arrResultado);
+            $resultado = $arrResultado['precioVendido'];
+        }
+        return $resultado;
+    }
 
 }
 

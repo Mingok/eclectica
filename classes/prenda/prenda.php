@@ -57,6 +57,19 @@ class prenda {
         return $arrResultado;
     }
     
+    public function eligePrenda($lngIdPrenda) {
+        require_once (__DIR__.'\..\..\base\manejoMySQL.php');
+		
+        $objManejoMySQL= new manejoMySQL();
+        $strSql="SELECT * FROM `prenda` where idPrenda=$lngIdPrenda";
+        $arrResultado=null;
+        $objManejoMySQL->consultar($strSql, $arrResultado);
+        if (!empty($arrResultado)) {
+            $arrResultado = current($arrResultado);
+        }
+        return $arrResultado;
+    }
+    
     public function agregarNuevoPrenda($arrPrenda) {
         require_once (__DIR__ . '\..\..\base\manejoMySQL.php');
         $strValoresCampos = "";
@@ -198,5 +211,13 @@ class prenda {
         $objManejoMySQL->consultar($strSql, $arrResultado);
         return $arrResultado;
     }
-
+    
+    public function devolverPrenda($lngIdPrenda) {
+        require_once (__DIR__ . '\..\..\base\manejoMySQL.php');
+        $strSql = "UPDATE `prenda` SET `cantidadPrenda` = (`cantidadPrenda`+1 ) WHERE `idPrenda`=$lngIdPrenda";
+        $objManejoMySQL = new manejoMySQL ();
+        $arrResultado = null;
+        $objManejoMySQL->consultar($strSql, $arrResultado);
+        return $arrResultado;
+    }
 }

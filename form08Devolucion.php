@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-12 cliente-prendas">
         <div class="row">
             <div class="col-md-3">
                 <?php include_once './views/devolucion/devolucionCliente.php' ?>
@@ -10,15 +10,16 @@
             </div>
         </div>
     </div>
-    <div class="col-md-12">
+    <div class="col-md-12 historico-compras">
         <?php  include_once './views/venta/ventaHistoricoCliente.php'; ?>
     </div>
-    <div class="col-md-8">
+    <div class="col-md-12 hiden-form">
         <div class="row">
             <div class="col-md-12">
                 <?php // include_once './views/venta/ventaHistoricoCliente.php'; ?>
                 <form action="actions/devolucion/efectuarDevolucion.php" method="post" id="formItemVenta">
                     <input type="hidden" id="idClienteVenta" name="idClienteVenta" />
+                    <input type="hidden" id="idVendedor" name="idVendedor" />
                     <input type="hidden" id="idPrenda" name="idPrenda" />
                     <input type="hidden" id="idVenta" name="idVenta" />
                     <input type="submit" class="btn btn-info devolverSend" value="Devolver" disabled=""/>
@@ -39,20 +40,7 @@
     var estado = 0; /*selecCliente*/
     var pasar = 0;
     var pasar1 = 0;
-    var pasar2 = 0;
-    $("#selecEmpleados").on("change", function(e) {
-        $('#idVendedorVenta').val(this.value);
-
-        auxiliar = this.value;
-       
-
-        $('#selecClientes option[value="' + auxiliar + '"]').empty().css('display', 'none');
-
-        $('#selecClientes option[value="' + auxiliar + '"]').empty().attr('disabled', 'disabled');
-
-        $("#selecEmpleados").empty().attr("disabled", "disabled");
-    });
-
+    
     $(document).ready(function() {
         var estado = 1; /*selecCliente*/
         $('#selecClientes').on("change", function(e) {
@@ -62,6 +50,20 @@
 //            $("#cliente1").show('Slow');
             $('#selecClientes').empty().attr("disabled", "disabled");
             $('#prendasDevolucion').show();
+        });
+        
+        var pasar2 = 0;
+        $("#selecEmpleados").on("change", function(e) {
+            var auxiliar = this.value;
+            $('#idVendedor').val(this.value);
+
+            $('#selecClientes option[value="' + auxiliar + '"]').empty().css('display', 'none');
+
+            $('#selecClientes option[value="' + auxiliar + '"]').empty().attr('disabled', 'disabled');
+
+            $("#selecEmpleados").empty().attr("disabled", "disabled");
+
+            
         });
     });
     

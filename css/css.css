@@ -143,3 +143,15 @@ label.ccLabel {
     max-height: 160px;
     overflow-x: auto;
 }
+
+.bodyDevoluciones .cliente-prendas {
+    min-height: 285px;
+}
+
+.bodyDevoluciones .historico-compras {
+    min-height: 275px;
+}
+
+.bodyDevoluciones .hiden-form .devolverSend {
+    float: right;
+}
