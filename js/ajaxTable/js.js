@@ -24,14 +24,12 @@ $(document).ready(function() {
 
     // filtrar al darle click al boton
     $("#btnfiltrar").click(function() {
-        filtrar()
+        filtrar();
     });
 
     // boton cancelar
     $("#btncancel").click(function() {
-        $(".filtro input").val('')
-        $(".filtro select").find("option[value='0']").attr("selected", true)
-        filtrar()
+        location.reload();
     });
 
     // ordenar por
