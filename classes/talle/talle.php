@@ -5,7 +5,8 @@ Class talle {
 		
 		$objManejoMySQL= new manejoMySQL();
 		$strSql="	SELECT * FROM `talle`
-					ORDER BY `detalleTalle` ASC";
+					ORDER BY length(detalleTalle),detalleTalle ASC";
+                  
 		$arrResultado=null;
 		$objManejoMySQL->consultar($strSql, $arrResultado);
 		return $arrResultado;

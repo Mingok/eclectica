@@ -38,7 +38,7 @@
                                         <thead class="btn-success" style="font-weight: bolder; text-align: center;">
                                             <tr>
                                                 <td>
-                                                    Mod
+                                                    Selec
                                                 </td>
                                                 <td>
                                                     Cod

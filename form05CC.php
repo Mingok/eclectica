@@ -31,13 +31,19 @@ $personas = $personaList->personasDisponibles();
                 $('#selecCliente').select2().on("change", function(e) {
                     var deuda = $($(this).select2('data').element).data('deuda');
                     $('input[name=idPersona]').val(e.val);
+
                     $("#selecCliente").empty().attr("disabled", "disabled");
                     $('.deudaCliente').html("$ " + deuda);
+
                 });
 
                 $('#selecEmpleado').select2().on("change", function(e) {
+                    auxiliar = this.value;
+                    $('#selecCliente option[value="' + auxiliar + '"]').empty().css('display', 'none');
+                    $('#selecCliente option[value="' + auxiliar + '"]').empty().attr('disabled', 'disabled');
+
                     $('input[name=idEmple]').val(e.val);
-                    
+                    $('#divCliente').show();
                     $('#pwdDeVendedor').val($($(this).select2('data').element).data('codigovendedor'));
                     $("#selecEmpleado").empty().attr("disabled", "disabled");
                 });
@@ -86,20 +92,24 @@ $personas = $personaList->personasDisponibles();
                                     </td>
                                 </tr>
                                 <tr style="vertical-align: middle;width: 500px;">   
+
                                     <td style="height:55px; width:330px; text-align: left;">
-                                        <label >Cliente:</label> <br>
+                                        <div id="divCliente">
+                                            <label >Cliente:</label> <br>
 
-                                        <select id="selecCliente" name="selecCliente" style="width:250px">
-                                            <option value="">Seleccione un Cliente</option>
-                                            <?php
-                                            foreach ($personas as $persona) {
-                                                if (isset($persona)) {
-                                                    echo "<option value=" . $persona["idPersona"]. " data-deuda=" . $persona['cuentaCorrientePersona'] . ">" . $persona["apellidoPersona"] . " " . $persona["nombrePersona"] . "</option>";
+                                            <select id="selecCliente" name="selecCliente" style="width:250px">
+                                                <option value="">Seleccione un Cliente</option>
+                                                <?php
+                                                foreach ($personas as $persona) {
+                                                    if (isset($persona)) {
+                                                        echo "<option value=" . $persona["idPersona"] . " data-deuda=" . $persona['cuentaCorrientePersona'] . ">" . $persona["apellidoPersona"] . " " . $persona["nombrePersona"] . "</option>";
+                                                    }
                                                 }
-                                            }
-                                            ?>
+                                                ?>
 
-                                        </select>
+                                            </select>
+                                        </div>
+
                                     </td>
                                     <td style="height:55px; text-align: left;">
                                         <label >Deuda:</label><br>
@@ -127,42 +137,41 @@ $personas = $personaList->personasDisponibles();
 </html>
 <script type="text/javascript">
     $(document).ready(function() {
+        $('#divCliente').hide();
         $("#formCcCliente").validate({
-                rules: {
-                    selecEmpleado: {
-                        required: true
-                    
-                    },
-                    control: {
-                        required: true,
-                        equalTo: '#pwdDeVendedor'
-                    },
-                    selecCliente: {
-                        required: true
-                    },
-                    entregaCliente:{
-                        required:true,
-                        number:true
-                    }
+            rules: {
+                selecEmpleado: {
+                    required: true
+
                 },
-                messages: {
-                    selecEmpleado: {
-                        required: "Seleccione un Empleado",
-                       
-                    },
-                    control: {
-                        required: "Ingrese un codigo de Vendedor",
-                        equalTo: "Codigo Erroneo"
-                    },
-                    selecCliente: {
-                        required: "Seleccione un Cliente",
-                       
-                    },
-                    entregaCliente:{
-                        required: "Ingrese un valor de entrega",
-                        number: "Tiene que ser un numero"
-                    }
-                },submitHandler: function(form) {
+                control: {
+                    required: true,
+                    equalTo: '#pwdDeVendedor'
+                },
+                selecCliente: {
+                    required: true
+                },
+                entregaCliente: {
+                    required: true,
+                    number: true
+                }
+            },
+            messages: {
+                selecEmpleado: {
+                    required: "Seleccione un Empleado",
+                },
+                control: {
+                    required: "Ingrese un codigo de Vendedor",
+                    equalTo: "Codigo Erroneo"
+                },
+                selecCliente: {
+                    required: "Seleccione un Cliente",
+                },
+                entregaCliente: {
+                    required: "Ingrese un valor de entrega",
+                    number: "Tiene que ser un numero"
+                }
+            }, submitHandler: function(form) {
                 var url = $(form).attr('action');
                 $('input[name=ccSubmit]').attr('disabled', 'disabled');
                 $.ajax({

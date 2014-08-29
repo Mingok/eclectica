@@ -10,19 +10,22 @@ $proveedores = $proveedorList->proveedoresDisponibles();
             <div class="panel-body ">
                 <div style="padding-bottom: 10px; text-align: right;">
                     <label
-                        for="txtProveedor"> Buscar: </label> 
+                        for="txtProveedor"> Nombre: </label> 
                     <input type="search" style="width: 375px" id="txtProveedor" class="textPrendas form-control" placeholder="Escriba el Nombre que desea encontrar y presione la ENTER" autofocus />
                     &nbsp;&nbsp;&nbsp; 
-                    <input type="button" value="Nuevo"style="width: 100px;" class="buttonProvNuevo btn btn-sm btn-success"/>
+                    <input type="button" value="Nuevo" style="width: 100px;" class="buttonProvNuevo btn btn-sm btn-success"/>
                 </div>
-                <div class="scrol1">
+                <div class="scrolProveedor">
                     <table class="table table-striped" id="tblProveedor">
                         <thead class="btn-success">
                             <tr style="text-align: center;">
                                 <td style="height: 30px; width: 8%;"><strong> Mod </strong></td>
-                                <td style="width: 40%"><strong> Nombre </strong></td>
-                                <td style="width: 25%"><strong> Contacto </strong></td>
-                                <td style="width: 27%"><strong> Telefono </strong></td>
+                                <td style="width: 25%;"><strong> Nombre </strong></td>
+                                <td style="width: 20%;"><strong> Contacto </strong></td>
+                                <td style="width: 12%;"><strong> Cuit </strong></td>
+                                <td style="width: 23%;"><strong> E-mail </strong></td>
+                                <td style="width: 10%;"><strong> Telefono </strong></td>
+
                             </tr>
                         </thead>
                         <tbody>
@@ -67,17 +70,27 @@ $proveedores = $proveedorList->proveedoresDisponibles();
                                            ?>"> 
                                             <img src='./imagenes/iconos/edit.png' width='18px' height='18px' /> </a>
                                     </td>
-                                    <td>
+                                    <td style=" text-align: left;">
                                         <?php
                                         echo $proveedor['nombreProveedor'];
                                         ?>
                                     </td>
-                                    <td>
+                                    <td style=" text-align: left;">
                                         <?php
                                         echo $proveedor['contactoProveedor'];
                                         ?>
                                     </td>
-                                    <td>
+                                    <td style=" text-align: right;">
+                                        <?php
+                                        echo $proveedor['cuitProveedor'];
+                                        ?>
+                                    </td>
+                                    <td style=" text-align: left;">
+                                        <?php
+                                        echo $proveedor['emailProveedor'];
+                                        ?>
+                                    </td>
+                                    <td style=" text-align: right;">
                                         <?php
                                         echo $proveedor['telefonoProveedor'];
                                         ?>
