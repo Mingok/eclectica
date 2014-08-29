@@ -82,6 +82,13 @@ div.scrolPrenda{
     padding:10px; 
     
 }
+div.scrolProveedor{
+    overflow: auto;
+    overflow-x: hidden; 
+    height: 380px;
+    padding:10px; 
+    
+}
 div.scrolCliente{
     overflow: auto;
     overflow-x: hidden; 
@@ -154,4 +161,8 @@ label.ccLabel {
 
 .bodyDevoluciones .hiden-form .devolverSend {
     float: right;
+}.alert-success1{
+    font-weight: bolder;
+    font-size:large;
+    text-align: center;
 }

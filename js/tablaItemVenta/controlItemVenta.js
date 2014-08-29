@@ -36,22 +36,24 @@ function agregarCampo() {
                 "     </td>" +
                 "   </tr>";
 
-        importe[campos] = parseFloat($("#cantidadItemVenta").val()) * parseFloat($("#precioItemVenta").val());
+        importe[campos] = parseInt($("#cantidadItemVenta").val()) * parseInt($("#precioItemVenta").val());
         for (var i = 1; i < importe.length; i = i + 1) {
-            importeTotal += parseFloat(importe[i]);
+            importeTotal += parseInt(importe[i]);
         }
 
-        $("#contenedorcampos").append(NvoCampo);
-        $("#span_cantidad").html(camposTotal);
-        $("#span_Total").html(parseFloat(importeTotal).toFixed(2));
+        $('#contenedorcampos').append(NvoCampo);
+        $('#span_cantidad').html(camposTotal);
+        $('#span_Total').html(parseInt(importeTotal));
+        auxCCC=parseInt($('#cuentaCorrienteCLiente').val())+ parseInt(importeTotal);
+        $('#MuestraCCC').text(auxCCC);
         $('#codItemVenta').val('0');
         $('#cantidadItemVenta').val('1');
         $('#selecCondicionItem').val(["0"]).select2();
         $('#agregarItem').hide();
         $('#areaItemAVender').hide('slow');
-        $('#entrega').val(parseFloat(importeTotal).toFixed(2));
-        $('#entregaTot').val(parseFloat(importeTotal).toFixed(2));
-        $('#totalCompra').val(parseFloat(importeTotal).toFixed(2));
+        $('#entrega').val(parseInt(importeTotal));
+        $('#entregaTot').val(parseInt(importeTotal));
+        $('#totalCompra').val(parseInt(importeTotal));
     } else {
         alert("Elija Condicion de venta");
     }
@@ -64,14 +66,14 @@ function quitarCampo(iddiv) {
     var eliminar = document.getElementById("divcampo_" + iddiv);
     importe[iddiv] = 0;
     for (var i = 1; i < importe.length; i = i + 1) {
-        importeTotal += parseFloat(importe[i]);
+        importeTotal += parseInt(importe[i]);
 
     }
     var contenedor = document.getElementById("contenedorcampos");
     contenedor.removeChild(eliminar);
-    $("#span_Total").html(parseFloat(importeTotal).toFixed(2));
-    $("#span_cantidad").html(parseFloat(camposTotal));
-    $('#entrega').val(parseFloat(importeTotal).toFixed(2));
-    $('#totalCompra').val(parseFloat(importeTotal).toFixed(2));
+    $("#span_Total").html(parseInt(importeTotal));
+    $("#span_cantidad").html(camposTotal);
+    $('#entrega').val(parseInt(importeTotal));
+    $('#totalCompra').val(parseInt(importeTotal));
 
 }

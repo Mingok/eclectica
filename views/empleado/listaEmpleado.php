@@ -14,7 +14,7 @@ $personas = $personaList->
                 <div class="panel-body ">
                     <div style="padding-bottom: 10px; text-align: right;">
                         <label for="txtPersona">
-                            Buscar:
+                            Nombre:
                         </label>
                         <input type="search" style="width:375px" id="txtPersona" class="txtPersona form-control" placeholder="Escriba el Nombre que desea encontrar y presione la ENTER" autofocus />
                         &nbsp;&nbsp;&nbsp;

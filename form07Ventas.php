@@ -26,32 +26,33 @@
 <input type="hidden" id="estaVenta" name="estaVenta" >
 
 <script type="text/javascript">
-
     var estado = 0; /*selecCliente*/
     var pasar = 0;
     var pasar1 = 0;
     var pasar2 = 0;
-    $("#selecEmpleado").on("change", function(e) {
-        $('#idVendedorVentaCod').val($($(this).select2('data').element).data('codigovendedor'));
-        $('#idVendedorVenta').val(this.value);
-
-        auxiliar = this.value;
-       
-
-        $('#selecCliente option[value="' + auxiliar + '"]').empty().css('display', 'none');
-
-        $('#selecCliente option[value="' + auxiliar + '"]').empty().attr('disabled', 'disabled');
-
-        $("#selecEmpleado").empty().attr("disabled", "disabled");
-    });
 
     $(document).ready(function() {
+        $('#divCliente').hide();
+        $('#divCondicion').hide();
+        $("#selecEmpleado").on("change", function(e) {
+            $('#idVendedorVentaCod').val($($(this).select2('data').element).data('codigovendedor'));
+            $('#idVendedorVenta').val(this.value);
+            auxiliar = this.value;
+            $('#selecCliente option[value="' + auxiliar + '"]').empty().css('display', 'none');
+            $('#selecCliente option[value="' + auxiliar + '"]').empty().attr('disabled', 'disabled');
+            $('#divCliente').show();
+            $("#selecEmpleado").empty().attr("disabled", "disabled");
+        });
         var estado = 1; /*selecCliente*/
         $('#selecCliente').on("change", function(e) {
             $('#clienteVenta').val(this.options[this.selectedIndex].text);
             $('#idClienteVenta').val(this.value);
+            $('#cuentaCorrienteCLiente').val($($(this).select2('data').element).data('ccc'));
+            if ($('#cuentaCorrienteCLiente').val()<'0'){$('#saldoPisitivo').removeClass('no');}
             $("#cliente1").html(this.options[this.selectedIndex].text);
             $("#cliente1").show('Slow');
+            $('#divCondicion').show();
+            alert($('#cuentaCorrienteCLiente').val());
             $('#selecCliente').empty().attr("disabled", "disabled");
             var url = 'indexComprasCliente.php';
             var idCliente = $('#idClienteVenta').val();
@@ -82,88 +83,88 @@
                     }
                 });
             } else {
-
-
                 $("#selecCondicionGral").empty().attr("disabled", "disabled");
             }
+            
+            
+            $("#MuestraCCC").html($('#cuentaCorrienteCLiente').val());
             $("#selecCondicionGral").empty().attr("disabled", "disabled");
             $('#ventaDetalle').show('fast');
         });
-        $(document).ready(function() {
 
 
-            $('#selecEmpleado').select2({
-                placeholder: "Seleccionar",
-                allowClear: true
-            });
-            $('#selecCliente').select2({
-                placeholder: "Seleccionar",
-                allowClear: true
-            });
-            $('#selecCondicionItem').select2({
-                placeholder: "Seleccionar",
-                allowClear: true
-            });
-            $('#selecCondicionGral').select2({
-                placeholder: "Seleccionar",
-                allowClear: true
-            });
-            $('#areaItemAVender').hide();
-            $('#agregarItem').hide();
-            $("#cliente1").hide();
-            $("#selecCondicionItem").empty().attr("disabled", "disabled");
-            $('#ventaDetalle').hide();
-            $("#formDinamico").validate({
-                rules: {
-                    entrega: {
-                        required: true,
-                        number: true
-                    },
-                    vendedor: {
-                        required: true,
-                        equalTo: '#idVendedorVentaCod'
-                    }
-                },
-                messages: {
-                    entrega: {
-                        required: "Ingrese Importe",
-                        number: "Tiene que ser un numero"
-                    },
-                    vendedor: {
-                        required: "Ingrese vendedor",
-                        equalTo: "Codigo Erroneo"
-                    }
-                },
-                submitHandler: function(form) {
-                    // do other things for a valid form
-                    if (campos != 0) {
-                        pasar = 1;
-                    } else {
-                        alert("Agregue al menos 1 prenda");
-                        pasar = 0;
-                        return false;
-                    }
-                    if ($('#idClienteVenta').val() != '') {
-                        pasar1 = 1;
-                    } else {
-                        pasar1 = 0;
-                        alert("Eliga Cliente");
-                        return false;
-
-                    }
-                    if ($('#idVendedorVentaCod').val() != '') {
-                        pasar2 = 1;
-                    } else {
-                        alert("Eliga Empleado");
-                        pasar2 = 0;
-
-                    }
-                    if ((pasar == 1) & (pasar1 == 1) & (pasar2 == 1)) {
-                        myFunction();
-                    }
-                }
-            });
+        $('#selecEmpleado').select2({
+            placeholder: "Seleccionar",
+            allowClear: true
         });
+        $('#selecCliente').select2({
+            placeholder: "Seleccionar",
+            allowClear: true
+        });
+        $('#selecCondicionItem').select2({
+            placeholder: "Seleccionar",
+            allowClear: true
+        });
+        $('#selecCondicionGral').select2({
+            placeholder: "Seleccionar",
+            allowClear: true
+        });
+        $('#areaItemAVender').hide();
+        $('#agregarItem').hide();
+        $("#cliente1").hide();
+        $("#selecCondicionItem").empty().attr("disabled", "disabled");
+        $('#ventaDetalle').hide();
+        $("#formDinamico").validate({
+            rules: {
+                entrega: {
+                    required: true,
+                    number: true
+                },
+                vendedor: {
+                    required: true,
+                    equalTo: '#idVendedorVentaCod'
+                }
+            },
+            messages: {
+                entrega: {
+                    required: "Ingrese Importe",
+                    number: "Tiene que ser un numero"
+                },
+                vendedor: {
+                    required: "Ingrese vendedor",
+                    equalTo: "Codigo Erroneo"
+                }
+            },
+            submitHandler: function(form) {
+                // do other things for a valid form
+                if (campos != 0) {
+                    pasar = 1;
+                } else {
+                    alert("Agregue al menos 1 prenda");
+                    pasar = 0;
+                    return false;
+                }
+                if ($('#idClienteVenta').val() != '') {
+                    pasar1 = 1;
+                } else {
+                    pasar1 = 0;
+                    alert("Eliga Cliente");
+                    return false;
+
+                }
+                if ($('#idVendedorVentaCod').val() != '') {
+                    pasar2 = 1;
+                } else {
+                    alert("Eliga Empleado");
+                    pasar2 = 0;
+
+                }
+                if ((pasar == 1) & (pasar1 == 1) & (pasar2 == 1)) {
+                    myFunction();
+                }
+            }
+        });
+
     });
     function myFunction() {
         switch (true) {
@@ -202,7 +203,4 @@
         }
 
     }
-
-
-
 </script>

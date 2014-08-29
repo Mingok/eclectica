@@ -87,7 +87,10 @@ $strSql = "SELECT idPrenda FROM prenda ORDER BY idPrenda DESC LIMIT 1;";
             $varPrenda = $valorCampo1;
         }
 	
-    $prendas = $prendaClass->agregarNuevoPrecioPrenda($arrPrecioPrenda,$varPrenda['idPrenda']);		
+    $prendas = $prendaClass->agregarNuevoPrecioPrenda($arrPrecioPrenda,$varPrenda['idPrenda']);	
+    $url=strtok($_SERVER["HTTP_REFERER"],'?');
+header('Location: '.$url.'?pasar=1&prendaNueva=ok&NPrenda='.$codigoPrenda);
+exit;
 }
 
 header('Location: '.$_SERVER['HTTP_REFERER']);

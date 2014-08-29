@@ -22,46 +22,50 @@ $prendas = $prendaList->prendasDisponibles();
                     Empleado:
                 </label>
                 <select id="selecEmpleado" name="selecEmpleado" style="width:240px;" required>
-                    <option></option>
+                    <option value="">Seleccione un Empleado</option>
                     <?php
                     foreach ($personas as $persona) {
 
                         if (isset($persona)) {
                             if (!($persona["codigoVendedor"] == null)) {
-                                echo "<option value=" . $persona["idPersona"] . " data-codigoVendedor='".$persona["codigoVendedor"]  ."' >" . $persona["apellidoPersona"] . " " . $persona["nombrePersona"] . "</option>";
+                                echo "<option value=" . $persona["idPersona"] . " data-codigoVendedor='" . $persona["codigoVendedor"] . "' >" . $persona["apellidoPersona"] . " " . $persona["nombrePersona"] . "</option>";
                             }
                         }
                     }
                     ?>
                 </select>
                 <div style="height: 10px"></div>
-                <label style="text-align:left">
-                    Cliente:
-                </label>
-                <select id="selecCliente" name="selecCliente" style="width:240px;" required>
-                    <option></option>
-                    <?php
-                    foreach ($personas as $persona) {
-                        if (isset($persona)) {
-                            echo "<option value=" . $persona["idPersona"] . ">" . $persona["apellidoPersona"] . " " . $persona["nombrePersona"] . "</option>";
+                <div id="divCliente">
+                    <label for="selecCliente" style="text-align:left">
+                        Cliente:
+                    </label>
+                    <select id="selecCliente" name="selecCliente" style="width:240px;" required>
+                        <option value="">Seleccione un Cliente</option>
+                        <?php
+                        foreach ($personas as $persona) {
+                            if (isset($persona)) {
+                                echo "<option value=" . $persona["idPersona"] . " data-ccc='" . $persona["cuentaCorrientePersona"] . "' >" . $persona["apellidoPersona"] . " " . $persona["nombrePersona"] . "</option>";
+                            }
                         }
-                    }
-                    ?>
-                </select>
+                        ?>
+                    </select>
+                </div>
                 <div style="height: 10px"></div>
-                <label style="text-align:left">Condicion : </label>
-                <select id="selecCondicionGral" name="selecCondicionGral" style="width: 240px" required>
-                    <option></option>
-                    <option value="1">
-                        Grupo 1
-                    </option>
-                    <option value="2">
-                        Grupo 2
-                    </option>
-                    <option value="3">
-                        Grupo 3
-                    </option>
-                </select>
+                <div id="divCondicion">
+                    <label style="text-align:left">Condicion : </label>
+                    <select id="selecCondicionGral" name="selecCondicionGral" style="width: 240px" required>
+                        <option></option>
+                        <option value="1">
+                            Grupo 1
+                        </option>
+                        <option value="2">
+                            Grupo 2
+                        </option>
+                        <option value="3">
+                            Grupo 3
+                        </option>
+                    </select>
+                </div>
             </div>
         </div>
     </div>

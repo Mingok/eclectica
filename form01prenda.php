@@ -9,7 +9,28 @@
 	</div>
 </div>
 <script type="text/javascript">
+    function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+    return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
 $(document).ready(function() {
+    $("#exitoPrenda").hide();
+    mostrar = getParameterByName('prendaNueva');
+    
+        mostrar1 = "Prenda NUEVA: " + getParameterByName('NPrenda') +"<a href='./indexPrendas.php?pasar=1'> <img src='./imagenes/iconos/delete.png' /></a>";
+     
+    if (mostrar=='ok'){    
+         $("#exitoPrenda").show("slow");
+        
+        $("#CPrenda").html(mostrar1);
+     } 
+    
+    
+    
+    
+    
    $("#fancyboxPrecios").fancybox({
     autoDimensions:true,
     type   : 'iframe',

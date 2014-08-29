@@ -24,7 +24,7 @@ class prenda {
             JOIN tipoventa_prenda AS tvp4 ON tvp4.idPrenda = prenda.idPrenda AND tvp4.idTipoVenta = 4
             JOIN tipoventa_prenda AS tvp5 ON tvp5.idPrenda = prenda.idPrenda AND tvp5.idTipoVenta = 5
             JOIN tipoventa_prenda AS tvp6 ON tvp6.idPrenda = prenda.idPrenda AND tvp6.idTipoVenta = 6
-			ORDER BY prenda.`cantidadPrenda` desc";
+			ORDER BY prenda.`idPrenda` desc";
         $arrResultado = null;
         $objManejoMySQL->consultar($strSql, $arrResultado);
         return $arrResultado;

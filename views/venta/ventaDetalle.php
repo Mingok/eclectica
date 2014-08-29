@@ -5,7 +5,7 @@
 <input type="hidden" id="precio4" name="precio4"  />
 <input type="hidden" id="precio5" name="precio5"  />
 <input type="hidden" id="precio6" name="precio6"  />
-
+<input type="hidden" id="cuentaCorrienteCLiente" name="cuentaCorrienteCLiente" />
 <div class="row">
     <div class="col-md-12">
         <div class="panel panel-default">
@@ -19,6 +19,7 @@
                                 </h3>
                             </td>
                             <td style="text-align: right">
+
                                 &nbsp;&nbsp;&nbsp;&nbsp; <input type="submit" value="Agregar Item" id="agregarItem" style="width: 150px;" class="btn btn-sm btn-success" />
                                 &nbsp;&nbsp;&nbsp;&nbsp;<a id="fancyboxPrenda" class="fancyboxPrenda" href="#informacion">
                                     <input type="button"
@@ -59,8 +60,6 @@
                     </div>
                 </div>
             </div>
-
-
 
             <form id="formDinamico" name="formDinamico" action="actions/venta/efectuarVenta.php">
                 <div class="panel-body">
@@ -112,34 +111,40 @@
                             </tr>
                         </tfoot>
                     </table>
-
+<div class="col-md-12 no" id="saldoPisitivo" >
+   Atencion Debe Cobrar: <span id="MuestraCCC"></span>
+                                    </div>
                 </div>
                 <div class="row">
                     <div class="col-md-12">
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                <h3 class="panel-title">
-                                    Clinete
+                                <h3 class="panel-title" >
+                                    Restumen
                                 </h3>
                             </div>
                             <div class="panel-body">
                                 <div class="row">
                                     <div class="col-md-12">
-                                                  <input type="hidden" id="idVendedorVenta" name="idVendedorVenta" />
-                    <input type="hidden" id="idVendedorVentaCod" name="idVendedorVentaCod" />
-                    
-                    
-          <input type="hidden" id="idClienteVenta" name="idClienteVenta" />
-                    <input type="hidden" id="clienteVenta" name="clienteVenta" />
+                                        <input type="hidden" id="idVendedorVenta" name="idVendedorVenta" />
+                                        <input type="hidden" id="idVendedorVentaCod" name="idVendedorVentaCod" />
+
+
+                                        <input type="hidden" id="idClienteVenta" name="idClienteVenta" />
+                                        <input type="hidden" id="clienteVenta" name="clienteVenta" />
+                                        <input type="hidden" id="clienteCC" name="clienteCC" />
                                         Ciente: <span id="cliente1" class="form-control" ></span>&nbsp;&nbsp;&nbsp;
                                         Entrega: <input type="text" placeholder="Ingrese" name="entrega" class="form-control" id="entrega" style="width: 100px">&nbsp;&nbsp;&nbsp;
                                         <input type="hidden" id="totalCompra" name="totalCompra" />
                                         Vendedor: <input type="password"  placeholder="Ingrese" name="vendedor" class="form-control" id="vendedor" style="width: 100px" >&nbsp;&nbsp;&nbsp;
                                     </div>
+                                    <div class="col-md-12" id="MuestraCCC">
+                                        
+                                    </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12" style="text-align: right">
-                                                                  
+
                                         <input type="submit" value="Confirmar"  name="Guardar" class="btn btn-sm btn-success">
                                         <input type="button" value="Limpiar" style="width: 100px;" class="btn btn-sm btn-danger" onClick="history.go(0)">
                                     </div>
@@ -154,6 +159,7 @@
     </div>
 </div>
 <script type="text/javascript">
+
     $('#selecCondicionItem').on("change", function(e) {
 
         $("#condItemVenta").val(this.options[this.selectedIndex].text);
@@ -180,7 +186,7 @@
         }
     });
 
-$("#fancyboxRenglon").fancybox({
+    $("#fancyboxRenglon").fancybox({
         maxWidth: 700,
         maxHeight: 400,
         closeEffect: 'elastic'
@@ -193,7 +199,7 @@ $("#fancyboxRenglon").fancybox({
         closeEffect: 'elastic'
     });
     $('.itemAVender').click(function() {
-        $("#cantidadItemVenta").attr('max',$(this).data('cantidadprenda'));
+        $("#cantidadItemVenta").attr('max', $(this).data('cantidadprenda'));
         $('#codItemVenta').val('0');
         $('#cantidadItemVenta').val('1');
         $('#selecCondicionItem').val(["0"]).select2();
