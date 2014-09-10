@@ -90,18 +90,20 @@ $(document).ready(function() {
 			$('.btn-danger').removeClass('no');
 		});
         $('#mostrarPrecios').click(function() {
+            
+            $('#idTipoVenta0').val(Math.round($('#idTipoVenta0').val()));
     if ( <?php echo $tipoVentas["1"]["operacionTipoVenta"]; ?>=="0") {
         $('input[name=tipoVenta2]').val($('#idTipoVenta0').val());
     } else {
         if ( <?php echo $tipoVentas["1"]["operacionTipoVenta"]; ?>=="2") {
             valor = ($('#idTipoVenta0').val() * ( <?php echo $tipoVentas["1"]["porcentajeTipoVenta"] / 100; ?>));
             valor = valor + parseInt($('#idTipoVenta0').val());
-            $('input[name=tipoVenta2]').val(valor);
+            $('input[name=tipoVenta2]').val(Math.round(valor));
 
         } else {
             valor = ($('#idTipoVenta0').val() * ( <?php echo $tipoVentas["1"]["porcentajeTipoVenta"] / 100; ?>));
             valor = parseInt($('#idTipoVenta0').val())-valor;
-            $('input[name=tipoVenta2]').val(valor);
+            $('input[name=tipoVenta2]').val(Math.round(valor));
         }
     }
     if ( <?php echo $tipoVentas["2"]["operacionTipoVenta"]; ?>=="0") {
@@ -110,12 +112,12 @@ $(document).ready(function() {
         if ( <?php echo $tipoVentas["2"]["operacionTipoVenta"]; ?>=="2") {
             valor = ($('#idTipoVenta0').val() * ( <?php echo $tipoVentas["2"]["porcentajeTipoVenta"] / 100; ?>));
             valor = valor + parseInt($('#idTipoVenta0').val());
-            $('input[name=tipoVenta3]').val(valor);
+            $('input[name=tipoVenta3]').val(Math.round(valor));
 
         } else {
             valor = ($('#idTipoVenta0').val() * ( <?php echo $tipoVentas["2"]["porcentajeTipoVenta"] / 100; ?>));
             valor = parseInt($('#idTipoVenta0').val())-valor;
-            $('input[name=tipoVenta3]').val(valor);
+            $('input[name=tipoVenta3]').val(Math.round(valor));
         }
     }
    if ( <?php echo $tipoVentas["3"]["operacionTipoVenta"]; ?>=="0") {
@@ -124,12 +126,12 @@ $(document).ready(function() {
         if ( <?php echo $tipoVentas["3"]["operacionTipoVenta"]; ?>=="2") {
             valor = ($('#idTipoVenta0').val() * ( <?php echo $tipoVentas["3"]["porcentajeTipoVenta"] / 100; ?>));
             valor = valor + parseInt($('#idTipoVenta0').val());
-            $('input[name=tipoVenta4]').val(valor);
+            $('input[name=tipoVenta4]').val(Math.round(valor));
 
         } else {
             valor = ($('#idTipoVenta0').val() * ( <?php echo $tipoVentas["3"]["porcentajeTipoVenta"] / 100; ?>));
             valor = parseInt($('#idTipoVenta0').val())-valor;
-            $('input[name=tipoVenta4]').val(valor);
+            $('input[name=tipoVenta4]').val(Math.round(valor));
         }
 
     }
@@ -140,12 +142,12 @@ $(document).ready(function() {
         if ( <?php echo $tipoVentas["4"]["operacionTipoVenta"]; ?>=="2") {
             valor = ($('#idTipoVenta0').val() * ( <?php echo $tipoVentas["4"]["porcentajeTipoVenta"] / 100; ?>));
             valor = valor + parseInt($('#idTipoVenta0').val());
-            $('input[name=tipoVenta5]').val(valor);
+            $('input[name=tipoVenta5]').val(Math.round(valor));
 
         } else {
             valor = ($('#idTipoVenta0').val() * ( <?php echo $tipoVentas["4"]["porcentajeTipoVenta"] / 100; ?>));
             valor = parseInt($('#idTipoVenta0').val())-valor;
-            $('input[name=tipoVenta5]').val(valor);
+            $('input[name=tipoVenta5]').val(Math.round(valor));
         }
     }
     if ( <?php echo $tipoVentas["5"]["operacionTipoVenta"]; ?>=="0") {
@@ -154,12 +156,12 @@ $(document).ready(function() {
         if ( <?php echo $tipoVentas["5"]["operacionTipoVenta"]; ?>=="2") {
             valor = ($('#idTipoVenta0').val() * ( <?php echo $tipoVentas["5"]["porcentajeTipoVenta"] / 100; ?>));
             valor = valor + parseInt($('#idTipoVenta0').val());
-            $('input[name=tipoVenta6]').val(valor);
+            $('input[name=tipoVenta6]').val(Math.round(valor));
 
         } else {
             valor = ($('#idTipoVenta0').val() * ( <?php echo $tipoVentas["5"]["porcentajeTipoVenta"] / 100; ?>));
             valor = parseInt($('#idTipoVenta0').val())-valor;
-            $('input[name=tipoVenta6]').val(valor);
+            $('input[name=tipoVenta6]').val(Math.round(valor));
         }
 
     }
