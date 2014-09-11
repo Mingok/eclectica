@@ -1,30 +1,46 @@
 // JavaScript Document
 var ordenar = '';
+var ordenar_prenda = '';
 $(document).ready(function() {
 
     // Llamando a la funcion de busqueda al
     // cargar la pagina
-    filtrar()
+    if ($("#frm_filtro_ventas").length) {
+        filtrarVentas();
+    } else {
+        filtrar();
+    }
 
-    var dates = $("#del, #al").datepicker({
-        yearRange: "-50",
-        defaultDate: "+1w",
-        changeMonth: true,
-        changeYear: true,
-        onSelect: function(selectedDate) {
-            var option = this.id == "del" ? "minDate" : "maxDate",
-                    instance = $(this).data("datepicker"),
-                    date = $.datepicker.parseDate(
-                            instance.settings.dateFormat ||
-                            $.datepicker._defaults.dateFormat,
-                            selectedDate, instance.settings);
-            dates.not(this).datepicker("option", option, date);
+    var dates = $("#fecDesde, #fecHasta").datepicker({
+        monthNames: [ "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", 
+                      "Septiembre", "Octubre", "Noviembre", "Diciembre"],
+        dayNamesMin: [ "Dom", "Lun", "Mar", "Mie", "Jue", "Vie", "Sab"],          
+        dateFormat: "dd/mm/yy",
+        onSelect: function(date){
+            if (this.id === "fecDesde") {
+                $("#fecHasta").datepicker("option","minDate",
+                $("#fecDesde").datepicker("getDate"));
+            }
+        },
+        beforeShow: function(input) {
+            var x = 10; //add offset
+            var y = 0; 
+            field = $(input);
+            left = field.position().left + x;
+            bottom = y;
+            setTimeout(function(){
+                $('#ui-datepicker-div').css({'top':'', 'bottom':bottom + 'px', 'left': left + 'px'});      
+            },1);                    
         }
     });
 
     // filtrar al darle click al boton
     $("#btnfiltrar").click(function() {
-        filtrar();
+        if ($("#frm_filtro_ventas").length) {
+            filtrarVentas();
+        } else {
+            filtrar();
+        }
     });
 
     // boton cancelar
@@ -40,18 +56,43 @@ $(document).ready(function() {
             $("#data th span").removeClass("desc").removeClass("asc")
             $(this).addClass("asc");
             ordenar = "&orderby=" + $(this).attr("title") + " asc"
+            ordenar_prenda = "&orderby=" + $(this).attr("title") + " asc"
         } else
         {
             $("#data th span").removeClass("desc").removeClass("asc")
             $(this).addClass("desc");
             ordenar = "&orderby=" + $(this).attr("title") + " desc"
+            ordenar_prenda = "&orderby=" + $(this).attr("title") + " desc"
         }
-        filtrar()
+        if ($("#frm_filtro_ventas").length) {
+            filtrarVentas();
+        }
+        if ($("#frm_filtro")) {
+            filtrar();     
+        }
     });
 });
 
-function filtrar()
-{
+function filtrarVentas() {
+    $.ajax({
+        data: $("#frm_filtro_ventas").serialize() + ordenar,
+        type: "POST",
+//        dataType: "json",
+        url: "ajaxInformeVentas.php?action=listar",
+        success: function(data) {
+            var html = '';
+            if (data.length > 0) {
+                html = data;
+            }
+            if (html.lenght == 0)
+                html = '<tr><td colspan="8" align="center">No se encontraron vendas.</td></tr>'
+            
+            $("#data tbody").html(html);
+        }
+    });
+}
+
+function filtrar() {
     $.ajax({
         data: $("#frm_filtro").serialize() + ordenar,
         type: "POST",

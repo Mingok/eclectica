@@ -46,6 +46,15 @@ Class persona {
 		$objManejoMySQL->consultar($strSql, $arrResultado);
 		return $arrResultado;
 	}
+        public function vendedoresDisponibles(){
+		require_once (__DIR__.'\..\..\base\manejoMySQL.php');
+		
+		$objManejoMySQL= new manejoMySQL();
+		$strSql="SELECT * FROM `persona` WHERE codigoVendedor IS NOT NULL";
+		$arrResultado=null;
+		$objManejoMySQL->consultar($strSql, $arrResultado);
+		return $arrResultado;
+	}
 	public function agregarNuevaPersona($arrPersona){
 		require_once (__DIR__.'\..\..\base\manejoMySQL.php');
 		$strValoresCampos = "";
