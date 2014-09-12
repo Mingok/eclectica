@@ -105,7 +105,7 @@ $tipoVentas = $tipoVentaList->tipoVentasDisponibles();
                                             </td>
                                             <td style="text-align: right;">
                                                 Cantidad :
-                                                <input type="number" title="Indresar Cantidad" style="width: 60px;" name="cantidadPrenda" min="0" max="20" value="0" class="form-control" />
+                                                <input type="number" title="Ingresar Cantidad" style="width: 60px;" name="cantidadPrenda" min="0" max="20" value="0" class="form-control" />
                                                 <br />
                                             </td>
                                         </tr>

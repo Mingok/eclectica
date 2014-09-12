@@ -10,7 +10,7 @@
     <div class="col-md-12">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <form action="JavaScript:agregarCampo();" method="post" id="formItemVenta">
+                <form action="JavaScript:agregarCampo();" method="post" id="formItemVenta`">
                     <table  style="width: 100%">
                         <tr>
                             <td style="text-align: left">
@@ -47,7 +47,7 @@
                         &nbsp;&nbsp;&nbsp;&nbsp;<label for="cantidadItemVenta">
                             Cantidad :
                         </label>
-                        <input type="number" title="Indresar Cantidad" name="cantidadItemVenta" id="cantidadItemVenta" style="width: 60px;" class="form-control" min="1" value="1" />
+                        <input type="number" title="Ingresar Cantidad" name="cantidadItemVenta" id="cantidadItemVenta" style="width: 60px;" class="form-control" min="1" value="1"/>
 
 
                         <label for="selecCondicionItem">
@@ -198,6 +198,7 @@
         minHeight: 400,
         closeEffect: 'elastic'
     });
+    $("#cantidadItemVenta").keypress(function(e) {e.preventDefault(); } );// alert (e.keyCode); if (e.keyCode == 32) {  } })
     $('.itemAVender').click(function() {
         $("#cantidadItemVenta").attr('max', $(this).data('cantidadprenda'));
         $('#codItemVenta').val('0');

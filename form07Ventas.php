@@ -52,7 +52,7 @@
             $("#cliente1").html(this.options[this.selectedIndex].text);
             $("#cliente1").show('Slow');
             $('#divCondicion').show();
-            alert($('#cuentaCorrienteCLiente').val());
+            
             $('#selecCliente').empty().attr("disabled", "disabled");
             var url = 'indexComprasCliente.php';
             var idCliente = $('#idClienteVenta').val();

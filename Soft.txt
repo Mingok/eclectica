@@ -1,0 +1,10 @@
+Prendas: (EMMA)
+    - Hacer que cuando se carga una prenda, aparezca un cartel como en caracteristicas. Hacer que se cierre con una cruz y no automaticamente.
+
+Venta:
+    - Ver de poder descontar la devolucion en una nueva venta. (EMMA)
+
+Extra:
+- Cambiar los nombres a los grupos de precios (Grupo 1, Grupo 2 ....).
+- Arreglar la parte de buscar prendas en Ventas y Devoluciones (SACAR/PONER TBODY).
+- Ver de cambiar el alert por un fancy para confirmar la venta.
