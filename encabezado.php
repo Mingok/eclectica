@@ -54,7 +54,7 @@ if (is_array($empresas)) {
                     </a>
                     <ul class="dropdown-menu">
                         <li><a href="./indexInformePrenda.php?pasar=<?php echo $_SESSION['pasar']; ?>">&nbsp;Existencias&nbsp;</a></li>
-                        <li><a href="./indexInformeVenta.php?pasar=<?php echo $_SESSION['pasar']; ?>"> &nbsp;Empleados&nbsp;</a></li>
+                        <li><a href="./indexInformeVenta.php?pasar=<?php echo $_SESSION['pasar']; ?>"> &nbsp;Ventas&nbsp;</a></li>
                        </ul>
                 </li>
                 <!--  	<li>

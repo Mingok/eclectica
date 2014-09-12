@@ -5,7 +5,7 @@
 </div>
 <script type="text/javascript">
     $(document).ready(function() {
-        $('#selecEmpleado, #selecTipoVenta').select2({
+        $('#selecEmpleado, #selecCliente').select2({
             placeholder: "Seleccionar",
             allowClear: true
         }); 

@@ -21,16 +21,6 @@ $(document).ready(function() {
                 $("#fecHasta").datepicker("option","minDate",
                 $("#fecDesde").datepicker("getDate"));
             }
-        },
-        beforeShow: function(input) {
-            var x = 10; //add offset
-            var y = 0; 
-            field = $(input);
-            left = field.position().left + x;
-            bottom = y;
-            setTimeout(function(){
-                $('#ui-datepicker-div').css({'top':'', 'bottom':bottom + 'px', 'left': left + 'px'});      
-            },1);                    
         }
     });
 
@@ -66,9 +56,8 @@ $(document).ready(function() {
         }
         if ($("#frm_filtro_ventas").length) {
             filtrarVentas();
-        }
-        if ($("#frm_filtro")) {
-            filtrar();     
+        } else {
+            filtrar();
         }
     });
 });
