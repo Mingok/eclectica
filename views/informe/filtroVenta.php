@@ -1,13 +1,14 @@
 <?php
 require_once 'classes/persona/persona.php';
 $personaList = new persona();
-$personas = $personaList->vendedoresDisponibles();
+$vendedores = $personaList->vendedoresDisponibles();
+$personas = $personaList->personasDisponibles();
 require_once 'classes/tipoVenta/tipoVenta.php';
 $tipoVentaList = new tipoVenta ();
 $tipoVentas = $tipoVentaList->tipoVentasDisponibles();
 ?>
 <h1>
-    Existencias
+    Ventas realizadas
 </h1>
 <form id="frm_filtro_ventas" method="post" action="">
     <div class="row">
@@ -16,17 +17,29 @@ $tipoVentas = $tipoVentaList->tipoVentasDisponibles();
                 <div class="panel-body">
                     <table style="width: 98%;">
                         <tr style="height: 40px;">
-                            <td style="text-align: right;width: 25%" colspan="2">
+                            <td style="text-align: right;width: 25%">
                                 <label>Empleado:</label>
                                 <select id="selecEmpleado" name="selecEmpleado" style="width:240px;" required>
                                     <option value="">Seleccione un Empleado</option>
                                     <?php
+                                    foreach ($vendedores as $vendedor) {
+
+                                        if (isset($vendedor)) {
+                                            echo "<option value=" . $vendedor["idPersona"] . " data-codigoVendedor='" . $vendedor["codigoVendedor"] . "' >" . $vendedor["apellidoPersona"] . " " . $vendedor["nombrePersona"] . "</option>";
+                                        }
+                                    }
+                                    ?>
+                                </select>
+                            </td>
+                            <td style="text-align: right;width: 25%">
+                                <label>Cliente:</label>
+                                <select id="selecCliente" name="selecCliente" style="width:240px;" required>
+                                    <option value="">Seleccione un Cliente</option>
+                                    <?php
                                     foreach ($personas as $persona) {
 
                                         if (isset($persona)) {
-                                            if (!($persona["codigoVendedor"] == null)) {
-                                                echo "<option value=" . $persona["idPersona"] . " data-codigoVendedor='" . $persona["codigoVendedor"] . "' >" . $persona["apellidoPersona"] . " " . $persona["nombrePersona"] . "</option>";
-                                            }
+                                            echo "<option value=" . $persona["idPersona"] . " data-codigoVendedor='" . $persona["codigoVendedor"] . "' >" . $persona["apellidoPersona"] . " " . $persona["nombrePersona"] . "</option>";
                                         }
                                     }
                                     ?>

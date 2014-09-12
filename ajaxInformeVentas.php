@@ -18,9 +18,15 @@ if ($_GET['action'] == 'listar') {
    
    
     // valores recibidos por POST
-    if (isset($_POST['selectEmpleado'])) {
-        if ($_POST['selectEmpleado'] !=''){    
-             $arrayFiltro[] = "idVendedor = " . $_POST['selectEmpleado'];
+    if (isset($_POST['selecEmpleado'])) {
+        if ($_POST['selecEmpleado'] !=''){    
+             $arrayFiltro[] = "idVendedor = " . $_POST['selecEmpleado'];
+        }      
+    }
+    
+    if (isset($_POST['selecCliente'])) {
+        if ($_POST['selecCliente'] !=''){    
+             $arrayFiltro[] = "idCliente = " . $_POST['selecCliente'];
         }      
     }
    
@@ -57,19 +63,32 @@ if ($_GET['action'] == 'listar') {
     if ($vorder != '') {
         $sql .= " ORDER BY " . $vorder;
     }
-
+//    echo "<pre>";
+//    var_dump($sql);
+//    echo "</pre>";
+//    exit;
     $objManejoMySQL->consultar($sql, $arrResultado);
     $str_final = '';
     if (!empty($arrResultado)) {
+        $precio_venta = 0;
+        $entrega = 0;
         foreach ($arrResultado as $registro) {
             $str_final .= '<tr>';
-            $str_final .= '<td>' . $registro['fechaVenta'] . '</td>';
+            $str_final .= '<td>' . date('d/m/Y H:i',strtotime($registro['fechaVenta'])) . ' hs</td>';
             $str_final .= '<td>' . $registro['detalleCliente'] . '</td>';
             $str_final .= '<td>' . $registro['precioVenta'] . '</td>';
             $str_final .= '<td>' . $registro['entregaCliente'] . '</td>';
             $str_final .= '<td>' . $registro['detalleVendedor'] . '</td>';
             $str_final .= '</tr>';
+            $precio_venta += intval($registro['precioVenta']);
+            $entrega += intval($registro['entregaCliente']);
         }
+        $str_final .= '<tr>';
+        $str_final .= '<td colspan="2"><b>TOTAL</b></td>';
+        $str_final .= '<td><b>' . $precio_venta . '</b></td>';
+        $str_final .= '<td><b>' . $entrega . '</b></td>';
+        $str_final .= '<td></td>';
+        $str_final .= '</tr>';
     }
 
     // convertimos el array de datos a formato json
