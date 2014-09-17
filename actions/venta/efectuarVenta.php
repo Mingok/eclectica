@@ -7,6 +7,7 @@ $idClienteVenta     = $_REQUEST['idClienteVenta'];
 $entrega            = $_REQUEST['entrega'];
 $totalCompra        = $_REQUEST['totalCompra'];
 $items_venta        = $_REQUEST['venta'];
+$condVenta          = $_REQUEST['condVenta'];
 
 $saldo = $entrega - $totalCompra;
 
@@ -20,6 +21,7 @@ $arrNuevaVenta['idCliente'] = $idClienteVenta;
 $arrNuevaVenta['idVendedor'] = $idVendedor;
 $arrNuevaVenta['precioVenta'] = $totalCompra;
 $arrNuevaVenta['entregaCliente'] = $entrega;
+$arrNuevaVenta['condicionVentaGeneral'] = $condVenta;
 $arrNuevaVenta['fechaVenta'] = date('Y-m-d h:i:s', time());
 $nueva_venta = $obj_venta->agregarNuevaVenta($arrNuevaVenta);
 

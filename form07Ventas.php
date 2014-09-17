@@ -71,6 +71,7 @@
             $("#selecCondicionItem").empty().attr("disabled", "disabled");
             if ($(this).val() != "") {
                 var dato = $(this).val();
+                $('#condVenta').val(dato);
                 $("#imgCondicionItem").show();
                 $.ajax({
                     type: "POST",

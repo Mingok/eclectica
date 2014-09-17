@@ -133,6 +133,7 @@
                                         <input type="hidden" id="idClienteVenta" name="idClienteVenta" />
                                         <input type="hidden" id="clienteVenta" name="clienteVenta" />
                                         <input type="hidden" id="clienteCC" name="clienteCC" />
+                                        <input type="hidden" id="condVenta" name="condVenta" />
                                         Ciente: <span id="cliente1" class="form-control" ></span>&nbsp;&nbsp;&nbsp;
                                         Entrega: <input type="text" placeholder="Ingrese" name="entrega" class="form-control" id="entrega" style="width: 100px">&nbsp;&nbsp;&nbsp;
                                         <input type="hidden" id="totalCompra" name="totalCompra" />
