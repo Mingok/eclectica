@@ -17,10 +17,17 @@ Class manejoMySQL {
 		$conexion = mysqli_connect($this->host,$this->username,$this->password,$this->database);
 		$result = null;
 		$objRs = mysqli_query($conexion,$strSql);
-                $arrResultado = null;
+                $arrResultado = array();
+        if (isset($objRs->num_rows)) {
+            while ($row = mysqli_fetch_assoc($objRs)) {
+                // do what you need.
+                $arrResultado[] = $row;
+            }
+        }
+       /*
                 if (isset($objRs->num_rows)) {
                     $arrResultado = mysqli_fetch_all($objRs,MYSQLI_ASSOC);
-                }
+                }*/
 		mysqli_close($conexion);
 	}
 }
