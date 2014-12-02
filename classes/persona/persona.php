@@ -1,7 +1,8 @@
 <?php
 Class persona {
 	public function eligePersona($id){
-		require_once (__DIR__.'\..\..\base\manejoMySQL.php');
+        $ds = DIRECTORY_SEPARATOR;
+        require_once (__DIR__ .  "{$ds}..{$ds}..{$ds}base{$ds}manejoMySQL.php");
 		
 		$objManejoMySQL= new manejoMySQL();
 		$strSql="SELECT * FROM `persona` where idPersona=".$id;
@@ -13,7 +14,8 @@ Class persona {
 		return $arrResultado;
 	}
         public function eligeUltimaPersona(){
-		require_once (__DIR__.'\..\..\base\manejoMySQL.php');
+        $ds = DIRECTORY_SEPARATOR;
+        require_once (__DIR__ .  "{$ds}..{$ds}..{$ds}base{$ds}manejoMySQL.php");
 		
 		$objManejoMySQL= new manejoMySQL();
 		$strSql="SELECT * FROM `persona` order by idPersona desc limit 1 ";
@@ -26,7 +28,7 @@ Class persona {
                 
 	}
         public function eligeVendedor($codVendedor){
-		require_once (__DIR__.'\..\..\base\manejoMySQL.php');
+		require_once (__DIR__.'/../../base/manejoMySQL.php');
 		
 		$objManejoMySQL= new manejoMySQL();
 		$strSql="SELECT * FROM `persona` where codigoVendedor='$codVendedor'";
@@ -37,8 +39,10 @@ Class persona {
                 }
 		return $arrResultado;
 	}
+
 	public function personasDisponibles(){
-		require_once (__DIR__.'\..\..\base\manejoMySQL.php');
+        $ds = DIRECTORY_SEPARATOR;
+        require_once (__DIR__ .  "{$ds}..{$ds}..{$ds}base{$ds}manejoMySQL.php");
 		
 		$objManejoMySQL= new manejoMySQL();
 		$strSql="SELECT * FROM `persona`";
@@ -46,8 +50,10 @@ Class persona {
 		$objManejoMySQL->consultar($strSql, $arrResultado);
 		return $arrResultado;
 	}
-        public function vendedoresDisponibles(){
-		require_once (__DIR__.'\..\..\base\manejoMySQL.php');
+
+    public function vendedoresDisponibles(){
+        $ds = DIRECTORY_SEPARATOR;
+        require_once (__DIR__ .  "{$ds}..{$ds}..{$ds}base{$ds}manejoMySQL.php");
 		
 		$objManejoMySQL= new manejoMySQL();
 		$strSql="SELECT * FROM `persona` WHERE codigoVendedor IS NOT NULL";
@@ -55,8 +61,10 @@ Class persona {
 		$objManejoMySQL->consultar($strSql, $arrResultado);
 		return $arrResultado;
 	}
+
 	public function agregarNuevaPersona($arrPersona){
-		require_once (__DIR__.'\..\..\base\manejoMySQL.php');
+        $ds = DIRECTORY_SEPARATOR;
+        require_once (__DIR__ .  "{$ds}..{$ds}..{$ds}base{$ds}manejoMySQL.php");
 		$strValoresCampos = "";
 		$strNombresCampos = "";
 		$objManejoMySQL = new manejoMySQL();
@@ -81,7 +89,7 @@ Class persona {
 	}
 	
 /*	public function eliminarcliente($objcliente){
-		require_once (__DIR__.'\..\..\base\manejoMySQL.php');
+		require_once (__DIR__.'/../../base/manejoMySQL.php');
 		
 		$objManejoMySQL = new manejoMySQL();
 		$lngIdPersona = $objcliente['idPersona'];
@@ -92,7 +100,7 @@ Class persona {
 	}
 */
 /*public function camposModificarcliente($id){
-		require_once (__DIR__.'\..\..\base\manejoMySQL.php');
+		require_once (__DIR__.'/../../base/manejoMySQL.php');
 		$objManejoMySQL = new manejoMySQL();
 		$strSql = "SELECT * FROM `cliente` WHERE `idPersona`=$id";
 		$arrResultado = null;
@@ -102,7 +110,8 @@ Class persona {
 		
 	}*/	
 	public function modificarPersona($arrPersona){
-		require_once (__DIR__.'\..\..\base\manejoMySQL.php');
+        $ds = DIRECTORY_SEPARATOR;
+        require_once (__DIR__ .  "{$ds}..{$ds}..{$ds}base{$ds}manejoMySQL.php");
 		$strValoresCampos = "";
 		$strNombresCampos = "";
 		$strUpdate = "";

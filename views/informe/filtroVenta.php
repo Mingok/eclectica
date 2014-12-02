@@ -46,11 +46,12 @@ $tipoVentas = $tipoVentaList->tipoVentasDisponibles();
                                 </select>
                             </td>
                             <td style="text-align: center;width: 25%" rowspan="3">
-                                <button type="button" id="btnfiltrar" style="width: 190px;" class="btn btn-sm btn-success" />Filtrar</button>
-
+                                <button type="button" id="btnfiltrar" style="width: 90px;" class="btn btn-sm btn-success" />Filtrar</button>
+                                <button id="btncancel" style="width: 90px;" class="btn btn-sm btn-danger"/> Todos</button>
                                 <br />
                                 <br />
-                                <button id="btncancel" style="width: 190px;" class="btn btn-sm btn-danger"/> Todos</button>
+                                <button type="button" id="btnPdfVentas" style="width:90px;" class="btn btn-sm btn-warning" />Exportar Pdf</button>
+                                <button type="button" id="btnXlsVentas" style="width:90px;" class="btn btn-sm btn-warning" />Exportar Excel</button>
 
                             </td>
                         </tr>

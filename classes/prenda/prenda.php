@@ -3,7 +3,8 @@
 class prenda {
 
     public function prendasDisponibles() {
-        require_once (__DIR__ . '\..\..\base\manejoMySQL.php');
+        $ds = DIRECTORY_SEPARATOR;
+        require_once (__DIR__ .  "{$ds}..{$ds}..{$ds}base{$ds}manejoMySQL.php");
 
         $objManejoMySQL = new manejoMySQL ();
         $strSql = "SELECT prenda.*, proveedor.nombreProveedor, color.detalleColor , estampado.detalleEstampado, tela.detalleTela,
@@ -37,7 +38,7 @@ class prenda {
     }
 
     /*   	public function ordenarTablaPrenda($prendaList){
-      require_once (__DIR__.'\..\..\base\manejoMySQL.php');
+      require_once (__DIR__.'/../../base/manejoMySQL.php');
       foreach ($prendaList as $key => $row) {
       $aux[$key] = $row['cantidadPrenda'];
       }
@@ -45,7 +46,8 @@ class prenda {
       return $prendaList;
       } */
     public function eligePrendaDesdeCodigo($lngCodigoPrenda) {
-        require_once (__DIR__.'\..\..\base\manejoMySQL.php');
+        $ds = DIRECTORY_SEPARATOR;
+        require_once (__DIR__ .  "{$ds}..{$ds}..{$ds}base{$ds}manejoMySQL.php");
 		
         $objManejoMySQL= new manejoMySQL();
         $strSql="SELECT * FROM `prenda` where codigoPrenda=$lngCodigoPrenda";
@@ -58,7 +60,8 @@ class prenda {
     }
     
     public function eligePrenda($lngIdPrenda) {
-        require_once (__DIR__.'\..\..\base\manejoMySQL.php');
+        $ds = DIRECTORY_SEPARATOR;
+        require_once (__DIR__ .  "{$ds}..{$ds}..{$ds}base{$ds}manejoMySQL.php");
 		
         $objManejoMySQL= new manejoMySQL();
         $strSql="SELECT * FROM `prenda` where idPrenda=$lngIdPrenda";
@@ -71,7 +74,8 @@ class prenda {
     }
     
     public function agregarNuevoPrenda($arrPrenda) {
-        require_once (__DIR__ . '\..\..\base\manejoMySQL.php');
+        $ds = DIRECTORY_SEPARATOR;
+        require_once (__DIR__ .  "{$ds}..{$ds}..{$ds}base{$ds}manejoMySQL.php");
         $strValoresCampos = "";
         $strNombresCampos = "";
         $objManejoMySQL = new manejoMySQL ();
@@ -98,7 +102,8 @@ class prenda {
     }
 
     public function agregarNuevoPrecioPrenda($arrPrecioPrenda, $id) {
-        require_once (__DIR__ . '\..\..\base\manejoMySQL.php');
+        $ds = DIRECTORY_SEPARATOR;
+        require_once (__DIR__ .  "{$ds}..{$ds}..{$ds}base{$ds}manejoMySQL.php");
         $strValoresCampos = "";
         $strNombresCampos = "";
         $objManejoMySQL = new manejoMySQL ();
@@ -123,7 +128,7 @@ class prenda {
     }
 
     /* 	public function eliminarColor($objColor){
-      require_once (__DIR__.'\..\..\base\manejoMySQL.php');
+      require_once (__DIR__.'/../../base/manejoMySQL.php');
 
       $objManejoMySQL = new manejoMySQL();
       $lngIdColor = $objColor['idColor'];
@@ -135,7 +140,8 @@ class prenda {
      */
 
     public function modificarPrenda($arrPrenda) {
-        require_once (__DIR__ . '\..\..\base\manejoMySQL.php');
+        $ds = DIRECTORY_SEPARATOR;
+        require_once (__DIR__ .  "{$ds}..{$ds}..{$ds}base{$ds}manejoMySQL.php");
         $strValoresCampos = "";
         $strNombresCampos = "";
         $strUpdate = "";
@@ -165,7 +171,8 @@ class prenda {
     }
 
     public function modificarPrecioPrenda($arrPrecioPrenda, $id) {
-        require_once (__DIR__ . '\..\..\base\manejoMySQL.php');
+        $ds = DIRECTORY_SEPARATOR;
+        require_once (__DIR__ .  "{$ds}..{$ds}..{$ds}base{$ds}manejoMySQL.php");
         $strSql = "UPDATE `tipoventa_prenda` SET `valor`=" . floatval($arrPrecioPrenda ['tipoVenta1']) . " WHERE `idTipoVenta`=1 AND`idPrenda`=" . $id;
         $objManejoMySQL = new manejoMySQL ();
         $arrResultado = null;
@@ -200,7 +207,8 @@ class prenda {
     }
 
     public function preciosPrenda($idPrenda) {
-        require_once (__DIR__ . '\..\..\base\manejoMySQL.php');
+        $ds = DIRECTORY_SEPARATOR;
+        require_once (__DIR__ .  "{$ds}..{$ds}..{$ds}base{$ds}manejoMySQL.php");
         $strSql = "
 		SELECT * FROM `tipoventa_prenda` `tvp`
 		JOIN  `tipoVenta` as tv ON tv.idTipoVenta = tvp.idTipoVenta 
@@ -213,7 +221,8 @@ class prenda {
     }
     
     public function devolverPrenda($lngIdPrenda) {
-        require_once (__DIR__ . '\..\..\base\manejoMySQL.php');
+        $ds = DIRECTORY_SEPARATOR;
+        require_once (__DIR__ .  "{$ds}..{$ds}..{$ds}base{$ds}manejoMySQL.php");
         $strSql = "UPDATE `prenda` SET `cantidadPrenda` = (`cantidadPrenda`+1 ) WHERE `idPrenda`=$lngIdPrenda";
         $objManejoMySQL = new manejoMySQL ();
         $arrResultado = null;

@@ -1,7 +1,8 @@
 <?php
 Class marca {
 	public function marcasDisponibles(){
-		require_once (__DIR__.'\..\..\base\manejoMySQL.php');
+        $ds = DIRECTORY_SEPARATOR;
+        require_once (__DIR__ .  "{$ds}..{$ds}..{$ds}base{$ds}manejoMySQL.php");
 		
 		$objManejoMySQL= new manejoMySQL();
 		$strSql="	SELECT * FROM `marca`
@@ -10,9 +11,24 @@ Class marca {
 		$objManejoMySQL->consultar($strSql, $arrResultado);
 		return $arrResultado;
 	}
+
+    public function eligeMarca($id){
+        $ds = DIRECTORY_SEPARATOR;
+        require_once (__DIR__ .  "{$ds}..{$ds}..{$ds}base{$ds}manejoMySQL.php");
+
+        $objManejoMySQL= new manejoMySQL();
+        $strSql="SELECT * FROM `marca` where idMarca=".$id;
+        $arrResultado=null;
+        $objManejoMySQL->consultar($strSql, $arrResultado);
+        if (!empty($arrResultado)) {
+            $arrResultado = current($arrResultado);
+        }
+        return $arrResultado;
+    }
 	
 	public function agregarNuevoMarca($arrMarca){
-		require_once (__DIR__.'\..\..\base\manejoMySQL.php');
+        $ds = DIRECTORY_SEPARATOR;
+        require_once (__DIR__ .  "{$ds}..{$ds}..{$ds}base{$ds}manejoMySQL.php");
 		$strValoresCampos = "";
 		$strNombresCampos = "";
 		$objManejoMySQL = new manejoMySQL();
@@ -37,7 +53,7 @@ Class marca {
 	}
 	
 /* public function eliminarMarca($objMarca){
-		require_once (__DIR__.'\..\..\base\manejoMySQL.php');
+		require_once (__DIR__.'/../../base/manejoMySQL.php');
 		
 		$objManejoMySQL = new manejoMySQL();
 		$lngIdMarca = $objMarca['idMarca'];
@@ -48,7 +64,8 @@ Class marca {
 	}*/
 	
 	public function modificarMarca($arrMarca){
-		require_once (__DIR__.'\..\..\base\manejoMySQL.php');
+        $ds = DIRECTORY_SEPARATOR;
+        require_once (__DIR__ .  "{$ds}..{$ds}..{$ds}base{$ds}manejoMySQL.php");
 		$strValoresCampos = "";
 		$strNombresCampos = "";
 		$strUpdate = "";

@@ -1,7 +1,8 @@
 <?php
 
 function getCondicion() {
-    require_once (__DIR__ . '\..\..\base\manejoMySQL.php');
+    $ds = DIRECTORY_SEPARATOR;
+    require_once (__DIR__ . "{$ds}..{$ds}..{$ds}base{$ds}manejoMySQL.php");
     $objManejoMySQL = new manejoMySQL();
     $strSql = "SELECT * FROM tipoventa WHERE grupoTipoVenta='" . $_POST["grupoTipoVenta"] . "'";
 

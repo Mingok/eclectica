@@ -30,14 +30,14 @@ define('EMPLEADOS_SCRIPTS_PATH', 'http://localhost/eclectica/js/');
     <table class="tablaGral">
         <tr>
             <td>
-                <?php include_once './encabezado.php'; ?>
+                <?php include_once 'encabezado.php'; ?>
             </td>
         </tr>
         <tr><td><br /><br /><br /><br /></td></tr>
         <tr>
             <td>
-               <?php 
-                include_once './form02Caracteristicas.php';} ?>
+            <?php
+                include_once './form02caracteristicas.php';} ?>
             </td>
         </tr>
     </table>

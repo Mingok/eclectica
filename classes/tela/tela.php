@@ -1,7 +1,8 @@
 <?php
 Class tela {
 	public function telasDisponibles(){
-		require_once (__DIR__.'\..\..\base\manejoMySQL.php');
+        $ds = DIRECTORY_SEPARATOR;
+        require_once (__DIR__ .  "{$ds}..{$ds}..{$ds}base{$ds}manejoMySQL.php");
 		
 		$objManejoMySQL= new manejoMySQL();
 		$strSql="	SELECT * FROM `tela`
@@ -10,9 +11,24 @@ Class tela {
 		$objManejoMySQL->consultar($strSql, $arrResultado);
 		return $arrResultado;
 	}
+
+    public function eligeTela($id){
+        $ds = DIRECTORY_SEPARATOR;
+        require_once (__DIR__ .  "{$ds}..{$ds}..{$ds}base{$ds}manejoMySQL.php");
+
+        $objManejoMySQL= new manejoMySQL();
+        $strSql="SELECT * FROM `tela` where idTela=".$id;
+        $arrResultado=null;
+        $objManejoMySQL->consultar($strSql, $arrResultado);
+        if (!empty($arrResultado)) {
+            $arrResultado = current($arrResultado);
+        }
+        return $arrResultado;
+    }
 	
 	public function agregarNuevoTela($arrTela){
-		require_once (__DIR__.'\..\..\base\manejoMySQL.php');
+        $ds = DIRECTORY_SEPARATOR;
+        require_once (__DIR__ .  "{$ds}..{$ds}..{$ds}base{$ds}manejoMySQL.php");
 		$strValoresCampos = "";
 		$strNombresCampos = "";
 		$objManejoMySQL = new manejoMySQL();
@@ -37,7 +53,7 @@ Class tela {
 	}
 	
 /* public function eliminarTela($objTela){
-		require_once (__DIR__.'\..\..\base\manejoMySQL.php');
+		require_once (__DIR__.'/../../base/manejoMySQL.php');
 		
 		$objManejoMySQL = new manejoMySQL();
 		$lngIdTela = $objTela['idTela'];
@@ -48,7 +64,8 @@ Class tela {
 	}*/
 	
 	public function modificarTela($arrTela){
-		require_once (__DIR__.'\..\..\base\manejoMySQL.php');
+        $ds = DIRECTORY_SEPARATOR;
+        require_once (__DIR__ .  "{$ds}..{$ds}..{$ds}base{$ds}manejoMySQL.php");
 		$strValoresCampos = "";
 		$strNombresCampos = "";
 		$strUpdate = "";

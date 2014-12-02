@@ -3,7 +3,8 @@
 Class venta {
 
     public function ventasDisponibles() {
-        require_once (__DIR__ . '\..\..\base\manejoMySQL.php');
+        $ds = DIRECTORY_SEPARATOR;
+        require_once (__DIR__ .  "{$ds}..{$ds}..{$ds}base{$ds}manejoMySQL.php");
 
         $objManejoMySQL = new manejoMySQL();
         $strSql = "	SELECT * FROM `venta`
@@ -13,7 +14,8 @@ Class venta {
         return $arrResultado;
     }
     public function movimientosCliente($lngIdCliente,$lngIdPrenda = NULL) {
-        require_once (__DIR__ . '\..\..\base\manejoMySQL.php');
+        $ds = DIRECTORY_SEPARATOR;
+        require_once (__DIR__ .  "{$ds}..{$ds}..{$ds}base{$ds}manejoMySQL.php");
 
         $objManejoMySQL = new manejoMySQL();
         $strSql = " SELECT * FROM (
@@ -47,7 +49,8 @@ Class venta {
     }
 
     public function agregarNuevaVenta($arrVenta) {
-        require_once (__DIR__ . '\..\..\base\manejoMySQL.php');
+        $ds = DIRECTORY_SEPARATOR;
+        require_once (__DIR__ .  "{$ds}..{$ds}..{$ds}base{$ds}manejoMySQL.php");
         $strValoresCampos = "";
         $strNombresCampos = "";
         $objManejoMySQL = new manejoMySQL();
@@ -72,7 +75,8 @@ Class venta {
     }
     
     public function obtenerUltimaVenta() {
-        require_once (__DIR__.'\..\..\base\manejoMySQL.php');
+        $ds = DIRECTORY_SEPARATOR;
+        require_once (__DIR__ .  "{$ds}..{$ds}..{$ds}base{$ds}manejoMySQL.php");
 		
         $objManejoMySQL= new manejoMySQL();
         $strSql="SELECT * FROM `venta` ORDER BY `idVenta` DESC LIMIT 1";
@@ -83,8 +87,10 @@ Class venta {
         }
         return $arrResultado;
     }
+
     public function obtenerEstaVenta($idMiVenta){
-        require_once (__DIR__.'\..\..\base\manejoMySQL.php');
+        $ds = DIRECTORY_SEPARATOR;
+        require_once (__DIR__ .  "{$ds}..{$ds}..{$ds}base{$ds}manejoMySQL.php");
 		
         $objManejoMySQL= new manejoMySQL();
         $strSql="SELECT * FROM `venta` WHERE idVenta=".$idMiVenta;
@@ -95,8 +101,10 @@ Class venta {
         }
         return $arrResultado;
     }
+
     public function eliminarVenta($objVenta) {
-        require_once (__DIR__ . '\..\..\base\manejoMySQL.php');
+        $ds = DIRECTORY_SEPARATOR;
+        require_once (__DIR__ .  "{$ds}..{$ds}..{$ds}base{$ds}manejoMySQL.php");
 
         $objManejoMySQL = new manejoMySQL();
         $lngIdVenta = $objVenta['idVenta'];
@@ -107,7 +115,8 @@ Class venta {
     }
 
     public function modificarVenta($arrVenta) {
-        require_once (__DIR__ . '\..\..\base\manejoMySQL.php');
+        $ds = DIRECTORY_SEPARATOR;
+        require_once (__DIR__ .  "{$ds}..{$ds}..{$ds}base{$ds}manejoMySQL.php");
         $strValoresCampos = "";
         $strNombresCampos = "";
         $strUpdate = "";
@@ -137,7 +146,8 @@ Class venta {
     }
     
     public function marcarVentaCambio($lngIdVenta, $lngIdPrenda) {
-        require_once (__DIR__ . '\..\..\base\manejoMySQL.php');
+        $ds = DIRECTORY_SEPARATOR;
+        require_once (__DIR__ .  "{$ds}..{$ds}..{$ds}base{$ds}manejoMySQL.php");
         $objManejoMySQL = new manejoMySQL();
         $strSql = "UPDATE `venta` SET estado = 'C'
 					WHERE `idVenta`=$lngIdVenta";
@@ -162,7 +172,8 @@ Class venta {
     }
     
     public function precioVendidoPrenda($lngIdVenta, $lngIdPrenda) {
-        require_once (__DIR__.'\..\..\base\manejoMySQL.php');
+        $ds = DIRECTORY_SEPARATOR;
+        require_once (__DIR__ .  "{$ds}..{$ds}..{$ds}base{$ds}manejoMySQL.php");
 		
         $objManejoMySQL= new manejoMySQL();
         $strSql = "SELECT `precioVendido` FROM `venta_renglon` WHERE `idVenta`=$lngIdVenta AND `idPrenda`=$lngIdPrenda";

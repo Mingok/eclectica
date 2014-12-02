@@ -1,9 +1,10 @@
 <?php session_start();
+$ds = DIRECTORY_SEPARATOR;
 define('EMPLEADOS_STYLE_PATH', 'http://localhost/eclectica/css/');
 define('EMPLEADOS_SCRIPTS_PATH', 'http://localhost/eclectica/js/');
 $_SESSION['pasar']= "0";
 if(!isset($_SESSION['backuped'])) {
-    include_once (__DIR__.'\\base\\backup_db.php');
+    include_once (__DIR__. $ds . 'base' . $ds .'backup_db.php');
     $_SESSION['backuped'] = TRUE;
 }
 ?>

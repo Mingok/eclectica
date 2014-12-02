@@ -33,6 +33,22 @@ $(document).ready(function() {
         }
     });
 
+    $("#btnPdfExistencias").click(function() {
+        exportarArchivoExistencias('pdf');
+    });
+
+    $("#btnXlsExistencias").click(function() {
+        exportarArchivoExistencias('xls');
+    });
+
+    $("#btnPdfVentas").click(function() {
+        exportarArchivoVentas('pdf');
+    });
+
+    $("#btnXlsVentas").click(function() {
+        exportarArchivoVentas('xls');
+    });
+
     // boton cancelar
     $("#btncancel").click(function() {
         location.reload();
@@ -79,6 +95,16 @@ function filtrarVentas() {
             $("#data tbody").html(html);
         }
     });
+}
+
+function exportarArchivoExistencias(tipo) {
+    var informeUrl = "http://localhost/eclectica/informe/InformePrenda.php?"+$('#frm_filtro').serialize() + '&type=' + tipo;
+    window.open(informeUrl);
+}
+
+function exportarArchivoVentas(tipo) {
+    var informeUrl = "http://localhost/eclectica/informe/InformeVentas.php?"+$('#frm_filtro_ventas').serialize() + '&type=' + tipo;
+    window.open(informeUrl);
 }
 
 function filtrar() {

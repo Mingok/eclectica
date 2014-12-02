@@ -1,7 +1,8 @@
 <?php
 Class talle {
 	public function tallesDisponibles(){
-		require_once (__DIR__.'\..\..\base\manejoMySQL.php');
+        $ds = DIRECTORY_SEPARATOR;
+        require_once (__DIR__ .  "{$ds}..{$ds}..{$ds}base{$ds}manejoMySQL.php");
 		
 		$objManejoMySQL= new manejoMySQL();
 		$strSql="	SELECT * FROM `talle`
@@ -11,9 +12,24 @@ Class talle {
 		$objManejoMySQL->consultar($strSql, $arrResultado);
 		return $arrResultado;
 	}
+
+    public function eligeTalle($id){
+        $ds = DIRECTORY_SEPARATOR;
+        require_once (__DIR__ .  "{$ds}..{$ds}..{$ds}base{$ds}manejoMySQL.php");
+
+        $objManejoMySQL= new manejoMySQL();
+        $strSql="SELECT * FROM `talle` where idTalle=".$id;
+        $arrResultado=null;
+        $objManejoMySQL->consultar($strSql, $arrResultado);
+        if (!empty($arrResultado)) {
+            $arrResultado = current($arrResultado);
+        }
+        return $arrResultado;
+    }
 	
 	public function agregarNuevoTalle($arrTalle){
-		require_once (__DIR__.'\..\..\base\manejoMySQL.php');
+        $ds = DIRECTORY_SEPARATOR;
+        require_once (__DIR__ .  "{$ds}..{$ds}..{$ds}base{$ds}manejoMySQL.php");
 		$strValoresCampos = "";
 		$strNombresCampos = "";
 		$objManejoMySQL = new manejoMySQL();
@@ -38,7 +54,7 @@ Class talle {
 	}
 	
 /* public function eliminarTalle($objTalle){
-		require_once (__DIR__.'\..\..\base\manejoMySQL.php');
+		require_once (__DIR__.'/../../base/manejoMySQL.php');
 		
 		$objManejoMySQL = new manejoMySQL();
 		$lngIdTalle = $objTalle['idTalle'];
@@ -49,7 +65,8 @@ Class talle {
 	}*/
 	
 	public function modificarTalle($arrTalle){
-		require_once (__DIR__.'\..\..\base\manejoMySQL.php');
+        $ds = DIRECTORY_SEPARATOR;
+        require_once (__DIR__ .  "{$ds}..{$ds}..{$ds}base{$ds}manejoMySQL.php");
 		$strValoresCampos = "";
 		$strNombresCampos = "";
 		$strUpdate = "";

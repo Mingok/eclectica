@@ -1,7 +1,8 @@
 <?php
 
 if ($_GET['action'] == 'listar') {
-    require_once (__DIR__ . '\base\manejoMySQL.php');
+    $ds = DIRECTORY_SEPARATOR;
+    require_once (__DIR__ . "{$ds}base{$ds}manejoMySQL.php");
 
     $objManejoMySQL = new manejoMySQL ();
     $sql = "SELECT * FROM (

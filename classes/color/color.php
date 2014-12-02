@@ -3,7 +3,8 @@
 Class color {
 
     public function coloresDisponibles() {
-        require_once (__DIR__ . '\..\..\base\manejoMySQL.php');
+        $ds = DIRECTORY_SEPARATOR;
+        require_once (__DIR__ .  "{$ds}..{$ds}..{$ds}base{$ds}manejoMySQL.php");
 
         $objManejoMySQL = new manejoMySQL();
         $strSql = "	SELECT * FROM `color`
@@ -13,8 +14,23 @@ Class color {
         return $arrResultado;
     }
 
+    public function eligeColor($id){
+        $ds = DIRECTORY_SEPARATOR;
+        require_once (__DIR__ .  "{$ds}..{$ds}..{$ds}base{$ds}manejoMySQL.php");
+
+        $objManejoMySQL= new manejoMySQL();
+        $strSql="SELECT * FROM `color` where idColor=".$id;
+        $arrResultado=null;
+        $objManejoMySQL->consultar($strSql, $arrResultado);
+        if (!empty($arrResultado)) {
+            $arrResultado = current($arrResultado);
+        }
+        return $arrResultado;
+    }
+
     public function agregarNuevoColor($arrColor) {
-        require_once (__DIR__ . '\..\..\base\manejoMySQL.php');
+        $ds = DIRECTORY_SEPARATOR;
+        require_once (__DIR__ .  "{$ds}..{$ds}..{$ds}base{$ds}manejoMySQL.php");
         $strValoresCampos = "";
         $strNombresCampos = "";
         $objManejoMySQL = new manejoMySQL();
@@ -39,7 +55,8 @@ Class color {
     }
 
     public function eliminarColor($objColor) {
-        require_once (__DIR__ . '\..\..\base\manejoMySQL.php');
+        $ds = DIRECTORY_SEPARATOR;
+        require_once (__DIR__ .  "{$ds}..{$ds}..{$ds}base{$ds}manejoMySQL.php");
 
         $objManejoMySQL = new manejoMySQL();
         $lngIdColor = $objColor['idColor'];
@@ -50,7 +67,8 @@ Class color {
     }
 
     public function modificarColor($arrColor) {
-        require_once (__DIR__ . '\..\..\base\manejoMySQL.php');
+        $ds = DIRECTORY_SEPARATOR;
+        require_once (__DIR__ .  "{$ds}..{$ds}..{$ds}base{$ds}manejoMySQL.php");
         $strValoresCampos = "";
         $strNombresCampos = "";
         $strUpdate = "";

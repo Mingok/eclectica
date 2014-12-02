@@ -1,7 +1,8 @@
 <?php
 Class proveedor {
 	public function proveedoresDisponibles(){
-		require_once (__DIR__.'\..\..\base\manejoMySQL.php');
+        $ds = DIRECTORY_SEPARATOR;
+        require_once (__DIR__ .  "{$ds}..{$ds}..{$ds}base{$ds}manejoMySQL.php");
 		
 		$objManejoMySQL= new manejoMySQL();
 		$strSql="	SELECT * FROM `proveedor`
@@ -10,9 +11,25 @@ Class proveedor {
 		$objManejoMySQL->consultar($strSql, $arrResultado);
 		return $arrResultado;
 	}
+
+    public function eligeProveedor($id){
+        $ds = DIRECTORY_SEPARATOR;
+        require_once (__DIR__ .  "{$ds}..{$ds}..{$ds}base{$ds}manejoMySQL.php");
+
+        $objManejoMySQL= new manejoMySQL();
+        $strSql="SELECT * FROM `proveedor` where idProveedor=".$id;
+        $arrResultado=null;
+        $objManejoMySQL->consultar($strSql, $arrResultado);
+
+        if (!empty($arrResultado)) {
+            $arrResultado = current($arrResultado);
+        }
+        return $arrResultado;
+    }
 	
 	public function agregarNuevoProveedor($arrProveedor){
-		require_once (__DIR__.'\..\..\base\manejoMySQL.php');
+        $ds = DIRECTORY_SEPARATOR;
+        require_once (__DIR__ .  "{$ds}..{$ds}..{$ds}base{$ds}manejoMySQL.php");
 		$strValoresCampos = "";
 		$strNombresCampos = "";
 		$objManejoMySQL = new manejoMySQL();
@@ -37,7 +54,7 @@ Class proveedor {
 	}
 	
 /*	public function eliminarProveedor($objProveedor){
-		require_once (__DIR__.'\..\..\base\manejoMySQL.php');
+		require_once (__DIR__.'/../../base/manejoMySQL.php');
 		
 		$objManejoMySQL = new manejoMySQL();
 		$lngIdProveedor = $objProveedor['idProveedor'];
@@ -48,7 +65,8 @@ Class proveedor {
 	}
 */	
 	public function modificarProveedor($arrProveedor){
-		require_once (__DIR__.'\..\..\base\manejoMySQL.php');
+        $ds = DIRECTORY_SEPARATOR;
+        require_once (__DIR__ .  "{$ds}..{$ds}..{$ds}base{$ds}manejoMySQL.php");
 		$strValoresCampos = "";
 		$strNombresCampos = "";
 		$strUpdate = "";
@@ -78,7 +96,8 @@ Class proveedor {
 	}
 
 public function camposModificarProveedor($id){
-		require_once (__DIR__.'\..\..\base\manejoMySQL.php');
+        $ds = DIRECTORY_SEPARATOR;
+        require_once (__DIR__ .  "{$ds}..{$ds}..{$ds}base{$ds}manejoMySQL.php");
 		$objManejoMySQL = new manejoMySQL();
 		$strSql = "SELECT * FROM `proveedor` WHERE `idProveedor`=$id";
 		$arrResultado = null;

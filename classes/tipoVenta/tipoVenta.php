@@ -1,18 +1,20 @@
 <?php
 Class tipoVenta {
 	public function tipoVentasDisponibles(){
-		require_once (__DIR__.'\..\..\base\manejoMySQL.php');
+        $ds = DIRECTORY_SEPARATOR;
+        require_once (__DIR__ .  "{$ds}..{$ds}..{$ds}base{$ds}manejoMySQL.php");
 		
 		$objManejoMySQL= new manejoMySQL();
 		$strSql="	SELECT * FROM `tipoVenta`
 					ORDER BY `idTipoVenta` ASC";
-		$arrResultado=null;
+        $arrResultado=null;
 		$objManejoMySQL->consultar($strSql, $arrResultado);
 		return $arrResultado;
 	}
 	
 	public function tipoVentasFiltro($filtro){
-		require_once (__DIR__.'\..\..\base\manejoMySQL.php');
+        $ds = DIRECTORY_SEPARATOR;
+        require_once (__DIR__ .  "{$ds}..{$ds}..{$ds}base{$ds}manejoMySQL.php");
 		
 		$objManejoMySQL= new manejoMySQL();
 		$strSql="	SELECT * FROM `tipoVenta` WHERE grupoTipoVenta=".$filtro." ORDER BY `idTipoVenta` ASC";
@@ -22,7 +24,8 @@ Class tipoVenta {
 	}
 	
 	public function modificarTipoVenta($arrTipoVenta){
-		require_once (__DIR__.'\..\..\base\manejoMySQL.php');
+        $ds = DIRECTORY_SEPARATOR;
+        require_once (__DIR__ .  "{$ds}..{$ds}..{$ds}base{$ds}manejoMySQL.php");
 		$strValoresCampos = "";
 		$strNombresCampos = "";
 		$strUpdate = "";

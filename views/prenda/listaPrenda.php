@@ -139,7 +139,7 @@ $tipoVentas = $tipoVentaList->tipoVentasDisponibles();
                                                             <?php echo ucfirst(strtolower($prenda ['detalleEstacion'])); ?>
                                                         </td>
                                                         <?php
-                                                        if ($prenda ['cantidadPrenda'] == '0') {
+                                                        if (isset($prenda['cantidadPrenda']) && ($prenda['cantidadPrenda'] == '0')) {
                                                             echo "<td style='background-color: red; font-weight: bolder;text-align: center;'>";
                                                         } else {
                                                             echo "<td style='text-align: center;' >";

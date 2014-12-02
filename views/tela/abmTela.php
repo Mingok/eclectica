@@ -1,4 +1,4 @@
-<?php 
+<?php
     require_once 'classes/tela/tela.php';
     $telaList = new tela();
     $telas = $telaList->telasDisponibles();
