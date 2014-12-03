@@ -24,10 +24,10 @@ Class manejoMySQL {
                 $arrResultado[] = $row;
             }
         }
-       /*
-                if (isset($objRs->num_rows)) {
-                    $arrResultado = mysqli_fetch_all($objRs,MYSQLI_ASSOC);
-                }*/
+       
+//                if (isset($objRs->num_rows)) {
+//                    $arrResultado = mysqli_fetch_all($objRs,MYSQLI_ASSOC);
+//                }
 		mysqli_close($conexion);
 	}
 }

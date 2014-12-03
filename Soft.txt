@@ -1,10 +1,15 @@
-Prendas: (EMMA)
-    - Hacer que cuando se carga una prenda, aparezca un cartel como en caracteristicas. Hacer que se cierre con una cruz y no automaticamente.
+ver mensajes de validacion de clinetes y empleados
 
-Venta:
-    - Ver de poder descontar la devolucion en una nueva venta. (EMMA)
+ver caracteristicas Condicion venta ver ccs
+1
+ocultar/mostrar el renglon de la prenda si esta marcada para vender y si es eliminada de los renglones
+
+caracterisitcas cambiar los aler de exito por color verde
+
+
 
 Extra:
 - Cambiar los nombres a los grupos de precios (Grupo 1, Grupo 2 ....).
 - Arreglar la parte de buscar prendas en Ventas y Devoluciones (SACAR/PONER TBODY).
 - Ver de cambiar el alert por un fancy para confirmar la venta.
+

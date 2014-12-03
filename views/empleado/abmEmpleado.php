@@ -26,7 +26,7 @@
                             <label for="celuPersona"  style="width: 120px;">
                                 Celular:
                             </label>
-                            <input type="text" id="celuPersona" name="celuPersona"  style="width: 120px;" title="Ingrese Celu" placeholder="Ingrese"  class="form-control" required/>
+                            <input type="text" id="celuPersona" name="celuPersona"  style="width: 120px;" title="Ingrese Celular" placeholder="Celular"  class="form-control" required/>
                         </div>
                     </div>
                     <div class="row" style="height: 40px;">
@@ -34,19 +34,19 @@
                             <label for="localidadPersona"  style="width: 120px;">
                                 Localidad:
                             </label>
-                            <input type="text" id="localidadPersona" name="localidadPersona" style="width: 120px;" title="Ingrese DOMICILIO" placeholder="Ingrese"  class="form-control" />
+                            <input type="text" id="localidadPersona" name="localidadPersona" style="width: 120px;" title="Ingrese Localidad" placeholder="Localidad"  class="form-control" required />
                         </div>
                         <div class="col-md-4" style="text-align: right;">
                             <label for="direccionPersona"  style="width: 120px;">
                                 Direccion:
                             </label>
-                            <input type="text" id="direccionPersona" name="direccionPersona"  style="width: 120px;"  class="form-control" title="Ingrese CONDICION" placeholder="Ingrese" required />
+                            <input type="text" id="direccionPersona" name="direccionPersona"  style="width: 120px;"  class="form-control" title="Ingrese Direccion" placeholder="Direccion" required />
                         </div>
                         <div class="col-md-4" style="text-align: right;">
                             <label for="telefonoPersona"  style="width: 120px;">
                                 Telefono:
                             </label>
-                            <input type="text" id="telefonoPersona" name="telefonoPersona"  style="width: 120px;"  class="form-control" title="Ingrese Telefono" placeholder="Ingrese" required />
+                            <input type="text" id="telefonoPersona" name="telefonoPersona"  style="width: 120px;"  class="form-control" title="Ingrese Telefono" placeholder="Telefono" required />
                         </div>
                     </div>
                     <div class="row" style="height: 35px;">
@@ -54,7 +54,7 @@
                             <label for="dniPersona"  style="width: 120px;">
                                 DNI:
                             </label>
-                            <input type="text" id="dniPersona" name="dniPersona" style="width: 120px;" title="Ingrese DOMICILIO" placeholder="Ingrese"  class="form-control"     required />
+                            <input type="text" id="dniPersona" name="dniPersona" style="width: 120px;" title="Ingrese DNI" placeholder="DNI"  class="form-control"     required />
                         </div>
                         <div class="col-md-4" style="text-align: right; height: 55px;">
                             <label for="fechaNacPersona"  style="width: 120px;">
@@ -80,7 +80,7 @@
                             <label for="cuentaCorrientePersona"  style="width: 120px;">
                                 C.C. Inicial: 
                             </label>
-                            <input type="text" id="cuentaCorrientePersona" name="cuentaCorrientePersona"  style="width: 120px;" class="form-control" title="Ingrese LOCALIDAD" placeholder="Ingrese" required />
+                            <input type="text" id="cuentaCorrientePersona" name="cuentaCorrientePersona"  style="width: 120px;" class="form-control" title="Ingrese Cta Corriente" placeholder="Cta Corriente" required />
                         </div>
                         <div class="col-md-3" style="text-align: right;">
                             <input type="hidden" value="" name="idPersona"/>

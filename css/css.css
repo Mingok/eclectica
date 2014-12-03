@@ -46,8 +46,12 @@ input.checkbox { border: none; }
 input:focus { border: 1px dotted black; }
 input.error { border: 1px dotted red; background-color: rgb(250, 255, 189);}
 select.error { border: 1px dotted red; background-color: rgb(250, 255, 189);}
+#formGastos label { width: 160px;}
+#formGastos label.error, #formGastos input.submit {margin-left: 13px; color:red; text-align: right	; }
 #formPrendas label { width: 160px;}
 #formPrendas label.error, #formPrendas input.submit {margin-left: 13px; color:red; text-align: right	; }
+#formFormaPago label { width: 160px;}
+#formFormaPago label.error, #formFormaPago input.submit {margin-left: 13px; color:red; text-align: right	; }
 #formProveedor label { width: 50px;}
 #formProveedor label.error, #formProveedor input.submit {width: 170px; margin-left: 23px; color:red; text-align: right; }
 #formTela label { width: 50px;}
@@ -63,7 +67,7 @@ select.error { border: 1px dotted red; background-color: rgb(250, 255, 189);}
 #formEstacion label { width: 50px;}
 #formEstacion label.error, #formEstacion input.submit {width: 150px;color:red; text-align: right; }
 #formTipoVenta label { width: 50px;}
-#formTipoVenta label.error, #formTipoVenta input.submit {width: 150px;color:red; text-align: right; }
+#formTipoVenta label.error, #formTipoVenta input.submit {width: 120px;color:red; text-align: right; }
 #formEmpleado label.error, #formEmpleado input.submit {width: 170px;color:red; text-align: right; }
 #formCliente label.error, #formCliente input.submit {width: 170px;color:red; text-align: right; }
 #formEmpresa label.error, #formEmpresa input.submit {width: 150px;color:red; text-align: right; }

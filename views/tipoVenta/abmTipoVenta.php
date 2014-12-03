@@ -12,7 +12,7 @@ $tipoVentas = $tipoVentaList->tipoVentasDisponibles();
     <div class="panel-body">
         <form action="actions/tipoVenta/guardarTipoVenta.php" id="formTipoVenta">
             <div id="muestraForm">
-                <div class="row" style="text-align: right; height: 45px;">
+                <div class="row" style="text-align: right; height: 50px;">
                     <div class="col-md-6">
                         Nombre:
                         <input type="text" name="detalleTipoVenta" class="form-control" title="Ingresar Nombre" placeholder="ingrese" style="width: 150px;" required/>
@@ -25,7 +25,7 @@ $tipoVentas = $tipoVentaList->tipoVentasDisponibles();
                         <input type="submit" style="width: 100px;" value="Modificar" class="btn btn-sm btn-success TipoVenta no"/>
                     </div>
                 </div>
-                <div class="row"  style="text-align: right; height: 45px;">
+                <div class="row"  style="text-align: right; height: 50px;">
                     <div class="col-md-6">
                         Operacion:
                         <select size="1" title="Ingrese Grupo" class="form-control" name="operacionTipoVenta" id="operacionTipoVenta" style="width: 130px">
@@ -49,9 +49,10 @@ $tipoVentas = $tipoVentaList->tipoVentasDisponibles();
             </div>
         </form>
         <div id="exitoTipoVenta" >
-            <p class="alert-error">
-                Se Modifico Tipo de Venta</p>
+           <p class="alert-success" style="text-align: center">
+               <b>Se Modifico Tipo de Venta</b></p>
         </div>
+        
         <div class="row scrol">
             <table class="table table-condensed">
                 <thead>

@@ -11,44 +11,51 @@ if (is_array($empresas)) {
     <div class="container">
         <div class="navbar-header">
             <a href="index.php">
-                <img style="padding-top: 3px;" src="./imagenes/logos/<?php echo $empresa['logoEmpresa']; ?>" height="46px" />
+                <img style="padding-top: 3px;" src="./imagenes/logos/<?php echo $empresa['logoEmpresa']; ?>" height="40px" />
             </a>
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <li>
                     <a href="index.php">
-                        <img src="./imagenes/iconos/home.png" width='24px' height='24px' title="Inicio" />
+                        <img src="./imagenes/iconos/home.png" height='24px' title="Inicio" />
                         &nbsp;Inicio&nbsp;
                     </a>
                 </li>
                 <li>
                     <a href="./indexPrendas.php?pasar=<?php echo $_SESSION['pasar']; ?>">
-                        <img src="./imagenes/iconos/1.png" width='24px' height='24px' title="Prendas" />
+                        <img src="./imagenes/iconos/1.png" height='24px' title="Prendas" />
                         &nbsp;Prendas&nbsp;
                     </a>
                 </li>
                 <li>
                     <a href="./indexVenta.php?pasar=<?php echo $_SESSION['pasar']; ?>">
-                        <img src="./imagenes/iconos/venta.png" width='24px' height='24px' title="Ventas" />
+                        <img src="./imagenes/iconos/venta.png" height='24px' title="Ventas" />
                         &nbsp;Ventas&nbsp;
                     </a>
                 </li>
                 <li>
                     <a href="./indexDevolucion.php?pasar=<?php echo $_SESSION['pasar']; ?>">
-                        <img src="./imagenes/iconos/venta.png" width='24px' height='24px' title="Devolucion" />
+                        <img src="./imagenes/iconos/venta.png" height='24px' title="Devolucion" />
                         &nbsp;Devolucion&nbsp;
                     </a>
                 </li>
                 <li>
                     <a id="fancyboxCC" class="fancyboxCC" href="form05CC.php">
-                        <img src="./imagenes/iconos/25.png" width='24px' height='24px' title="Cuentas Corrientes" />
+                        <img src="./imagenes/iconos/25.png" height='24px' title="Cuentas Corrientes" />
                         &nbsp;Cuenta Corriente&nbsp;
                     </a>
                 </li>
+                <li>
+                    <a href="./indexGastos.php?pasar=<?php echo $_SESSION['pasar']; ?>">
+                        <img src="./imagenes/iconos/informes.png" height='24px' title="Gastos" />
+                        &nbsp;Gastos&nbsp;
+                    </a>
+                </li>
+                
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle"	data-toggle="dropdown"> 
-                        <img src="./imagenes/iconos/informes.png" width='24px' height='24px' title="Informes" />
+                        <img src="./imagenes/iconos/time.png" height='24px' title="Informes" />
                         &nbsp;Informes&nbsp;
                         <b class="caret"></b>
                     </a>
@@ -71,7 +78,7 @@ if (is_array($empresas)) {
                 </li>-->
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle"	data-toggle="dropdown"> 
-                        <img src="./imagenes/iconos/reparacion.png" width='24px' height='24px' title="Configuracion" />
+                        <img src="./imagenes/iconos/reparacion.png" height='24px' title="Configuracion" />
                         &nbsp;Configuracion&nbsp;
                         <b class="caret"></b>
                     </a>

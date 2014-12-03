@@ -22,8 +22,8 @@
 				</div>
 			</form>
             <div  id="exitoTela" >
-            <p class="alert-error">
-            Se Creo/Modifico Tela</p>
+                <p class="alert-success" style="text-align: center">
+                <b>Se Creo/Modifico Tela</b></p>
             </div>
 			<div class="row scrol"> 
 				<table class="table table-condensed">

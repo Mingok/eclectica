@@ -21,8 +21,8 @@ $estampados = $estampadoList->estampadosDisponibles();
 			</div>
 		</form>
          <div  id="exitoEstampado" >
-        <p class="alert-error">
-        Se Creo/Modifico Estampado</p>
+        <p class="alert-success" style="text-align: center">
+            <b>Se Creo/Modifico Estampado</b></p>
         </div>
 		<div class="row scrol"> 
 			<table class="table table-condensed">

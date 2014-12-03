@@ -23,6 +23,9 @@
 	<div class="col-md-4"><?php include_once 'views/estacion/abmEstacion.php'; ?></div>
 </div>
 <div class="row">
-	<div class="col-md-7"><?php include_once 'views/tipoVenta/abmTipoVenta.php'; ?></div>
-	<div class="col-md-5"><img src="./imagenes/logos/<?php echo $empresa['logoEmpresa'];?>"  style="border: 5px solid Darkred; height: 200px;"/></div>
+	<div class="col-md-8"><?php include_once 'views/tipoVenta/abmTipoVenta.php'; ?></div>
+	<div class="col-md-4"><?php include_once 'views/formaPago/abmFormaPago.php'; ?></div>
+</div>
+<div class="row">
+	<div class="col-md-12"><img src="./imagenes/logos/<?php echo $empresa['logoEmpresa'];?>"  style="border: 5px solid Darkred; height: 200px;"/></div>
 </div>

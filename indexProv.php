@@ -8,7 +8,7 @@ define('EMPLEADOS_SCRIPTS_PATH', 'http://localhost/eclectica/js/');
     <meta http-equiv="content-type" content="text/html" />
     <meta name="author" content="Emmanuel" />
     <title>
-        Nombre del programa
+        Eclectica
     </title>
     <link rel="stylesheet" href="<?php echo EMPLEADOS_STYLE_PATH; ?>css.css" type="text/css" />
     <link rel="stylesheet" href="<?php echo EMPLEADOS_STYLE_PATH; ?>bootstrap/bootstrap.min.css" type="text/css" />

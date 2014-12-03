@@ -21,8 +21,8 @@
 			</div>
 		</form>
         <div  id="exitoColor" >
-        <p class="alert-error">
-        Se Creo/Modifico Color</p>
+        <p class="alert-success" style="text-align: center">
+                <b>Se Creo/Modifico Color</b></p>
         </div>
 		<div class="row scrol"> 
 			<table class="table table-condensed">

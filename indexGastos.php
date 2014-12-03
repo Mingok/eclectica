@@ -2,8 +2,8 @@
 session_start();
 define('EMPLEADOS_STYLE_PATH', 'http://localhost/eclectica/css/');
 define('EMPLEADOS_SCRIPTS_PATH', 'http://localhost/eclectica/js/');
-$_SESSION['pasar']= "0";
 ?>
+
 <!DOCTYPE HTML>
 <head>
     <meta http-equiv="content-type" content="text/html" />
@@ -11,6 +11,7 @@ $_SESSION['pasar']= "0";
     <title>
         Eclectica
     </title>
+
     <link rel="stylesheet" href="<?php echo EMPLEADOS_STYLE_PATH; ?>css.css" type="text/css" />
     <link rel="stylesheet" href="<?php echo EMPLEADOS_STYLE_PATH; ?>bootstrap/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="<?php echo EMPLEADOS_STYLE_PATH; ?>bootstrap/bootstrap-theme.min.css" type="text/css" />
@@ -23,23 +24,56 @@ $_SESSION['pasar']= "0";
     <script type="text/javascript" src="<?php echo EMPLEADOS_SCRIPTS_PATH; ?>select2/select2.js"></script>
     <script type="text/javascript" src="<?php echo EMPLEADOS_SCRIPTS_PATH; ?>fancybox/jquery.mousewheel-3.0.6.pack.js"></script>
     <script type="text/javascript" src="<?php echo EMPLEADOS_SCRIPTS_PATH; ?>fancybox/jquery.fancybox.js"></script>
-    <script type="text/javascript" src="<?php echo EMPLEADOS_SCRIPTS_PATH; ?>tablaItemVenta/controlItemVenta.js"></script>
 </head>
-<body class="image-back-body bodyDevoluciones">
-<center>
-    <table class="tablaGral">
-        <tr>
-            <td>
-                <?php include_once './encabezado.php'; ?>
-            </td>
-        </tr>
-        <tr><br /><br /><br /><br /></tr>
-        <tr>
-            <td>
-            <?php include_once './form08Devolucion.php';?>
-            </td>
-        </tr>
-    </table>
-</center>
+<body class="image-back-body">
+    <?php if (isset($_GET['pasar'])) { ?>
+    <center>
+        <?php if ($_GET['pasar'] == "0") {
+            include_once './indexRol.php';
+        } else {
+            $_SESSION['pasar'] = "1"; ?>
+            <table class="tablaGral">
+                <tr>
+                    <td>
+        <?php include_once './encabezado.php'; ?>
+                    </td>
+                </tr>
+                <tr><td><br /><br /><br /><br /></td></tr>
+                <tr>
+                    <td>
+        <?php include_once './form11Gasto.php';
+    } ?>
+                </td>
+            </tr>
+        </table>
+    </center>
+<?php } else { ?>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class='row'>
+        <div class='col-md-12'>
+            <div class='panel panel-default'>
+                <div class='panel-heading'>
+                    <h3 class='panel-title'>
+                        No Tiene Permisos Para Ingresar a esta P&aacute;gina
+                        <input type="button" name="home"class="btn btn-sm btn-primary" value="Volver" onclick="window.history.back();"/>
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<?php } ?>
 </body>
 </html>

@@ -21,8 +21,8 @@
 			</div>
 		</form>
         <div  id="exitoEstacion" >
-        <p class="alert-error">
-        Se Creo/Modifico Estacion</p>
+        <p class="alert-success" style="text-align: center">
+            <b>Se Creo/Modifico Estacion</b></p>
         </div>
 		<div class="row scrol"> 
 			<table class="table table-condensed">

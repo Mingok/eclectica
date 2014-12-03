@@ -21,8 +21,8 @@
 			</div>
 		</form>
          <div id="exitoTalle" >
-        <p class="alert-error">
-        Se Creo/Modifico Talle</p>
+        <p class="alert-success" style="text-align: center">
+            <b>Se Creo/Modifico Talle</b></p>
         </div>
 		<div class="row scrol"> 
 			<table class="table table-condensed">
