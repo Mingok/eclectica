@@ -29,19 +29,19 @@ define('EMPLEADOS_SCRIPTS_PATH', 'http://localhost/eclectica/js/');
     <?php if (isset($_GET['pasar'])) { ?>
     <center>
         <?php if ($_GET['pasar'] == "0") {
-            include_once './indexRol.php';
+            include_once 'indexRol.php';
         } else {
             $_SESSION['pasar'] = "1"; ?>
             <table class="tablaGral">
                 <tr>
                     <td>
-        <?php include_once './encabezado.php'; ?>
+        <?php include_once 'encabezado.php'; ?>
                     </td>
                 </tr>
-                <tr><td><br /><br /><br /><br /></td></tr>
+                <tr><td><br><br><br><br></td></tr>
                 <tr>
                     <td>
-        <?php include_once './form01Prenda.php';
+        <?php include_once 'form01prenda.php';
     } ?>
                 </td>
             </tr>

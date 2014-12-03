@@ -26,7 +26,8 @@ if ($idPrenda){
    
 }else{
  /*Nuevo erpesa 1 prov 000 marca 000 prenda 00000*/
- 		require_once (__DIR__.'\..\..\base\manejoMySQL.php');
+        $ds = DIRECTORY_SEPARATOR;
+        require_once (__DIR__ .  "{$ds}..{$ds}..{$ds}base{$ds}manejoMySQL.php");
 		$objManejoMySQL= new manejoMySQL();
 $strSql = "SELECT idPrenda FROM prenda ORDER BY idPrenda DESC LIMIT 1;";
         $prendaId = null;   
@@ -76,7 +77,8 @@ if ($idPrenda) {
 		
 } else {
     $prendas = $prendaClass->agregarNuevoPrenda($arrPrenda);
-    		require_once (__DIR__.'\..\..\base\manejoMySQL.php');
+        $ds = DIRECTORY_SEPARATOR;
+        require_once (__DIR__ .  "{$ds}..{$ds}..{$ds}base{$ds}manejoMySQL.php");
 		$objManejoMySQL= new manejoMySQL();
 $strSql = "SELECT idPrenda FROM prenda ORDER BY idPrenda DESC LIMIT 1;";
         $prendaId = null;   

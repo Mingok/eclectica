@@ -3,7 +3,8 @@
 Class entrega {
 
     public function entregasDisponibles() {
-        require_once (__DIR__ . '\..\..\base\manejoMySQL.php');
+        $ds = DIRECTORY_SEPARATOR;
+        require_once (__DIR__ .  "{$ds}..{$ds}..{$ds}base{$ds}manejoMySQL.php");
 
         $objManejoMySQL = new manejoMySQL();
         $strSql = "	SELECT * FROM `entrega`
@@ -14,7 +15,8 @@ Class entrega {
     }
     
     public function entregasCliente($lngIdCliente) {
-        require_once (__DIR__ . '\..\..\base\manejoMySQL.php');
+        $ds = DIRECTORY_SEPARATOR;
+        require_once (__DIR__ .  "{$ds}..{$ds}..{$ds}base{$ds}manejoMySQL.php");
 
         $objManejoMySQL = new manejoMySQL();
         $strSql = "	SELECT * FROM `entrega`
@@ -26,7 +28,8 @@ Class entrega {
     }
 
     public function agregarNuevaEntrega($arrEntrega) {
-        require_once (__DIR__ . '\..\..\base\manejoMySQL.php');
+        $ds = DIRECTORY_SEPARATOR;
+        require_once (__DIR__ .  "{$ds}..{$ds}..{$ds}base{$ds}manejoMySQL.php");
         $strValoresCampos = "";
         $strNombresCampos = "";
         $objManejoMySQL = new manejoMySQL();
@@ -54,7 +57,8 @@ Class entrega {
     }
 
     public function eliminarEntrega($objEntrega) {
-        require_once (__DIR__ . '\..\..\base\manejoMySQL.php');
+        $ds = DIRECTORY_SEPARATOR;
+        require_once (__DIR__ .  "{$ds}..{$ds}..{$ds}base{$ds}manejoMySQL.php");
 
         $objManejoMySQL = new manejoMySQL();
         $lngIdEntrega = $objEntrega['idEntrega'];
@@ -65,7 +69,8 @@ Class entrega {
     }
 
     public function modificarEntrega($arrEntrega) {
-        require_once (__DIR__ . '\..\..\base\manejoMySQL.php');
+        $ds = DIRECTORY_SEPARATOR;
+        require_once (__DIR__ .  "{$ds}..{$ds}..{$ds}base{$ds}manejoMySQL.php");
         $strValoresCampos = "";
         $strNombresCampos = "";
         $strUpdate = "";

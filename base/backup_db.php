@@ -1,5 +1,6 @@
 <?php
-require_once (__DIR__.'/manejoMySQL.php');
+$ds = DIRECTORY_SEPARATOR;
+require_once (__DIR__. $ds . 'manejoMySQL.php');
 $objManejoMySQL = new manejoMySQL();
 $dbhost = $objManejoMySQL->host;
 $dbuser = $objManejoMySQL->username;

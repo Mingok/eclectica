@@ -3,7 +3,8 @@
 Class ventaRenglon {
 
     public function ventaRenglonesDisponibles() {
-        require_once (__DIR__ . '\..\..\base\manejoMySQL.php');
+        $ds = DIRECTORY_SEPARATOR;
+        require_once (__DIR__ .  "{$ds}..{$ds}..{$ds}base{$ds}manejoMySQL.php");
 
         $objManejoMySQL = new manejoMySQL();
         $strSql = "SELECT ventaRenglon.*,  prenda.detallePrenda, tipoVenta.detalleTipoVenta FROM `venta_renglon` as ventaRenglon
@@ -15,7 +16,8 @@ Class ventaRenglon {
         return $arrResultado;
     }
     public function ventaParticular($idVentaParticular) {
-        require_once (__DIR__ . '\..\..\base\manejoMySQL.php');
+        $ds = DIRECTORY_SEPARATOR;
+        require_once (__DIR__ .  "{$ds}..{$ds}..{$ds}base{$ds}manejoMySQL.php");
 
         $objManejoMySQL = new manejoMySQL();
         $strSql = "SELECT ventaRenglon.*,  prenda.detallePrenda, tipoVenta.detalleTipoVenta FROM `venta_renglon` as ventaRenglon
@@ -28,7 +30,8 @@ Class ventaRenglon {
     }
 
     public function agregarNuevaVentaRenglon($arrVentaRenglon) {
-        require_once (__DIR__ . '\..\..\base\manejoMySQL.php');
+        $ds = DIRECTORY_SEPARATOR;
+        require_once (__DIR__ .  "{$ds}..{$ds}..{$ds}base{$ds}manejoMySQL.php");
         $strValoresCampos = "";
         $strNombresCampos = "";
         $objManejoMySQL = new manejoMySQL();
@@ -53,7 +56,8 @@ Class ventaRenglon {
     }
 
     public function eliminarVentaRenglon($objVentaRenglon) {
-        require_once (__DIR__ . '\..\..\base\manejoMySQL.php');
+        $ds = DIRECTORY_SEPARATOR;
+        require_once (__DIR__ .  "{$ds}..{$ds}..{$ds}base{$ds}manejoMySQL.php");
 
         $objManejoMySQL = new manejoMySQL();
         $lngIdVentaRenglon = $objVentaRenglon['idVentaRenglon'];
@@ -64,7 +68,8 @@ Class ventaRenglon {
     }
 
     public function modificarVentaRenglon($arrVentaRenglon) {
-        require_once (__DIR__ . '\..\..\base\manejoMySQL.php');
+        $ds = DIRECTORY_SEPARATOR;
+        require_once (__DIR__ .  "{$ds}..{$ds}..{$ds}base{$ds}manejoMySQL.php");
         $strValoresCampos = "";
         $strNombresCampos = "";
         $strUpdate = "";

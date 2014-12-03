@@ -3,7 +3,8 @@
 Class empresa {
 
     public function datosEmpresa() {
-        require_once (__DIR__ . '\..\..\base\manejoMySQL.php');
+        $ds = DIRECTORY_SEPARATOR;
+        require_once (__DIR__ .  "{$ds}..{$ds}..{$ds}base{$ds}manejoMySQL.php");
 
         $objManejoMySQL = new manejoMySQL();
         $strSql = "	SELECT * FROM `empresa`
@@ -14,7 +15,8 @@ Class empresa {
     }
 
     public function agregarNuevoColor($arrColor) {
-        require_once (__DIR__ . '\..\..\base\manejoMySQL.php');
+        $ds = DIRECTORY_SEPARATOR;
+        require_once (__DIR__ .  "{$ds}..{$ds}..{$ds}base{$ds}manejoMySQL.php");
         $strValoresCampos = "";
         $strNombresCampos = "";
         $objManejoMySQL = new manejoMySQL();
@@ -39,7 +41,8 @@ Class empresa {
     }
 
     public function eliminarColor($objColor) {
-        require_once (__DIR__ . '\..\..\base\manejoMySQL.php');
+        $ds = DIRECTORY_SEPARATOR;
+        require_once (__DIR__ .  "{$ds}..{$ds}..{$ds}base{$ds}manejoMySQL.php");
 
         $objManejoMySQL = new manejoMySQL();
         $lngIdColor = $objColor['idColor'];
@@ -50,7 +53,8 @@ Class empresa {
     }
 
     public function modificarEmpresa($arrColor) {
-        require_once (__DIR__ . '\..\..\base\manejoMySQL.php');
+        $ds = DIRECTORY_SEPARATOR;
+        require_once (__DIR__ .  "{$ds}..{$ds}..{$ds}base{$ds}manejoMySQL.php");
         $strValoresCampos = "";
         $strNombresCampos = "";
         $strUpdate = "";
@@ -81,7 +85,8 @@ Class empresa {
 
     public function guardarLogoEmpresa($archivo) {
         $origen = $archivo['tmp_name'];
-        $destino = "../../imagenes/logos/" . $archivo['name'];
+        $ds = DIRECTORY_SEPARATOR;
+        $destino = "..{$ds}..{$ds}imagenes{$ds}logos{$ds}" . $archivo['name'];
 
         move_uploaded_file($origen, $destino);
     }
