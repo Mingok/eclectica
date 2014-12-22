@@ -34,35 +34,35 @@
                         <tr>
                             <td style="text-align: right;">
                                 <div class="scrol1">
-                                    <table class="table table-striped" id="tblPrendaVenta">
+                                    <table class="table table-condensed" id="tblPrendaVenta">
                                         <thead class="btn-success" style="font-weight: bolder; text-align: center;">
                                             <tr>
-                                                <td>
+                                                <td style="width: 5">
                                                     Selec
                                                 </td>
-                                                <td>
+                                                <td style="width: 8%">
                                                     Cod
                                                 </td>
                                                 <td style="width: 30%">
                                                     Nombre
                                                 </td>
-                                                <td>
-                                                    Talle
+                                                <td style="width: 5%">
+                                                    T.
                                                 </td>
-                                                <td>
+                                                <td style="width: 12%">
                                                     Color
                                                 </td>
-                                                <td>
+                                                <td style="width: 10%">
                                                     Estampado
                                                 </td>
-                                                <td>
+                                                <td style="width: 13%">
                                                     Tela
                                                 </td>
-                                                <td>
+                                                <td style="width: 12%">
                                                     Temporada
                                                 </td>
-                                                <td>
-                                                    Cantidad
+                                                <td style="width: 5%">
+                                                    C.
                                                 </td>
                                             </tr>
                                         </thead>
@@ -74,7 +74,7 @@
                                                         ?>
                                                         <tr >
                                                             <td style="text-align: center;">
-                                                                <a title="Modificar datos" class="itemAVender" id="itemAVender" data-cantidadprenda="<?php echo $prenda ['cantidadPrenda'] ?>" data-idprenda="<?php echo $prenda ['idPrenda'] ?>" data-idestampadoprenda="<?php echo $prenda ['idEstampadoPrenda'] ?>" data-idtelaprenda="<?php echo $prenda ['idTelaPrenda'] ?>" data-idtalleprenda="<?php echo $prenda ['idTallePrenda'] ?>" data-codigoprenda="<?php echo $prenda ['codigoPrenda'] ?>" data-detalleprenda="<?php echo $prenda ['detallePrenda'] ?>" data-idmarcaprenda="<?php echo $prenda ['idMarcaPrenda'] ?>" data-idproveedorprenda="<?php echo $prenda ['idProveedorPrenda'] ?>" data-idestacionprenda="<?php echo $prenda ['idEstacionPrenda'] ?>" data-idcolorprenda="<?php echo $prenda ['idColorPrenda'] ?>" data-valor1="<?php echo $prenda ['valor1'] ?>" data-valor2="<?php echo $prenda ['valor2'] ?>" data-valor3="<?php echo $prenda ['valor3'] ?>" data-valor4="<?php echo $prenda ['valor4'] ?>" data-valor5="<?php echo $prenda ['valor5'] ?>" data-valor6="<?php echo $prenda ['valor6'] ?>" />
+                                                                <a title="Seleccionar" class="itemAVender" id="itemAVender" data-cantidadprenda="<?php echo $prenda ['cantidadPrenda'] ?>" data-idprenda="<?php echo $prenda ['idPrenda'] ?>" data-idestampadoprenda="<?php echo $prenda ['idEstampadoPrenda'] ?>" data-idtelaprenda="<?php echo $prenda ['idTelaPrenda'] ?>" data-idtalleprenda="<?php echo $prenda ['idTallePrenda'] ?>" data-codigoprenda="<?php echo $prenda ['codigoPrenda'] ?>" data-detalleprenda="<?php echo $prenda ['detallePrenda'] ?>" data-idmarcaprenda="<?php echo $prenda ['idMarcaPrenda'] ?>" data-idproveedorprenda="<?php echo $prenda ['idProveedorPrenda'] ?>" data-idestacionprenda="<?php echo $prenda ['idEstacionPrenda'] ?>" data-idcolorprenda="<?php echo $prenda ['idColorPrenda'] ?>" data-valor1="<?php echo $prenda ['valor1'] ?>" data-valor2="<?php echo $prenda ['valor2'] ?>" data-valor3="<?php echo $prenda ['valor3'] ?>" data-valor4="<?php echo $prenda ['valor4'] ?>" data-valor5="<?php echo $prenda ['valor5'] ?>" data-valor6="<?php echo $prenda ['valor6'] ?>" />
                                                                 <img src="./imagenes/iconos/accept.png" width="18px" height="18px" />
                                                                 </a>
                                                             </td>

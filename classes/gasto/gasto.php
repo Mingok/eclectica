@@ -4,13 +4,18 @@ Class gasto {
 
     public function gastoDisponibles() {
         require_once (__DIR__ . '\..\..\base\manejoMySQL.php');
+        $hoy = date('d-m-Y');
+        $fecha = strtotime('-30 day', strtotime($hoy));
+        $fecha= date ( 'Ymd' , $fecha );
 
         $objManejoMySQL = new manejoMySQL();
         $strSql = "SELECT gasto.*, proveedor.nombreProveedor, empresa.nombreEmpresa, formaPago.detalleFormaPago FROM gasto AS gasto
             LEFT JOIN proveedor AS proveedor ON gasto.idProveedorGasto = proveedor.idProveedor
             LEFT JOIN empresa AS empresa ON gasto.idEmpresaGasto = empresa.idEmpresa
             LEFT JOIN formaPago AS formaPago ON gasto.idFormaPagoGasto = formaPago.idFormaPago
-					ORDER BY `fechaGasto` ASC";
+					";
+        $strSql.="WHERE gasto.fechaGasto >= ".$fecha . " ORDER BY `fechaGasto` DESC";
+        
         $arrResultado = null;
         $objManejoMySQL->consultar($strSql, $arrResultado);
         return $arrResultado;
@@ -37,9 +42,9 @@ Class gasto {
 
         $strSql = "INSERT INTO `gasto`($strNombresCampos) VALUES($strValoresCampos)";
         $arrResultado = null;
-       
+
         $objManejoMySQL->consultar($strSql, $arrResultado);
-       
+
         return $arrResultado;
     }
 

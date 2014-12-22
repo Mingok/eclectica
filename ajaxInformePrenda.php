@@ -66,9 +66,11 @@ if ($_GET['action'] == 'listar') {
 
     $objManejoMySQL->consultar($sql, $arrResultado);
     $str_final = '';
+    if (!empty($arrResultado)) {
     foreach ($arrResultado as $registro) {
         $str_final .= '<tr>';
         $str_final .= '<td>' . $registro['codigoPrenda'] . '</td>';
+        $str_final .= '<td>' . date('d-m-Y', strtotime($registro['fechaPrenda'])) . '</td>';
         $str_final .= '<td>' . $registro['detallePrenda'] . '</td>';
         $str_final .= '<td>' . $registro['detalleTalle'] . '</td>';
         $str_final .= '<td>' . $registro['detalleColor'] . '</td>';
@@ -80,6 +82,7 @@ if ($_GET['action'] == 'listar') {
         $str_final .= '<td>' . $registro['cantidadPrenda'] . '</td>';
         $str_final .= '</tr>';
     }
+    }else {$str_final .= '<tr><td colspan=10" align="center">No se encontraron prendas.</td></tr>';}
 
     // convertimos el array de datos a formato json
 //	echo json_encode($array_final);

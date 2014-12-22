@@ -44,7 +44,7 @@ echo '
         <div class="panel-body">
             <div class="row">
                 <div class="col-md-12" >
-                    <table class="table table-striped" id="tblPrendaVenta">
+                    <table class="table table-condensed" id="tblPrendaVenta">
                         <thead class="btn-success" style="font-weight: bolder; text-align: center;">
                             <tr>
                                 <td>

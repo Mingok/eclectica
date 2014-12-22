@@ -21,9 +21,6 @@ $sql = "SELECT * FROM (
 			JOIN persona AS persona1 ON venta.idVendedor = persona1.idPersona
 			) tmp ";
 $arrayFiltro = array();
-
-
-
 $filtros = array();
 require_once 'classes/persona/persona.php';
 $personaList = new persona();
@@ -35,7 +32,7 @@ if (isset($_REQUEST['selecEmpleado'])) {
         $filtros[] = "Vendedor: {$persona['apellidoPersona']}, {$persona['nombrePersona']}";
     }
 }
-
+    
 if (isset($_REQUEST['selecCliente'])) {
     if ($_REQUEST['selecCliente'] !=''){
         $arrayFiltro[] = "idCliente = " . $_REQUEST['selecCliente'];
@@ -230,7 +227,7 @@ if ($tipo == 'pdf') {
     $date = date('d/m/Y');
     $filtros = implode(' - ', $filtros);
     $str_final = '
-    <table class="table table-striped" id="data">
+    <table class="table table-condensed" id="data">
         <tr><td colspan="5" style="text-align: center; font-weight:bold; font-size: 14px;">Ventas Realizadas ('.$date.')</td></tr>
         <tr><td colspan="5" style="text-align: center;"><label>Filtros: '. $filtros . '</td></tr>
         <thead style="font-weight: bolder; text-align: center;">

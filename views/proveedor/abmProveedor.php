@@ -16,7 +16,7 @@ $proveedores = $proveedorList->proveedoresDisponibles();
                     <input type="button" value="Nuevo" style="width: 100px;" class="buttonProvNuevo btn btn-sm btn-success"/>
                 </div>
                 <div class="scrolProveedor">
-                    <table class="table table-striped" id="tblProveedor">
+                    <table class="table table-condensed" id="tblProveedor">
                         <thead class="btn-success">
                             <tr style="text-align: center;">
                                 <td style="height: 30px; width: 8%;"><strong> Mod </strong></td>

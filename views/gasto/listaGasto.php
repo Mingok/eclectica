@@ -23,13 +23,6 @@ $formasPago = $formaPagoList->formaPagoDisponibles();
         }
     }
 </script>
-<h1>
-    Gastos
-</h1>
-<div  id="exitoPrenda" >
-
-    <div id="CPrenda" class="alert alert-success alert-success1"></div>
-</div>
 <div class="row">
     <div class="col-md-12">
         <div class="panel panel-success">
@@ -38,7 +31,7 @@ $formasPago = $formaPagoList->formaPagoDisponibles();
                     <label for="txtNomPrenda">
                         Detalle:
                     </label>
-                    <input type="search" id="txtNomPrenda" class="textPrendas form-control" placeholder="Digite el texto que desea encontrar y presione la ENTER. Para cancelar la tecla ESCAPE." autofocus style="width: 690px">
+                    <input type="search" id="txtGasto" class="textPrendas form-control" placeholder="Digite el texto que desea encontrar y presione la ENTER. Para cancelar la tecla ESCAPE." autofocus style="width: 690px">
                     <div style="height: 10px"></div>
                 </div>
                 <div class="row">
@@ -46,7 +39,7 @@ $formasPago = $formaPagoList->formaPagoDisponibles();
                         <tr>
                             <td colspan="3" style="text-align: right;">
                                 <div class="scrolPrenda">
-                                    <table class="table table-striped" id="tblPrenda">
+                                    <table class="table table-condensed" id="tblGasto">
                                         <thead class="btn-success" style="font-weight: bolder; text-align: center;">
                                             <tr>
                                                 <td>
@@ -74,6 +67,7 @@ $formasPago = $formaPagoList->formaPagoDisponibles();
                                             $cont = 0;
                                             if (isset($gastos)) {
                                                 foreach ($gastos as $gasto) {
+                                                    
                                                     $cont ++;
                                                     ?>
                                                     <tr id=" <?php echo $cont; ?> " class=" <?php echo $cont; ?> ">

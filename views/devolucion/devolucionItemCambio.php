@@ -40,7 +40,7 @@ $prendas = $prendaList->prendasDisponibles();
                         <tr>
                             <td style="text-align: right;">
                                 <div class="scrol1">
-                                    <table class="table table-striped" id="tblPrendaVenta">
+                                    <table class="table table-condensed" id="tblPrendaVenta">
                                         <thead class="btn-success" style="font-weight: bolder; text-align: center;">
                                             <tr>
                                                 <td>

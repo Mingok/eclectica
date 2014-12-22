@@ -11,5 +11,5 @@ $backup_file = 'db_' . $dbname . '_' . date("l") . '.sql';
 if (file_exists($backup_file)) {
     unlink($backup_file);
 } 
-$command = "C:/wamp/bin/mysql/mysql5.6.17/bin/mysqldump.exe --opt --host=$dbhost --user=$dbuser --password= $dbname > $backup_file";
+$command = "C:/wamp/bin/mysql/mysql5.6.12/bin/mysqldump.exe --opt --host=$dbhost --user=$dbuser --password= $dbname > $backup_file";
 exec($command);

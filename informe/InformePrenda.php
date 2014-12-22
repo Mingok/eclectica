@@ -1,4 +1,5 @@
 <?php
+
 // Include the main TCPDF library (search for installation path).
 $ds = DIRECTORY_SEPARATOR;
 require_once "base{$ds}manejoMySQL.php";
@@ -28,32 +29,32 @@ $arrayFiltro = array();
 
 // valores recibidos por POST
 $filtros = array();
-if ( $_REQUEST['detallePrenda'] != '') {
-    $arrayFiltro[] = " CONCAT(detallePrenda,' ', codigoPrenda) LIKE '%".$_REQUEST['detallePrenda']."%'";
+if ($_REQUEST['detallePrenda'] != '') {
+    $arrayFiltro[] = " CONCAT(detallePrenda,' ', codigoPrenda) LIKE '%" . $_REQUEST['detallePrenda'] . "%'";
     $filtros[] = "Nombre o codigo: {$_REQUEST['detallePrenda']}";
 }
 if ($_REQUEST['idMarca'] != '') {
     $arrayFiltro[] = " prenda.idMarcaPrenda = " . $_REQUEST['idMarca'];
     require_once 'classes/marca/marca.php';
     $marcaList = new marca ();
-    $marca  = $marcaList->eligeMarca($_REQUEST['idMarca']);
+    $marca = $marcaList->eligeMarca($_REQUEST['idMarca']);
     $filtros[] = "Marca: {$marca['detalleMarca']}";
 }
-if ($_REQUEST['idProveedor'] !=''){
+if ($_REQUEST['idProveedor'] != '') {
     $arrayFiltro[] = " proveedor.idProveedor = " . $_REQUEST['idProveedor'];
     require_once 'classes/proveedor/proveedor.php';
     $proveedorList = new proveedor ();
     $proveedor = $proveedorList->eligeProveedor($_REQUEST['idProveedor']);
     $filtros[] = "Proveedor: {$proveedor['nombreProveedor']}";
 }
-if ($_REQUEST['idEstacion'] !=''){
+if ($_REQUEST['idEstacion'] != '') {
     $arrayFiltro[] = " prenda.idEstacionPrenda = " . $_REQUEST['idEstacion'];
     require_once 'classes/estacion/estacion.php';
     $estacionList = new estacion ();
     $estacion = $estacionList->eligeEstacion($_REQUEST['idEstacion']);
     $filtros[] = "Temporada: {$estacion['detalleEstacion']}";
 }
-if ($_REQUEST['idEstampado'] !=''){
+if ($_REQUEST['idEstampado'] != '') {
     $arrayFiltro[] = " prenda.idEstampadoPrenda = " . $_REQUEST['idEstampado'];
     require_once 'classes/estampado/estampado.php';
     $estampadoList = new estampado ();
@@ -67,14 +68,14 @@ if ($_REQUEST['idTela'] != '') {
     $tela = $telaList->eligeTela($_REQUEST['idTela']);
     $filtros[] = "Tela: {$tela['detalleTela']}";
 }
-if ($_REQUEST['idColor'] !=''){
+if ($_REQUEST['idColor'] != '') {
     $arrayFiltro[] = " prenda.idColorPrenda = " . $_REQUEST['idColor'];
     require_once 'classes/color/color.php';
     $colorList = new color ();
     $color = $colorList->eligeColor($_REQUEST['idColor']);
     $filtros[] = "Color: {$color['detalleColor']}";
 }
-if ($_REQUEST['idTalle'] !=''){
+if ($_REQUEST['idTalle'] != '') {
     $arrayFiltro[] = " prenda.idTallePrenda = " . $_REQUEST['idTalle'];
     require_once 'classes/talle/talle.php';
     $talleList = new talle ();
@@ -82,9 +83,6 @@ if ($_REQUEST['idTalle'] !=''){
     $filtros[] = "Talle: {$talle['detalleTalle']}";
 }
 //
-
-
-
 // Vericamos si hay algun filtro
 
 $auxArray = implode(' AND ', $arrayFiltro);
@@ -106,6 +104,7 @@ $objManejoMySQL->consultar($sql, $arrResultado);
 if ($tipo == 'pdf') {
     define('K_PATH_IMAGES', "http://localhost/eclectica/imagenes/logos/");
     require_once "js{$ds}tcpdf{$ds}tcpdf.php";
+
 // extend TCPF with custom functions
     class MYPDF extends TCPDF {
 
@@ -117,11 +116,11 @@ if ($tipo == 'pdf') {
             $this->SetFont('helvetica', 'I', 8);
             // Page number
             $this->Cell(20, 5, 'Emitido: ' . date('d/m/Y') . '        ', 0, false, 'R', 0, '', 0, false, 'T', 'M');
-            $this->Cell(0, 5, 'Página '.$this->getAliasNumPage().'/'.$this->getAliasNbPages(), 0, false, 'C', 0, '', 0, false, 'T', 'M');
+            $this->Cell(0, 5, 'Página ' . $this->getAliasNumPage() . '/' . $this->getAliasNbPages(), 0, false, 'C', 0, '', 0, false, 'T', 'M');
         }
 
         // Colored table
-        public function ColoredTable($header,$data,$columns) {
+        public function ColoredTable($header, $data, $columns) {
             // Colors, line width and bold font
             $this->SetFillColor(92, 184, 92);
             $this->SetTextColor(255);
@@ -130,10 +129,10 @@ if ($tipo == 'pdf') {
             $this->SetFont('', 'B');
             $this->SetFontSize(8);
             // Header
-            $w = array(22,60,8,36,25,35,18,23,30,8);
-            $truncate = array(0,25,0,15,12,10,10,10,10,8);
+            $w = array(22,15, 45, 8, 36, 25, 35, 18, 23, 30, 8);
+            $truncate = array(0,0, 15, 0, 15, 12, 10, 10, 10, 10, 8);
             $num_headers = count($header);
-            for($i = 0; $i < $num_headers; ++$i) {
+            for ($i = 0; $i < $num_headers; ++$i) {
                 $this->Cell($w[$i], 7, $header[$i], 1, 0, 'C', 1);
             }
             $this->Ln();
@@ -144,34 +143,35 @@ if ($tipo == 'pdf') {
             $this->SetFontSize(8);
             // Data
             $fill = 0;
-            foreach($data as $row) {
-                foreach ($columns as $key=>$column_name) {
+            foreach ($data as $row) {
+                foreach ($columns as $key => $column_name) {
                     $align = 'L';
                     if (is_numeric($row[$column_name])) {
                         $align = 'R';
                         $text = $row[$column_name];
                     } else {
-                        $text = acortar($row[$column_name],$truncate[$key]);
+                        $text = acortar($row[$column_name], $truncate[$key]);
                     }
 
                     $this->Cell($w[$key], 6, $text, 'LR', 0, $align, $fill);
                 }
-                /*$this->Cell($w[0], 6, $row[0], 'LR', 0, 'L', $fill);
-                $this->Cell($w[1], 6, $row[1], 'LR', 0, 'L', $fill);
-                $this->Cell($w[2], 6, number_format($row[2]), 'LR', 0, 'R', $fill);
-                $this->Cell($w[3], 6, number_format($row[3]), 'LR', 0, 'R', $fill);*/
+                /* $this->Cell($w[0], 6, $row[0], 'LR', 0, 'L', $fill);
+                  $this->Cell($w[1], 6, $row[1], 'LR', 0, 'L', $fill);
+                  $this->Cell($w[2], 6, number_format($row[2]), 'LR', 0, 'R', $fill);
+                  $this->Cell($w[3], 6, number_format($row[3]), 'LR', 0, 'R', $fill); */
                 $this->Ln();
-                $fill=!$fill;
+                $fill = !$fill;
             }
             $this->Cell(array_sum($w), 0, '', 'T');
         }
+
     }
 
-    function acortar($cadena, $limite, $corte=" ", $pad="...") {
-        if(strlen($cadena) <= $limite)
+    function acortar($cadena, $limite, $corte = " ", $pad = "...") {
+        if (strlen($cadena) <= $limite)
             return $cadena;
-        if(false !== ($breakpoint = strpos($cadena, $corte, $limite))) {
-            if($breakpoint < strlen($cadena) - 1) {
+        if (false !== ($breakpoint = strpos($cadena, $corte, $limite))) {
+            if ($breakpoint < strlen($cadena) - 1) {
                 $cadena = substr($cadena, 0, $breakpoint) . $pad;
             }
         }
@@ -187,7 +187,6 @@ if ($tipo == 'pdf') {
     $pdf->SetTitle('Existencias');
 //$pdf->SetSubject('TCPDF Tutorial');
 //$pdf->SetKeywords('TCPDF, PDF, example, test, guide');
-
 // set default header data
     $image = $empresa['logoEmpresa'];
     if (!empty($filtros)) {
@@ -216,13 +215,12 @@ if ($tipo == 'pdf') {
     $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
 
 // set some language-dependent strings (optional)
-    if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
-        require_once(dirname(__FILE__).'/lang/eng.php');
+    if (@file_exists(dirname(__FILE__) . '/lang/eng.php')) {
+        require_once(dirname(__FILE__) . '/lang/eng.php');
         $pdf->setLanguageArray($l);
     }
 
 // ---------------------------------------------------------
-
 // set font
     $pdf->SetFont('helvetica', '', 12);
 
@@ -230,7 +228,7 @@ if ($tipo == 'pdf') {
     $pdf->AddPage();
 
 // column titles
-    $header = array(    'Cod',
+    $header = array('Cod','Fecha',
         'Nombre',
         'Talle',
         'Color',
@@ -241,7 +239,7 @@ if ($tipo == 'pdf') {
         'Proveedor',
         'Cant');
 
-    $columns = array(   'codigoPrenda',
+    $columns = array('codigoPrenda','fechaPrenda',
         'detallePrenda',
         'detalleTalle',
         'detalleColor',
@@ -254,7 +252,6 @@ if ($tipo == 'pdf') {
     $pdf->ColoredTable($header, $arrResultado, $columns);
 
 // ---------------------------------------------------------
-
 // close and output PDF document
     $pdf->Output('informe_existencias.pdf', 'I');
 
@@ -265,26 +262,28 @@ if ($tipo == 'pdf') {
     $date = date('d/m/Y');
     $filtros = implode(' - ', $filtros);
     $str_final = '
-    <table class="table table-striped" id="data">
-        <tr><td colspan="10" style="text-align: center; font-weight:bold; font-size: 14px;">Existencias('.$date.')</td></tr>
-        <tr><td colspan="10" style="text-align: center;"><label>Filtros: '. $filtros . '</td></tr>
+    <table class="table table-condensed" id="data">
+        <tr><td colspan="10" style="text-align: center; font-weight:bold; font-size: 14px;">Existencias(' . $date . ')</td></tr>
+        <tr><td colspan="10" style="text-align: center;"><label>Filtros: ' . $filtros . '</td></tr>
         <thead style="font-weight: bolder; text-align: center;">
             <tr>
-                <th bgcolor="#5cb85c" width="9%"><span title="prenda.codigoPrenda">Cod</span></th>
-                <th bgcolor="#5cb85c" width="25%"><span title="prenda.detallePrenda">Nombre</span></th>
-                <th bgcolor="#5cb85c" width="6%"><span title="talle.detalleTalle">Talle</span></th>
-                <th bgcolor="#5cb85c" width="9%"><span title="color.detalleColor">Color</span></th>
-                <th bgcolor="#5cb85c" width="9%"><span title="estampado.detalleEstampado">Estampado</span></th>
-                <th bgcolor="#5cb85c" width="9%"><span title="tela.detalleTela">Tela</span></th>
-                <th bgcolor="#5cb85c" width="9%"><span title="estacion.detalleEstacion">Temporada</span></th>
-                <th bgcolor="#5cb85c" width="9%"><span title="marca.detalleMarca">Marca</span></th>
-                <th bgcolor="#5cb85c" width="9%"><span title="proveedor.nombreProveedor">Proveedor</span></th>
-                <th bgcolor="#5cb85c" width="6%"><span title="prenda.cantidadPrenda">Cantidad</span></th>
+                <th width="9%"><span title="prenda.codigoPrenda">Cod</span></th>
+                <th width="9%"><span title="prenda.fechaPrenda">Fecha</span></th>
+                <th width="23%"><span title="prenda.detallePrenda">Nombre</span></th>
+                <th width="4%"><span title="talle.detalleTalle">Talle</span></th>
+                <th width="9%"><span title="color.detalleColor">Color</span></th>
+                <th width="9%"><span title="estampado.detalleEstampado">Estampado</span></th>
+                <th width="9%"><span title="tela.detalleTela">Tela</span></th>
+                <th width="7%"><span title="estacion.detalleEstacion">Temporada</span></th>
+                <th width="9%"><span title="marca.detalleMarca">Marca</span></th>
+                <th width="9%"><span title="proveedor.nombreProveedor">Proveedor</span></th>
+                <th width="3%"><span title="prenda.cantidadPrenda">C.</span></th>
         </thead>
     ';
     foreach ($arrResultado as $registro) {
         $str_final .= '<tr>';
         $str_final .= '<td>' . $registro['codigoPrenda'] . '</td>';
+        $str_final .= '<td>' . date('d-m-Y', strtotime($registro['fechaPrenda'])) . '</td>';
         $str_final .= '<td>' . $registro['detallePrenda'] . '</td>';
         $str_final .= '<td>' . $registro['detalleTalle'] . '</td>';
         $str_final .= '<td>' . $registro['detalleColor'] . '</td>';
@@ -302,6 +301,6 @@ if ($tipo == 'pdf') {
     header("Content-Disposition: attachment; filename=existencias.xls");  //File name extension was wrong
     header("Expires: 0");
     header("Cache-Control: must-revalidate, post-check=0, pre-check=0");
-    header("Cache-Control: private",false);
+    header("Cache-Control: private", false);
     echo $str_final;
 }

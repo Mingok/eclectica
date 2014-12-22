@@ -20,7 +20,7 @@ if (is_array($empresas)) {
                     <a href="index.php">
                         <img src="./imagenes/iconos/home.png" height='24px' title="Inicio" />
                         &nbsp;Inicio&nbsp;
-                    </a>
+                    </a>    
                 </li>
                 <li>
                     <a href="./indexPrendas.php?pasar=<?php echo $_SESSION['pasar']; ?>">
@@ -62,6 +62,7 @@ if (is_array($empresas)) {
                     <ul class="dropdown-menu">
                         <li><a href="./indexInformePrenda.php?pasar=<?php echo $_SESSION['pasar']; ?>">&nbsp;Existencias&nbsp;</a></li>
                         <li><a href="./indexInformeVenta.php?pasar=<?php echo $_SESSION['pasar']; ?>"> &nbsp;Ventas&nbsp;</a></li>
+                        <li><a href="./indexInformeGasto.php?pasar=<?php echo $_SESSION['pasar']; ?>"> &nbsp;Gastos&nbsp;</a></li>
                        </ul>
                 </li>
                 <!--  	<li>

@@ -189,7 +189,7 @@ $(document).ready(function() {
     		$('select[name=idTallePrenda]').val('0');
     		$('select[name=idEstampadoPrenda]').val('0');
     		$('select[name=idEstacionPrenda]').val('0');
-    		$('.btn-danger').addClass('no');
+    		//$('.btn-danger').addClass('no');
     		$('input[name=idPrenda]').val(null);
     		$('input[name=codigoPrenda]').hide();
     		$('label[for=codigoPrenda').hide();

@@ -46,23 +46,23 @@ $tipoVentas = $tipoVentaList->tipoVentasDisponibles();
                                 </select>
                             </td>
                             <td style="text-align: center;width: 25%" rowspan="3">
-                                <button type="button" id="btnfiltrar" style="width: 90px;" class="btn btn-sm btn-success" />Filtrar</button>
-                                <button id="btncancel" style="width: 90px;" class="btn btn-sm btn-danger"/> Todos</button>
+                                <button type="button" id="btnFiltrar" style="width: 110px;" class="btn btn-sm btn-success" />Filtrar</button>
+                                <button type="button" id="btnCancel" style="width: 110px;" class="btn btn-sm btn-danger"/> Todos</button>
                                 <br />
                                 <br />
-                                <button type="button" id="btnPdfVentas" style="width:90px;" class="btn btn-sm btn-warning" />Exportar Pdf</button>
-                                <button type="button" id="btnXlsVentas" style="width:90px;" class="btn btn-sm btn-warning" />Exportar Excel</button>
+                                <button type="button" id="btnPdfVentas" style="width: 110px;" class="btn btn-sm btn-warning" />Exportar Pdf</button>
+                                <button type="button" id="btnXlsVentas" style="width: 110px;" class="btn btn-sm btn-warning" />Exportar Excel</button>
 
                             </td>
                         </tr>
                         <tr style="height: 40px;">
                             <td style="text-align: right;width: 25%">
-                                <label>Desde</label>
-                                <input type="text" name="fecDesde" id="fecDesde" size="15" class="datepicker" /> 
+                                <label>Desde:</label>
+                                <input type="text" name="fecDesde" id="fecDesde" class="datepicker form-control" style="width: 120px" /> 
                             </td>
                             <td style="text-align: right;width: 25%">
                                 <label>Hasta:</label>
-                                <input type="text" name="fecHasta" id="fecHasta" size="15" class="datepicker" /> 
+                                <input type="text" name="fecHasta" id="fecHasta" class="datepicker form-control" style="width: 120px" /> 
                             </td>
                         </tr>
 <!--                        <tr style="height: 40px;">

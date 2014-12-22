@@ -25,7 +25,7 @@ $tipoVentas = $tipoVentaList->tipoVentasDisponibles();
 </h1>
 <div  id="exitoPrenda" style="display: none; padding-top: 10px;">
     
-    <div id="CPrenda" class="alert alert-success    alert-success1" style=""></div>
+    <div id="CPrenda" class="alert alert-success alert-success1" style=""></div>
 </div>
 <div class="row">
     <div class="col-md-12">
@@ -45,14 +45,14 @@ $tipoVentas = $tipoVentaList->tipoVentasDisponibles();
                 </div>
                 <div class="col-md-2">
                     <a href="#prenda"> 
-                        <input type="button" value="Nuevo" style="width: 100px;" class="buttonPrendasNueva btn btn-sm btn-success" /></a>
+                        <input type="button" value="Agregar" style="width: 100px;" class="buttonPrendasNueva btn btn-sm btn-success" /></a>
                 </div>
                 <div class="row">
                     <table class="table">
                         <tr>
                             <td colspan="3" style="text-align: right;">
                                 <div class="scrolPrenda">
-                                    <table class="table table-striped" id="tblPrenda">
+                                    <table class="table table-condensed" id="tblPrenda">
                                         <thead class="btn-success" style="font-weight: bolder; text-align: center;">
                                             <tr>
                                                 <td style="width: 4%">

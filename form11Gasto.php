@@ -27,7 +27,6 @@
         $('select[name=idFormaPagoGasto]').val($(this).data('idformapagogasto'));
         $('input[name=idGasto]').val($(this).data('idgasto'));
         $('.btn-success').val('Modificar');
-        $('.btn-danger').removeClass('no');
     });
     //Boton limpiar campos
     $('.btn-danger').click(function() {
@@ -36,7 +35,8 @@
     $("#formGastos").validate({
         rules: {
             FechaGasto: {
-                required: true
+                required: true,
+                date:true
             },
             detalleGasto: {
                 required: true,
@@ -55,7 +55,8 @@
         },
         messages: {
             FechaGasto: {
-                required: "Ingrese Fecha"
+                required: "Ingrese Fecha",
+                date:"debe ser una fecha"
             },
             detalleGasto: {
                 required: "Ingrese Detalle",

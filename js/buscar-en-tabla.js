@@ -371,6 +371,11 @@ $(function() {
             $.fntBuscarEnTablaPrendaCodVenta($(this).val(), 'tblPrendaVenta');
         }
     });
+    $('#txtGasto').keydown(function(e) {
+        if (e.keyCode === 13) {
+            $.fntBuscarEnTablaPrendaNomVenta($(this).val(), 'tblGasto');
+        }
+    });
     $('#txtNomPrendaVenta').keydown(function(e) {
         if (e.keyCode === 13) {
             $.fntBuscarEnTablaPrendaNomVenta($(this).val(), 'tblPrendaVenta');

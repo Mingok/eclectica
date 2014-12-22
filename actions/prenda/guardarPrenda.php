@@ -53,6 +53,7 @@ $arrPrenda = array(
 'idEstacionPrenda' => $idEstacionPrenda,    
 'idEmpresaPrenda'=>$idEmpresaPrenda,
 'idProveedorPrenda' => $idProveedorPrenda,	
+'fechaPrenda'=>date('Y-m-d h:i:s', time()),
 'idMarcaPrenda'=>$idMarcaPrenda
 
 );

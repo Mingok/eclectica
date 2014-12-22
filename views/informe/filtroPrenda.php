@@ -27,7 +27,7 @@ $tipoVentas = $tipoVentaList->tipoVentasDisponibles();
 <h1>
     Existencias
 </h1>
-<form id="frm_filtro" method="post" action="">
+<form id="frm_filtro_Prendas" method="post" action="">
     <div class="row">
         <div class="col-md-12">
             <div class="panel panel-success">
@@ -38,7 +38,7 @@ $tipoVentas = $tipoVentaList->tipoVentasDisponibles();
                                 <b>
                                     Nombre/Codigo:&nbsp;
                                 </b>
-                                <input type="text" name="detallePrenda" id="detallePrenda" class="form-control" placeholder="ingrese" style="width: 450px;" />
+                                <input type="text" name="detallePrenda" id="detallePrenda" class="form-control" placeholder="ingrese" style="width: 400px;" />
                             </td>
                             <td style="text-align: right; width: 25%">
                                 <label>Marca:</label>
@@ -57,12 +57,12 @@ $tipoVentas = $tipoVentaList->tipoVentasDisponibles();
                                 </select>  
                             </td>
                             <td style="text-align: center;width: 25%" rowspan="3">
-                                <button type="button" id="btnfiltrar" style="width: 90px;" class="btn btn-sm btn-success" />Filtrar</button>
-                                <button id="btncancel" style="width: 90px;" class="btn btn-sm btn-danger"/> Todos</button>
+                                <button id="btnFiltrar" type="button" style="width: 110px;" class="btn btn-sm btn-success" />Filtrar</button>
+                                <button id="btnCancel" style="width: 110px;" class="btn btn-sm btn-danger"/> Todos</button>
                                 <br />
                                 <br />
-                                <button type="button" id="btnPdfExistencias" style="width:90px;" class="btn btn-sm btn-warning" />Exportar Pdf</button>
-                                <button type="button" id="btnXlsExistencias" style="width:90px;" class="btn btn-sm btn-warning" />Exportar Excel</button>
+                                <button type="button" id="btnPdfExistencias" style="width: 110px;" class="btn btn-sm btn-warning" />Exportar Pdf</button>
+                                <button type="button" id="btnXlsExistencias" style="width: 110px;" class="btn btn-sm btn-warning" />Exportar Excel</button>
                             </td>
                         </tr>
                         <tr style="height: 40px;">
@@ -147,9 +147,9 @@ $tipoVentas = $tipoVentaList->tipoVentasDisponibles();
                                     }
                                     ?>
                                 </select>
-                        </td>
-                        <td style="text-align: right;width: 25%">
-                            <label>Talle:</label>
+                            </td>
+                            <td style="text-align: right;width: 25%">
+                                <label>Talle:</label>
                                 <select name="idTalle" style="width: 190px;" class="form-control">
                                     <option value="">--</option>
 
@@ -163,7 +163,7 @@ $tipoVentas = $tipoVentaList->tipoVentasDisponibles();
                                     }
                                     ?>
                                 </select>
-                        </td>
+                            </td>
 
                         </tr>
                     </table>
@@ -173,36 +173,3 @@ $tipoVentas = $tipoVentaList->tipoVentasDisponibles();
         </div>
     </div>  
 </form>
-
-
-
-
-
-
-
-
-<!--<form id="frm_filtro" method="post" action="">
-    <ul>
-        <li><label>Tela:</label>
-            <select name="idTela">
-                <option value="">--</option>
-                 Listar Paises 
-<?php
-foreach ($telas as $tela) {
-    ?>
-                        <option value="<?php echo $tela['idTela'] ?>">
-    <?php echo $tela['detalleTela'] ?>
-                        </option>
-    <?php
-}
-?>
-            </select>                	
-        </li>
-        <li>
-            <button type="button" id="btnfiltrar">Filtrar</button>
-        </li>                
-        <li>
-            <a href="javascript:;" id="btncancel">Todos</a>
-        </li>
-    </ul>
-</form>-->

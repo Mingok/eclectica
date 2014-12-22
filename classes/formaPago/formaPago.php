@@ -2,6 +2,20 @@
 
 Class formaPago {
 
+    public function eligeFormaDePago($id) {
+        $ds = DIRECTORY_SEPARATOR;
+        require_once (__DIR__ . "{$ds}..{$ds}..{$ds}base{$ds}manejoMySQL.php");
+
+        $objManejoMySQL = new manejoMySQL();
+        $strSql = "SELECT * FROM `formapago` where idFormaPago=" . $id;
+        $arrResultado = null;
+        $objManejoMySQL->consultar($strSql, $arrResultado);
+        if (!empty($arrResultado)) {
+            $arrResultado = current($arrResultado);
+        }
+        return $arrResultado;
+    }
+
     public function formaPagoDisponibles() {
         require_once (__DIR__ . '\..\..\base\manejoMySQL.php');
 

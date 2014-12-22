@@ -63,7 +63,7 @@
 
             <form id="formDinamico" name="formDinamico" action="actions/venta/efectuarVenta.php">
                 <div class="panel-body">
-                    <table id="contenedorcampos" class="table table-striped">
+                    <table id="contenedorcampos" class="table table-condensed">
                         <thead class="btn-success" style="font-weight: bolder; text-align: center;">
                             <tr>
                                 <td style="text-align: center; width: 15%;">

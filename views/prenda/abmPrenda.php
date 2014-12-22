@@ -57,15 +57,14 @@ $tipoVentas = $tipoVentaList->tipoVentasDisponibles();
                                             <td style="text-align: right;">
                                                 <input type="submit" value="Agregar" style="width: 100px;" class="btn btn-sm btn-success" />
                                                 &nbsp;
-                                                <input type="button" value="Limpiar" style="width: 100px;" class="btn btn-sm btn-danger no"/>
+                                                <input type="button" value="Limpiar" style="width: 100px;" class="btn btn-sm btn-danger"/>
                                             </td>
                                         </tr>
                                         <tr style="height: 40px;">
                                             <td style="text-align: right;">
                                                 Marca:&nbsp;
                                                 <select size="1" name="idMarcaPrenda" id="idMarcaPrenda" style="width: 165px" class="form-control">
-                                                    <option>
-                                                    </option>
+                                                    <option value=''>- Elija Una -</option>
                                                     <?php
                                                     foreach ($marcas as $marca) {
                                                         if (isset($marca)) {
@@ -78,8 +77,7 @@ $tipoVentas = $tipoVentaList->tipoVentasDisponibles();
                                             <td style="text-align: right;">
                                                 Proveedor:&nbsp;
                                                 <select size="1" title="Ingrese Proveedor" name="idProveedorPrenda" id="idProveedorPrenda" style="width: 165px" class="form-control">
-                                                    <option>
-                                                    </option>
+                                                    <option value=''>- Elija Una - </option>
                                                     <?php
                                                     foreach ($proveedores as $proveedor) {
                                                         if (isset($proveedor)) {
@@ -92,8 +90,7 @@ $tipoVentas = $tipoVentaList->tipoVentasDisponibles();
                                             <td style="text-align: right;">
                                                 Temporada:&nbsp;
                                                 <select size="1" title="Ingrese Temporada" style="width: 150px" name="idEstacionPrenda" id="idEstacionPrenda" class="form-control">
-                                                    <option>
-                                                    </option>
+                                                    <option value=''>- Elija Una - </option>
                                                     <?php
                                                     foreach ($estaciones as $estacion) {
                                                         if (isset($estacion)) {
@@ -113,8 +110,7 @@ $tipoVentas = $tipoVentaList->tipoVentasDisponibles();
                                             <td style="text-align: right;">
                                                 Tela:&nbsp;
                                                 <select size="1" title="Ingrese Razon Social" name="idTelaPrenda" id="idTelaPrenda" style="width: 150px" class="form-control"/>
-                                        <option>
-                                        </option>
+                                        <option value=''>- Elija Una - </option>    
                                         <?php
                                         foreach ($telas as $tela) {
                                             if (isset($telas)) {
@@ -127,8 +123,7 @@ $tipoVentas = $tipoVentaList->tipoVentasDisponibles();
                                 <td style="text-align: right;">
                                     Color:&nbsp;
                                     <select size="1" title="Ingrese Razon Social" name="idColorPrenda" id="idColorPrenda" style="width: 150px" class="form-control" />
-                            <option>
-                            </option>
+                            <option value=''>- Elija Una - </option>
                             <?php
                             foreach ($colores as $color) {
                                 if (isset($color)) {
@@ -141,8 +136,7 @@ $tipoVentas = $tipoVentaList->tipoVentasDisponibles();
                             <td style="text-align: right;">
                                 Talle:&nbsp;
                                 <select size="1" title="Ingrese Razon Social" name="idTallePrenda" id="idTallePrenda" style="width: 150px" class="form-control"/>
-                            <option>
-                            </option>
+                            <option value=''>- Elija Una - </option>
                             <?php
                             foreach ($talles as $talle) {
                                 if (isset($talles)) {
@@ -155,8 +149,7 @@ $tipoVentas = $tipoVentaList->tipoVentasDisponibles();
                             <td style="text-align: right;">
                                 Estampado:&nbsp;
                                 <select size="1" name="idEstampadoPrenda" id="idEstampadoPrenda" style="width: 140px" class="form-control"/>
-                            <option>
-                            </option>
+                            <option value=''>- Elija Una -   </option>
                             <?php
                             foreach ($estampados as $estampado) {
                                 if (isset($estampado)) {
@@ -221,8 +214,8 @@ $tipoVentas = $tipoVentaList->tipoVentasDisponibles();
                                         <td style="text-align: right;">
                                             <?php echo $tipoVentas["5"]["detalleTipoVenta"]; ?>
                                             <input type="text" style="width: 100px" name="tipoVenta<?php
-                                                   echo $tipoVentas["5"]["idTipoVenta"];
-                                                   ?>" class="form-control" />
+                                            echo $tipoVentas["5"]["idTipoVenta"];
+                                            ?>" class="form-control" />
                                         </td>
 
                                     </tr>
