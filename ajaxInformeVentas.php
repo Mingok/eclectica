@@ -15,43 +15,40 @@ if ($_GET['action'] == 'listar') {
 			) tmp ";
     $arrayFiltro = array();
    
-    
-   
-   
     // valores recibidos por POST
     if (isset($_POST['selecEmpleado'])) {
-        if ($_POST['selecEmpleado'] !=''){    
-             $arrayFiltro[] = "idVendedor = " . $_POST['selecEmpleado'];
-        }      
+        if ($_POST['selecEmpleado'] != '') {
+            $arrayFiltro[] = "idVendedor = " . $_POST['selecEmpleado'];
+        }
     }
-    
+
     if (isset($_POST['selecCliente'])) {
-        if ($_POST['selecCliente'] !=''){    
-             $arrayFiltro[] = "idCliente = " . $_POST['selecCliente'];
-        }      
+        if ($_POST['selecCliente'] != '') {
+            $arrayFiltro[] = "idCliente = " . $_POST['selecCliente'];
+        }
     }
-   
+
     if (isset($_POST['fecDesde'])) {
-        if ($_POST['fecDesde'] !=''){
+        if ($_POST['fecDesde'] != '') {
             $date = str_replace('/', '-', $_POST['fecDesde']);
-            $fecha = date('Y-m-d',strtotime($date)).' 00:00:00';
+            $fecha = date('Y-m-d', strtotime($date)) . ' 00:00:00';
             $arrayFiltro[] = "fechaVenta >= '" . $fecha . "'";
-        }      
+        }
     }
-   
+
     if (isset($_POST['fecHasta'])) {
-        if ($_POST['fecHasta'] !='') {
+        if ($_POST['fecHasta'] != '') {
             $date = str_replace('/', '-', $_POST['fecHasta']);
-            $fecha = date('Y-m-d',strtotime($date)).' 23:59:59';
+            $fecha = date('Y-m-d', strtotime($date)) . ' 23:59:59';
             $arrayFiltro[] = "fechaVenta <= '" . $fecha . "'";
-        }      
+        }
     }
-   
+
 
 
     // Vericamos si hay algun filtro
-	
-         $auxArray = implode(' AND ', $arrayFiltro);
+
+    $auxArray = implode(' AND ', $arrayFiltro);
     if (count($arrayFiltro) != 0) {
         $sql .= " WHERE ";
         $sql.=$auxArray;
@@ -75,7 +72,7 @@ if ($_GET['action'] == 'listar') {
         $entrega = 0;
         foreach ($arrResultado as $registro) {
             $str_final .= '<tr>';
-            $str_final .= '<td>' . date('d/m/Y H:i',strtotime($registro['fechaVenta'])) . ' hs</td>';
+            $str_final .= '<td>' . date('d/m/Y H:i', strtotime($registro['fechaVenta'])) . ' hs</td>';
             $str_final .= '<td>' . $registro['detalleCliente'] . '</td>';
             $str_final .= '<td>' . $registro['precioVenta'] . '</td>';
             $str_final .= '<td>' . $registro['entregaCliente'] . '</td>';
@@ -91,6 +88,7 @@ if ($_GET['action'] == 'listar') {
         $str_final .= '<td></td>';
         $str_final .= '</tr>';
     }
+    $str_final .= '<tr><td colspan="8" align="center">No se encontraron ventas.</td></tr>';
 
     // convertimos el array de datos a formato json
 //	echo json_encode($array_final);
