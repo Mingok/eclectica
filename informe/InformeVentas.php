@@ -109,7 +109,7 @@ if ($tipo == 'pdf') {
             $this->SetFont('', 'B');
             $this->SetFontSize(8);
             // Header
-            $w = array(30,60,15,15,60);
+            $w = array(30,52,15,15,15,53);
             $truncate = array(0,0,0,0,0);
             $num_headers = count($header);
             for($i = 0; $i < $num_headers; ++$i) {
@@ -209,12 +209,14 @@ if ($tipo == 'pdf') {
         'Cliente',
         'Vendido',
         'Entregado',
+        'Costo',
         'Vendedor');
 
     $columns = array(   'fechaVenta',
         'detalleCliente',
         'precioVenta',
         'entregaCliente',
+        'costoVenta',
         'detalleVendedor');
     $pdf->ColoredTable($header, $arrResultado, $columns);
 
@@ -250,6 +252,7 @@ if ($tipo == 'pdf') {
         $str_final .= '<td>' . $registro['detalleCliente'] . '</td>';
         $str_final .= '<td>' . $registro['precioVenta'] . '</td>';
         $str_final .= '<td>' . $registro['entregaCliente'] . '</td>';
+        $str_final .= '<td>' . $registro['costoVenta'] . '</td>';
         $str_final .= '<td>' . $registro['detalleVendedor'] . '</td>';
         $str_final .= '</tr>';
         $precio_venta += intval($registro['precioVenta']);
