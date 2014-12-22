@@ -76,6 +76,7 @@ if ($_GET['action'] == 'listar') {
             $str_final .= '<td>' . $registro['detalleCliente'] . '</td>';
             $str_final .= '<td>' . $registro['precioVenta'] . '</td>';
             $str_final .= '<td>' . $registro['entregaCliente'] . '</td>';
+            $str_final .= '<td>' . $registro['costoVenta'] . '</td>';
             $str_final .= '<td>' . $registro['detalleVendedor'] . '</td>';
             $str_final .= '</tr>';
             $precio_venta += intval($registro['precioVenta']);
