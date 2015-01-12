@@ -26,21 +26,20 @@ $personas = $personaList->personasDisponibles();
         <script type="text/javascript" src="<?php echo EMPLEADOS_SCRIPTS_PATH; ?>fancybox/jquery.mousewheel-3.0.6.pack.js"></script>
         <script type="text/javascript" src="<?php echo EMPLEADOS_SCRIPTS_PATH; ?>fancybox/jquery.fancybox.js"></script>
         <script>
-            $(function() {
+            $(function () {
 
-                $('#selecCliente').select2().on("change", function(e) {
+                $('#selecCliente').select2().on("change", function (e) {
                     var deuda = $($(this).select2('data').element).data('deuda');
                     $('input[name=idPersona]').val(e.val);
 
                     $("#selecCliente").empty().attr("disabled", "disabled");
-                    $('.deudaCliente').html("$ " + deuda);
+                    $('.deudaCliente').html("<label >Deuda:</label>$ " + deuda);
 
                 });
 
-                $('#selecEmpleado').select2().on("change", function(e) {
+                $('#selecEmpleado').select2().on("change", function (e) {
                     auxiliar = this.value;
-                    $('#selecCliente option[value="' + auxiliar + '"]').empty().css('display', 'none');
-                    $('#selecCliente option[value="' + auxiliar + '"]').empty().attr('disabled', 'disabled');
+                    $('#selecCliente option[value="' + auxiliar + '"]').addClass("hide_me");
 
                     $('input[name=idEmple]').val(e.val);
                     $('#divCliente').show();
@@ -68,11 +67,11 @@ $personas = $personaList->personasDisponibles();
                             <input type="hidden" id="pwdDeVendedor" name="pwdDeVendedor" />
                             <table style="width: 100%;">
                                 <tr>
-                                    <td style="height:55px; text-align: middle;">
+                                    <td style="height:55px; text-align: middle; width: 50%">
                                         <label style="text-align:left">
                                             Empleado:
-                                        </label><br>
-                                        <select id="selecEmpleado" name="selecEmpleado"  style="width: 250px" >
+                                        </label>
+                                        <select id="selecEmpleado" name="selecEmpleado"  style="width: 210px" >
                                             <option value="">Seleccione un Empleado</option>
                                             <?php
                                             foreach ($personas as $persona) {
@@ -86,18 +85,17 @@ $personas = $personaList->personasDisponibles();
                                             ?>
                                         </select>
                                     </td>
-                                    <td style="height:55px; text-align: middle;">
-                                        <label class="ccLabel">Control:</label><br>
-                                        <input type="password" class=" input input-sm" name="control" id="control" placeholder="ingresar" style="width: 100px;"/>
+                                    <td style="height:55px; text-align: center;" rowspan="2">
+                                        <span class="deudaCliente"></span>
                                     </td>
                                 </tr>
                                 <tr style="vertical-align: middle;width: 500px;">   
 
                                     <td style="height:55px; width:330px; text-align: left;">
                                         <div id="divCliente">
-                                            <label >Cliente:</label> <br>
+                                            <label >Cliente:</label>
 
-                                            <select id="selecCliente" name="selecCliente" style="width:250px">
+                                            <select id="selecCliente" name="selecCliente" style="width:210px">
                                                 <option value="">Seleccione un Cliente</option>
                                                 <?php
                                                 foreach ($personas as $persona) {
@@ -111,17 +109,20 @@ $personas = $personaList->personasDisponibles();
                                         </div>
 
                                     </td>
-                                    <td style="height:55px; text-align: left;">
-                                        <label >Deuda:</label><br>
-                                        <span class="deudaCliente"></span>
-                                    </td>
+
                                 </tr>
                                 <tr>
-                                    <td style="height:55px; text-align: left;">
+                                    <td style="height:55px; text-align: right; padding: 10px">
                                         <label class="ccLabel">Entrega:</label>
                                         <input type="text" class=" input input-sm" name="entregaCliente" id="entregaCliente" placeholder="ingresar" style="width: 100px;"/>
                                     </td>
-                                    <td style="height:55px; text-align: right;">
+                                    <td style="height:55px; text-align: left; padding: 10px">
+                                        <label class="ccLabel">Control:</label>
+                                        <input type="password" class=" input input-sm" name="control" id="control" placeholder="ingresar" style="width: 100px;"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" style=" text-align: right">
                                         <input type="submit" name="ccSubmit" onclick="" value="Actualizar" class="btn btn-sm btn-success" />
                                     </td>
                                 </tr>
@@ -136,7 +137,7 @@ $personas = $personaList->personasDisponibles();
 
 </html>
 <script type="text/javascript">
-    $(document).ready(function() {
+    $(document).ready(function () {
         $('#divCliente').hide();
         $("#formCcCliente").validate({
             rules: {
@@ -171,14 +172,14 @@ $personas = $personaList->personasDisponibles();
                     required: "Ingrese un valor de entrega",
                     number: "Tiene que ser un numero"
                 }
-            }, submitHandler: function(form) {
+            }, submitHandler: function (form) {
                 var url = $(form).attr('action');
                 $('input[name=ccSubmit]').attr('disabled', 'disabled');
                 $.ajax({
                     type: "POST",
                     url: url,
                     data: $(form).serialize(), // serializes the form's elements.
-                    success: function(data) {
+                    success: function (data) {
                         if (data == 'error:no_vendedor') {
                             $('input[name=ccSubmit]').removeAttr('disabled');
                             alert('El codigo de vendedor es incorrecto.');

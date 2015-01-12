@@ -56,11 +56,8 @@
         $("#selecEmpleados").on("change", function(e) {
             var auxiliar = this.value;
             $('#idVendedor').val(this.value);
-
-            $('#selecClientes option[value="' + auxiliar + '"]').empty().css('display', 'none');
-
-            $('#selecClientes option[value="' + auxiliar + '"]').empty().attr('disabled', 'disabled');
-
+$('#selecClientes option[value="' + auxiliar + '"]').addClass("hide_me");
+            
             $("#selecEmpleados").empty().attr("disabled", "disabled");
 
             

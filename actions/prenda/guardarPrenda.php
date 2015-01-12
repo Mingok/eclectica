@@ -7,6 +7,12 @@ $tipoVenta3 = $_REQUEST['tipoVenta3'];
 $tipoVenta4 = $_REQUEST['tipoVenta4'];
 $tipoVenta5 = $_REQUEST['tipoVenta5'];
 $tipoVenta6 = $_REQUEST['tipoVenta6'];
+$tipoVenta7 = $_REQUEST['tipoVenta7'];
+$tipoVenta8 = $_REQUEST['tipoVenta8'];
+$tipoVenta9 = $_REQUEST['tipoVenta9'];
+$tipoVenta10 = $_REQUEST['tipoVenta10'];
+$tipoVenta11 = $_REQUEST['tipoVenta11'];
+
 $idPrenda = $_REQUEST['idPrenda'];
 
 $detallePrenda = $_REQUEST['detallePrenda'];
@@ -63,7 +69,12 @@ $arrPrecioPrenda = array(
     'tipoVenta3'=>$tipoVenta3,
     'tipoVenta4'=>$tipoVenta4,
     'tipoVenta5'=>$tipoVenta5,
-    'tipoVenta6'=>$tipoVenta6
+    'tipoVenta6'=>$tipoVenta6,
+    'tipoVenta7'=>$tipoVenta7,
+    'tipoVenta8'=>$tipoVenta8,
+    'tipoVenta9'=>$tipoVenta9,
+    'tipoVenta10'=>$tipoVenta10,
+    'tipoVenta11'=>$tipoVenta11
 );
 
 

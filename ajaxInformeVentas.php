@@ -88,8 +88,8 @@ if ($_GET['action'] == 'listar') {
         $str_final .= '<td><b>' . $entrega . '</b></td>';
         $str_final .= '<td></td>';
         $str_final .= '</tr>';
-    }
-    $str_final .= '<tr><td colspan="8" align="center">No se encontraron ventas.</td></tr>';
+    
+    }else {$str_final .= '<tr><td colspan="8" align="center">No se encontraron ventas.</td></tr>';}
 
     // convertimos el array de datos a formato json
 //	echo json_encode($array_final);

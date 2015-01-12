@@ -124,45 +124,45 @@ $proveedores = $proveedorList->proveedoresDisponibles();
                             </div>
                             <div class="col-md-4" style="text-align: right;">
                                 <label for="cuitProveedor" style="width: 100px;"> CUIT: </label>
-                                <input type="text" id="cuitProveedor" name="cuitProveedor" style="width: 170px;" title="Ingrese CUIT"  placeholder="xx-xxxxxxxxx-xx" class="form-control" required />
+                                <input type="text" id="cuitProveedor" name="cuitProveedor" style="width: 170px;" title="Ingrese CUIT"  placeholder="xx-xxxxxxxxx-xx" class="form-control"  />
                             </div>
                             <div class="col-md-4" style="text-align: right;">
                                 <label for="condIvaProveedor" style="width: 100px;"> Cond. IVA: </label> 
-                                <input type="text" id="condIvaProveedor" name="condIvaProveedor" style="width: 100px;" title="Ingrese CONDICION" placeholder="Ingrese" class="form-control" required />
+                                <input type="text" id="condIvaProveedor" name="condIvaProveedor" style="width: 100px;" title="Ingrese CONDICION" placeholder="Ingrese" class="form-control"  />
                             </div>
                         </div>
                         <div class="row" style="height: 40px;">
                             <div class="col-md-4" style="text-align: right;">
                                 <label for="direccionProveedor" style="width: 100px;"> Domicilio: </label>
-                                <input type="text" id="direccionProveedor" name="direccionProveedor" style="width: 130px;" title="Ingrese DOMICILIO" placeholder="Ingrese" class="form-control" required />
+                                <input type="text" id="direccionProveedor" name="direccionProveedor" style="width: 130px;" title="Ingrese DOMICILIO" placeholder="Ingrese" class="form-control"  />
                             </div>
                             <div class="col-md-4" style="text-align: right;">
                                 <label for="localidadProveedor" style="width: 100px;"> Localidad: </label> 
-                                <input type="text" id="localidadProveedor" name="localidadProveedor" style="width: 100px;"  title="Ingrese LOCALIDAD" class="form-control" placeholder="Ingrese" required />
+                                <input type="text" id="localidadProveedor" name="localidadProveedor" style="width: 100px;"  title="Ingrese LOCALIDAD" class="form-control" placeholder="Ingrese"  />
                             </div>
                             <div class="col-md-4" style="text-align: right;">
                                 <label for="bancoProveedor" style="width: 100px;"> Banco: </label> 
-                                <input type="text" id="bancoProveedor" name="bancoProveedor" style="width: 100px;" title="Ingrese BANCO" placeholder="Ingrese" class="form-control" required />
+                                <input type="text" id="bancoProveedor" name="bancoProveedor" style="width: 100px;" title="Ingrese BANCO" placeholder="Ingrese" class="form-control"  />
                             </div>
                         </div>
                         <div class="row" style="height: 40px;">
                             <div class="col-md-4" style="text-align: right;">
                                 <label for="contactoProveedor" style="width: 100px;"> Contacto: </label> 
-                                <input type="text" id="contactoProveedor" name="contactoProveedor" style="width: 100px;" title="Ingrese CONTACTO" placeholder="ingrese" class="form-control" required />
+                                <input type="text" id="contactoProveedor" name="contactoProveedor" style="width: 100px;" title="Ingrese CONTACTO" placeholder="ingrese" class="form-control"  />
                             </div>
                             <div class="col-md-4" style="text-align: right;">
                                 <label for="telefonoProveedor" style="width: 100px;"> Telefono: </label> 
-                                <input type="text" id="telefonoProveedor" name="telefonoProveedor" style="width: 120px;" title="Ingrese TELEFONO " class="form-control" placeholder="ingrese" required />
+                                <input type="text" id="telefonoProveedor" name="telefonoProveedor" style="width: 120px;" title="Ingrese TELEFONO " class="form-control" placeholder="ingrese"  />
                             </div>
                             <div class="col-md-4" style="text-align: right;">
                                 <label for="cbuProveedor" style="width: 100px;"> CBU </label> 
-                                <input type="text" id="cbuProveedor" name="cbuProveedor" style="width: 100px;" class="form-control" placeholder="Ingrese" title="Ingrese CBU" required />
+                                <input type="text" id="cbuProveedor" name="cbuProveedor" style="width: 100px;" class="form-control" placeholder="Ingrese" title="Ingrese CBU"  />
                             </div>
                         </div>
                         <div class="row" style="height: 40px;">
                             <div class="col-md-4" style="text-align: right;">
                                 <label for="emailProveedor" style="width: 100px;"> Email </label> 
-                                <input type="email" title="Ingrese Email Correcto" id="emailProveedor" name="emailProveedor" placeholder="Ingrese" class="form-control" style="width: 200px;" required />
+                                <input type="email" title="Ingrese Email Correcto" id="emailProveedor" name="emailProveedor" placeholder="Ingrese" class="form-control" style="width: 200px;"  />
                             </div>
                             <div class="col-md-4" style="text-align: right;">
 

@@ -166,60 +166,85 @@ $tipoVentas = $tipoVentaList->tipoVentasDisponibles();
                         <tr>
                             <td colspan="2">
                                 <table style="width: 100%;">
-                                    <tr>
-                                        <td colspan="1">
-                                            <h4 style="text-align: left;">
+                                    <tr style="height: 40px;padding-bottom: 10px;padding-top: 10px; ">
+                                        <td colspan="2" style="min-width: 200px;">
+                                            <h4 style="text-align: center;">
                                                 Precios
-                                            </h4>
+                                            </h4>   
                                         </td>
-                                        <td colspan="2">
-                                            <?php echo $tipoVentas["0"]["detalleTipoVenta"]; ?>
-                                            <input type="text" id="idTipoVenta0" style="width: 120px" value="0" name="tipoVenta<?php
-                                            echo $tipoVentas["0"]["idTipoVenta"];
-                                            ?>" class="form-control"/>
-                                            <input type="button" value="Calcular" style="width: 100px;" class="btn btn-sm btn-primary" id="mostrarPrecios" />
-                                        </td>
-                                        <td colspan="3">
+                                        <td style="min-width: 200px;">
                                             &nbsp;
                                         </td>
-                                    </tr>
-
-                                    <tr id="montoto">
-
-                                        <td style="text-align: right;">
+                                        <td style="background-color: #1E90FF;min-width: 200px; text-align: right; padding-right: 10px">
+                                            <?php echo $tipoVentas["0"]["detalleTipoVenta"]; ?> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <input type="text"  style="width: 120px" value="0" class="form-control"
+                                                   id="idTipoVenta<?php echo $tipoVentas["0"]["idTipoVenta"]; ?>" 
+                                                   name="tipoVenta<?php echo $tipoVentas["0"]["idTipoVenta"]; ?>"/>
+                                        </td>
+                                        <td style="min-width: 200px; text-align: right;">
                                             <?php echo $tipoVentas["1"]["detalleTipoVenta"]; ?>
-                                            <input type="text" style="width: 100px" name="tipoVenta<?php
-                                            echo $tipoVentas["1"]["idTipoVenta"];
-                                            ?>" class="form-control" />
+                                            <input type="text"  style="width: 120px" value="0" class="form-control"
+                                                   id="idTipoVenta<?php echo $tipoVentas["1"]["idTipoVenta"]; ?>" 
+                                                   name="tipoVenta<?php echo $tipoVentas["1"]["idTipoVenta"]; ?>"/>
                                         </td>
-                                        <td style="text-align: right;">
-                                            <?php echo $tipoVentas["2"]["detalleTipoVenta"]; ?>
-                                            <input type="text" style="width: 100px" name="tipoVenta<?php
-                                            echo $tipoVentas["2"]["idTipoVenta"];
-                                            ?>" class="form-control" />
+                                        <td style="min-width: 200px; text-align: right;" >
+                                            <input type="button" value="Calcular" style="width: 100px;" class="btn btn-sm btn-primary" id="mostrarPrecios" />
                                         </td>
-                                        <td style="text-align: right;">
-                                            <?php echo $tipoVentas["3"]["detalleTipoVenta"]; ?>
-                                            <input type="text" style="width: 100px" name="tipoVenta<?php
-                                            echo $tipoVentas["3"]["idTipoVenta"];
-                                            ?>" class="form-control"/>
-                                        </td>
-                                        <td style="text-align: right;">
-                                            <?php echo $tipoVentas["4"]["detalleTipoVenta"]; ?>
-                                            <input type="text" id="idTipoVenta4" style="width: 100px" name="tipoVenta<?php
-                                            echo $tipoVentas["4"]["idTipoVenta"];
-                                            ?>" class="form-control" />
-
-                                        </td>
-                                        <td style="text-align: right;">
-                                            <?php echo $tipoVentas["5"]["detalleTipoVenta"]; ?>
-                                            <input type="text" style="width: 100px" name="tipoVenta<?php
-                                            echo $tipoVentas["5"]["idTipoVenta"];
-                                            ?>" class="form-control" />
-                                        </td>
-
                                     </tr>
-
+                                    <tr style="min-height: 100px; padding-bottom: 10px;padding-top: 10px;" id="montoto">
+                                        <td colspan="2" style="text-align: right;">
+                                            <?php echo $tipoVentas["2"]["detalleTipoVenta"]; ?>
+                                            <input type="text"  style="width: 120px" value="0" class="form-control"
+                                                   id="idTipoVenta<?php echo $tipoVentas["2"]["idTipoVenta"]; ?>" 
+                                                   name="tipoVenta<?php echo $tipoVentas["2"]["idTipoVenta"]; ?>"/>
+                                            <br><br>
+                                            <?php echo $tipoVentas["3"]["detalleTipoVenta"]; ?>
+                                            <input type="text"  style="width: 120px" value="0" class="form-control"
+                                                   id="idTipoVenta<?php echo $tipoVentas["3"]["idTipoVenta"]; ?>" 
+                                                   name="tipoVenta<?php echo $tipoVentas["3"]["idTipoVenta"]; ?>"/>
+                                            <br><br>
+                                            <?php echo $tipoVentas["4"]["detalleTipoVenta"]; ?>
+                                            <input type="text"  style="width: 120px" value="0" class="form-control"
+                                                   id="idTipoVenta<?php echo $tipoVentas["4"]["idTipoVenta"]; ?>" 
+                                                   name="tipoVenta<?php echo $tipoVentas["4"]["idTipoVenta"]; ?>"/>
+                                        </td>
+                                        <td colspan="2" style="text-align: right;">
+                                            <?php echo $tipoVentas["5"]["detalleTipoVenta"]; ?>
+                                            <input type="text"  style="width: 120px" value="0" class="form-control"
+                                                   id="idTipoVenta<?php echo $tipoVentas["5"]["idTipoVenta"]; ?>" 
+                                                   name="tipoVenta<?php echo $tipoVentas["5"]["idTipoVenta"]; ?>"/>
+                                            <br>
+                                            <br>
+                                            <?php echo $tipoVentas["6"]["detalleTipoVenta"]; ?>
+                                            <input type="text"  style="width: 120px" value="0" class="form-control"
+                                                   id="idTipoVenta<?php echo $tipoVentas["6"]["idTipoVenta"]; ?>" 
+                                                   name="tipoVenta<?php echo $tipoVentas["6"]["idTipoVenta"]; ?>"/>
+                                            <br>
+                                            <br>
+                                            <?php echo $tipoVentas["7"]["detalleTipoVenta"]; ?>
+                                            <input type="text"  style="width: 120px" value="0" class="form-control"
+                                                   id="idTipoVenta<?php echo $tipoVentas["7"]["idTipoVenta"]; ?>" 
+                                                   name="tipoVenta<?php echo $tipoVentas["7"]["idTipoVenta"]; ?>"/>
+                                        </td>
+                                        <td colspan="2" style="text-align: right;">
+                                            <?php echo $tipoVentas["8"]["detalleTipoVenta"]; ?>
+                                            <input type="text"  style="width: 120px" value="0" class="form-control"
+                                                   id="idTipoVenta<?php echo $tipoVentas["8"]["idTipoVenta"]; ?>" 
+                                                   name="tipoVenta<?php echo $tipoVentas["8"]["idTipoVenta"]; ?>"/>
+                                            <br>
+                                            <br>
+                                            <?php echo $tipoVentas["9"]["detalleTipoVenta"]; ?>
+                                            <input type="text"  style="width: 120px" value="0" class="form-control"
+                                                   id="idTipoVenta<?php echo $tipoVentas["9"]["idTipoVenta"]; ?>" 
+                                                   name="tipoVenta<?php echo $tipoVentas["9"]["idTipoVenta"]; ?>"/>
+                                            <br>
+                                            <br>
+                                            <?php echo $tipoVentas["10"]["detalleTipoVenta"]; ?>
+                                            <input type="text"  style="width: 120px" value="0" class="form-control"
+                                                   id="idTipoVenta<?php echo $tipoVentas["10"]["idTipoVenta"]; ?>" 
+                                                   name="tipoVenta<?php echo $tipoVentas["10"]["idTipoVenta"]; ?>"/>
+                                        </td>
+                                    </tr>
                                 </table>
                             </td>
                         </tr>

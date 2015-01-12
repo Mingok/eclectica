@@ -30,13 +30,13 @@ if (is_array($empresas)) {
                 </li>
                 <li>
                     <a href="./indexVenta.php?pasar=<?php echo $_SESSION['pasar']; ?>">
-                        <img src="./imagenes/iconos/venta.png" height='24px' title="Ventas" />
+                        <img src="./imagenes/iconos/venta1.png" height='24px' title="Ventas" />
                         &nbsp;Ventas&nbsp;
                     </a>
                 </li>
                 <li>
                     <a href="./indexDevolucion.php?pasar=<?php echo $_SESSION['pasar']; ?>">
-                        <img src="./imagenes/iconos/venta.png" height='24px' title="Devolucion" />
+                        <img src="./imagenes/iconos/devol.png" height='24px' title="Devolucion" />
                         &nbsp;Devolucion&nbsp;
                     </a>
                 </li>
@@ -60,7 +60,7 @@ if (is_array($empresas)) {
                         <b class="caret"></b>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="./indexInformePrenda.php?pasar=<?php echo $_SESSION['pasar']; ?>">&nbsp;Existencias&nbsp;</a></li>
+                        <li><a href="./indexInformePrenda.php?pasar=<?php echo $_SESSION['pasar']; ?>"><img src="./imagenes/iconos/devol.png" height='24px' title="Devolucion" />&nbsp;Existencias&nbsp;</a></li>
                         <li><a href="./indexInformeVenta.php?pasar=<?php echo $_SESSION['pasar']; ?>"> &nbsp;Ventas&nbsp;</a></li>
                         <li><a href="./indexInformeGasto.php?pasar=<?php echo $_SESSION['pasar']; ?>"> &nbsp;Gastos&nbsp;</a></li>
                        </ul>
@@ -99,7 +99,7 @@ if (is_array($empresas)) {
 <script type="text/javascript">
 
     $(".fancyboxCC").fancybox({
-        maxWidth: 550,
+        maxWidth: 650,
         minHeight: 325,
         type: 'iframe',
         closeEffect: 'elastic',

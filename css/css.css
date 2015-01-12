@@ -73,7 +73,9 @@ select.error { border: 1px dotted red; background-color: rgb(250, 255, 189);}
 #formEmpresa label.error, #formEmpresa input.submit {width: 150px;color:red; text-align: right; }
 #formDinamico label.error, #formDinamico input.submit {width: 70px;color:red; text-align: right; }
 #formCcCliente label.error, #formCcCliente input.submit {width: 200px;color:red; text-align: left;  }
-
+.hide_me {
+  display: none!important;
+}
 div.scrol{
     overflow: auto;
     overflow-x: hidden; 

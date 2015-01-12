@@ -38,8 +38,8 @@
             $('#idVendedorVentaCod').val($($(this).select2('data').element).data('codigovendedor'));
             $('#idVendedorVenta').val(this.value);
             auxiliar = this.value;
-            $('#selecCliente option[value="' + auxiliar + '"]').empty().css('display', 'none');
-            $('#selecCliente option[value="' + auxiliar + '"]').empty().attr('disabled', 'disabled');
+            $('#selecCliente option[value="' + auxiliar + '"]').addClass("hide_me");
+
             $('#divCliente').show();
             $("#selecEmpleado").empty().attr("disabled", "disabled");
         });

@@ -88,7 +88,7 @@ $tipoVentas = $tipoVentaList->tipoVentasDisponibles();
                 foreach ($tipoVentas as $tipoVenta) { ?>
                     <tr style='text-align: center'>
                         <td>
-    <?php if ($cont >= 1) { ?>
+    <?php if ($cont >= 2) { ?>
                                 <a title='Modificar datos' class="editButtonTipoVenta" name="editTipoVenta" data-idtipoventa="<?php echo $tipoVenta['idTipoVenta'] ?>" data-grupotipoventa="<?php echo $tipoVenta['grupoTipoVenta'] ?>" data-operaciontipoventa="<?php echo $tipoVenta['operacionTipoVenta'] ?>"
                                    data-detalletipoventa="<?php echo $tipoVenta['detalleTipoVenta'] ?>" data-porcentajetipoventa="<?php echo $tipoVenta['porcentajeTipoVenta'] ?>">
                                     <img src='./imagenes/iconos/edit.png' width='18px' height='18px' />

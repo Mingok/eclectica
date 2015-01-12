@@ -76,48 +76,46 @@ $prendas = $prendaList->prendasDisponibles();
                                             <?php
                                             if (isset($prendas)) {
                                                 foreach ($prendas as $prenda) {
-                                                    if (!($prenda ['cantidadPrenda'] == '0')) {
-                                                        ?>
-                                                        <tr >
-                                                            <td style="text-align: center;">
-                                                                <a title="Devolver" class="itemDev" id="itemDev" data-cantidadprenda="<?php echo $prenda ['cantidadPrenda'] ?>" data-idprenda="<?php echo $prenda ['idPrenda'] ?>" data-idestampadoprenda="<?php echo $prenda ['idEstampadoPrenda'] ?>" data-idtelaprenda="<?php echo $prenda ['idTelaPrenda'] ?>" data-idtalleprenda="<?php echo $prenda ['idTallePrenda'] ?>" data-codigoprenda="<?php echo $prenda ['codigoPrenda'] ?>" data-detalleprenda="<?php echo $prenda ['detallePrenda'] ?>" data-idmarcaprenda="<?php echo $prenda ['idMarcaPrenda'] ?>" data-idproveedorprenda="<?php echo $prenda ['idProveedorPrenda'] ?>" data-idestacionprenda="<?php echo $prenda ['idEstacionPrenda'] ?>" data-idcolorprenda="<?php echo $prenda ['idColorPrenda'] ?>" data-valor1="<?php echo $prenda ['valor1'] ?>" data-valor2="<?php echo $prenda ['valor2'] ?>" data-valor3="<?php echo $prenda ['valor3'] ?>" data-valor4="<?php echo $prenda ['valor4'] ?>" data-valor5="<?php echo $prenda ['valor5'] ?>" data-valor6="<?php echo $prenda ['valor6'] ?>" />
-                                                                <img src="./imagenes/iconos/accept.png" width="18px" height="18px" />
-                                                                </a>
-                                                            </td>
-                                                            <td>
-                                                                <?php echo $prenda ['codigoPrenda'] ?>
-                                                            </td>
-                                                            <td style="text-align: left;">
-                                                                <?php echo ucfirst(strtolower($prenda ['detallePrenda'])); ?>
-                                                            </td>
-                                                            <td style="text-align: center;">
-                                                                <?php echo ucfirst(strtolower($prenda ['detalleTalle'])); ?>
-                                                            </td>
-                                                            <td style="text-align: center;">
-                                                                <?php echo ucfirst(strtolower($prenda ['detalleColor'])); ?>
-                                                            </td>
-                                                            <td style="text-align: center;">
-                                                                <?php echo ucfirst(strtolower($prenda ['detalleEstampado'])); ?>
-                                                            </td>
-                                                            <td style="text-align: center;">
-                                                                <?php echo ucfirst(strtolower($prenda ['detalleTela'])); ?>
-                                                            </td>
-                                                            <td style="text-align: center;">
-                                                                <?php echo ucfirst(strtolower($prenda ['detalleEstacion'])); ?>
-                                                            </td>
-                                                            <?php
-                                                            if ($prenda ['cantidadPrenda'] == '0') {
-                                                                echo "<td style='background-color: red; font-weight: bolder;text-align: center;'>";
-                                                            } else {
-                                                                echo "<td style='text-align: center;' >";
-                                                            }
-                                                            ?>
-                                                            <?php echo $prenda ['cantidadPrenda'] ?>
-
-                                                            </td>
-                                                        </tr>
+                                                    ?>
+                                                    <tr >
+                                                        <td style="text-align: center;">
+                                                            <a title="Devolver" class="itemDev" id="itemDev" data-cantidadprenda="<?php echo $prenda ['cantidadPrenda'] ?>" data-idprenda="<?php echo $prenda ['idPrenda'] ?>" data-idestampadoprenda="<?php echo $prenda ['idEstampadoPrenda'] ?>" data-idtelaprenda="<?php echo $prenda ['idTelaPrenda'] ?>" data-idtalleprenda="<?php echo $prenda ['idTallePrenda'] ?>" data-codigoprenda="<?php echo $prenda ['codigoPrenda'] ?>" data-detalleprenda="<?php echo $prenda ['detallePrenda'] ?>" data-idmarcaprenda="<?php echo $prenda ['idMarcaPrenda'] ?>" data-idproveedorprenda="<?php echo $prenda ['idProveedorPrenda'] ?>" data-idestacionprenda="<?php echo $prenda ['idEstacionPrenda'] ?>" data-idcolorprenda="<?php echo $prenda ['idColorPrenda'] ?>" data-valor1="<?php echo $prenda ['valor1'] ?>" data-valor2="<?php echo $prenda ['valor2'] ?>" data-valor3="<?php echo $prenda ['valor3'] ?>" data-valor4="<?php echo $prenda ['valor4'] ?>" data-valor5="<?php echo $prenda ['valor5'] ?>" data-valor6="<?php echo $prenda ['valor6'] ?>" data-valor7="<?php echo $prenda ['valor7'] ?>" data-valor8="<?php echo $prenda ['valor8'] ?>" data-valor9="<?php echo $prenda ['valor9'] ?>" data-valor10="<?php echo $prenda ['valor10'] ?>" data-valor11="<?php echo $prenda ['valor11'] ?>" />
+                                                            <img src="./imagenes/iconos/accept.png" width="18px" height="18px" />
+                                                            </a>
+                                                        </td>
+                                                        <td>
+                                                            <?php echo $prenda ['codigoPrenda'] ?>
+                                                        </td>
+                                                        <td style="text-align: left;">
+                                                            <?php echo ucfirst(strtolower($prenda ['detallePrenda'])); ?>
+                                                        </td>
+                                                        <td style="text-align: center;">
+                                                            <?php echo ucfirst(strtolower($prenda ['detalleTalle'])); ?>
+                                                        </td>
+                                                        <td style="text-align: center;">
+                                                            <?php echo ucfirst(strtolower($prenda ['detalleColor'])); ?>
+                                                        </td>
+                                                        <td style="text-align: center;">
+                                                            <?php echo ucfirst(strtolower($prenda ['detalleEstampado'])); ?>
+                                                        </td>
+                                                        <td style="text-align: center;">
+                                                            <?php echo ucfirst(strtolower($prenda ['detalleTela'])); ?>
+                                                        </td>
+                                                        <td style="text-align: center;">
+                                                            <?php echo ucfirst(strtolower($prenda ['detalleEstacion'])); ?>
+                                                        </td>
                                                         <?php
-                                                    }
+                                                        if ($prenda ['cantidadPrenda'] == '0') {
+                                                            echo "<td style='background-color: red; font-weight: bolder;text-align: center;'>";
+                                                        } else {
+                                                            echo "<td style='text-align: center;' >";
+                                                        }
+                                                        ?>
+                                                        <?php echo $prenda ['cantidadPrenda'] ?>
+
+                                                        </td>
+                                                    </tr>
+                                                    <?php
                                                 }
                                             }
                                             ?>

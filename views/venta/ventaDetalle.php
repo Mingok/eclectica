@@ -214,6 +214,11 @@
         $('#precio4').val($(this).data('valor4'));
         $('#precio5').val($(this).data('valor5'));
         $('#precio6').val($(this).data('valor6'));
+        $('#precio7').val($(this).data('valor7'));
+        $('#precio8').val($(this).data('valor8'));
+        $('#precio9').val($(this).data('valor9'));
+        $('#precio10').val($(this).data('valor10'));
+        $('#precio11').val($(this).data('valor11'));
         $('#cuentaCorriente').val($(this).data('cuentaCorrientePersona'));
         $('#agregarItem').show();
         $('#areaItemAVender').show();
