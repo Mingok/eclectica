@@ -3,14 +3,13 @@
 class prenda {
 
     public function prendasDisponibles() {
-        $ds = DIRECTORY_SEPARATOR;
-        require_once (__DIR__ . "{$ds}..{$ds}..{$ds}base{$ds}manejoMySQL.php");
+        require_once (__DIR__ . '\..\..\base\manejoMySQL.php');
 
         $objManejoMySQL = new manejoMySQL ();
         $strSql = "SELECT prenda.*, proveedor.nombreProveedor, color.detalleColor , estampado.detalleEstampado, tela.detalleTela,
 					talle.detalleTalle, estacion.detalleEstacion, marca.detalleMarca,
 					tvp1.valor as valor1, tvp2.valor as valor2, tvp3.valor as valor3, tvp4.valor as valor4, tvp5.valor as valor5,
-					tvp6.valor as valor6, tvp7.valor as valor7, tvp8.valor as valor8, tvp9.valor as valor9, tvp10.valor as valor10, tvp11.valor as valor11
+					tvp6.valor as valor6
 			FROM prenda AS prenda 
 			LEFT JOIN proveedor AS proveedor ON prenda.idProveedorPrenda = proveedor.idProveedor
 			LEFT JOIN color AS color ON prenda.idColorPrenda = color.idColor
@@ -21,16 +20,10 @@ class prenda {
 			LEFT JOIN marca AS marca ON prenda.idMarcaPrenda = marca.idMarca
 			JOIN tipoventa_prenda AS tvp1 ON tvp1.idPrenda = prenda.idPrenda AND tvp1.idTipoVenta = 1
 			JOIN tipoventa_prenda AS tvp2 ON tvp2.idPrenda = prenda.idPrenda AND tvp2.idTipoVenta = 2
-                        JOIN tipoventa_prenda AS tvp3 ON tvp3.idPrenda = prenda.idPrenda AND tvp3.idTipoVenta = 3
-                        JOIN tipoventa_prenda AS tvp4 ON tvp4.idPrenda = prenda.idPrenda AND tvp4.idTipoVenta = 4
-                        JOIN tipoventa_prenda AS tvp5 ON tvp5.idPrenda = prenda.idPrenda AND tvp5.idTipoVenta = 5
-                        JOIN tipoventa_prenda AS tvp6 ON tvp6.idPrenda = prenda.idPrenda AND tvp6.idTipoVenta = 6
-                        JOIN tipoventa_prenda AS tvp7 ON tvp7.idPrenda = prenda.idPrenda AND tvp7.idTipoVenta = 7
-                        JOIN tipoventa_prenda AS tvp8 ON tvp8.idPrenda = prenda.idPrenda AND tvp8.idTipoVenta = 8
-                        JOIN tipoventa_prenda AS tvp9 ON tvp9.idPrenda = prenda.idPrenda AND tvp9.idTipoVenta = 9
-                        JOIN tipoventa_prenda AS tvp10 ON tvp10.idPrenda = prenda.idPrenda AND tvp10.idTipoVenta = 10
-                        JOIN tipoventa_prenda AS tvp11 ON tvp11.idPrenda = prenda.idPrenda AND tvp11.idTipoVenta = 11
-            
+            JOIN tipoventa_prenda AS tvp3 ON tvp3.idPrenda = prenda.idPrenda AND tvp3.idTipoVenta = 3
+            JOIN tipoventa_prenda AS tvp4 ON tvp4.idPrenda = prenda.idPrenda AND tvp4.idTipoVenta = 4
+            JOIN tipoventa_prenda AS tvp5 ON tvp5.idPrenda = prenda.idPrenda AND tvp5.idTipoVenta = 5
+            JOIN tipoventa_prenda AS tvp6 ON tvp6.idPrenda = prenda.idPrenda AND tvp6.idTipoVenta = 6
 			ORDER BY prenda.`idPrenda` desc";
         $arrResultado = null;
         $objManejoMySQL->consultar($strSql, $arrResultado);
@@ -44,45 +37,41 @@ class prenda {
     }
 
     /*   	public function ordenarTablaPrenda($prendaList){
-      require_once (__DIR__.'/../../base/manejoMySQL.php');
+      require_once (__DIR__.'\..\..\base\manejoMySQL.php');
       foreach ($prendaList as $key => $row) {
       $aux[$key] = $row['cantidadPrenda'];
       }
       array_multisort($aux, SORT_ASC ,$prendaList);
       return $prendaList;
       } */
-
     public function eligePrendaDesdeCodigo($lngCodigoPrenda) {
-        $ds = DIRECTORY_SEPARATOR;
-        require_once (__DIR__ . "{$ds}..{$ds}..{$ds}base{$ds}manejoMySQL.php");
-
-        $objManejoMySQL = new manejoMySQL();
-        $strSql = "SELECT * FROM `prenda` where codigoPrenda=$lngCodigoPrenda";
-        $arrResultado = null;
+        require_once (__DIR__.'\..\..\base\manejoMySQL.php');
+		
+        $objManejoMySQL= new manejoMySQL();
+        $strSql="SELECT * FROM `prenda` where codigoPrenda=$lngCodigoPrenda";
+        $arrResultado=null;
         $objManejoMySQL->consultar($strSql, $arrResultado);
         if (!empty($arrResultado)) {
             $arrResultado = current($arrResultado);
         }
         return $arrResultado;
     }
-
+    
     public function eligePrenda($lngIdPrenda) {
-        $ds = DIRECTORY_SEPARATOR;
-        require_once (__DIR__ . "{$ds}..{$ds}..{$ds}base{$ds}manejoMySQL.php");
-
-        $objManejoMySQL = new manejoMySQL();
-        $strSql = "SELECT * FROM `prenda` where idPrenda=$lngIdPrenda";
-        $arrResultado = null;
+        require_once (__DIR__.'\..\..\base\manejoMySQL.php');
+		
+        $objManejoMySQL= new manejoMySQL();
+        $strSql="SELECT * FROM `prenda` where idPrenda=$lngIdPrenda";
+        $arrResultado=null;
         $objManejoMySQL->consultar($strSql, $arrResultado);
         if (!empty($arrResultado)) {
             $arrResultado = current($arrResultado);
         }
         return $arrResultado;
     }
-
+    
     public function agregarNuevoPrenda($arrPrenda) {
-        $ds = DIRECTORY_SEPARATOR;
-        require_once (__DIR__ . "{$ds}..{$ds}..{$ds}base{$ds}manejoMySQL.php");
+        require_once (__DIR__ . '\..\..\base\manejoMySQL.php');
         $strValoresCampos = "";
         $strNombresCampos = "";
         $objManejoMySQL = new manejoMySQL ();
@@ -109,8 +98,7 @@ class prenda {
     }
 
     public function agregarNuevoPrecioPrenda($arrPrecioPrenda, $id) {
-        $ds = DIRECTORY_SEPARATOR;
-        require_once (__DIR__ . "{$ds}..{$ds}..{$ds}base{$ds}manejoMySQL.php");
+        require_once (__DIR__ . '\..\..\base\manejoMySQL.php');
         $strValoresCampos = "";
         $strNombresCampos = "";
         $objManejoMySQL = new manejoMySQL ();
@@ -135,7 +123,7 @@ class prenda {
     }
 
     /* 	public function eliminarColor($objColor){
-      require_once (__DIR__.'/../../base/manejoMySQL.php');
+      require_once (__DIR__.'\..\..\base\manejoMySQL.php');
 
       $objManejoMySQL = new manejoMySQL();
       $lngIdColor = $objColor['idColor'];
@@ -147,8 +135,7 @@ class prenda {
      */
 
     public function modificarPrenda($arrPrenda) {
-        $ds = DIRECTORY_SEPARATOR;
-        require_once (__DIR__ . "{$ds}..{$ds}..{$ds}base{$ds}manejoMySQL.php");
+        require_once (__DIR__ . '\..\..\base\manejoMySQL.php');
         $strValoresCampos = "";
         $strNombresCampos = "";
         $strUpdate = "";
@@ -178,8 +165,7 @@ class prenda {
     }
 
     public function modificarPrecioPrenda($arrPrecioPrenda, $id) {
-        $ds = DIRECTORY_SEPARATOR;
-        require_once (__DIR__ . "{$ds}..{$ds}..{$ds}base{$ds}manejoMySQL.php");
+        require_once (__DIR__ . '\..\..\base\manejoMySQL.php');
         $strSql = "UPDATE `tipoventa_prenda` SET `valor`=" . floatval($arrPrecioPrenda ['tipoVenta1']) . " WHERE `idTipoVenta`=1 AND`idPrenda`=" . $id;
         $objManejoMySQL = new manejoMySQL ();
         $arrResultado = null;
@@ -214,8 +200,7 @@ class prenda {
     }
 
     public function preciosPrenda($idPrenda) {
-        $ds = DIRECTORY_SEPARATOR;
-        require_once (__DIR__ . "{$ds}..{$ds}..{$ds}base{$ds}manejoMySQL.php");
+        require_once (__DIR__ . '\..\..\base\manejoMySQL.php');
         $strSql = "
 		SELECT * FROM `tipoventa_prenda` `tvp`
 		JOIN  `tipoVenta` as tv ON tv.idTipoVenta = tvp.idTipoVenta 
@@ -226,15 +211,13 @@ class prenda {
         $objManejoMySQL->consultar($strSql, $arrResultado);
         return $arrResultado;
     }
-
+    
     public function devolverPrenda($lngIdPrenda) {
-        $ds = DIRECTORY_SEPARATOR;
-        require_once (__DIR__ . "{$ds}..{$ds}..{$ds}base{$ds}manejoMySQL.php");
+        require_once (__DIR__ . '\..\..\base\manejoMySQL.php');
         $strSql = "UPDATE `prenda` SET `cantidadPrenda` = (`cantidadPrenda`+1 ) WHERE `idPrenda`=$lngIdPrenda";
         $objManejoMySQL = new manejoMySQL ();
         $arrResultado = null;
         $objManejoMySQL->consultar($strSql, $arrResultado);
         return $arrResultado;
     }
-
 }
