@@ -1,3 +1,8 @@
+<?php
+require_once 'classes/tipoVenta/tipoVenta.php';
+$tipoVentaList = new tipoVenta ();
+$tipoVentas = $tipoVentaList->tipoVentasDisponibles();
+?>
 <div class="row">
     <div class="col-md-12">
         <?php include_once 'views/prenda/listaPrenda.php'; ?>

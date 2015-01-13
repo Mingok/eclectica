@@ -5,10 +5,10 @@ Class tipoVenta {
         require_once (__DIR__ .  "{$ds}..{$ds}..{$ds}base{$ds}manejoMySQL.php");
 		
 		$objManejoMySQL= new manejoMySQL();
-		$strSql="	SELECT * FROM `tipoVenta`
+		$strSql="	SELECT * FROM `tipoventa`
 					ORDER BY `idTipoVenta` ASC";
         $arrResultado=null;
-		$objManejoMySQL->consultar($strSql, $arrResultado);
+        $objManejoMySQL->consultar($strSql, $arrResultado);
 		return $arrResultado;
 	}
 	
@@ -17,7 +17,7 @@ Class tipoVenta {
         require_once (__DIR__ .  "{$ds}..{$ds}..{$ds}base{$ds}manejoMySQL.php");
 		
 		$objManejoMySQL= new manejoMySQL();
-		$strSql="	SELECT * FROM `tipoVenta` WHERE grupoTipoVenta=".$filtro." ORDER BY `idTipoVenta` ASC";
+		$strSql="	SELECT * FROM `tipoventa` WHERE grupoTipoVenta=".$filtro." ORDER BY `idTipoVenta` ASC";
 		$arrResultado=null;
 		$objManejoMySQL->consultar($strSql, $arrResultado);
 		return $arrResultado;
@@ -47,7 +47,7 @@ Class tipoVenta {
 		}
 		
 		$objManejoMySQL = new manejoMySQL();
-		$strSql = "UPDATE `tipoVenta` SET $strUpdate
+		$strSql = "UPDATE `tipoventa` SET $strUpdate
 					WHERE `idTipoVenta` = $lngIdTipoVenta";
 		$arrResultado = null;
 		$objManejoMySQL->consultar($strSql, $arrResultado);

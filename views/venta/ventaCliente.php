@@ -56,13 +56,13 @@ $prendas = $prendaList->prendasDisponibles();
                     <select id="selecCondicionGral" name="selecCondicionGral" style="width: 240px" required>
                         <option></option>
                         <option value="1">
-                            Contado
+                            Costo / Contado
                         </option>
                         <option value="2">
-                            Diferido
+                            Descuento
                         </option>
                         <option value="3">
-                            Promicion
+                            Recargo
                         </option>
                     </select>
                 </div>

@@ -20,9 +20,6 @@ $marcas = $marcaList->marcasDisponibles();
 require_once 'classes/estampado/estampado.php';
 $estampadoList = new estampado ();
 $estampados = $estampadoList->estampadosDisponibles();
-require_once 'classes/tipoVenta/tipoVenta.php';
-$tipoVentaList = new tipoVenta ();
-$tipoVentas = $tipoVentaList->tipoVentasDisponibles();
 ?>
 <div id="ver" style="display: none; padding-top: 10px;">
     <div class="row">

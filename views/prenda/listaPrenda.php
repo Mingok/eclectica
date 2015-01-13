@@ -2,9 +2,6 @@
 require_once 'classes/prenda/prenda.php';
 $prendaList = new prenda ();
 $prendas = $prendaList->prendasDisponibles();
-require_once 'classes/tipoVenta/tipoVenta.php';
-$tipoVentaList = new tipoVenta ();
-$tipoVentas = $tipoVentaList->tipoVentasDisponibles();
 ?>
 <script language="javascript" type="text/javascript">
     function pintafila(fila, color) {
