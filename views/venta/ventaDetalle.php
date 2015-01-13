@@ -137,6 +137,7 @@
                                         Ciente: <span id="cliente1" class="form-control" ></span>&nbsp;&nbsp;&nbsp;
                                         Entrega: <input type="text" placeholder="Ingrese" name="entrega" class="form-control" id="entrega" style="width: 100px">&nbsp;&nbsp;&nbsp;
                                         <input type="hidden" id="totalCompra" name="totalCompra" />
+                                        <input type="hidden" id="totalCosto" name="totalCosto" />
                                         Vendedor: <input type="password"  placeholder="Ingrese" name="vendedor" class="form-control" id="vendedor" style="width: 100px" >&nbsp;&nbsp;&nbsp;
                                     </div>
                                     <div class="col-md-12" id="MuestraCCC">
@@ -183,6 +184,21 @@
                 break;
             case '6':
                 $('input[name=precioItemVenta]').val($('#precio6').val());
+                break;
+            case '7':
+                $('input[name=precioItemVenta]').val($('#precio7').val());
+                break;
+            case '8':
+                $('input[name=precioItemVenta]').val($('#precio8').val());
+                break;
+            case '9':
+                $('input[name=precioItemVenta]').val($('#precio9').val());
+                break;
+            case '10':
+                $('input[name=precioItemVenta]').val($('#precio10').val());
+                break;
+            case '11':
+                $('input[name=precioItemVenta]').val($('#precio11').val());
                 break;
         }
     });
