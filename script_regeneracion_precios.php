@@ -24,7 +24,7 @@ foreach ($prendas as $prenda) {
         if ($operacion == 2) {
             $multiplicando = 1 + (floatval($porcentaje)/100);
         }
-        $valor_calculado = ($valor * $multiplicando);
+        $valor_calculado = ceil($valor * $multiplicando);
         $nuevo_registro = "INSERT INTO `tipoventa_prenda`(`valor`, `idTipoVenta`, `idPrenda`) VALUES ($valor_calculado, $tipoVenta, $idPrenda)";
         $resultado = array();
         $objManejoMySQL->consultar($nuevo_registro, $resultado);
