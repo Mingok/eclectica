@@ -173,12 +173,19 @@ label.ccLabel {
     text-align: center;
 }
 #content table th span{
-		cursor:pointer;
-		padding-right:12px
-	}
-	#content table th span.asc{
-		background:url(http://localhost/eclectica/imagenes/iconos/sorta.gif) no-repeat right center;
-	}
-	#content table th span.desc{
-		background:url(http://localhost/eclectica/imagenes/iconos/sortd.gif) no-repeat right center;
-	}
+    cursor:pointer;
+    padding-right:12px
+}
+#content table th span.asc{
+    background:url(http://localhost/eclectica/imagenes/iconos/sorta.gif) no-repeat right center;
+}
+#content table th span.desc{
+    background:url(http://localhost/eclectica/imagenes/iconos/sortd.gif) no-repeat right center;
+}
+
+#divFechaVenta {
+    margin-top: 6px;
+}
+#fechaVenta {
+    width: 240px!important;
+}

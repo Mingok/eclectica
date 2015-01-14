@@ -6,8 +6,10 @@ $idVendedor         = $_REQUEST['idVendedorVenta'];
 $idClienteVenta     = $_REQUEST['idClienteVenta'];
 $entrega            = $_REQUEST['entrega'];
 $totalCompra        = $_REQUEST['totalCompra'];
+$totalCosto         = $_REQUEST['totalCosto'];
 $items_venta        = $_REQUEST['venta'];
 $condVenta          = $_REQUEST['condVenta'];
+$fecVenta           = $_REQUEST['fecVenta'];
 
 $saldo = $entrega - $totalCompra;
 
@@ -20,9 +22,15 @@ $arrNuevaVenta['estado'] = 'V';//vendido
 $arrNuevaVenta['idCliente'] = $idClienteVenta;
 $arrNuevaVenta['idVendedor'] = $idVendedor;
 $arrNuevaVenta['precioVenta'] = $totalCompra;
+$arrNuevaVenta['costoVenta'] = $totalCosto;
 $arrNuevaVenta['entregaCliente'] = $entrega;
 $arrNuevaVenta['condicionVentaGeneral'] = $condVenta;
-$arrNuevaVenta['fechaVenta'] = date('Y-m-d h:i:s', time());
+if (empty($fecVenta)) {
+    $fecVenta = time();
+} else {
+    $fecVenta = str_replace('/', '-', $fecVenta);
+}
+$arrNuevaVenta['fechaVenta'] = date('Y-m-d h:i:s', $fecVenta);
 $nueva_venta = $obj_venta->agregarNuevaVenta($arrNuevaVenta);
 
 $ultima_venta = $obj_venta->obtenerUltimaVenta();

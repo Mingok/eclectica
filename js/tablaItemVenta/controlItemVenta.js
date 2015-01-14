@@ -1,12 +1,15 @@
 var campos = 0;
 var camposTotal = 0;
 var importe = new Array();
+var costo = new Array();
 var importeTotal = 0;
+var costoTotal = 0;
 
 function agregarCampo() {
 
     if ($("#selecCondicionItem").val() != '') {
         importeTotal = 0;
+        costoTotal = 0;
         campos = campos + 1;
         camposTotal = camposTotal + 1;
 
@@ -37,8 +40,13 @@ function agregarCampo() {
                 "   </tr>";
 
         importe[campos] = parseInt($("#cantidadItemVenta").val()) * parseInt($("#precioItemVenta").val());
+        costo[campos] = parseInt($("#cantidadItemVenta").val()) * parseInt($("#costoItemVenta").val());
+
         for (var i = 1; i < importe.length; i = i + 1) {
             importeTotal += parseInt(importe[i]);
+        }
+        for (var i = 1; i < costo.length; i = i + 1) {
+            costoTotal += parseInt(costo[i]);
         }
 
         $('#contenedorcampos').append(NvoCampo);
@@ -52,8 +60,10 @@ function agregarCampo() {
         $('#agregarItem').hide();
         $('#areaItemAVender').hide('slow');
         $('#entrega').val(parseInt(importeTotal));
+        $('#totalCosto').val(parseInt(costoTotal));
         $('#entregaTot').val(parseInt(importeTotal));
         $('#totalCompra').val(parseInt(importeTotal));
+
     } else {
         alert("Elija Condicion de venta");
     }

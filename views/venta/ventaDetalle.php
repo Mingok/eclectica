@@ -34,8 +34,9 @@
                     <input type="hidden" id="ItemVenta" name="ItemVenta" />
                     <input type="hidden" id="detalleItemVenta" name="detalleItemVenta" />
                     <input type="hidden" id="precioItemVenta" name="precioItemVenta"  />
+                    <input type="hidden" id="costoItemVenta" name="costoItemVenta"  />
 
-                </form> 
+                </form>
             </div>
             <div class="panel-body"  id="areaItemAVender">
                 <div class="row">
@@ -128,6 +129,7 @@
                                     <div class="col-md-12">
                                         <input type="hidden" id="idVendedorVenta" name="idVendedorVenta" />
                                         <input type="hidden" id="idVendedorVentaCod" name="idVendedorVentaCod" />
+                                        <input type="hidden" id="fecVenta" name="fecVenta"/>
 
 
                                         <input type="hidden" id="idClienteVenta" name="idClienteVenta" />
@@ -166,6 +168,7 @@
 
         $("#condItemVenta").val(this.options[this.selectedIndex].text);
         $("#idCondItemVenta").val(this.value);
+        $('input[name=costoItemVenta]').val($('#precio1').val());
         switch (this.value) {
             case '1':
                 $('input[name=precioItemVenta]').val($('#precio1').val());

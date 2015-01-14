@@ -34,6 +34,7 @@
     $(document).ready(function() {
         $('#divCliente').hide();
         $('#divCondicion').hide();
+        $('#divFechaVenta').hide();
         $("#selecEmpleado").on("change", function(e) {
             $('#idVendedorVentaCod').val($($(this).select2('data').element).data('codigovendedor'));
             $('#idVendedorVenta').val(this.value);
@@ -52,7 +53,8 @@
             $("#cliente1").html(this.options[this.selectedIndex].text);
             $("#cliente1").show('Slow');
             $('#divCondicion').show();
-            
+            $('#divFechaVenta').show();
+
             $('#selecCliente').empty().attr("disabled", "disabled");
             var url = 'indexComprasCliente.php';
             var idCliente = $('#idClienteVenta').val();
@@ -110,6 +112,19 @@
             placeholder: "Seleccionar",
             allowClear: true
         });
+
+        $("#fechaVenta").datepicker({
+            monthNames: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto",
+                "Septiembre", "Octubre", "Noviembre", "Diciembre"],
+            dayNamesMin: ["Dom", "Lun", "Mar", "Mie", "Jue", "Vie", "Sab"],
+            dateFormat: "dd/mm/yy"
+        });
+        $( "#fechaVenta" ).datepicker( "setDate", new Date());
+
+        $("#fechaVenta").change(function() {
+            $('#fecVenta').val($(this).val());
+        });
+
         $('#areaItemAVender').hide();
         $('#agregarItem').hide();
         $("#cliente1").hide();
