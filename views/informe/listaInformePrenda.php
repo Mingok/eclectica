@@ -23,6 +23,7 @@
                                     <th width="9%"><span title="marca.detalleMarca">Marca</span></th>
                                     <th width="9%"><span title="proveedor.nombreProveedor">Proveedor</span></th>
                                     <th width="3%"><span title="prenda.cantidadPrenda">C.</span></th>
+                                </tr>
                             </thead>
                             <tbody>
 

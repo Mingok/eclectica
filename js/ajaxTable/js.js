@@ -4,6 +4,9 @@ var ordenar_prenda = '';
 $(document).ready(function () {
     // Llamando a la funcion de busqueda al
     // cargar la pagina
+    if ($("#frm_filtro_resumen").length) {
+        filtrarResumen();
+    }
     if ($("#frm_filtro_gastos").length) {
         filtrarGastos();
     }
@@ -29,6 +32,9 @@ $(document).ready(function () {
 
     // filtrar al darle click al boton
     $("#btnFiltrar").click(function () {
+        if ($("#frm_filtro_resumen").length) {
+            filtrarResumen();
+        }
         if ($("#frm_filtro_gastos").length) {
             filtrarGastos();
         }
@@ -40,6 +46,9 @@ $(document).ready(function () {
         }
     });
     //llamada A exportar listados Pdf y excel
+    $("#btnPdfResumen").click(function () {
+        exportarArchivoResumen('pdf');
+    });
     $("#btnPdfGastos").click(function () {
         exportarArchivoGastos('pdf');
     });
@@ -50,6 +59,9 @@ $(document).ready(function () {
         exportarArchivoExistencias('pdf');
     });
 
+    $("#btnXlsResumen").click(function () {
+        exportarArchivoResumen('pdf');
+    });
     $("#btnXlsGastos").click(function () {
         exportarArchivoGastos('xls');
     });
@@ -66,7 +78,7 @@ $(document).ready(function () {
 
     // ordenar por On Click en las th de la tabla
     $("#data th span").click(function () {
-        
+
         var orden = '';
         if ($(this).hasClass("desc"))
         {
@@ -81,6 +93,9 @@ $(document).ready(function () {
             ordenar = "&orderby=" + $(this).attr("title") + " desc"
             ordenar_prenda = "&orderby=" + $(this).attr("title") + " desc"
         }
+        if ($("#frm_filtro_resumen").length) {
+            filtrarResumen();
+        }
         if ($("#frm_filtro_gastos").length) {
             filtrarGastos();
         }
@@ -93,6 +108,36 @@ $(document).ready(function () {
     });
 });
 
+function filtrarResumen() {
+    $.ajax({
+        data: $("#frm_filtro_resumen").serialize() + ordenar,
+        type: "POST",
+//        dataType: "json",
+        url: "ajaxInformeResumenTipoVenta.php?action=listar",
+        success: function (data) {
+            var html = '';
+            if (data.length > 0) {
+
+                html = data;
+            }
+            $("#dataTipoVenta tbody").html(html);
+        }
+    });
+    $.ajax({
+        data: $("#frm_filtro_resumen").serialize() + ordenar,
+        type: "POST",
+//        dataType: "json",
+        url: "ajaxInformeResumenGasto.php?action=listar",
+        success: function (data) {
+            var html = '';
+            if (data.length > 0) {
+
+                html = data;
+            }
+            $("#dataCostos tbody").html(html);
+        }
+    });
+}
 function filtrarGastos() {
     $.ajax({
         data: $("#frm_filtro_gastos").serialize() + ordenar,
@@ -138,6 +183,10 @@ function filtrarPrendas() {
             $("#data tbody").html(html);
         }
     });
+}
+function exportarArchivoResumen(tipo) {
+    var informeUrl = "http://localhost/eclectica/informe/InformeResumen.php?" + $('#frm_filtro_resumen').serialize() + '&type=' + tipo;
+    window.open(informeUrl);
 }
 function exportarArchivoGastos(tipo) {
     var informeUrl = "http://localhost/eclectica/informe/InformeGastos.php?" + $('#frm_filtro_gastos').serialize() + '&type=' + tipo;

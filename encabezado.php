@@ -52,7 +52,7 @@ if (is_array($empresas)) {
                         &nbsp;Gastos&nbsp;
                     </a>
                 </li>
-                
+
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle"	data-toggle="dropdown"> 
                         <img src="./imagenes/iconos/time.png" height='24px' title="Informes" />
@@ -60,10 +60,13 @@ if (is_array($empresas)) {
                         <b class="caret"></b>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="./indexInformePrenda.php?pasar=<?php echo $_SESSION['pasar']; ?>"><img src="./imagenes/iconos/devol.png" height='24px' title="Devolucion" />&nbsp;Existencias&nbsp;</a></li>
+                        <li><a href="./indexInformePrenda.php?pasar=<?php echo $_SESSION['pasar']; ?>">&nbsp;Existencias&nbsp;</a></li>
                         <li><a href="./indexInformeVenta.php?pasar=<?php echo $_SESSION['pasar']; ?>"> &nbsp;Ventas&nbsp;</a></li>
                         <li><a href="./indexInformeGasto.php?pasar=<?php echo $_SESSION['pasar']; ?>"> &nbsp;Gastos&nbsp;</a></li>
-                       </ul>
+                        <li class="divider"></li>
+                        <li><a href="./indexInformeResumen.php?pasar=<?php echo $_SESSION['pasar']; ?>"> &nbsp;Resumen&nbsp;</a></li>
+                        
+                    </ul>
                 </li>
                 <!--  	<li>
                   <a href="#">

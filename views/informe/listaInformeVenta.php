@@ -17,6 +17,8 @@
                                     <th width="7%"><span title="entregaCliente">Entregado</span></th>
                                     <th width="6%"><span title="costoVenta">Costo</span></th>
                                     <th width="30%"><span title="detalleVendedor">Vendedor</span></th>
+
+                                </tr>
                             </thead>
                             <tbody>
 

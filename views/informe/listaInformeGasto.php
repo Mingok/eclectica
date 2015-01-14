@@ -16,6 +16,8 @@
                                     <th width="20%" style="text-align: center;"><span title="idFormaPagoGasto">F.Pago</span></th>
                                     <th width="40%" style="text-align: center"><span title="detalleGasto">Concepto</span></th>
                                     <th width="9%" style="text-align: center"><span title="importeGasto">Importe</span></th>
+
+                                </tr>
                             </thead>
                             <tbody>
 
