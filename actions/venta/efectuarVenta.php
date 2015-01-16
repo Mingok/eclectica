@@ -25,10 +25,13 @@ $arrNuevaVenta['precioVenta'] = $totalCompra;
 $arrNuevaVenta['costoVenta'] = $totalCosto;
 $arrNuevaVenta['entregaCliente'] = $entrega;
 $arrNuevaVenta['condicionVentaGeneral'] = $condVenta;
+
 if (empty($fecVenta)) {
     $fecVenta = time();
+    $arrNuevaVenta['fechaVenta'] = date('Y-m-d h:i:s', $fecVenta);
 } else {
-    $fecVenta = str_replace('/', '-', $fecVenta);
+    $fecVenta = strtotime(str_replace('/', '-', $fecVenta));
+    $arrNuevaVenta['fechaVenta'] = date('Y-m-d', $fecVenta). ' 00:00:00';
 }
 $arrNuevaVenta['fechaVenta'] = date('Y-m-d h:i:s', $fecVenta);
 $nueva_venta = $obj_venta->agregarNuevaVenta($arrNuevaVenta);
