@@ -9,7 +9,7 @@ Class ventaRenglon {
         $objManejoMySQL = new manejoMySQL();
         $strSql = "SELECT ventaRenglon.*,  prenda.detallePrenda, tipoVenta.detalleTipoVenta FROM `venta_renglon` as ventaRenglon
                    LEFT JOIN prenda AS prenda ON ventaRenglon.idPrenda = prenda.idPrenda
-                   LEFT JOIN tipoVenta AS tipoVenta ON ventaRenglon.idTipoVenta = tipoVenta.idTipoVenta
+                   LEFT JOIN tipoVenta AS tipoventa ON ventaRenglon.idTipoVenta = tipoVenta.idTipoVenta
 					";
         $arrResultado = null;
         $objManejoMySQL->consultar($strSql, $arrResultado);
@@ -22,7 +22,7 @@ Class ventaRenglon {
         $objManejoMySQL = new manejoMySQL();
         $strSql = "SELECT ventaRenglon.*,  prenda.detallePrenda, tipoVenta.detalleTipoVenta FROM `venta_renglon` as ventaRenglon
                    LEFT JOIN prenda AS prenda ON ventaRenglon.idPrenda = prenda.idPrenda
-                   LEFT JOIN tipoVenta AS tipoVenta ON ventaRenglon.idTipoVenta = tipoVenta.idTipoVenta
+                   LEFT JOIN tipoventa AS tipoVenta ON ventaRenglon.idTipoVenta = tipoVenta.idTipoVenta
 					WHERE ventaRenglon.idVenta=".$idVentaParticular;
         $arrResultado = null;
         $objManejoMySQL->consultar($strSql, $arrResultado);
