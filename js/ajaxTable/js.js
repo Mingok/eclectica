@@ -60,7 +60,7 @@ $(document).ready(function () {
     });
 
     $("#btnXlsResumen").click(function () {
-        exportarArchivoResumen('pdf');
+        exportarArchivoResumen('xls');
     });
     $("#btnXlsGastos").click(function () {
         exportarArchivoGastos('xls');

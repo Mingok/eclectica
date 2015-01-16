@@ -15,7 +15,7 @@
                                     <thead class="btn-success" style="font-weight: bolder; text-align: center;">
                                         <tr>
                                             <th ><span title="idTipoVenta">Forma de pago</span></th>
-                                            <th ><span title="precioVendido">total</span></th>
+                                            <th ><span title="precioVendido">Total</span></th>
                                         </tr>
                                     </thead>
                                     <tbody>
