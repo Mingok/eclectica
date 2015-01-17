@@ -99,6 +99,12 @@ echo '</div>';
             success: function(data) {
                 if (data) {
                     $('.movimientosVentaRenglon').html(data);
+                    $.fancybox({
+                        maxWidth: 700,
+                        maxHeight: 400,
+                        closeEffect: 'elastic',
+                        href: '#historicoDetalleCliente'
+                    });
                 }
             }
         });
