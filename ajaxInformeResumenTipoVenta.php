@@ -40,10 +40,12 @@ if ($_GET['action'] == 'listar') {
 
     // Ordenar por
     $vorder = isset($_POST['orderby']) ? $_POST['orderby'] : '';
-    $sql.= " group by `idTipoVenta`";
+   
     if ($vorder != '') {
         $sql .= " ORDER BY " . $vorder;
+            
     }
+ $sql.= " group by `idTipoVenta`";
 //    echo "<pre>";
 //    var_dump($sql);
 //    echo "</pre>";

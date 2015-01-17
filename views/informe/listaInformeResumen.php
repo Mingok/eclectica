@@ -10,7 +10,8 @@
                     <div class="scrolPrenda">
                         <div class="row">
                             <div class="col-md-6">
-
+                                <h1 style="text-align: center; ">Ventas por Formas de pago
+                                </h1>
                                 <table class="table table-condensed" id="dataTipoVenta">
                                     <thead class="btn-success" style="font-weight: bolder; text-align: center;">
                                         <tr>
@@ -24,6 +25,7 @@
                                 </table>
                             </div>
                             <div class="col-md-6">
+                                <h1 style="text-align: center">Proveedores - Gastos</h1>
                                 <table class="table table-condensed" id="dataCostos">
                                     <thead class="btn-success" style="font-weight: bolder; text-align: center;">
                                         <tr>
