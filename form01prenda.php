@@ -5,7 +5,7 @@ $tipoVentas = $tipoVentaList->tipoVentasDisponibles();
 ?>
 <div class="row">
     <div class="col-md-12">
-        <?php include_once 'views/prenda/listaPrenda.php'; ?>
+        <?php include_once 'views/prenda/listaPrendaUI.php'; ?>
     </div>
 </div>
 <div class="row">
