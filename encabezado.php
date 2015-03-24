@@ -65,7 +65,7 @@ if (is_array($empresas)) {
                         <li><a href="./indexInformeGasto.php?pasar=<?php echo $_SESSION['pasar']; ?>"> &nbsp;Gastos&nbsp;</a></li>
                         <li class="divider"></li>
                         <li><a href="./indexInformeResumen.php?pasar=<?php echo $_SESSION['pasar']; ?>"> &nbsp;Resumen&nbsp;</a></li>
-                        
+
                     </ul>
                 </li>
                 <!--  	<li>
@@ -102,11 +102,12 @@ if (is_array($empresas)) {
 <script type="text/javascript">
 
     $(".fancyboxCC").fancybox({
-        maxWidth: 650,
-        minHeight: 325,
-        type: 'iframe',
-        closeEffect: 'elastic',
-        'scrolling': 'no'
+        maxWidth: 900,
+        minHeight: 490,
+        autoScale: true,
+        
+                type: 'iframe',
+        closeEffect: 'elastic'
 
     });
 </script>

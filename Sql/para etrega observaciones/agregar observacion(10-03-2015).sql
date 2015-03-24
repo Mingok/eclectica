@@ -1,0 +1,1 @@
+ALTER TABLE  `venta` ADD  `observacionVenta` VARCHAR( 140 ) NULL AFTER  `fechaVenta` ;

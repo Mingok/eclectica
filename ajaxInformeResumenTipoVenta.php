@@ -12,12 +12,18 @@ if ($_GET['action'] == 'listar') {
     $arrayFiltro = array();
 
     // valores recibidos por POST
+    $hoy = date('d-m-Y');
+    $fecha30 = strtotime('-30 day', strtotime($hoy));
+    $fecha30 = date('Ymd', $fecha30);
 
     if (isset($_POST['fecDesde'])) {
         if ($_POST['fecDesde'] != '') {
             $date = str_replace('/', '-', $_POST['fecDesde']);
             $fecha = date('Y-m-d', strtotime($date)) . ' 00:00:00';
             $arrayFiltro[] = "v.fechaVenta >= '" . $fecha . "'";
+        }else{$date = str_replace('/', '-',   $fecha30);
+        $fecha = date('Y-m-d', strtotime( $fecha30)) . ' 00:00:00';
+         $arrayFiltro[] = "v.fechaVenta >= '" . $fecha . "'";
         }
     }
 
@@ -34,18 +40,16 @@ if ($_GET['action'] == 'listar') {
     if (count($arrayFiltro) != 0) {
         $sql .= " and ";
         $sql.=$auxArray;
-        
     }
 
 
     // Ordenar por
     $vorder = isset($_POST['orderby']) ? $_POST['orderby'] : '';
-   
+
     if ($vorder != '') {
         $sql .= " ORDER BY " . $vorder;
-            
     }
- $sql.= " group by `idTipoVenta`";
+    $sql.= " group by `idTipoVenta`";
 //    echo "<pre>";
 //    var_dump($sql);
 //    echo "</pre>";
@@ -57,15 +61,13 @@ if ($_GET['action'] == 'listar') {
         $precio_venta = 0;
         $entrega = 0;
         foreach ($arrResultado as $registro) {
-            
+
             $str_final .= '<tr>';
             $str_final .= '<td>' . $registro['detalleTipoVenta'] . '</td>';
             $str_final .= '<td>' . $registro['precioVendido'] . '</td>';
-            
+
             $str_final .= '</tr>';
-            
         }
-       
     } else {
         $str_final .= '<tr><td colspan="8" align="center">No se encontraron ventas.</td></tr>';
     }

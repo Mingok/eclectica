@@ -11,8 +11,8 @@ if ($_GET['action'] == 'listar') {
                         CONCAT(persona1.apellidoPersona, ', ', persona1.nombrePersona) as detalleVendedor
 			FROM venta AS venta
 			JOIN persona AS persona ON venta.idCliente = persona.idPersona
-			JOIN persona AS persona1 ON venta.idVendedor = persona1.idPersona
-			) tmp ";
+			JOIN persona AS persona1 ON venta.idVendedor = persona1.idPersona 
+                        WHERE venta.estado='V') tmp ";
     $arrayFiltro = array();
    
     // valores recibidos por POST
@@ -77,7 +77,12 @@ if ($_GET['action'] == 'listar') {
             $str_final .= '<td>' . $registro['precioVenta'] . '</td>';
             $str_final .= '<td>' . $registro['entregaCliente'] . '</td>';
             $str_final .= '<td>' . $registro['costoVenta'] . '</td>';
-            $str_final .= '<td>' . $registro['detalleVendedor'] . '</td>';
+            $str_final .= '<td >' . $registro['detalleVendedor'] . '</td>';
+            if ($registro['observacionVenta']!=NULL){$str_final .= '<td style="text-align:center"> <a id="fancyboxRenglon" class="miVenta" data-idEstaVenta="' . $registro['idVenta'] . '" href="#historicoDetalleCliente">
+                        <img src="./imagenes/iconos/informes.png" height="24px" title="Ver venta" />
+                       
+                    </a></td>';}else {$str_final .= '<td style="text-align:center">-</td>';}
+            
             $str_final .= '</tr>';
             $precio_venta += intval($registro['precioVenta']);
             $entrega += intval($registro['entregaCliente']);
@@ -97,3 +102,27 @@ if ($_GET['action'] == 'listar') {
     echo $str_final;
 }
 ?>
+<script type="text/javascript">
+    $('.miVenta').click(function() {
+        $('input[name=estaVenta]').val($(this).data('idestaventa'));
+        var url = './views/venta/ventaHistoricoDetalleCliente.php';
+        var idMiVenta = $('#estaVenta').val();
+        var esteCliente = $('#cliente1').val();
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: {'idMiVenta': idMiVenta}, 
+            success: function(data) {
+                if (data) {
+                    $('.movimientosVentaRenglon').html(data);
+                    $.fancybox({
+                        maxWidth: 700,
+                        maxHeight: 400,
+                        closeEffect: 'elastic',
+                        href: '#historicoDetalleCliente'
+                    });
+                }
+            }
+        });
+    });
+</script>

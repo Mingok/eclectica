@@ -4,7 +4,7 @@ Class entrega {
 
     public function entregasDisponibles() {
         $ds = DIRECTORY_SEPARATOR;
-        require_once (__DIR__ .  "{$ds}..{$ds}..{$ds}base{$ds}manejoMySQL.php");
+        require_once (__DIR__ . "{$ds}..{$ds}..{$ds}base{$ds}manejoMySQL.php");
 
         $objManejoMySQL = new manejoMySQL();
         $strSql = "	SELECT * FROM `entrega`
@@ -13,10 +13,10 @@ Class entrega {
         $objManejoMySQL->consultar($strSql, $arrResultado);
         return $arrResultado;
     }
-    
+
     public function entregasCliente($lngIdCliente) {
         $ds = DIRECTORY_SEPARATOR;
-        require_once (__DIR__ .  "{$ds}..{$ds}..{$ds}base{$ds}manejoMySQL.php");
+        require_once (__DIR__ . "{$ds}..{$ds}..{$ds}base{$ds}manejoMySQL.php");
 
         $objManejoMySQL = new manejoMySQL();
         $strSql = "	SELECT * FROM `entrega`
@@ -29,7 +29,7 @@ Class entrega {
 
     public function agregarNuevaEntrega($arrEntrega) {
         $ds = DIRECTORY_SEPARATOR;
-        require_once (__DIR__ .  "{$ds}..{$ds}..{$ds}base{$ds}manejoMySQL.php");
+        require_once (__DIR__ . "{$ds}..{$ds}..{$ds}base{$ds}manejoMySQL.php");
         $strValoresCampos = "";
         $strNombresCampos = "";
         $objManejoMySQL = new manejoMySQL();
@@ -44,12 +44,11 @@ Class entrega {
                 } else {
                     $strValoresCampos .= "$valorCampo";
                 }
-
             }
         }
 
         $strSql = "INSERT INTO `entrega`($strNombresCampos) VALUES($strValoresCampos)";
-       
+
 
         $arrResultado = null;
         $objManejoMySQL->consultar($strSql, $arrResultado);
@@ -58,7 +57,7 @@ Class entrega {
 
     public function eliminarEntrega($objEntrega) {
         $ds = DIRECTORY_SEPARATOR;
-        require_once (__DIR__ .  "{$ds}..{$ds}..{$ds}base{$ds}manejoMySQL.php");
+        require_once (__DIR__ . "{$ds}..{$ds}..{$ds}base{$ds}manejoMySQL.php");
 
         $objManejoMySQL = new manejoMySQL();
         $lngIdEntrega = $objEntrega['idEntrega'];
@@ -70,7 +69,7 @@ Class entrega {
 
     public function modificarEntrega($arrEntrega) {
         $ds = DIRECTORY_SEPARATOR;
-        require_once (__DIR__ .  "{$ds}..{$ds}..{$ds}base{$ds}manejoMySQL.php");
+        require_once (__DIR__ . "{$ds}..{$ds}..{$ds}base{$ds}manejoMySQL.php");
         $strValoresCampos = "";
         $strNombresCampos = "";
         $strUpdate = "";

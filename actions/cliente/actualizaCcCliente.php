@@ -1,10 +1,19 @@
 <?php
+
 require_once 'classes/persona/persona.php';
 require_once 'classes/entrega/entrega.php';
+
+
+
 
 $idPersona = $_REQUEST['idPersona'];
 $entrega = $_REQUEST['entregaCliente'];
 $codigoVendedor = $_REQUEST['control'];
+$fecEntrega = $_REQUEST['fechaEntrega'];
+
+$fecEntrega = strtotime(str_replace('/', '-', $fecEntrega));
+$fecEntrega = date('Y-m-d', $fecEntrega). ' 00:00:00';
+
 
 $personaClass = new persona();
 $cliente = $personaClass->eligePersona($idPersona);
@@ -18,7 +27,7 @@ $cuentaCorrientePersona = doubleval($cliente['cuentaCorrientePersona']) - $entre
 
 $arrPersona = array(
     'cuentaCorrientePersona' => $cuentaCorrientePersona,
-    'idPersona' =>  $idPersona
+    'idPersona' => $idPersona
 );
 
 $persona = null;
@@ -27,11 +36,12 @@ $persona = $personaClass->modificarPersona($arrPersona);
 
 $entregaClass = new entrega();
 
+
 $arrEntrega = array(
     'idCliente' => $idPersona,
     'idVendedor' => $vendedor['idPersona'],
     'valorEntrega' => $entrega,
-    'fechaEntrega' => date('Y-m-d h:i:s', time()),
+    'fechaEntrega' => $fecEntrega,
     'inicial' => 'N'
 );
 $entrega = null;

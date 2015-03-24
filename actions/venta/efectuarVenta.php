@@ -1,4 +1,5 @@
 <?php
+
 require_once 'classes/prenda/prenda.php';
 require_once 'classes/venta/venta.php';
 require_once 'classes/ventaRenglon/ventaRenglon.php';
@@ -10,6 +11,7 @@ $totalCosto         = $_REQUEST['totalCosto'];
 $items_venta        = $_REQUEST['venta'];
 $condVenta          = $_REQUEST['condVenta'];
 $fecVenta           = $_REQUEST['fecVenta'];
+$observacionVenta =  $_REQUEST['observacionVenta'];
 
 $saldo = $entrega - $totalCompra;
 
@@ -25,6 +27,7 @@ $arrNuevaVenta['precioVenta'] = $totalCompra;
 $arrNuevaVenta['costoVenta'] = $totalCosto;
 $arrNuevaVenta['entregaCliente'] = $entrega;
 $arrNuevaVenta['condicionVentaGeneral'] = $condVenta;
+$arrNuevaVenta['observacionVenta'] = $observacionVenta;
 
 if (empty($fecVenta)) {
     $fecVenta = time();

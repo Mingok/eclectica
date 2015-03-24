@@ -5,6 +5,12 @@
 <input type="hidden" id="precio4" name="precio4"  />
 <input type="hidden" id="precio5" name="precio5"  />
 <input type="hidden" id="precio6" name="precio6"  />
+<input type="hidden" id="precio7" name="precio7"  />
+<input type="hidden" id="precio8" name="precio8"  />
+<input type="hidden" id="precio9" name="precio9"  />
+<input type="hidden" id="precio10" name="precio10"  />
+<input type="hidden" id="precio11" name="precio11"  />
+
 <input type="hidden" id="cuentaCorrienteCLiente" name="cuentaCorrienteCLiente" />
 <div class="row">
     <div class="col-md-12">
@@ -121,7 +127,7 @@
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h3 class="panel-title" >
-                                    Restumen
+                                    Resumen
                                 </h3>
                             </div>
                             <div class="panel-body">
@@ -142,7 +148,8 @@
                                         <input type="hidden" id="totalCosto" name="totalCosto" />
                                         Vendedor: <input type="password"  placeholder="Ingrese" name="vendedor" class="form-control" id="vendedor" style="width: 100px" >&nbsp;&nbsp;&nbsp;
                                     </div>
-                                    <div class="col-md-12" id="MuestraCCC">
+                                    <div class="col-md-12" >
+                                        Observacion: <textarea class="form-control" rows="3" placeholder="Ingrese un comentario" name="observacionVenta" id="observacion" maxlength="140"></textarea>
                                         
                                     </div>
                                 </div>

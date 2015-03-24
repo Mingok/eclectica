@@ -102,5 +102,12 @@ echo '
                     $aux2=$ultima_venta['entregaCliente'];
                     echo ''.number_format($aux2,2);
                 
-echo ' </h4></div></div>';
-        ?>
+//echo ' </h4></div></div>';
+//var_dump(); exit;
+echo '
+
+            <div class="row" style="text-align: left; padding-right: 20px;">
+                <div class="col-md-12" >'
+;
+echo '<br>Observacion:'.$ultima_venta['observacionVenta'].'<br><br>';
+echo'</div></div>';

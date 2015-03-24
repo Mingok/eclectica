@@ -70,7 +70,7 @@
                                             <?php
                                             if (isset($prendas)) {
                                                 foreach ($prendas as $prenda) {
-                                                    if (!($prenda ['cantidadPrenda'] == '0')) {
+                                                    if (!($prenda ['cantidadPrenda'] <= '0')) {
                                                         ?>
                                                         <tr >
                                                             <td style="text-align: center;">
@@ -100,7 +100,7 @@
                                                                 <?php echo ucfirst(strtolower($prenda ['detalleEstacion'])); ?>
                                                             </td>
                                                             <?php
-                                                            if ($prenda ['cantidadPrenda'] == '0') {
+                                                            if ($prenda ['cantidadPrenda'] <= '0') {
                                                                 echo "<td style='background-color: red; font-weight: bolder;text-align: center;'>";
                                                             } else {
                                                                 echo "<td style='text-align: center;' >";

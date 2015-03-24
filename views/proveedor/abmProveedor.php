@@ -16,7 +16,7 @@ $proveedores = $proveedorList->proveedoresDisponibles();
                     <input type="button" value="Nuevo" style="width: 100px;" class="buttonProvNuevo btn btn-sm btn-success"/>
                 </div>
                 <div class="scrolProveedor">
-                    <table class="table table-condensed" id="tblProveedor">
+                    <table class="table table-striped" id="tblProveedor">
                         <thead class="btn-success">
                             <tr style="text-align: center;">
                                 <td style="height: 30px; width: 8%;"><strong> Mod </strong></td>
@@ -31,72 +31,74 @@ $proveedores = $proveedorList->proveedoresDisponibles();
                         <tbody>
                             <?php
                             foreach ($proveedores as $proveedor) {
-                                ?>
-                                <tr style='text-align: center'>
-                                    <td><a tite='Modificar datos del empleado'
-                                           class="editButtonProveedor" name="editProveedor"
-                                           data-emailProveedor="<?php
-                                           echo $proveedor['emailProveedor'];
-                                           ?>"
-                                           data-idProveedor="<?php
-                                           echo $proveedor['idProveedor'];
-                                           ?>"
-                                           data-nombreProveedor="<?php
-                                           echo $proveedor['nombreProveedor'];
-                                           ?>"
-                                           data-cuitProveedor="<?php
-                                           echo $proveedor['cuitProveedor'];
-                                           ?>"
-                                           data-condIvaProveedor="<?php
-                                           echo $proveedor['condIvaProveedor'];
-                                           ?>"
-                                           data-direccionProveedor="<?php
-                                           echo $proveedor['direccionProveedor'];
-                                           ?>"
-                                           data-localidadproveedor="<?php
-                                           echo $proveedor['localidadProveedor'];
-                                           ?>"
-                                           data-telefonoProveedor="<?php
-                                           echo $proveedor['telefonoProveedor'];
-                                           ?>"
-                                           data-contactoProveedor="<?php
-                                           echo $proveedor['contactoProveedor'];
-                                           ?>"
-                                           data-bancoProveedor="<?php
-                                           echo $proveedor['bancoProveedor'];
-                                           ?>"
-                                           data-cbuProveedor="<?php
-                                           echo $proveedor['cbuProveedor'];
-                                           ?>"> 
-                                            <img src='./imagenes/iconos/edit.png' width='18px' height='18px' /> </a>
-                                    </td>
-                                    <td style=" text-align: left;">
-                                        <?php
-                                        echo $proveedor['nombreProveedor'];
-                                        ?>
-                                    </td>
-                                    <td style=" text-align: left;">
-                                        <?php
-                                        echo $proveedor['contactoProveedor'];
-                                        ?>
-                                    </td>
-                                    <td style=" text-align: right;">
-                                        <?php
-                                        echo $proveedor['cuitProveedor'];
-                                        ?>
-                                    </td>
-                                    <td style=" text-align: left;">
-                                        <?php
-                                        echo $proveedor['emailProveedor'];
-                                        ?>
-                                    </td>
-                                    <td style=" text-align: right;">
-                                        <?php
-                                        echo $proveedor['telefonoProveedor'];
-                                        ?>
-                                    </td>
-                                </tr>
-                                <?php
+                                if (!($proveedor["acreedorProveedor"] == 1)) {
+                                    ?>
+                                    <tr style='text-align: center'>
+                                        <td><a tite='Modificar datos del empleado'
+                                               class="editButtonProveedor" name="editProveedor"
+                                               data-emailProveedor="<?php
+                                               echo $proveedor['emailProveedor'];
+                                               ?>"
+                                               data-idProveedor="<?php
+                                               echo $proveedor['idProveedor'];
+                                               ?>"
+                                               data-nombreProveedor="<?php
+                                               echo $proveedor['nombreProveedor'];
+                                               ?>"
+                                               data-cuitProveedor="<?php
+                                               echo $proveedor['cuitProveedor'];
+                                               ?>"
+                                               data-condIvaProveedor="<?php
+                                               echo $proveedor['condIvaProveedor'];
+                                               ?>"
+                                               data-direccionProveedor="<?php
+                                               echo $proveedor['direccionProveedor'];
+                                               ?>"
+                                               data-localidadproveedor="<?php
+                                               echo $proveedor['localidadProveedor'];
+                                               ?>"
+                                               data-telefonoProveedor="<?php
+                                               echo $proveedor['telefonoProveedor'];
+                                               ?>"
+                                               data-contactoProveedor="<?php
+                                               echo $proveedor['contactoProveedor'];
+                                               ?>"
+                                               data-bancoProveedor="<?php
+                                               echo $proveedor['bancoProveedor'];
+                                               ?>"
+                                               data-cbuProveedor="<?php
+                                               echo $proveedor['cbuProveedor'];
+                                               ?>"> 
+                                                <img src='./imagenes/iconos/edit.png' width='18px' height='18px' /> </a>
+                                        </td>
+                                        <td style=" text-align: left;">
+                                            <?php
+                                            echo $proveedor['nombreProveedor'];
+                                            ?>
+                                        </td>
+                                        <td style=" text-align: left;">
+                                            <?php
+                                            echo $proveedor['contactoProveedor'];
+                                            ?>
+                                        </td>
+                                        <td style=" text-align: right;">
+                                            <?php
+                                            echo $proveedor['cuitProveedor'];
+                                            ?>
+                                        </td>
+                                        <td style=" text-align: left;">
+                                            <?php
+                                            echo $proveedor['emailProveedor'];
+                                            ?>
+                                        </td>
+                                        <td style=" text-align: right;">
+                                            <?php
+                                            echo $proveedor['telefonoProveedor'];
+                                            ?>
+                                        </td>
+                                    </tr>
+                                    <?php
+                                }
                             }
                             ?>
                         </tbody>
@@ -124,45 +126,45 @@ $proveedores = $proveedorList->proveedoresDisponibles();
                             </div>
                             <div class="col-md-4" style="text-align: right;">
                                 <label for="cuitProveedor" style="width: 100px;"> CUIT: </label>
-                                <input type="text" id="cuitProveedor" name="cuitProveedor" style="width: 170px;" title="Ingrese CUIT"  placeholder="xx-xxxxxxxxx-xx" class="form-control"  />
+                                <input type="text" id="cuitProveedor" name="cuitProveedor" style="width: 170px;" title="Ingrese CUIT"  placeholder="xx-xxxxxxxxx-xx" class="form-control" required />
                             </div>
                             <div class="col-md-4" style="text-align: right;">
                                 <label for="condIvaProveedor" style="width: 100px;"> Cond. IVA: </label> 
-                                <input type="text" id="condIvaProveedor" name="condIvaProveedor" style="width: 100px;" title="Ingrese CONDICION" placeholder="Ingrese" class="form-control"  />
+                                <input type="text" id="condIvaProveedor" name="condIvaProveedor" style="width: 100px;" title="Ingrese CONDICION" placeholder="Ingrese" class="form-control" required />
                             </div>
                         </div>
                         <div class="row" style="height: 40px;">
                             <div class="col-md-4" style="text-align: right;">
                                 <label for="direccionProveedor" style="width: 100px;"> Domicilio: </label>
-                                <input type="text" id="direccionProveedor" name="direccionProveedor" style="width: 130px;" title="Ingrese DOMICILIO" placeholder="Ingrese" class="form-control"  />
+                                <input type="text" id="direccionProveedor" name="direccionProveedor" style="width: 130px;" title="Ingrese DOMICILIO" placeholder="Ingrese" class="form-control" required />
                             </div>
                             <div class="col-md-4" style="text-align: right;">
                                 <label for="localidadProveedor" style="width: 100px;"> Localidad: </label> 
-                                <input type="text" id="localidadProveedor" name="localidadProveedor" style="width: 100px;"  title="Ingrese LOCALIDAD" class="form-control" placeholder="Ingrese"  />
+                                <input type="text" id="localidadProveedor" name="localidadProveedor" style="width: 100px;"  title="Ingrese LOCALIDAD" class="form-control" placeholder="Ingrese" required />
                             </div>
                             <div class="col-md-4" style="text-align: right;">
                                 <label for="bancoProveedor" style="width: 100px;"> Banco: </label> 
-                                <input type="text" id="bancoProveedor" name="bancoProveedor" style="width: 100px;" title="Ingrese BANCO" placeholder="Ingrese" class="form-control"  />
+                                <input type="text" id="bancoProveedor" name="bancoProveedor" style="width: 100px;" title="Ingrese BANCO" placeholder="Ingrese" class="form-control" required />
                             </div>
                         </div>
                         <div class="row" style="height: 40px;">
                             <div class="col-md-4" style="text-align: right;">
                                 <label for="contactoProveedor" style="width: 100px;"> Contacto: </label> 
-                                <input type="text" id="contactoProveedor" name="contactoProveedor" style="width: 100px;" title="Ingrese CONTACTO" placeholder="ingrese" class="form-control"  />
+                                <input type="text" id="contactoProveedor" name="contactoProveedor" style="width: 100px;" title="Ingrese CONTACTO" placeholder="ingrese" class="form-control" required />
                             </div>
                             <div class="col-md-4" style="text-align: right;">
                                 <label for="telefonoProveedor" style="width: 100px;"> Telefono: </label> 
-                                <input type="text" id="telefonoProveedor" name="telefonoProveedor" style="width: 120px;" title="Ingrese TELEFONO " class="form-control" placeholder="ingrese"  />
+                                <input type="text" id="telefonoProveedor" name="telefonoProveedor" style="width: 120px;" title="Ingrese TELEFONO " class="form-control" placeholder="ingrese" required />
                             </div>
                             <div class="col-md-4" style="text-align: right;">
                                 <label for="cbuProveedor" style="width: 100px;"> CBU </label> 
-                                <input type="text" id="cbuProveedor" name="cbuProveedor" style="width: 100px;" class="form-control" placeholder="Ingrese" title="Ingrese CBU"  />
+                                <input type="text" id="cbuProveedor" name="cbuProveedor" style="width: 100px;" class="form-control" placeholder="Ingrese" title="Ingrese CBU" required />
                             </div>
                         </div>
                         <div class="row" style="height: 40px;">
                             <div class="col-md-4" style="text-align: right;">
                                 <label for="emailProveedor" style="width: 100px;"> Email </label> 
-                                <input type="email" title="Ingrese Email Correcto" id="emailProveedor" name="emailProveedor" placeholder="Ingrese" class="form-control" style="width: 200px;"  />
+                                <input type="email" title="Ingrese Email Correcto" id="emailProveedor" name="emailProveedor" placeholder="Ingrese" class="form-control" style="width: 200px;" required />
                             </div>
                             <div class="col-md-4" style="text-align: right;">
 
@@ -183,7 +185,7 @@ $proveedores = $proveedorList->proveedoresDisponibles();
 <script type="text/javascript">
 
 
-    $('.editButtonProveedor').click(function() {
+    $('.editButtonProveedor').click(function () {
         $('input[name=idProveedor]').val($(this).data('idproveedor'));
         $('input[name=nombreProveedor]').val($(this).data('nombreproveedor'));
         $('input[name=cuitProveedor]').val($(this).data('cuitproveedor'));
@@ -202,10 +204,10 @@ $proveedores = $proveedorList->proveedoresDisponibles();
     });
 
     //Boton limpiar campos
-    $('.btn-danger').click(function() {
+    $('.btn-danger').click(function () {
         location.reload();
     });
-    $('.buttonProvNuevo').click(function() {
+    $('.buttonProvNuevo').click(function () {
 
         $('input[name=idProveedor]').val('');
         $('input[name=emailProveedor]').val('');

@@ -26,6 +26,6 @@
 	<div class="col-md-4"><?php include_once "views{$ds}formaPago{$ds}abmFormaPago.php"; ?></div>
 </div>
 <div class="row">
-	
-	<div class="col-md-5"><img src="./imagenes/logos/<?php echo $empresa["logoEmpresa"];?>"  style="border: 5px solid Darkred; height: 200px;"{$ds}></div>
+	<div class="col-md-7"><?php include_once "views{$ds}acreedor{$ds}abmAcreedor.php"; ?></div>
+	<div class="col-md-5"><img src="./imagenes/logos/<?php echo $empresa["logoEmpresa"];?>"  style="border: 5px solid Darkred; height: 200px;"></div>
 </div>

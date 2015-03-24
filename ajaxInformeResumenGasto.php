@@ -12,25 +12,32 @@ if ($_GET['action'] == 'listar') {
     $arrayFiltro = array();
 
     // valores recibidos por POST
-
+    $hoy = date('d-m-Y');
+    $fecha30 = strtotime('-30 day', strtotime($hoy));
+    $fecha30 = date('Ymd', $fecha30);
+    
+         
     if (isset($_POST['fecDesde'])) {
         if ($_POST['fecDesde'] != '') {
-            $date = str_replace('/', '-', $_POST['fecDesde']);
-            $fecha = date('Y-m-d', strtotime($date)) . ' 00:00:00';
+            $date = str_replace('/', '-',   $_POST['fecDesde']);
+            $fecha = date('Y-m-d', strtotime( $date)) . ' 00:00:00';
             $arrayFiltro[] = "gasto.fechaGasto >= '" . $fecha . "'";
+        }else{$date = str_replace('/', '-',   $fecha30);
+        $fecha = date('Y-m-d', strtotime( $fecha30)) . ' 00:00:00';
+         $arrayFiltro[] = "gasto.fechaGasto >= '" . $fecha . "'";
         }
     }
 
     if (isset($_POST['fecHasta'])) {
         if ($_POST['fecHasta'] != '') {
-            $date = str_replace('/', '-', $_POST['fecHasta']);
-            $fecha = date('Y-m-d', strtotime($date)) . ' 23:59:59';
+            $date = str_replace('/', '-',   $_POST['fecHasta']);
+            $fecha = date('Y-m-d', strtotime( $date)) . ' 23:59:59';
             $arrayFiltro[] = "gasto.fechaGasto <= '" . $fecha . "'";
         }
     }
     // Vericamos si hay algun filtro
 
-    $auxArray = implode(' AND ', $arrayFiltro);
+    $auxArray = implode(' AND ',  $arrayFiltro);
     if (count($arrayFiltro) != 0) {
         $sql .= " and ";
         $sql.=$auxArray;
@@ -40,7 +47,7 @@ if ($_GET['action'] == 'listar') {
 
     // Ordenar por
     $vorder = isset($_POST['orderby']) ? $_POST['orderby'] : '';
-    $sql.= " group by `idFormaPago`";
+    $sql.= " group by formaPago.idFormaPago/proveedor.idProveedor";
     if ($vorder != '') {
         $sql .= " ORDER BY " . $vorder;
     }
@@ -73,6 +80,6 @@ if ($_GET['action'] == 'listar') {
     // convertimos el array de datos a formato json
 //	echo json_encode($array_final);
 
-    echo $str_final;
+    echo $str_final  ;
 }
 ?>
