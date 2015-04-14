@@ -1,8 +1,9 @@
 <?php
+
 require_once 'classes/ventaRenglon/ventaRenglon.php';
 require_once 'classes/venta/venta.php';
 require_once 'classes/persona/persona.php';
-$obj_Persona= new persona();
+$obj_Persona = new persona();
 $obj_venta = new venta();
 $ventaRenglonClass = new ventaRenglon();
 $idMiVenta = $_REQUEST['idMiVenta'];
@@ -13,7 +14,7 @@ $renglones = $ventaRenglonClass->ventaParticular($idMiVenta);
 $ultima_venta = $obj_venta->obtenerEstaVenta($idMiVenta);
 $estaVenta = null;
 
-$estaVenta = $obj_Persona ->eligePersona($ultima_venta['idCliente']);
+$estaVenta = $obj_Persona->eligePersona($ultima_venta['idCliente']);
 
 echo '
     <div class="panel panel-default">
@@ -27,11 +28,11 @@ echo '
                                     <tr>
                                         
                                         <td>';
-                                        echo $estaVenta['nombrePersona']." ".$estaVenta['apellidoPersona'];
-                                        echo'</td>
+echo $estaVenta['nombrePersona'] . " " . $estaVenta['apellidoPersona'];
+echo'</td>
                                         <td style="text-align: right">                                            ';
-                                        echo date('d/m/Y', strtotime($ultima_venta['fechaVenta']));
-                                        echo'
+echo date('d/m/Y', strtotime($ultima_venta['fechaVenta']));
+echo'
                                         </td>
                                     </tr>
                                 </table>
@@ -65,43 +66,47 @@ echo '
                             </tr>
                         </thead>
                         <tbody>';
-                            foreach ($renglones as $renglon) {
-                                //var_dump($renglon);
-                                echo '<tr >
+foreach ($renglones as $renglon) {
+//    var_dump($renglon);
+    if ($renglon['estado'] == 'C') {
+        echo '<tr bgcolor="#FF0000">';
+    } else {
+        echo '<tr >';
+    }
+    echo '        <td style="text-align: left;">';
+    echo $renglon['cantidadPrenda'];
+    echo'</td>
                                         <td style="text-align: left;">';
-                                            echo $renglon['cantidadPrenda'];
-                                    echo'</td>
+    echo ucfirst(strtolower($renglon['detallePrenda']));
+    echo'</td>
                                         <td style="text-align: left;">';
-                                            echo ucfirst(strtolower($renglon['detallePrenda']));
-                                    echo'</td>
-                                        <td style="text-align: left;">';
-                                            echo ucfirst(strtolower($renglon['detalleTipoVenta']));
-                                    echo'</td>
+    echo ucfirst(strtolower($renglon['detalleTipoVenta']));
+    echo'</td>
                                         <td style="text-align: right;">';
-                                            echo '$ '.number_format($renglon['precioVendido'],2);
-                                    echo'</td>
+    echo '$ ' . number_format($renglon['precioVendido'], 2);
+    echo'</td>
                                         <td style="text-align: right;">';
-                                            $aux=$renglon['precioVendido'] * $renglon['cantidadPrenda'];
-                                            echo '$ '.number_format($aux,2);
-                                    echo'</td>
+    $aux = $renglon['precioVendido'] * $renglon['cantidadPrenda'];
+    echo '$ ' . number_format($aux, 2);
+    echo'</td>
                                 </tr>';
-                            }
-                    echo'</tbody>
+}
+echo'</tbody>
                     </table>
                 </div> 
             </div>
         </div>
        
         <div class="panel-heading" style="text-align: right;"><h4 class="panel-title">  ';
-                    echo'Total: $';
-                    $aux2=$ultima_venta['precioVenta'];
-                    echo ''.number_format($aux2,2);
-                    
-                    echo'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
-                    echo'Entrega: $';
-                    $aux2=$ultima_venta['entregaCliente'];
-                    echo ''.number_format($aux2,2);
-                
+echo'Total: $';
+$aux2 = $ultima_venta['precioVenta'];
+echo '' . number_format($aux2, 2);
+
+echo'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
+echo'Entrega: $';
+$aux2 = $ultima_venta['entregaCliente'];
+echo '' . number_format($aux2, 2);
+
 //echo ' </h4></div></div>';
 //var_dump(); exit;
 echo '
@@ -109,5 +114,5 @@ echo '
             <div class="row" style="text-align: left; padding-right: 20px;">
                 <div class="col-md-12" >'
 ;
-echo '<br>Observacion:'.$ultima_venta['observacionVenta'].'<br><br>';
+echo '<br>Observacion:' . $ultima_venta['observacionVenta'] . '<br><br>';
 echo'</div></div>';

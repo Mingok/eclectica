@@ -45,6 +45,7 @@ $tipoVentas = $tipoVentaList->tipoVentasDisponibles();
         $('html,body').animate({scrollTop: $("#ver").offset().top}, 2000);
         $('.buttonPrendas').val('Agregar');
         $('input[name=idPrenda]').val('');
+         $('input[name=idPrenda]').val(null);
         $('input[name=cantidadPrenda]').val($(this).data('cantidadprenda'));
         $('input[name=codigoPrenda]').val($(this).data('codigoprenda'));
         $('input[name=detallePrenda]').val($(this).data('detalleprenda') + "[2]");
@@ -250,6 +251,7 @@ $tipoVentas = $tipoVentaList->tipoVentasDisponibles();
         $('html,body').animate({scrollTop: $("#ver").offset().top}, 2000);
         $('.btn-success').val('Agregar');
         $('input[name=idPrenda]').val('');
+       
         $('input[name=cantidadPrenda]').val('');
         $('input[name=codigoPrenda]').val('');
         $('input[name=detallePrenda]').val('');

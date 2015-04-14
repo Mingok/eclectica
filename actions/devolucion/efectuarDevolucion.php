@@ -38,7 +38,7 @@ $obj_prenda->devolverPrenda($idPrenda);
  */
 $precio_vendido = $obj_venta->precioVendidoPrenda($idVenta, $idPrenda);
 $cliente = $obj_persona->eligePersona($idClienteVenta);
-$cuentaCorrientePersona = doubleval($cliente['cuentaCorrientePersona']) + $precio_vendido;
+$cuentaCorrientePersona = doubleval($cliente['cuentaCorrientePersona']) - $precio_vendido;
 
 $arrPersona = array(
     'cuentaCorrientePersona' => $cuentaCorrientePersona,
@@ -52,7 +52,7 @@ $arrEntrega = array(
     'idVendedor' => $idVendedor,
     'valorEntrega' => $precio_vendido,
     'fechaEntrega' => date('Y-m-d h:i:s', time()),
-    'inicial' => 'N',
+    'inicial' => 'C',
     'tipo' => 'C'
 );
 $entrega = null;

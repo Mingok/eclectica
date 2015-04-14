@@ -5,13 +5,13 @@
                 <?php include_once './views/devolucion/devolucionCliente.php' ?>
             </div>
             <div class="col-md-9">
-                <?php include_once './views/devolucion/devolucionItemCambio.php';?>
-                
+                <?php include_once './views/devolucion/devolucionItemCambio.php'; ?>
+
             </div>
         </div>
     </div>
     <div class="col-md-12 historico-compras">
-        <?php  include_once './views/venta/ventaHistoricoCliente.php'; ?>
+        <?php include_once './views/venta/ventaHistoricoCliente.php'; ?>
     </div>
     <div class="col-md-12 hiden-form">
         <div class="row">
@@ -22,6 +22,7 @@
                     <input type="hidden" id="idVendedor" name="idVendedor" />
                     <input type="hidden" id="idPrenda" name="idPrenda" />
                     <input type="hidden" id="idVenta" name="idVenta" />
+                    <input type="hidden" id="fechaVenta" name="fechaVenta" />
                     <input type="submit" class="btn btn-info devolverSend" value="Devolver" disabled=""/>
                 </form>
 
@@ -40,10 +41,10 @@
     var estado = 0; /*selecCliente*/
     var pasar = 0;
     var pasar1 = 0;
-    
-    $(document).ready(function() {
+
+    $(document).ready(function () {
         var estado = 1; /*selecCliente*/
-        $('#selecClientes').on("change", function(e) {
+        $('#selecClientes').on("change", function (e) {
             $('#clienteVenta').val(this.options[this.selectedIndex].text);
             $('#idClienteVenta').val(this.value);
             $("#cliente1").html(this.options[this.selectedIndex].text);
@@ -51,21 +52,21 @@
             $('#selecClientes').empty().attr("disabled", "disabled");
             $('#prendasDevolucion').show();
         });
-        
+
         var pasar2 = 0;
-        $("#selecEmpleados").on("change", function(e) {
+        $("#selecEmpleados").on("change", function (e) {
             var auxiliar = this.value;
             $('#idVendedor').val(this.value);
-$('#selecClientes option[value="' + auxiliar + '"]').addClass("hide_me");
-            
+            $('#selecClientes option[value="' + auxiliar + '"]').addClass("hide_me");
+
             $("#selecEmpleados").empty().attr("disabled", "disabled");
 
-            
+
         });
     });
-    
-     
-    
+
+
+
     $('#prendasDevolucion .itemDev').click(function () {
         var url = 'indexComprasCliente.php';
         var idCliente = $('#idClienteVenta').val();
@@ -78,83 +79,82 @@ $('#selecClientes option[value="' + auxiliar + '"]').addClass("hide_me");
                 'idCliente': idCliente,
                 'idPrenda': idPrenda
             }, // serializes the form's elements.
-            success: function(data) {
+            success: function (data) {
                 if (data) {
                     $('.movimientosClienteCont').html(data);
                 }
-                
+
                 //cargo este evento aca porque las cosas se traen con ajax
-                $('.ventaDev').on("click", function(e) {
+                $('.ventaDev').on("click", function (e) {
                     var idVenta = $(this).data('idventa');
                     $('input[name=idVenta]').val(idVenta);
+                    $('input[name=fechaVenta]').val(fechaVenta);
                     $('.devolverSend').removeAttr('disabled');
                 });
             }
         });
     });
-    
-    $(document).ready(function() {
 
-
-            $('#selecEmpleados').select2({
-                placeholder: "Seleccionar",
-                allowClear: true
-            });
-            $('#selecClientes').select2({
-                placeholder: "Seleccionar",
-                allowClear: true
-            });
-            $('#prendasDevolucion').hide();
-            $('#ventaDetalle').hide();
-            $("#formDinamico").validate({
-                rules: {
-                    entrega: {
-                        required: true,
-                        number: true
-                    },
-                    vendedor: {
-                        required: true,
-                        equalTo: '#idVendedorVentaCod'
-                    }
-                },
-                messages: {
-                    entrega: {
-                        required: "Ingrese Importe",
-                        number: "Tiene que ser un numero"
-                    },
-                    vendedor: {
-                        required: "Ingrese vendedor",
-                        equalTo: "Codigo Erroneo"
-                    }
-                },
-                submitHandler: function(form) {
-                    // do other things for a valid form
-                    if (campos != 0) {
-                        pasar = 1;
-                    } else {
-                        alert("Agregue al menos 1 prenda");
-                        pasar = 0;
-                        return false;
-                    }
-                    if ($('#idClienteVenta').val() != '') {
-                        pasar1 = 1;
-                    } else {
-                        pasar1 = 0;
-                        alert("Eliga Cliente");
-                        return false;
-
-                    }
-                    if ($('#idVendedorVentaCod').val() != '') {
-                        pasar2 = 1;
-                    } else {
-                        alert("Eliga Empleado");
-                        pasar2 = 0;
-
-                    }
-                    if ((pasar == 1) & (pasar1 == 1) & (pasar2 == 1)) {
-                        myFunction();
-                    }
-                }
-            });
+    $(document).ready(function () {
+        $('#selecEmpleados').select2({
+            placeholder: "Seleccionar",
+            allowClear: true
         });
+        $('#selecClientes').select2({
+            placeholder: "Seleccionar",
+            allowClear: true
+        });
+        $('#prendasDevolucion').hide();
+        $('#ventaDetalle').hide();
+        $("#formDinamico").validate({
+            rules: {
+                entrega: {
+                    required: true,
+                    number: true
+                },
+                vendedor: {
+                    required: true,
+                    equalTo: '#idVendedorVentaCod'
+                }
+            },
+            messages: {
+                entrega: {
+                    required: "Ingrese Importe",
+                    number: "Tiene que ser un numero"
+                },
+                vendedor: {
+                    required: "Ingrese vendedor",
+                    equalTo: "Codigo Erroneo"
+                }
+            },
+            submitHandler: function (form) {
+                // do other things for a valid form
+                if (campos != 0) {
+                    pasar = 1;
+                } else {
+                    alert("Agregue al menos 1 prenda");
+                    pasar = 0;
+                    return false;
+                }
+                if ($('#idClienteVenta').val() != '') {
+                    pasar1 = 1;
+                } else {
+                    pasar1 = 0;
+                    alert("Eliga Cliente");
+                    return false;
+
+                }
+                if ($('#idVendedorVentaCod').val() != '') {
+                    pasar2 = 1;
+                } else {
+                    alert("Eliga Empleado");
+                    pasar2 = 0;
+
+                }
+                if ((pasar == 1) & (pasar1 == 1) & (pasar2 == 1)) {
+                    myFunction();
+                }
+            }
+        });
+    });
 </script>

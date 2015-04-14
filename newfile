@@ -1,1 +1,0 @@
-ALTER TABLE  `entrega` ADD  `Inicial` BOOLEAN NOT NULL AFTER  `fechaEntrega` ;

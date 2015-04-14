@@ -33,6 +33,9 @@ if (!empty($moviemientos_cliente)) {
         if ($moviemiento['Inicial'] == 'S')
             $moviemiento['tipo'] = 'Saldo Inicial';
 
+        if ($moviemiento['Inicial'] == 'C')
+            $moviemiento['tipo'] = 'Devolucion';
+
         switch ($moviemiento['tipo']) {
             case 'Saldo Inicial':
                 echo '<tr style="text-align: center; background-color:#aaaaaa;font-weight: bolder;color:#ffffff">';
@@ -69,6 +72,16 @@ if (!empty($moviemientos_cliente)) {
 
                     echo '<td>' . number_format($moviemiento['valor'], 2) . '</td>';
                 }
+                break;
+
+            case 'Devolucion':
+
+                echo '<tr style="text-align: center;background-color:#eeeeee;font-weight: bolder;">';
+                echo '<td>' . date('d/m/Y', strtotime($moviemiento['fecha'])) . '</td>';
+                echo '<td > ' . $moviemiento['tipo'] . '</td>';
+                echo '<td></td>';
+                echo '<td>' . number_format($moviemiento['valor'], 2) . '</td>';
+
                 break;
         }
 
