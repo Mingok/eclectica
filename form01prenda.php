@@ -37,68 +37,11 @@ $tipoVentas = $tipoVentaList->tipoVentasDisponibles();
             openEffect: 'fade',
             closeEffect: 'elastic'
         });
+        //Boton Agregar o modificar
+       
     });
 
-    //Boton Agregar o modificar
-    $('.buttonCopiar').click(function () {
-        $('#ver').show("slow");
-        $('html,body').animate({scrollTop: $("#ver").offset().top}, 2000);
-        $('.buttonPrendas').val('Agregar');
-        $('input[name=idPrenda]').val('');
-        $('input[name=cantidadPrenda]').val($(this).data('cantidadprenda'));
-        $('input[name=codigoPrenda]').val($(this).data('codigoprenda'));
-        $('input[name=detallePrenda]').val($(this).data('detalleprenda') + "[2]");
-        $('select[name=idMarcaPrenda]').val($(this).data('idmarcaprenda'));
-        $('select[name=idProveedorPrenda]').val($(this).data('idproveedorprenda'));
-        $('select[name=idEstacionPrenda]').val($(this).data('idestacionprenda'));
-        $('select[name=idColorPrenda]').val($(this).data('idcolorprenda'));
-        $('select[name=idTelaPrenda]').val($(this).data('idtelaprenda'));
-        $('select[name=idTallePrenda]').val($(this).data('idtalleprenda'));
-        $('select[name=idEstampadoPrenda]').val($(this).data('idestampadoprenda'));
-        $('input[name=tipoVenta1]').val($(this).data('valor1'));
-        $('input[name=tipoVenta2]').val($(this).data('valor2'));
-        $('input[name=tipoVenta3]').val($(this).data('valor3'));
-        $('input[name=tipoVenta4]').val($(this).data('valor4'));
-        $('input[name=tipoVenta5]').val($(this).data('valor5'));
-        $('input[name=tipoVenta6]').val($(this).data('valor6'));
-        $('input[name=tipoVenta7]').val($(this).data('valor7'));
-        $('input[name=tipoVenta8]').val($(this).data('valor8'));
-        $('input[name=tipoVenta9]').val($(this).data('valor9'));
-        $('input[name=tipoVenta10]').val($(this).data('valor10'));
-        $('input[name=tipoVenta11]').val($(this).data('valor11'));
-        $('input[name=codigoPrenda]').hide();
-        $('label[for=codigoPrenda]').hide();
-    });
-    $('.editButtonPrenda').click(function () {
-        $('#ver').show("slow");
-        $('html,body').animate({scrollTop: $("#ver").offset().top}, 2000);
-        $('input[name=idPrenda]').val($(this).data('idprenda'));
-        $('input[name=cantidadPrenda]').val($(this).data('cantidadprenda'));
-        $('input[name=codigoPrenda]').val($(this).data('codigoprenda'));
-        $('input[name=detallePrenda]').val($(this).data('detalleprenda'));
-        $('select[name=idMarcaPrenda]').val($(this).data('idmarcaprenda'));
-        $('select[name=idProveedorPrenda]').val($(this).data('idproveedorprenda'));
-        $('select[name=idEstacionPrenda]').val($(this).data('idestacionprenda'));
-        $('select[name=idColorPrenda]').val($(this).data('idcolorprenda'));
-        $('select[name=idTelaPrenda]').val($(this).data('idtelaprenda'));
-        $('select[name=idTallePrenda]').val($(this).data('idtalleprenda'));
-        $('select[name=idEstampadoPrenda]').val($(this).data('idestampadoprenda'));
-        $('input[name=tipoVenta1]').val($(this).data('valor1'));
-        $('input[name=tipoVenta2]').val($(this).data('valor2'));
-        $('input[name=tipoVenta3]').val($(this).data('valor3'));
-        $('input[name=tipoVenta4]').val($(this).data('valor4'));
-        $('input[name=tipoVenta5]').val($(this).data('valor5'));
-        $('input[name=tipoVenta6]').val($(this).data('valor6'));
-        $('input[name=tipoVenta7]').val($(this).data('valor7'));
-        $('input[name=tipoVenta8]').val($(this).data('valor8'));
-        $('input[name=tipoVenta9]').val($(this).data('valor9'));
-        $('input[name=tipoVenta10]').val($(this).data('valor10'));
-        $('input[name=tipoVenta11]').val($(this).data('valor11'));
-        $('input[name=codigoPrenda]').show("slow");
-        $('label[for=codigoPrenda]').show("slow");
-        $('.btn-success').val('Modificar');
-        $('.btn-danger').removeClass('no');
-    });
+    
     $('#mostrarPrecios').click(function () {
         $('#idTipoVenta2').val(Math.round($('#idTipoVenta2').val()));
         

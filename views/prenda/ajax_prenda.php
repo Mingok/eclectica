@@ -1,12 +1,37 @@
 <?php
 require_once 'classes/prenda/prenda.php';
+$order = $_REQUEST['order'];
+$offset = $_REQUEST['start'];
+$limit = $_REQUEST['length'];
+$search = $_REQUEST['search']['value'];
 $prendaList = new prenda ();
-$prendas = $prendaList->prendasDisponibles();
+$options = array();
+if ($order) {
+    $options['order']=$order;    
+}
+if ($offset) {
+    $options['offset']=$offset;    
+}
+if ($limit) {
+    $options['limit']=$limit;    
+}
+if ($search) {
+    $options['search']=$search;    
+}
+$prendas = $prendaList->prendasDisponiblesListado($options);
+$options['count'] = TRUE;
+$prendas_totales = $prendaList->prendasDisponiblesListado($options);
+
 $response = array();
+$response['aaData'] = array();
+$response['bSortable'] = false;
+$response['draw'] = $_REQUEST['draw'];
+$response['recordsTotal'] = $prendas_totales;
+$response['recordsFiltered'] = $prendas_totales;
 
 foreach ($prendas as $prenda) {
     $row = array();
-    /*
+    $precios_prenda = $prendaList->preciosPrenda($prenda['idPrenda']);
     $row[]= "<a title='Modificar datos' href='#prenda' class='editButtonPrenda' name='editButtonPrenda'
                             data-cantidadprenda='{$prenda ['cantidadPrenda']}' 
                             data-idprenda='{$prenda ['idPrenda']}' 
@@ -19,18 +44,18 @@ foreach ($prendas as $prenda) {
                             data-idproveedorprenda='{$prenda ['idProveedorPrenda']}' 
                             data-idestacionprenda='{$prenda ['idEstacionPrenda']}' 
                             data-idcolorprenda='{$prenda ['idColorPrenda']}' 
-                            data-valor1='{$prenda ['valor1']}' 
-                            data-valor2='{$prenda ['valor2']}' 
-                            data-valor3='{$prenda ['valor3']}' 
-                            data-valor4='{$prenda ['valor4']}' 
-                            data-valor5='{$prenda ['valor5']}' 
-                            data-valor6='{$prenda ['valor6']}' 
-                            data-valor7='{$prenda ['valor7']}' 
-                            data-valor8='{$prenda ['valor8']}' 
-                            data-valor9='{$prenda ['valor9']}' 
-                            data-valor10='{$prenda ['valor10']}' 
-                            data-valor11='{$prenda ['valor11']}' />
-                <img src='../../imagenes/iconos/layout_edit.png' width='18px' height='18px' />
+                            data-valor1='{$precios_prenda[0]['valor']}' 
+                            data-valor2='{$precios_prenda[1]['valor']}' 
+                            data-valor3='{$precios_prenda[2]['valor']}' 
+                            data-valor4='{$precios_prenda[3]['valor']}' 
+                            data-valor5='{$precios_prenda[4]['valor']}' 
+                            data-valor6='{$precios_prenda[5]['valor']}' 
+                            data-valor7='{$precios_prenda[6]['valor']}' 
+                            data-valor8='{$precios_prenda[7]['valor']}' 
+                            data-valor9='{$precios_prenda[8]['valor']}' 
+                            data-valor10='{$precios_prenda[9]['valor']}' 
+                            data-valor11='{$precios_prenda[10]['valor']}' />
+                <img src='imagenes/iconos/layout_edit.png' width='18px' height='18px' />
             </a>";
     $row[] = "<a title='copiar' href='#prenda' class='buttonCopiar' name='buttonCopiar' 
                             data-cantidadprenda='{$prenda ['cantidadPrenda']}'
@@ -44,64 +69,39 @@ foreach ($prendas as $prenda) {
                             data-idproveedorprenda='{$prenda ['idProveedorPrenda']}'
                             data-idestacionprenda='{$prenda ['idEstacionPrenda']}'
                             data-idcolorprenda='{$prenda ['idColorPrenda']}'
-                            data-valor1='{$prenda ['valor1']}'
-                            data-valor2='{$prenda ['valor2']}'
-                            data-valor3='{$prenda ['valor3']}'
-                            data-valor4='{$prenda ['valor4']}'
-                            data-valor5='{$prenda ['valor5']}'
-                            data-valor6='{$prenda ['valor6']}'
-                            data-valor7='{$prenda ['valor7']}'
-                            data-valor8='{$prenda ['valor8']}'
-                            data-valor9='{$prenda ['valor9']}'
-                            data-valor10='{$prenda ['valor10']}'
-                            data-valor11='{$prenda ['valor11']}' />
-                <img src='../../imagenes/iconos/copiar.png' width='18px' height='18px' />
+                            data-valor1='{$precios_prenda[0]['valor']}' 
+                            data-valor2='{$precios_prenda[1]['valor']}' 
+                            data-valor3='{$precios_prenda[2]['valor']}' 
+                            data-valor4='{$precios_prenda[3]['valor']}' 
+                            data-valor5='{$precios_prenda[4]['valor']}' 
+                            data-valor6='{$precios_prenda[5]['valor']}' 
+                            data-valor7='{$precios_prenda[6]['valor']}' 
+                            data-valor8='{$precios_prenda[7]['valor']}' 
+                            data-valor9='{$precios_prenda[8]['valor']}' 
+                            data-valor10='{$precios_prenda[9]['valor']}' 
+                            data-valor11='{$precios_prenda[10]['valor']}' />
+                <img src='imagenes/iconos/copiar.png' width='18px' height='18px' />
             </a>";
     $row[] = "<a class='fancyboxPrecios' id='fancyboxPrecios'
                 href='./indexPreciosPrenda.php?idPrenda={$prenda ['idPrenda']}'>
                 {$prenda ['codigoPrenda']}
-            </a>";*/
-    $row[] = ucfirst(strtolower($prenda ['detallePrenda']));
+            </a>";
 
-    $row[] = ucfirst(strtolower($prenda ['detalleTalle']));
-    $row[] = ucfirst(strtolower($prenda ['detalleColor']));
-    $row[] = ucfirst(strtolower($prenda ['detalleEstampado']));
-    $row[] = ucfirst(strtolower($prenda ['detalleTela']));
-    $row[] = ucfirst(strtolower($prenda ['detalleEstacion']));
-/*
+    $row[] = utf8_encode(ucfirst(strtolower($prenda ['detallePrenda'])));
+    $row[] = utf8_encode(ucfirst(strtolower($prenda ['detalleTalle'])));
+    $row[] = utf8_encode(ucfirst(strtolower($prenda ['detalleColor'])));
+    $row[] = utf8_encode(ucfirst(strtolower($prenda ['detalleEstampado'])));
+    $row[] = utf8_encode(ucfirst(strtolower($prenda ['detalleTela'])));
+    $row[] = utf8_encode(ucfirst(strtolower($prenda ['detalleEstacion'])));
+
     if (isset($prenda['cantidadPrenda']) && ($prenda['cantidadPrenda'] == '0')) {
         $row[] = "<div style='background-color: red; font-weight: bolder;text-align: center;'>{$prenda ['cantidadPrenda']}</div>";
     } else {
         $row[] = "<div style='text-align: center;' >{$prenda ['cantidadPrenda']}</div>";
-    }*/
-    $response[] =  array_values($row);
+    }
+    $response['aaData'][] =  array_values($row);
 }
-echo "<pre>";
-var_dump($response);
-var_dump(json_encode($response));
-switch (json_last_error()) {
-    case JSON_ERROR_NONE:
-        echo ' - No errors';
-        break;
-    case JSON_ERROR_DEPTH:
-        echo ' - Maximum stack depth exceeded';
-        break;
-    case JSON_ERROR_STATE_MISMATCH:
-        echo ' - Underflow or the modes mismatch';
-        break;
-    case JSON_ERROR_CTRL_CHAR:
-        echo ' - Unexpected control character found';
-        break;
-    case JSON_ERROR_SYNTAX:
-        echo ' - Syntax error, malformed JSON';
-        break;
-    case JSON_ERROR_UTF8:
-        echo ' - Malformed UTF-8 characters, possibly incorrectly encoded';
-        break;
-    default:
-        echo ' - Unknown error';
-        break;
-}
-echo "<pre>";
-exit;
+header('Cache-Control: no-cache, must-revalidate');
+header('Expires: Mon, 26 Jul 1997 05:00:00 GMT');
+header('Content-type: application/json');
 echo json_encode($response);

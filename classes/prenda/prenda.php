@@ -43,14 +43,52 @@ class prenda {
         //        }
     }
 
-    /*   	public function ordenarTablaPrenda($prendaList){
-      require_once (__DIR__.'/../../base/manejoMySQL.php');
-      foreach ($prendaList as $key => $row) {
-      $aux[$key] = $row['cantidadPrenda'];
-      }
-      array_multisort($aux, SORT_ASC ,$prendaList);
-      return $prendaList;
-      } */
+    public function prendasDisponiblesListado($options = array()) {
+        $ds = DIRECTORY_SEPARATOR;
+        require_once (__DIR__ . "{$ds}..{$ds}..{$ds}base{$ds}manejoMySQL.php");
+        $objManejoMySQL = new manejoMySQL ();
+        $order = isset($options['order'])?$options['order']:FALSE;
+        $offset = isset($options['offset'])?$options['offset']:'0';
+        $limit = isset($options['limit'])?$options['limit']:'10';
+        $count = isset($options['count'])?$options['count']:FALSE;
+        $search = isset($options['search'])?$options['search']:FALSE;
+        
+        $strSQL_order = "ORDER BY prenda.`idPrenda` desc";
+        $strSQL_limit = "";
+        if ($limit && !$count) {
+            $strSQL_limit = "LIMIT $offset, $limit";            
+        }
+        $strSQL_search = "";
+        if ($search) {
+            $strSQL_search = " WHERE CONCAT(detallePrenda,' ', codigoPrenda) LIKE '%$search%'";            
+        }
+        
+        $strSql = "SELECT prenda.*, proveedor.nombreProveedor, color.detalleColor , estampado.detalleEstampado, tela.detalleTela,
+					talle.detalleTalle, estacion.detalleEstacion, marca.detalleMarca
+			FROM prenda AS prenda 
+			LEFT JOIN proveedor AS proveedor ON prenda.idProveedorPrenda = proveedor.idProveedor
+			LEFT JOIN color AS color ON prenda.idColorPrenda = color.idColor
+			LEFT JOIN estampado AS estampado ON prenda.idEstampadoPrenda = estampado.idEstampado
+			LEFT JOIN tela AS tela ON prenda.idTelaPrenda = tela.idTela
+			LEFT JOIN talle AS talle ON prenda.idTallePrenda = talle.idTalle
+			LEFT JOIN estacion AS estacion ON prenda.idEstacionPrenda = estacion.idEstacion
+			LEFT JOIN marca AS marca ON prenda.idMarcaPrenda = marca.idMarca
+			$strSQL_search
+                        $strSQL_order
+                        $strSQL_limit
+                ";
+        if ($count) {
+            $strSql = "SELECT count(*) as total
+			FROM prenda
+                        $strSQL_search";
+        }
+        $arrResultado = null;
+        $objManejoMySQL->consultar($strSql, $arrResultado);
+        if ($count) {
+            return $arrResultado[0]['total'];
+        }
+        return $arrResultado;
+    }
 
     public function eligePrendaDesdeCodigo($lngCodigoPrenda) {
         $ds = DIRECTORY_SEPARATOR;
