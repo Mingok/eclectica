@@ -37,7 +37,10 @@ $tipoVentas = $tipoVentaList->tipoVentasDisponibles();
             openEffect: 'fade',
             closeEffect: 'elastic'
         });
+        //Boton Agregar o modificar
+       
     });
+
 
     //Boton Agregar o modificar
     $('.buttonCopiar').click(function () {
@@ -100,6 +103,7 @@ $tipoVentas = $tipoVentaList->tipoVentasDisponibles();
         $('.btn-success').val('Modificar');
         $('.btn-danger').removeClass('no');
     });
+
     $('#mostrarPrecios').click(function () {
         $('#idTipoVenta2').val(Math.round($('#idTipoVenta2').val()));
         
