@@ -32,13 +32,17 @@ $tipoVentas = $tipoVentaList->tipoVentasDisponibles();
             $("#CPrenda").html(mostrar1);
         }
         $("#fancyboxPrecios").fancybox({
-            autoDimensions: true,
             type: 'iframe',
+            width: 520,
+            minheight: 820,
+            closeClick: true,
             openEffect: 'fade',
-            closeEffect: 'elastic'
+            closeEffect: 'fade'
+
+
         });
         //Boton Agregar o modificar
-       
+
     });
 
 
@@ -48,7 +52,7 @@ $tipoVentas = $tipoVentaList->tipoVentasDisponibles();
         $('html,body').animate({scrollTop: $("#ver").offset().top}, 2000);
         $('.buttonPrendas').val('Agregar');
         $('input[name=idPrenda]').val('');
-         $('input[name=idPrenda]').val(null);
+        $('input[name=idPrenda]').val(null);
         $('input[name=cantidadPrenda]').val($(this).data('cantidadprenda'));
         $('input[name=codigoPrenda]').val($(this).data('codigoprenda'));
         $('input[name=detallePrenda]').val($(this).data('detalleprenda') + "[2]");
@@ -106,8 +110,8 @@ $tipoVentas = $tipoVentaList->tipoVentasDisponibles();
 
     $('#mostrarPrecios').click(function () {
         $('#idTipoVenta2').val(Math.round($('#idTipoVenta2').val()));
-        
-        
+
+
         if (<?php echo $tipoVentas["2"]["operacionTipoVenta"]; ?> == "0") {
             $('input[name=tipoVenta3]').val($('#idTipoVenta2').val());
         } else {
@@ -255,7 +259,7 @@ $tipoVentas = $tipoVentaList->tipoVentasDisponibles();
         $('html,body').animate({scrollTop: $("#ver").offset().top}, 2000);
         $('.btn-success').val('Agregar');
         $('input[name=idPrenda]').val('');
-       
+
         $('input[name=cantidadPrenda]').val('');
         $('input[name=codigoPrenda]').val('');
         $('input[name=detallePrenda]').val('');

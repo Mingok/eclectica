@@ -12,7 +12,7 @@
     <div class="col-md-8">
         <div class="row">
             <div class="col-md-12">
-                <?php include_once './views/venta/ventaItemVenta.php';
+                <?php include_once './views/venta/ventaItemVentaUI.php';
                 ?>
 
             </div>

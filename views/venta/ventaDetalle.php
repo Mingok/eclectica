@@ -226,30 +226,7 @@
         closeEffect: 'elastic'
     });
     $("#cantidadItemVenta").keypress(function(e) {e.preventDefault(); } );// alert (e.keyCode); if (e.keyCode == 32) {  } })
-    $('.itemAVender').click(function() {
-        $("#cantidadItemVenta").attr('max', $(this).data('cantidadprenda'));
-        $('#codItemVenta').val('0');
-        $('#cantidadItemVenta').val('1');
-        $('#selecCondicionItem').val(["0"]).select2();
-        $('#idItemVenta').val($(this).data('idprenda'));
-        $('#codItemVenta').val($(this).data('codigoprenda'));
-        $('#detalleItemVenta').val($(this).data('detalleprenda'));
-        $('#precio1').val($(this).data('valor1'));
-        $('#precio2').val($(this).data('valor2'));
-        $('#precio3').val($(this).data('valor3'));
-        $('#precio4').val($(this).data('valor4'));
-        $('#precio5').val($(this).data('valor5'));
-        $('#precio6').val($(this).data('valor6'));
-        $('#precio7').val($(this).data('valor7'));
-        $('#precio8').val($(this).data('valor8'));
-        $('#precio9').val($(this).data('valor9'));
-        $('#precio10').val($(this).data('valor10'));
-        $('#precio11').val($(this).data('valor11'));
-        $('#cuentaCorriente').val($(this).data('cuentaCorrientePersona'));
-        $('#agregarItem').show();
-        $('#areaItemAVender').show();
-        $.fancybox.close();
-    });
+    
 
 
 </script>
