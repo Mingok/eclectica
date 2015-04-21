@@ -27,31 +27,31 @@ $prendas = $prendaList->prendasDisponibles();
                         <tr>
                             <td style="text-align: right;">
                                 <div class="scrol1">
-                                    <table class="table table-condensed" id="tblPrendaVenta">
+                                    <table class="table table-condensed" id="tblPrendaDevolucuion">
                                         <thead class="btn-success" style="font-weight: bolder; text-align: center;">
                                             <tr>
-                                                <td>
+                                                <td style="width: 3%">
                                                     Mod
                                                 </td>
-                                                <td>
+                                                <td style="width: 10%">
                                                     Cod
                                                 </td>
                                                 <td style="width: 30%">
                                                     Nombre
                                                 </td>
-                                                <td>
+                                                <td style="width: 3%">
                                                     Talle
                                                 </td>
-                                                <td>
+                                                <td style="width: 10%">
                                                     Color
                                                 </td>
-                                                <td>
+                                                <td style="width: 10%">
                                                     Estampado
                                                 </td>
-                                                <td>
+                                                <td style="width: 14%">
                                                     Tela
                                                 </td>
-                                                <td>
+                                                <td style="width: 10%">
                                                     Temporada
                                                 </td>
                                             </tr>
@@ -68,7 +68,7 @@ $prendas = $prendaList->prendasDisponibles();
 </div>
 <script>
     $(document).ready(function() {
-        $('.tabla').dataTable({
+        $('#tblPrendaDevolucuion').dataTable({
             "processing": true,
             "serverSide": true,
             "ajax": "views/devolucion/ajax_prendas.php",
@@ -92,10 +92,8 @@ $prendas = $prendaList->prendasDisponibles();
             ]
         });
         
-        $('.tabla').on('draw.dt', function() {
-            console.log('pasa1');
+        $('#tblPrendaDevolucuion').on('draw.dt', function() {
             $('#prendasDevolucion .itemDev').on('click',function () {
-                console.log('pasa2');
                 var url = 'indexComprasCliente.php';
                 var idCliente = $('#idClienteVenta').val();
                 var idPrenda = $(this).data('idprenda');
