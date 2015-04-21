@@ -5,7 +5,7 @@
                 <?php include_once './views/devolucion/devolucionCliente.php' ?>
             </div>
             <div class="col-md-9">
-                <?php include_once './views/devolucion/devolucionItemCambio.php'; ?>
+                <?php include_once './views/devolucion/devolucionItemCambioUI.php'; ?>
 
             </div>
         </div>
@@ -48,7 +48,6 @@
             $('#clienteVenta').val(this.options[this.selectedIndex].text);
             $('#idClienteVenta').val(this.value);
             $("#cliente1").html(this.options[this.selectedIndex].text);
-//            $("#cliente1").show('Slow');
             $('#selecClientes').empty().attr("disabled", "disabled");
             $('#prendasDevolucion').show();
         });
@@ -62,36 +61,6 @@
             $("#selecEmpleados").empty().attr("disabled", "disabled");
 
 
-        });
-    });
-
-
-
-    $('#prendasDevolucion .itemDev').click(function () {
-        var url = 'indexComprasCliente.php';
-        var idCliente = $('#idClienteVenta').val();
-        var idPrenda = $(this).data('idprenda');
-        $('input[name=idPrenda]').val(idPrenda);
-        $.ajax({
-            type: "POST",
-            url: url,
-            data: {
-                'idCliente': idCliente,
-                'idPrenda': idPrenda
-            }, // serializes the form's elements.
-            success: function (data) {
-                if (data) {
-                    $('.movimientosClienteCont').html(data);
-                }
-
-                //cargo este evento aca porque las cosas se traen con ajax
-                $('.ventaDev').on("click", function (e) {
-                    var idVenta = $(this).data('idventa');
-                    $('input[name=idVenta]').val(idVenta);
-                    $('input[name=fechaVenta]').val(fechaVenta);
-                    $('.devolverSend').removeAttr('disabled');
-                });
-            }
         });
     });
 

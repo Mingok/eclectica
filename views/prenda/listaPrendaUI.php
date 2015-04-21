@@ -23,7 +23,7 @@
     <div class="col-md-12">
         <div class="panel panel-success">
             <div class="panel-body  ">
-                <div class="col-md-12" style="text-align: right;">
+                <div class="col-md-12" style="text-align: left; top:19px; height:0px;">
                     <a href="#prenda">
                         <input type="button" value="Agregar" style="width: 100px;" class="buttonPrendasNueva btn btn-sm btn-success" />
                     </a>

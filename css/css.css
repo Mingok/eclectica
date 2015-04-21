@@ -148,7 +148,7 @@ label.ccLabel {
 }
 
 #prendasDevolucion .scrolPrenda {
-    max-height: 180px;
+    max-height: 330px;
     overflow-x: auto;
 }
 

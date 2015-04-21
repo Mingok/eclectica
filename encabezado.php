@@ -18,44 +18,44 @@ if (is_array($empresas)) {
             <ul class="nav navbar-nav">
                 <li>
                     <a href="index.php">
-                        <img src="./imagenes/iconos/home.png" height='24px' title="Inicio" />
+                        <img src="./imagenes/iconos/home.png" height='22px' title="Inicio" />
                         &nbsp;Inicio&nbsp;
                     </a>    
                 </li>
                 <li>
                     <a href="./indexPrendas.php?pasar=<?php echo $_SESSION['pasar']; ?>">
-                        <img src="./imagenes/iconos/1.png" height='24px' title="Prendas" />
+                        <img src="./imagenes/iconos/1.png" height='22px' title="Prendas" />
                         &nbsp;Prendas&nbsp;
                     </a>
                 </li>
                 <li>
                     <a href="./indexVenta.php?pasar=<?php echo $_SESSION['pasar']; ?>">
-                        <img src="./imagenes/iconos/venta1.png" height='24px' title="Ventas" />
+                        <img src="./imagenes/iconos/venta1.png" height='22px' title="Ventas" />
                         &nbsp;Ventas&nbsp;
                     </a>
                 </li>
                 <li>
                     <a href="./indexDevolucion.php?pasar=<?php echo $_SESSION['pasar']; ?>">
-                        <img src="./imagenes/iconos/devol.png" height='24px' title="Devolucion" />
+                        <img src="./imagenes/iconos/devol.png" height='22px' title="Devolucion" />
                         &nbsp;Devolucion&nbsp;
                     </a>
                 </li>
                 <li>
                     <a id="fancyboxCC" class="fancyboxCC" href="form05CC.php">
-                        <img src="./imagenes/iconos/25.png" height='24px' title="Cuentas Corrientes" />
+                        <img src="./imagenes/iconos/25.png" height='22px' title="Cuentas Corrientes" />
                         &nbsp;Cuenta Corriente&nbsp;
                     </a>
                 </li>
                 <li>
                     <a href="./indexGastos.php?pasar=<?php echo $_SESSION['pasar']; ?>">
-                        <img src="./imagenes/iconos/informes.png" height='24px' title="Gastos" />
+                        <img src="./imagenes/iconos/informes.png" height='22px' title="Gastos" />
                         &nbsp;Gastos&nbsp;
                     </a>
                 </li>
 
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle"	data-toggle="dropdown"> 
-                        <img src="./imagenes/iconos/time.png" height='24px' title="Informes" />
+                        <img src="./imagenes/iconos/time.png" height='22px' title="Informes" />
                         &nbsp;Informes&nbsp;
                         <b class="caret"></b>
                     </a>
@@ -70,19 +70,19 @@ if (is_array($empresas)) {
                 </li>
                 <!--  	<li>
                   <a href="#">
-                        <img src="./imagenes/iconos/24.png" width='24px' height='24px' title="Informes" />
+                        <img src="./imagenes/iconos/22.png" width='22px' height='22px' title="Informes" />
                         &nbsp;Informes&nbsp;
                     </a>
                 </li>
                         <li>
                     <a href="./help/index.html" target="_blank">
-                        <img src="./imagenes/iconos/ayuda4.png" width='24px' height='24px' title="Ayuda" />
+                        <img src="./imagenes/iconos/ayuda4.png" width='22px' height='22px' title="Ayuda" />
                         &nbsp;Ayuda&nbsp;
                     </a>
                 </li>-->
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle"	data-toggle="dropdown"> 
-                        <img src="./imagenes/iconos/reparacion.png" height='24px' title="Configuracion" />
+                        <img src="./imagenes/iconos/reparacion.png" height='22px' title="Configuracion" />
                         &nbsp;Configuracion&nbsp;
                         <b class="caret"></b>
                     </a>
