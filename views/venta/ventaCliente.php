@@ -68,7 +68,7 @@ $prendas = $prendaList->prendasDisponibles();
                 </div>
                 <div id="divFechaVenta">
                     <label style="text-align:left">Fecha Venta : </label>
-                    <input type="text" name="fechaVenta" id="fechaVenta" class="datepicker form-control" style="width: 120px" />
+                    <input type="text" name="fechaVenta" id="fechaVenta" class="datepicker form-control" style="width: 120px; cursor: pointer" readonly="true" />
                 </div>
             </div>
         </div>
