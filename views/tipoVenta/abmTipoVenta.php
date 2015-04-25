@@ -5,7 +5,7 @@ $tipoVentas = $tipoVentaList->tipoVentasDisponibles();
 ?>
 <div class="panel panel-default">
     <div class="panel-heading">
-        <h3 class="panel-title">
+        <h3 class="panel-title" style="font-weight: bold; ">
             Precios y Grupos
         </h3>
     </div>

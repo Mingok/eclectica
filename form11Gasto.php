@@ -17,7 +17,7 @@
         return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
     }
     //Boton Agregar o modificar
-        $('.editButtonGasto').click(function() {
+    $('.editButtonGasto').click(function () {
         $('#ver').show("slow");
         $('html,body').animate({scrollTop: $("#ver").offset().top}, 2000);
         $('input[name=fechaGasto]').val($(this).data('fechagasto'));
@@ -29,14 +29,14 @@
         $('.btn-success').val('Modificar');
     });
     //Boton limpiar campos
-    $('.btn-danger').click(function() {
+    $('.btn-danger').click(function () {
         location.reload();
     });
     $("#formGastos").validate({
         rules: {
             FechaGasto: {
                 required: true,
-                date:true
+                date: true
             },
             detalleGasto: {
                 required: true,
@@ -56,7 +56,7 @@
         messages: {
             FechaGasto: {
                 required: "Ingrese Fecha",
-                date:"debe ser una fecha"
+                date: "debe ser una fecha"
             },
             detalleGasto: {
                 required: "Ingrese Detalle",

@@ -5,7 +5,7 @@ $estampados = $estampadoList->estampadosDisponibles();
 ?>
 <div class="panel panel-default">
 	<div class="panel-heading">
-		<h3 class="panel-title">Estampado</h3>
+		<h3 class="panel-title" style="font-weight: bold; ">Estampado</h3>
 	</div>
 	<div class="panel-body">
 		<form action="actions/estampado/guardarEstampado.php" id="formEstampado">

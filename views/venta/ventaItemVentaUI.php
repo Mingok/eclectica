@@ -3,8 +3,8 @@
         <div class="panel-heading">  
             <div class="row" style="text-align: right; padding-right: 20px;">
 
-                <h3 class="panel-title">
-                    Prendas
+                <h3 class="panel-title" style="font-weight: bold;text-align: left; padding-left: 20px;">
+                    <b> Prendas </b>
                 </h3>
 
             </div>
@@ -20,10 +20,10 @@
                                     <table class="table table-condensed" id="tblEligePrenda">
                                         <thead class="btn-success" style="font-weight: bolder; text-align: center;">
                                             <tr>
-                                                <td style="width: 5%">
+                                                <td style="width: 5%; text-align: center">
                                                     Selec
                                                 </td>
-                                                <td style="width: 8%">
+                                                <td style="width: 8%; text-align: center;">
                                                     Cod
                                                 </td>
                                                 <td style="width: 30%">

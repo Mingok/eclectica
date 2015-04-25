@@ -5,7 +5,7 @@ $proveedores = $proveedorList->proveedoresDisponibles();
 ?>
 <div class="panel panel-default">
     <div class="panel-heading">
-        <h3 class="panel-title">Acreedores - Impuestos - Servicios </h3>
+        <h3 class="panel-title" style="font-weight: bold; ">Acreedores - Impuestos - Servicios </h3>
     </div>
     <div class="panel-body">
         <form action="actions/acreedor/guardarAcreedor.php" id="formAcreedor">

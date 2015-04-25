@@ -11,7 +11,7 @@ $idPrenda = isset($_REQUEST['idPrenda']) ? $_REQUEST['idPrenda'] : NULL;
 $moviemientos_cliente = $obj_venta->movimientosCliente($idCliente, $idPrenda);
 echo '<div class="panel panel-default" >';
 echo '<div class="panel-heading">';
-echo '<h3 class="panel-title"><table style="width:100%"><tr><td>Historial de Movimientos</td><td style="text-align: right"><h4>C.C.:$' . $personas["cuentaCorrientePersona"] . '</h4></td></tr></table></h3>';
+echo '<h3 class="panel-title" style="font-weight: bold;"><table style="width:100%"><tr><td>Historial de Movimientos</td><td style="text-align: right"><h4>C.C.:$' . $personas["cuentaCorrientePersona"] . '</h4></td></tr></table></h3>';
 echo '</div>';
 echo '<div class="panel-body">';
 echo '<div class="row scrol"> ';

@@ -1,40 +1,25 @@
 <div class="row">
     <div class="col-md-12 cliente-prendas">
         <div class="row">
-            <div class="col-md-3">
+            <div class="col-md-4">
                 <?php include_once './views/devolucion/devolucionCliente.php' ?>
             </div>
-            <div class="col-md-9">
-                <?php include_once './views/devolucion/devolucionItemCambioUI.php'; ?>
-
+            <div class="col-md-8 historico-compras">
+                <?php include_once './views/venta/ventaHistoricoCliente.php'; ?>
             </div>
+
         </div>
-    </div>
-    <div class="col-md-12 historico-compras">
-        <?php include_once './views/venta/ventaHistoricoCliente.php'; ?>
-    </div>
-    <div class="col-md-12 hiden-form">
         <div class="row">
-            <div class="col-md-12">
-                <?php // include_once './views/venta/ventaHistoricoCliente.php'; ?>
-                <form action="actions/devolucion/efectuarDevolucion.php" method="post" id="formItemVenta">
-                    <input type="hidden" id="idClienteVenta" name="idClienteVenta" />
-                    <input type="hidden" id="idVendedor" name="idVendedor" />
-                    <input type="hidden" id="idPrenda" name="idPrenda" />
-                    <input type="hidden" id="idVenta" name="idVenta" />
-                    <input type="hidden" id="fechaVenta" name="fechaVenta" />
-                    <input type="submit" class="btn btn-info devolverSend" value="Devolver" disabled=""/>
-                </form>
-
-            </div>
-            <div class="col-md-12" id="ventaDetalle">
-                <?php // include_once './views/venta/ventaDetalle.php' ?>
-
+            <div class="col-md-12 ">
+                <?php include_once './views/devolucion/devolucionItemCambioUI.php'; ?>
             </div>
         </div>
-    </div> 
-</div>
+    </div>
 <input type="hidden" id="estaVenta" name="estaVenta" >
+
+
+</div>
+
 
 <script type="text/javascript">
 

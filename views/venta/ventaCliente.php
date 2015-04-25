@@ -13,7 +13,7 @@ $prendas = $prendaList->prendasDisponibles();
     <div class="col-md-12">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h3 class="panel-title">
+                <h3 class="panel-title" style="font-weight: bold;">
                     Clinete
                 </h3>
             </div>

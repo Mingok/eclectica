@@ -6,7 +6,7 @@
 
 <div class="panel panel-default">
 	<div class="panel-heading">
-		<h3 class="panel-title">Tela</h3>
+		<h3 class="panel-title" style="font-weight: bold; ">Tela</h3>
 	</div>
 	<div class="panel-body">
 			<form action="actions/tela/guardarTela.php" id="formTela">

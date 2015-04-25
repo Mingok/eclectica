@@ -67,7 +67,7 @@ define('INFORME_SCRIPTS_PATH', 'http://localhost/eclectica/js/');
         <div class='col-md-12'>
             <div class='panel panel-default'>
                 <div class='panel-heading'>
-                    <h3 class='panel-title'>
+                    <h3 class='panel-title' style="font-weight: bold;">
                         No Tiene Permisos Para Ingresar a esta P&aacute;gina
                         <input type="button" name="home" class="btn btn-sm btn-primary" value="Volver" onclick="window.history.back();"/>
                     </h3>

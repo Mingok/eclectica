@@ -4,7 +4,7 @@
 		<fieldset style="width:450px; height: 152px;">
 			<div class="panel panel-default">
 				<div class="panel-heading">
-					<h3 class="panel-title">
+					<h3 class="panel-title" style="font-weight: bold;">
 						Confirme Acceso
 					</h3>
 				</div>

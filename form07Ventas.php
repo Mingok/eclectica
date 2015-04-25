@@ -54,7 +54,6 @@
             $("#cliente1").show('Slow');
             $('#divCondicion').show();
             $('#divFechaVenta').show();
-
             $('#selecCliente').empty().attr("disabled", "disabled");
             var url = 'indexComprasCliente.php';
             var idCliente = $('#idClienteVenta').val();
@@ -150,6 +149,7 @@
                     required: "Ingrese vendedor",
                     equalTo: "Codigo Erroneo"
                 }
+                
             },
             submitHandler: function(form) {
                 // do other things for a valid form

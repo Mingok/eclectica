@@ -79,12 +79,13 @@ select.error { border: 1px dotted red; background-color: rgb(250, 255, 189);}
 div.scrol{
     overflow: auto;
     overflow-x: hidden; 
-    height: 270px;
+    max-height: 260px;
+    min-height: 80px;
 }
 div.scrolPrenda{
     overflow: auto;
     overflow-x: hidden; 
-    height: 470px;
+    height: 440px;
     padding:10px; 
     
 }
@@ -117,6 +118,14 @@ div.scrolPrv{
 
 }
 
+table.tablaDev{
+    border-spacing: 5px; /* cellspacing */
+    padding: 15px;/* cellpadding */
+    width:100%;	
+    max-height: 180px;
+    margin: 5px;
+    text-align: center;
+}
 table.tabla{
     border-spacing: 5px; /* cellspacing */
     padding: 15px;/* cellpadding */
@@ -162,7 +171,7 @@ label.ccLabel {
 }
 
 .bodyDevoluciones .historico-compras {
-    min-height: 275px;
+    max-height: 75px;
 }
 
 .bodyDevoluciones .hiden-form .devolverSend {

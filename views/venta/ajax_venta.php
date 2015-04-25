@@ -71,11 +71,13 @@ foreach ($prendas as $prenda) {
         $row[] = utf8_encode(ucfirst(strtolower($prenda ['detalleTela'])));
         $row[] = utf8_encode(ucfirst(strtolower($prenda ['detalleEstacion'])));
         $row[] = utf8_encode(ucfirst(strtolower($prenda ['cantidadPrenda'])));
-}
         $response['aaData'][] = array_values($row);
-    
-}
-header('Cache-Control: no-cache, must-revalidate');
-header('Expires: Mon, 26 Jul 1997 05:00:00 GMT');
-header('Content-type: application/json');
+
+                }
+
+
+                }
+                header('Cache-Control: no-cache, must-revalidate');
+                header('Expires: Mon, 26 Jul 1997 05:00:00 GMT');
+        header('Content-type: application/json');
 echo json_encode($response);

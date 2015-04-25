@@ -22,7 +22,7 @@ $personas = $personaList->personasDisponibles();
 
                         if (isset($persona)) {
                             if (!($persona["codigoVendedor"] == null)) {
-                                echo "<option value=" . $persona["idPersona"] . " data-codigoVendedor='".$persona["codigoVendedor"]  ."' >" . $persona["apellidoPersona"] . " " . $persona["nombrePersona"] . "</option>";
+                                echo "<option value=" . $persona["idPersona"] . " data-codigoVendedor='" . $persona["codigoVendedor"] . "' >" . $persona["apellidoPersona"] . " " . $persona["nombrePersona"] . "</option>";
                             }
                         }
                     }
@@ -43,6 +43,14 @@ $personas = $personaList->personasDisponibles();
                     ?>
                 </select>
                 <div style="height: 10px"></div>
+                <form action="actions/devolucion/efectuarDevolucion.php" method="post" id="formItemVenta">
+                    <input type="hidden" id="idClienteVenta" name="idClienteVenta" />
+                    <input type="hidden" id="idVendedor" name="idVendedor" />
+                    <input type="hidden" id="idPrenda" name="idPrenda" />
+                    <input type="hidden" id="idVenta" name="idVenta" />
+                    <input type="hidden" id="fechaVenta" name="fechaVenta" />
+                    <input type="submit" class="btn btn-info devolverSend" value="Devolver" disabled="" style="width: 100%;"/>
+                </form>
             </div>
         </div>
     </div>

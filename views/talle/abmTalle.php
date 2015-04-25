@@ -5,7 +5,7 @@
 				?>
 <div class="panel panel-default">
 	<div class="panel-heading">
-		<h3 class="panel-title">Talle</h3>
+		<h3 class="panel-title" style="font-weight: bold; ">Talle</h3>
 	</div>
 	<div class="panel-body">
 		<form action="actions/talle/guardarTalle.php" id="formTalle">

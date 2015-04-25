@@ -15,12 +15,12 @@
 <div class="row">
     <div class="col-md-12">
         <div class="panel panel-default">
-            <div class="panel-heading">
+            <div class="panel-heading" >
                 <form action="JavaScript:agregarCampo();" method="post" id="formItemVenta`">
                     <table  style="width: 100%">
                         <tr>
                             <td style="text-align: left">
-                                <h3 class="panel-title">
+                                <h3 class="panel-title" style="font-weight: bold;">
                                     Detalle
                                 </h3>
                             </td>
@@ -126,7 +126,7 @@
                     <div class="col-md-12">
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                <h3 class="panel-title" >
+                                <h3 class="panel-title" style="font-weight: bold;" >
                                     Resumen
                                 </h3>
                             </div>

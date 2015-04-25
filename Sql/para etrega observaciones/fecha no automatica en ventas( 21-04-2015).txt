@@ -1,1 +1,3 @@
 ALTER TABLE  `venta` CHANGE  `fechaVenta`  `fechaVenta` TIMESTAMP ON UPDATE CURRENT_TIMESTAMP NOT NULL ;
+
+ALTER TABLE  `venta` CHANGE  `fechaVenta`  `fechaVenta` TIMESTAMP NOT NULL ;
