@@ -1,0 +1,13 @@
+Migracion:
+Cambios en prendas:
+  ? cambio_venta_agregado_de_costo(22-12).sql
+  ? prenda21-12-2014.sql
+
+
+Proveedores:
+  ? formapago(25-11).sql
+  ? gasto(25-11).sql
+
+Nuevas listas de precios:
+  ? cambios_precios(07-01).sql
+  ? script_regeneracion_precios.php

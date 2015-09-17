@@ -1,0 +1,1 @@
+ALTER TABLE  `proveedor` ADD  `acreedorProveedor` INT NOT NULL AFTER  `emailProveedor` ;

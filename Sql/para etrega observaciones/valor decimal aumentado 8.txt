@@ -1,0 +1,1 @@
+ALTER TABLE  `tipoventa_prenda` CHANGE  `valor`  `valor` DECIMAL( 8, 2 ) NOT NULL ;

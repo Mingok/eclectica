@@ -3,12 +3,17 @@
 require_once 'classes/gasto/gasto.php';
 $idGasto = $_REQUEST['idGasto'];
 $idEmpresaGasto = $_REQUEST['idEmpresaGasto'];
-$fechaGasto = $_REQUEST['fechaGasto'];
+if (isset($_REQUEST['fechaGasto'])&& (!($_REQUEST['fechaGasto']=='')))
+{$fechaGasto = $_REQUEST['fechaGasto'];
+}else {
+    $fechaGasto = date('Y-m-d h:i:s', time());
+}
 $detalleGasto = $_REQUEST['detalleGasto'];
 $importeGasto = $_REQUEST['importeGasto'];
 $idProveedorGasto = $_REQUEST['idProveedorGasto'];
 $idFormaPagoGasto = $_REQUEST['idFormaPagoGasto'];
-
+//var_dump($fechaGasto);
+//exit;
 $arrGasto = array(
     'idEmpresaGasto' => $idEmpresaGasto,
     'fechaGasto' => $fechaGasto,
@@ -16,10 +21,10 @@ $arrGasto = array(
     'detalleGasto' => $detalleGasto,
     'importeGasto' => $importeGasto,
     'idFormaPagoGasto' => $idFormaPagoGasto,
-    'idGasto'=>$idGasto,
+    'idGasto' => $idGasto,
     'idProveedorGasto' => $idProveedorGasto
 );
-    
+
 
 $gastoClass = new gasto();
 if ($idGasto) {

@@ -67,7 +67,6 @@ echo'
                         </thead>
                         <tbody>';
 foreach ($renglones as $renglon) {
-    $renglon ['detallePrenda']= utf8_encode(ucfirst(strtolower($renglon ['detallePrenda'])));
 //    var_dump($renglon);
     if ($renglon['estado'] == 'C') {
         echo '<tr bgcolor="#FF0000">';
@@ -78,7 +77,7 @@ foreach ($renglones as $renglon) {
     echo $renglon['cantidadPrenda'];
     echo'</td>
                                         <td style="text-align: left;">';
-    echo $renglon ['detallePrenda']  ;
+    echo ucfirst(strtolower($renglon['detallePrenda']));
     echo'</td>
                                         <td style="text-align: left;">';
     echo ucfirst(strtolower($renglon['detalleTipoVenta']));

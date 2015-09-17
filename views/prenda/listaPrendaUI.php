@@ -23,11 +23,11 @@
     <div class="col-md-12">
         <div class="panel panel-success">
             <div class="panel-body  ">
-                <div class="col-md-12" style="text-align: left; top:19px;">
+<!--                <div class="col-md-12" style="text-align: left; top:19px;">
                     <a href="#prenda">
-                        <input type="button" value="Agregar" style="width: 100px;" class="buttonPrendasNueva btn btn-sm btn-success" />
+                        
                     </a>
-                </div>
+                </div>-->
                 <div class="row">
                     <table class="table">
                         <tr>
@@ -79,15 +79,37 @@
     </div>
 </div>
 <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
         $('#tblPrenda').dataTable({
             "processing": true,
             "serverSide": true,
             "ajax": "views/prenda/ajax_prenda.php",
             "language": {
-                "url": "js/datatableUI/spanish_prendas.json"
+                "sProcessing": "Procesando...",
+                "sLengthMenu": "Mostrar _MENU_ prendas",
+                "sZeroRecords": "No se encontraron resultados",
+                "sEmptyTable": "Ningún dato disponible en esta tabla",
+                "sInfo": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ prendas",
+                "sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 prendas",
+                "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
+                "sInfoPostFix": "",
+                "sSearch": "Ingrese codigo o detalle de la prenda:",
+                "sUrl": "",
+                "sInfoThousands": ",",
+                "sLoadingRecords": "Cargando...",
+                "oPaginate": {
+                    "sFirst": "Primero",
+                    "sLast": "Último",
+                    "sNext": "Siguiente",
+                    "sPrevious": "Anterior"
+                },
+                "oAria": {
+                    "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
+                    "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+                }
 
             },
+            "dom": '<"toolbar" >frt<"bottom">ilp',
             //Esto deshabilita el ordenamiento por columnas
             // hay que poner un {"bSortable": false},
             // por cada columna que tenga la tabla
@@ -105,8 +127,32 @@
 
             ]
         });
-        $('#tblPrenda').on('draw.dt', function() {
-            $('.buttonCopiar').on('click', function() {
+         $("div.toolbar").html('<input type="button" value="Agregar" style="width: 100px;" class="buttonPrendasNueva btn btn-sm btn-success" />');
+        $('#tblPrenda').on('draw.dt', function () {
+            $('.buttonPrendasNueva').click(function () {
+        $('#montoto').hide();
+        $('#ver').show("slow");
+        $('html,body').animate({scrollTop: $("#ver").offset().top}, 2000);
+        $('.btn-success').val('Agregar');
+        $('input[name=idPrenda]').val('');
+
+        $('input[name=cantidadPrenda]').val('');
+        $('input[name=codigoPrenda]').val('');
+        $('input[name=detallePrenda]').val('');
+        $('select[name=idMarcaPrenda]').val('0');
+        $('select[name=idProveedorPrenda]').val('0');
+        $('select[name=idEstacionPrenda]').val('');
+        $('select[name=idColorPrenda]').val('0');
+        $('select[name=idTelaPrenda]').val('0');
+        $('select[name=idTallePrenda]').val('0');
+        $('select[name=idEstampadoPrenda]').val('0');
+        $('select[name=idEstacionPrenda]').val('0');
+        //$('.btn-danger').addClass('no');
+        $('input[name=idPrenda]').val(null);
+        $('input[name=codigoPrenda]').hide();
+        $('label[for=codigoPrenda').hide();
+    });
+            $('.buttonCopiar').on('click', function () {
                 $('#ver').show("slow");
                 $('html,body').animate({scrollTop: $("#ver").offset().top}, 2000);
                 $('.buttonPrendas').val('Agregar');
@@ -135,7 +181,7 @@
                 $('input[name=codigoPrenda]').hide();
                 $('label[for=codigoPrenda]').hide();
             });
-            $('.editButtonPrenda').on('click', function() {
+            $('.editButtonPrenda').on('click', function () {
                 $('#ver').show("slow");
                 $('html,body').animate({scrollTop: $("#ver").offset().top}, 2000);
                 $('input[name=idPrenda]').val($(this).data('idprenda'));

@@ -15,7 +15,7 @@ $formasPago = $formaPagoList->formaPagoDisponibles();
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title" style="font-weight: bold; ">
-                        Agregar
+                        Nuevo Gasto
                     </h3>
                 </div>
                 <div class="panel-body">

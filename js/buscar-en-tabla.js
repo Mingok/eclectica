@@ -125,7 +125,7 @@ $(function() {
         //iteramos en todas las filas del body de la tabla
         $objTabla.find('tbody tr').each(function(iIndiceFila, objFila) {
             //obtenemos todas las celdas de la fila
-            var $objCeldas = $(objFila).find('td:nth-child(4)');
+            var $objCeldas = $(objFila).find('td:nth-child(3)');
 
             //verificamos que la fila tenga celdas
             if ($objCeldas.length > 0) {

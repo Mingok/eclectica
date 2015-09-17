@@ -30,15 +30,7 @@ $response['recordsTotal'] = $prendas_totales;
 $response['recordsFiltered'] = $prendas_totales;
 
 foreach ($prendas as $prenda) {
-
- $prenda ['detallePrenda']= utf8_encode(ucfirst(strtolower($prenda ['detallePrenda'])));
- $prenda ['detalleTalle'] = utf8_encode(ucfirst(strtolower($prenda ['detalleTalle'])));
- $prenda ['detalleColor'] = utf8_encode(ucfirst(strtolower($prenda ['detalleColor'])));
- $prenda ['detalleEstampado'] = utf8_encode(ucfirst(strtolower($prenda ['detalleEstampado'])));
- $prenda ['detalleTela'] = utf8_encode(ucfirst(strtolower($prenda ['detalleTela'])));
- $prenda ['detalleEstacion'] = utf8_encode(ucfirst(strtolower($prenda ['detalleEstacion'])));
- 
-$row = array();
+    $row = array();
     $precios_prenda = $prendaList->preciosPrenda($prenda['idPrenda']);
     $row[]= "<a title='Modificar datos' href='#prenda' class='editButtonPrenda' name='editButtonPrenda'
                             data-cantidadprenda='{$prenda ['cantidadPrenda']}' 
@@ -95,12 +87,12 @@ $row = array();
                 {$prenda ['codigoPrenda']}
             </a>";
 
-    $row[] = $prenda ['detallePrenda'];
-    $row[] = $prenda ['detalleTalle'];
-    $row[] = $prenda ['detalleColor'];
-    $row[] = $prenda ['detalleEstampado'];
-    $row[] = $prenda ['detalleTela'];
-    $row[] = $prenda ['detalleEstacion'];
+    $row[] = utf8_encode(ucfirst(strtolower($prenda ['detallePrenda'])));
+    $row[] = utf8_encode(ucfirst(strtolower($prenda ['detalleTalle'])));
+    $row[] = utf8_encode(ucfirst(strtolower($prenda ['detalleColor'])));
+    $row[] = utf8_encode(ucfirst(strtolower($prenda ['detalleEstampado'])));
+    $row[] = utf8_encode(ucfirst(strtolower($prenda ['detalleTela'])));
+    $row[] = utf8_encode(ucfirst(strtolower($prenda ['detalleEstacion'])));
 
     if (isset($prenda['cantidadPrenda']) && ($prenda['cantidadPrenda'] == '0')) {
         $row[] = "<div style='background-color: red; font-weight: bolder;text-align: center;'>{$prenda ['cantidadPrenda']}</div>";
@@ -111,6 +103,5 @@ $row = array();
 }
 header('Cache-Control: no-cache, must-revalidate');
 header('Expires: Mon, 26 Jul 1997 05:00:00 GMT');
-
-header('content-type: application/json; charset=utf-8');
+header('Content-type: application/json');
 echo json_encode($response);

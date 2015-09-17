@@ -31,17 +31,7 @@ $response['recordsTotal'] = $prendas_totales;
 $response['recordsFiltered'] = $prendas_totales;
 
 foreach ($prendas as $prenda) {
-
     if (!($prenda ['cantidadPrenda'] <= '0')) {
-        $prenda ['detallePrenda'] = utf8_encode(ucfirst(strtolower($prenda ['detallePrenda'])));
-        $prenda ['detalleTalle'] = utf8_encode(ucfirst(strtolower($prenda ['detalleTalle'])));
-        $prenda ['detalleColor'] = utf8_encode(ucfirst(strtolower($prenda ['detalleColor'])));
-        $prenda ['detalleEstampado'] = utf8_encode(ucfirst(strtolower($prenda ['detalleEstampado'])));
-        $prenda ['detalleTela'] = utf8_encode(ucfirst(strtolower($prenda ['detalleTela'])));
-        $prenda ['detalleEstacion'] = utf8_encode(ucfirst(strtolower($prenda ['detalleEstacion'])));
-        $prenda ['codigoPrenda'] = utf8_encode(ucfirst(strtolower($prenda ['codigoPrenda'])));
-        $prenda ['cantidadPrenda'] = utf8_encode(ucfirst(strtolower($prenda ['cantidadPrenda'])));
-       
         $row = array();
         $precios_prenda = $prendaList->preciosPrenda($prenda['idPrenda']);
 
@@ -72,19 +62,22 @@ foreach ($prendas as $prenda) {
                 <img src='imagenes/iconos/copiar.png' width='18px' height='18px' />
             </a>";
 
-        $row[] = $prenda ['detallePrenda'];
-        $row[] = $prenda ['detalleTalle'];
-        $row[] = $prenda ['detalleColor'];
-        $row[] = $prenda ['detalleEstampado'];
-        $row[] = $prenda ['detalleTela'];
-        $row[] = $prenda ['detalleEstacion'];
-        $row[] = $prenda ['codigoPrenda'] ;
-        $row[] = $prenda ['cantidadPrenda'];
-        
+        $row[] = utf8_encode(ucfirst(strtolower($prenda ['codigoPrenda'])));
+
+        $row[] = utf8_encode(ucfirst(strtolower($prenda ['detallePrenda'])));
+        $row[] = utf8_encode(ucfirst(strtolower($prenda ['detalleTalle'])));
+        $row[] = utf8_encode(ucfirst(strtolower($prenda ['detalleColor'])));
+        $row[] = utf8_encode(ucfirst(strtolower($prenda ['detalleEstampado'])));
+        $row[] = utf8_encode(ucfirst(strtolower($prenda ['detalleTela'])));
+        $row[] = utf8_encode(ucfirst(strtolower($prenda ['detalleEstacion'])));
+        $row[] = utf8_encode(ucfirst(strtolower($prenda ['cantidadPrenda'])));
         $response['aaData'][] = array_values($row);
-    }
-}
-header('Cache-Control: no-cache, must-revalidate');
-header('Expires: Mon, 26 Jul 1997 05:00:00 GMT');
-header('Content-type: application/json');
+
+                }
+
+
+                }
+                header('Cache-Control: no-cache, must-revalidate');
+                header('Expires: Mon, 26 Jul 1997 05:00:00 GMT');
+        header('Content-type: application/json');
 echo json_encode($response);

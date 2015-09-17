@@ -54,15 +54,17 @@ if ($_GET['action'] == 'listar') {
     if (count($arrayFiltro) != 0) {
         $sql .= " WHERE ";
         $sql.=$auxArray;
-    }
+        $sql .= " ORDER BY fechaGasto DESC";
+    }else {$sql .= " ORDER BY fechaGasto DESC";}
 
 
     // Ordenar por
     $vorder = isset($_POST['orderby']) ? $_POST['orderby'] : '';
 
     if ($vorder != '') {
-        $sql .= " ORDER BY " . $vorder;
+        $sql .= " ORDER BY " . $vorder  ;
     }
+    
 //    echo "<pre>";
 //    var_dump($sql);
 //    echo "</pre>";
