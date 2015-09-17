@@ -1,5 +1,4 @@
 <?php
-
 if ($_GET['action'] == 'listar') {
     $ds = DIRECTORY_SEPARATOR;
     require_once (__DIR__ . "{$ds}base{$ds}manejoMySQL.php");
@@ -14,7 +13,7 @@ if ($_GET['action'] == 'listar') {
 			JOIN persona AS persona1 ON venta.idVendedor = persona1.idPersona 
                         WHERE venta.estado='V') tmp ";
     $arrayFiltro = array();
-   
+
     // valores recibidos por POST
     if (isset($_POST['selecEmpleado'])) {
         if ($_POST['selecEmpleado'] != '') {
@@ -78,11 +77,15 @@ if ($_GET['action'] == 'listar') {
             $str_final .= '<td>' . $registro['entregaCliente'] . '</td>';
             $str_final .= '<td>' . $registro['costoVenta'] . '</td>';
             $str_final .= '<td >' . $registro['detalleVendedor'] . '</td>';
-            if ($registro['observacionVenta']!=NULL){$str_final .= '<td style="text-align:center"> <a id="fancyboxRenglon" class="miVenta" data-idEstaVenta="' . $registro['idVenta'] . '" href="#historicoDetalleCliente">
+            if ($registro['observacionVenta'] != NULL) {
+                $str_final .= '<td style="text-align:center"> <a id="fancyboxRenglon" class="miVenta" data-idEstaVenta="' . $registro['idVenta'] . '" href="#historicoDetalleCliente">
                         <img src="./imagenes/iconos/informes.png" height="24px" title="Ver venta" />
                        
-                    </a></td>';}else {$str_final .= '<td style="text-align:center">-</td>';}
-            
+                    </a></td>';
+            } else {
+                $str_final .= '<td style="text-align:center">-</td>';
+            }
+
             $str_final .= '</tr>';
             $precio_venta += intval($registro['precioVenta']);
             $entrega += intval($registro['entregaCliente']);
@@ -93,8 +96,9 @@ if ($_GET['action'] == 'listar') {
         $str_final .= '<td><b>' . $entrega . '</b></td>';
         $str_final .= '<td></td>';
         $str_final .= '</tr>';
-    
-    }else {$str_final .= '<tr><td colspan="8" align="center">No se encontraron ventas.</td></tr>';}
+    } else {
+        $str_final .= '<tr><td colspan="8" align="center">No se encontraron ventas.</td></tr>';
+    }
 
     // convertimos el array de datos a formato json
 //	echo json_encode($array_final);
@@ -111,7 +115,7 @@ if ($_GET['action'] == 'listar') {
         $.ajax({
             type: "POST",
             url: url,
-            data: {'idMiVenta': idMiVenta}, 
+            data: {'idMiVenta': idMiVenta},
             success: function(data) {
                 if (data) {
                     $('.movimientosVentaRenglon').html(data);

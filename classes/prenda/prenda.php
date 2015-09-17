@@ -248,6 +248,31 @@ class prenda {
         $arrResultado = null;
         $objManejoMySQL->consultar($strSql, $arrResultado);
 
+        $strSql = "UPDATE `tipoventa_prenda` SET `valor`=" . floatval($arrPrecioPrenda ['tipoVenta7']) . " WHERE `idTipoVenta`=7 AND`idPrenda`=" . $id;
+        $objManejoMySQL = new manejoMySQL ();
+        $arrResultado = null;
+        $objManejoMySQL->consultar($strSql, $arrResultado);
+
+        $strSql = "UPDATE `tipoventa_prenda` SET `valor`=" . floatval($arrPrecioPrenda ['tipoVenta8']) . " WHERE `idTipoVenta`=8 AND`idPrenda`=" . $id;
+        $objManejoMySQL = new manejoMySQL ();
+        $arrResultado = null;
+        $objManejoMySQL->consultar($strSql, $arrResultado);
+
+        $strSql = "UPDATE `tipoventa_prenda` SET `valor`=" . floatval($arrPrecioPrenda ['tipoVenta9']) . " WHERE `idTipoVenta`=9 AND`idPrenda`=" . $id;
+        $objManejoMySQL = new manejoMySQL ();
+        $arrResultado = null;
+        $objManejoMySQL->consultar($strSql, $arrResultado);
+
+        $strSql = "UPDATE `tipoventa_prenda` SET `valor`=" . floatval($arrPrecioPrenda ['tipoVenta10']) . " WHERE `idTipoVenta`=10 AND`idPrenda`=" . $id;
+        $objManejoMySQL = new manejoMySQL ();
+        $arrResultado = null;
+        $objManejoMySQL->consultar($strSql, $arrResultado);
+
+        $strSql = "UPDATE `tipoventa_prenda` SET `valor`=" . floatval($arrPrecioPrenda ['tipoVenta11']) . " WHERE `idTipoVenta`=11 AND`idPrenda`=" . $id;
+        $objManejoMySQL = new manejoMySQL ();
+        $arrResultado = null;
+        $objManejoMySQL->consultar($strSql, $arrResultado);
+
         return $arrResultado;
     }
 
