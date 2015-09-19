@@ -69,6 +69,7 @@ if ($_GET['action'] == 'listar') {
     if (!empty($arrResultado)) {
         $precio_venta = 0;
         $entrega = 0;
+        $costo = 0;
         foreach ($arrResultado as $registro) {
             $str_final .= '<tr>';
             $str_final .= '<td>' . date('d/m/Y H:i', strtotime($registro['fechaVenta'])) . ' hs</td>';
@@ -89,12 +90,13 @@ if ($_GET['action'] == 'listar') {
             $str_final .= '</tr>';
             $precio_venta += intval($registro['precioVenta']);
             $entrega += intval($registro['entregaCliente']);
+            $costo += intval($registro['costoVenta']);
         }
         $str_final .= '<tr>';
         $str_final .= '<td colspan="2"><b>TOTAL</b></td>';
         $str_final .= '<td><b>' . $precio_venta . '</b></td>';
         $str_final .= '<td><b>' . $entrega . '</b></td>';
-        $str_final .= '<td></td>';
+        $str_final .= '<td colspan="3"><b>' . $costo . '</b></td>';
         $str_final .= '</tr>';
     } else {
         $str_final .= '<tr><td colspan="8" align="center">No se encontraron ventas.</td></tr>';

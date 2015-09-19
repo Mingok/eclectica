@@ -230,19 +230,21 @@ if ($tipo == 'pdf') {
     $filtros = implode(' - ', $filtros);
     $str_final = '
     <table class="table table-condensed" id="data">
-        <tr><td colspan="5" style="text-align: center; font-weight:bold; font-size: 14px;">Ventas Realizadas ('.$date.')</td></tr>
-        <tr><td colspan="5" style="text-align: center;"><label>Filtros: '. $filtros . '</td></tr>
+        <tr><td colspan="6" style="text-align: center; font-weight:bold; font-size: 14px;">Ventas Realizadas ('.$date.')</td></tr>
+        <tr><td colspan="6" style="text-align: center;"><label>Filtros: '. $filtros . '</td></tr>
         <thead style="font-weight: bolder; text-align: center;">
             <tr>
                 <th bgcolor="#5cb85c" width="20%"><span title="fechaVenta">Fecha</span></th>
                 <th bgcolor="#5cb85c" width="30%"><span title="detallePersona">Cliente</span></th>
                 <th bgcolor="#5cb85c" width="10%"><span title="precioVenta">Vendido</span></th>
                 <th bgcolor="#5cb85c" width="10%"><span title="entregaCliente">Entregado</span></th>
+                <th bgcolor="#5cb85c" width="10%"><span title="costoVenta">Costo</span></th>
                 <th bgcolor="#5cb85c" width="30%"><span title="detallePersona">Vendedor</span></th>
         </thead>
     ';
     $precio_venta = 0;
     $entrega = 0;
+    $costo = 0;
     foreach ($arrResultado as $registro) {
         $str_final .= '<tr>';
         $str_final .= '<td>' . date('d/m/Y H:i',strtotime($registro['fechaVenta'])) . ' hs</td>';
@@ -254,12 +256,13 @@ if ($tipo == 'pdf') {
         $str_final .= '</tr>';
         $precio_venta += intval($registro['precioVenta']);
         $entrega += intval($registro['entregaCliente']);
+        $costo += intval($registro['costoVenta']);
     }
     $str_final .= '<tr>';
     $str_final .= '<td colspan="2"><b>TOTAL</b></td>';
     $str_final .= '<td><b>' . $precio_venta . '</b></td>';
     $str_final .= '<td><b>' . $entrega . '</b></td>';
-    $str_final .= '<td></td>';
+    $str_final .= '<td><b>' . $costo . '</b></td>';
     $str_final .= '</tr>';
     $str_final .= '</table>';
 
