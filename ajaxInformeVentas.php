@@ -5,13 +5,17 @@ if ($_GET['action'] == 'listar') {
 
     $objManejoMySQL = new manejoMySQL ();
     $sql = "SELECT * FROM (
-                SELECT venta.*, 
-                        CONCAT(persona.apellidoPersona, ', ', persona.nombrePersona) as detalleCliente,
-                        CONCAT(persona1.apellidoPersona, ', ', persona1.nombrePersona) as detalleVendedor
-			FROM venta AS venta
-			JOIN persona AS persona ON venta.idCliente = persona.idPersona
-			JOIN persona AS persona1 ON venta.idVendedor = persona1.idPersona 
-                        WHERE venta.estado='V') tmp ";
+                SELECT tmp.*, vr.cantidadPrenda FROM (
+                    SELECT venta.*, 
+                            CONCAT(persona.apellidoPersona, ', ', persona.nombrePersona) AS detalleCliente,
+                            CONCAT(persona1.apellidoPersona, ', ', persona1.nombrePersona) AS detalleVendedor
+                            FROM venta AS venta
+                            JOIN persona AS persona ON venta.idCliente = persona.idPersona
+                            JOIN persona AS persona1 ON venta.idVendedor = persona1.idPersona 
+                            WHERE venta.estado='V') tmp
+                            JOIN 
+                            (SELECT idVenta, SUM(cantidadPrenda) AS cantidadPrenda FROM venta_renglon GROUP BY idVenta)
+                            vr ON tmp.idVenta = vr.idVenta) final ";
     $arrayFiltro = array();
 
     // valores recibidos por POST
@@ -70,6 +74,7 @@ if ($_GET['action'] == 'listar') {
         $precio_venta = 0;
         $entrega = 0;
         $costo = 0;
+        $prendas = 0;
         foreach ($arrResultado as $registro) {
             $str_final .= '<tr>';
             $str_final .= '<td>' . date('d/m/Y H:i', strtotime($registro['fechaVenta'])) . ' hs</td>';
@@ -77,6 +82,7 @@ if ($_GET['action'] == 'listar') {
             $str_final .= '<td>' . $registro['precioVenta'] . '</td>';
             $str_final .= '<td>' . $registro['entregaCliente'] . '</td>';
             $str_final .= '<td>' . $registro['costoVenta'] . '</td>';
+            $str_final .= '<td>' . $registro['cantidadPrenda'] . '</td>';
             $str_final .= '<td >' . $registro['detalleVendedor'] . '</td>';
             if ($registro['observacionVenta'] != NULL) {
                 $str_final .= '<td style="text-align:center"> <a id="fancyboxRenglon" class="miVenta" data-idEstaVenta="' . $registro['idVenta'] . '" href="#historicoDetalleCliente">
@@ -91,12 +97,14 @@ if ($_GET['action'] == 'listar') {
             $precio_venta += intval($registro['precioVenta']);
             $entrega += intval($registro['entregaCliente']);
             $costo += intval($registro['costoVenta']);
+            $prendas += intval($registro['cantidadPrenda']);
         }
         $str_final .= '<tr>';
         $str_final .= '<td colspan="2"><b>TOTAL</b></td>';
         $str_final .= '<td><b>' . $precio_venta . '</b></td>';
         $str_final .= '<td><b>' . $entrega . '</b></td>';
-        $str_final .= '<td colspan="3"><b>' . $costo . '</b></td>';
+        $str_final .= '<td><b>' . $costo . '</b></td>';
+        $str_final .= '<td colspan="3"><b>' . $prendas . '</b></td>';
         $str_final .= '</tr>';
     } else {
         $str_final .= '<tr><td colspan="8" align="center">No se encontraron ventas.</td></tr>';

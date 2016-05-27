@@ -13,9 +13,10 @@
                                 <tr>
                                     <th width="20%"><span title="fechaVenta">Fecha</span></th>
                                     <th width="30%"><span title="detalleCliente">Cliente</span></th>
-                                    <th width="7%"><span title="precioVenta">Vendido</span></th>
-                                    <th width="7%"><span title="entregaCliente">Entregado</span></th>
-                                    <th width="6%"><span title="costoVenta">Costo</span></th>
+                                    <th width="5%"><span title="precioVenta">Vendido</span></th>
+                                    <th width="5%"><span title="entregaCliente">Entregado</span></th>
+                                    <th width="5%"><span title="costoVenta">Costo</span></th>
+                                    <th width="5%"><span title="prendasVenta">Prendas</span></th>
                                     <th width="25%"><span title="detalleVendedor">Vendedor</span></th>
                                     <th width="5%"><span title="observacionVenta">Observacion</span></th>
 

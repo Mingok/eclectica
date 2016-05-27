@@ -13,13 +13,17 @@ if (is_array($empresas)) {
 
 $objManejoMySQL = new manejoMySQL ();
 $sql = "SELECT * FROM (
-                SELECT venta.*,
-                        CONCAT(persona.apellidoPersona, ', ', persona.nombrePersona) as detalleCliente,
-                        CONCAT(persona1.apellidoPersona, ', ', persona1.nombrePersona) as detalleVendedor
+            SELECT tmp.*, vr.cantidadPrenda FROM (
+                SELECT venta.*, 
+                        CONCAT(persona.apellidoPersona, ', ', persona.nombrePersona) AS detalleCliente,
+                        CONCAT(persona1.apellidoPersona, ', ', persona1.nombrePersona) AS detalleVendedor
 			FROM venta AS venta
 			JOIN persona AS persona ON venta.idCliente = persona.idPersona
-			JOIN persona AS persona1 ON venta.idVendedor = persona1.idPersona
-			) tmp ";
+			JOIN persona AS persona1 ON venta.idVendedor = persona1.idPersona 
+                        WHERE venta.estado='V') tmp
+                        JOIN 
+                        (SELECT idVenta, SUM(cantidadPrenda) AS cantidadPrenda FROM venta_renglon GROUP BY idVenta)
+                        vr ON tmp.idVenta = vr.idVenta) final";
 $arrayFiltro = array();
 $filtros = array();
 require_once 'classes/persona/persona.php';
@@ -106,8 +110,8 @@ if ($tipo == 'pdf') {
             $this->SetFont('', 'B');
             $this->SetFontSize(8);
             // Header
-            $w = array(30,52,15,15,15,53);
-            $truncate = array(0,0,0,0,0);
+            $w = array(30,52,12,12,12,12,45);
+            $truncate = array(0,0,0,0,0,0);
             $num_headers = count($header);
             for($i = 0; $i < $num_headers; ++$i) {
                 $this->Cell($w[$i], 7, $header[$i], 1, 0, 'C', 1);
@@ -204,9 +208,10 @@ if ($tipo == 'pdf') {
 // column titles
     $header = array(    'Fecha',
         'Cliente',
-        'Vendido',
-        'Entregado',
+        'Vend',
+        'Entreg',
         'Costo',
+        'Prendas',
         'Vendedor');
 
     $columns = array(   'fechaVenta',
@@ -214,6 +219,7 @@ if ($tipo == 'pdf') {
         'precioVenta',
         'entregaCliente',
         'costoVenta',
+        'cantidadPrenda',
         'detalleVendedor');
     $pdf->ColoredTable($header, $arrResultado, $columns);
 
@@ -230,21 +236,23 @@ if ($tipo == 'pdf') {
     $filtros = implode(' - ', $filtros);
     $str_final = '
     <table class="table table-condensed" id="data">
-        <tr><td colspan="6" style="text-align: center; font-weight:bold; font-size: 14px;">Ventas Realizadas ('.$date.')</td></tr>
-        <tr><td colspan="6" style="text-align: center;"><label>Filtros: '. $filtros . '</td></tr>
+        <tr><td colspan="7" style="text-align: center; font-weight:bold; font-size: 14px;">Ventas Realizadas ('.$date.')</td></tr>
+        <tr><td colspan="7" style="text-align: center;"><label>Filtros: '. $filtros . '</td></tr>
         <thead style="font-weight: bolder; text-align: center;">
             <tr>
                 <th bgcolor="#5cb85c" width="20%"><span title="fechaVenta">Fecha</span></th>
                 <th bgcolor="#5cb85c" width="30%"><span title="detallePersona">Cliente</span></th>
-                <th bgcolor="#5cb85c" width="10%"><span title="precioVenta">Vendido</span></th>
-                <th bgcolor="#5cb85c" width="10%"><span title="entregaCliente">Entregado</span></th>
-                <th bgcolor="#5cb85c" width="10%"><span title="costoVenta">Costo</span></th>
+                <th bgcolor="#5cb85c" width="7%"><span title="precioVenta">Vendido</span></th>
+                <th bgcolor="#5cb85c" width="7%"><span title="entregaCliente">Entregado</span></th>
+                <th bgcolor="#5cb85c" width="7%"><span title="costoVenta">Costo</span></th>
+                <th bgcolor="#5cb85c" width="7%"><span title="prendasVenta">Prendas</span></th>
                 <th bgcolor="#5cb85c" width="30%"><span title="detallePersona">Vendedor</span></th>
         </thead>
     ';
     $precio_venta = 0;
     $entrega = 0;
     $costo = 0;
+    $prendas = 0;
     foreach ($arrResultado as $registro) {
         $str_final .= '<tr>';
         $str_final .= '<td>' . date('d/m/Y H:i',strtotime($registro['fechaVenta'])) . ' hs</td>';
@@ -252,17 +260,20 @@ if ($tipo == 'pdf') {
         $str_final .= '<td>' . $registro['precioVenta'] . '</td>';
         $str_final .= '<td>' . $registro['entregaCliente'] . '</td>';
         $str_final .= '<td>' . $registro['costoVenta'] . '</td>';
+        $str_final .= '<td>' . $registro['cantidadPrenda'] . '</td>';
         $str_final .= '<td>' . $registro['detalleVendedor'] . '</td>';
         $str_final .= '</tr>';
         $precio_venta += intval($registro['precioVenta']);
         $entrega += intval($registro['entregaCliente']);
         $costo += intval($registro['costoVenta']);
+        $prendas += intval($registro['cantidadPrenda']);
     }
     $str_final .= '<tr>';
     $str_final .= '<td colspan="2"><b>TOTAL</b></td>';
     $str_final .= '<td><b>' . $precio_venta . '</b></td>';
     $str_final .= '<td><b>' . $entrega . '</b></td>';
     $str_final .= '<td><b>' . $costo . '</b></td>';
+    $str_final .= '<td><b>' . $prendas . '</b></td>';
     $str_final .= '</tr>';
     $str_final .= '</table>';
 
